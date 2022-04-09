@@ -1,0 +1,108 @@
+==================================Danh sách chức năng phần mềm WolvesRes==================================
+
+*** Quản lý truy cập
+- Đăng nhập
+- Đăng xuất
+- Đổi mật khẩu
+- Quên mật khẩu 
+
+***Quản lý nhân viên:
+- Thêm
+- Sửa 
+- Xóa
+- Tìm kiếm
+- Đưa vào danh sách đen
+- Xem danh sách đen
+- Đưa ra khỏi danh sách đen
+- Tìm kiếm nhân viên trong danh sách đen
+- Sắp xếp nhân viên trong danh sách đen
+
+***Bán hàng
+- Thanh toán
+- Xuất hóa đơn
+- In bếp
+- Tìm kiếm mặt hàng
+- Tìm kiếm danh mục
+- Quét mã QR
+- Hủy bàn
+
+***Quản lý tài khoản
+- Thêm
+- Sửa
+- Xóa
+- Tìm kiếm
+- Vô hiệu hóa tài khoản
+- Xem danh sách tài khoản bị vô hiệu hóa
+- Sắp xếp tài khoản
+- Tìm kiếm tài khoản trong danh sách bị vô hiệu hóa
+- Kích hoạt lại tài khoản bị vô hiệu hóa
+
+***Quản lý bàn
+- Thêm
+- Sửa
+- Xóa 
+- Tìm kiếm
+- Chuyển bàn
+- Gộp bàn 
+
+***Quản lý khu bàn
+- Thêm
+- Sửa
+- Xóa
+- Tìm kiếm
+
+***Quản lý thực đơn
+- Thêm
+- Sửa
+- Xóa
+- Tìm kiếm
+
+***Quản lý sản phẩm
+- Thêm
+- Sửa
+- Xóa
+- Tìm kiếm sản phẩm
+- Thêm vào danh sách đen
+- Xem danh sách đen
+- Tìm kiếm trong danh sách đen
+- Xóa khỏi danh sách đen
+- Xem lịch sử giá sản phẩm
+
+***Quản lý voucher
+- Thêm
+- Sửa
+- Xóa
+- Thêm vào danh sách đen 
+- Xem danh sách đen
+- Xóa khỏi danh sách đen
+
+***Quản lý kho
+- Nhập kho
+- Xuất kho
+- Tìm kiếm sản phẩm trong kho
+- Xem lịch sử xuất nhập kho
+- Xem chi tiết lịch sử xuất nhập kho 
+
+***Quản lý hóa đơn
+- Xem danh sách hóa đơn
+- Hủy hóa đơn trong danh sách
+- Tìm kiếm hóa đơn
+
+***Thống kê
+##Thống kê bàn
+- Thống kê theo ngày 
+- Thống kê theo tháng 
+- Thống kê theo năm
+- Xuất file excel
+##Thống kê doanh thu
+- Thống kê theo ngày 
+- Thống kê theo tháng 
+- Thống kê theo năm
+- Xuất file excel
+##Kho
+- Liệt kê số liệu trong kho
+##Thống kê sản phẩm
+- Thống kê theo ngày 
+- Thống kê theo tháng 
+- Thống kê theo năm
+- Xuất file excel
