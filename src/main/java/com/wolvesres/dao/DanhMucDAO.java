@@ -1,7 +1,10 @@
 package com.wolvesres.dao;
 
+import com.wolvesres.form.sanpham.BlackListSanPham;
 import com.wolvesres.helper.XJdbc;
 import com.wolvesres.model.ModelDanhMuc;
+import com.wolvesres.model.ModelSanPham;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -84,4 +87,13 @@ public class DanhMucDAO implements WolvesResDAO<ModelDanhMuc, String> {
         }
         return entity;
     }
+
+	public void loadToBlackList(BlackListSanPham blackListSanPham) {
+		blackListSanPham.listSP.clear();
+		for (ModelSanPham sp : blackListSanPham.formSP.getList()) {
+			if (sp.isTrangThai() == false) {
+				blackListSanPham.listSP.add(sp);
+			}
+		}
+	}
 }

@@ -5,7 +5,7 @@ import com.wolvesres.dao.AutoDAO;
 import com.wolvesres.dao.DanhMucDAO;
 import com.wolvesres.dao.DonViTinhDAO;
 import com.wolvesres.form.FormSanPham;
-import com.wolvesres.form.doanhmuc.EditDanhMuc;
+import com.wolvesres.form.danhmuc.EditDanhMuc;
 import com.wolvesres.form.donvitinh.EditDonviTinh;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XImage;
@@ -44,6 +44,9 @@ public class EditSanPham extends javax.swing.JDialog {
 	AutoDAO autodao = new AutoDAO();
 	FormSanPham formSP = new FormSanPham(frame);
 
+	/**
+	 * Init method
+	 */
 	public void init() {
 		lblMaSP.setText(autodao.AuToSanPham());
 		loadToList();
@@ -52,13 +55,18 @@ public class EditSanPham extends javax.swing.JDialog {
 
 	}
 
+	/**
+	 * Load data to list
+	 */
 	private void loadToList() {
 		listDVT.addAll(dvtdao.selectAll());
 	}
 
 	private void fillToComboboxDVT() {
+		// Clear and add data to list
 		listDVT.clear();
 		listDVT.addAll(dvtdao.selectAll());
+		// Fill to combobox
 		modelCboDVT = new DefaultComboBoxModel();
 		cboDVT.setModel(modelCboDVT);
 		modelCboDVT.removeAllElements();
@@ -150,13 +158,18 @@ public class EditSanPham extends javax.swing.JDialog {
 		txtGiaSP.setText("");
 	}
 
-	private void insertDVT(ModelDonViTinh entity) {
+	/**
+	 * Insert DonVitinh to database
+	 * 
+	 * @param entity ModelDonViTinh
+	 */
+	private void insertDonViTinh(ModelDonViTinh entity) {
 		dvtdao.insert(entity);
 		listDVT.add(entity);
 		fillToComboboxDVT();
 	}
 
-	public boolean valideForm() {
+	public boolean validForm() {
 		String MaSP = lblMaSP.getText().trim();
 		String TenSP = txtTenSP.getText().trim();
 		String GiaSP = txtGiaSP.getText().trim();
@@ -353,7 +366,7 @@ public class EditSanPham extends javax.swing.JDialog {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXacNhanActionPerformed
-		if (valideForm()) {
+		if (validForm()) {
 			dispose = false;
 			dispose();
 		}
@@ -393,7 +406,7 @@ public class EditSanPham extends javax.swing.JDialog {
 		EditDonviTinh editDVT = new EditDonviTinh(frame, true);
 		editDVT.setVisible(true);
 		if (!editDVT.isDispose()) {
-			insertDVT(editDVT.getDonViTinh());
+			insertDonViTinh(editDVT.getDonViTinh());
 		}
 	}// GEN-LAST:event_btnThemDVTActionPerformed
 

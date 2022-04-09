@@ -251,7 +251,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 			pass = pwdPass.getText().trim();
 		}
 
-		if (FormValidator.isTextIsNotEmpty(username) || FormValidator.isTextIsNotEmpty(pass)) {
+		if (!FormValidator.isTextIsNotEmpty(username) || !FormValidator.isTextIsNotEmpty(pass)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Tài Khoản hoặc Mật Khẩu bị trống!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;

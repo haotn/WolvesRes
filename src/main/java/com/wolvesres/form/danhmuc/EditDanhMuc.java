@@ -1,4 +1,4 @@
-package com.wolvesres.form.doanhmuc;
+package com.wolvesres.form.danhmuc;
 
 import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.AutoDAO;

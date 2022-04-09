@@ -2,7 +2,7 @@ package com.wolvesres.form.sanpham;
 
 import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.DanhMucDAO;
-import com.wolvesres.form.doanhmuc.EditDanhMuc;
+import com.wolvesres.form.danhmuc.EditDanhMuc;
 import com.wolvesres.form.donvitinh.EditDonviTinh;
 import com.wolvesres.model.ModelDanhMuc;
 import com.wolvesres.model.ModelDonViTinh;

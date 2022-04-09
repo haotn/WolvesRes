@@ -120,9 +120,7 @@ public class TaiKhoanDAO implements WolvesResDAO<ModelTaiKhoan, String> {
 		ResultSet result;
 		try {
 			result = XJdbc.query(sql, username, password);
-			if (result.next()) {
-				entity = getFromResult(result);
-			}
+			entity = getFromResult(result);
 		} catch (SQLException ex) {
 			Logger.getLogger(TaiKhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -131,7 +129,7 @@ public class TaiKhoanDAO implements WolvesResDAO<ModelTaiKhoan, String> {
 
 	public ModelTaiKhoan getFromResult(ResultSet result) throws SQLException {
 		ModelTaiKhoan entity = null;
-		while (result.next()) {
+		if (result.next()) {
 			entity = new ModelTaiKhoan(result.getString(1), result.getString(2), result.getBoolean(3));
 		}
 		return entity;
