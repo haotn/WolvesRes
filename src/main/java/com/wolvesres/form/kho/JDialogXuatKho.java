@@ -497,7 +497,7 @@ public class JDialogXuatKho extends javax.swing.JDialog {
                 xk.setMaSP(listKho.get(select).getMaSP());
                 xk.setId(id);
                 xk.setIDK(listKho.get(select).getId());
-                xk.setGia(listKho.get(select).GiaSP(listKho.get(select).getIdls(), listKho.get(select).getMaSP()));
+                xk.setGia(listKho.get(select).getGiaSanPham(listKho.get(select).getIdls(), listKho.get(select).getMaSP()));
                 xk.setHanSD(listKho.get(select).getHanSuDung());
                 xk.setSoLuong(listKho.get(select).getSoLuong());
                 addToListNhapKho(xk);

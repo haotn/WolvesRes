@@ -97,7 +97,7 @@ public class FormKho extends javax.swing.JPanel {
         listFind.clear();
         for (int i = 0; i < listKho.size(); i++) {
             if (keyword.trim().length() != 0) {
-                if (listKho.get(i).TenSP(listKho.get(i).getMaSP()).contains(keyword)) {
+                if (listKho.get(i).getTenSanPham(listKho.get(i).getMaSP()).contains(keyword)) {
                     listFind.add(listKho.get(i));
                     model.setRowCount(0);
                     for (ModelKho kho : listFind) {

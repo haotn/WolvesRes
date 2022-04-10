@@ -151,7 +151,7 @@ public class Menu extends javax.swing.JPanel {
 
 	public void setText() {
 		ModelNhanVien nv = Auth.user;
-		lblChucVu.setText(nv.chucVuToString(nv.getChucVu()));
+		lblChucVu.setText(nv.getTenChucVu(nv.getChucVu()));
 		lblTenNV.setText(nv.getHoTen());
 		if (nv.getPathHinhAnh() != null) {
 			avatar.setIcon(XImage.readImageNhanVien(nv.getPathHinhAnh()));

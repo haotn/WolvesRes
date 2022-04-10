@@ -20,6 +20,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import com.wolvesres.helper.FormValidator;
 
+/**
+ * Cac class lien quan: FormNhanVien, NhanVienDAO, EditNhanVien,
+ * BlackListNhanVien
+ * 
+ * @author Brian
+ *
+ */
 public class EditNhanVien extends javax.swing.JDialog {
 
 	/**
@@ -59,43 +66,6 @@ public class EditNhanVien extends javax.swing.JDialog {
 	JFrame frame;
 	AutoDAO autoDao = new AutoDAO();
 	FormNhanVien formParent = new FormNhanVien(frame);
-	/**
-	 * Cac phuong thuc kiem tra tinh hop le du lieu
-	 */
-	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
-			Pattern.CASE_INSENSITIVE);
-
-	public static boolean validateEmail(String emailStr) {
-		Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
-		return matcher.find();
-	}
-
-	public static final Pattern VALID_IDNATIONAL_CMND = Pattern.compile("(([0-2]{1}[0-9]{1})|(3[0-8]{1}))[0-9]{7}");// !T
-
-	public static final Pattern VALID_PHONE_NUMBER = Pattern.compile("0[3789]{1}[\\d]{8}");
-
-	public static boolean validatePhoneNumber(String phoneNumbet) {
-		Matcher matcher = VALID_PHONE_NUMBER.matcher(phoneNumbet);
-		return matcher.find();
-	}
-
-	public static final Pattern VALID_IDNATIONAL = Pattern.compile(
-			"0((0(1|2|4|6|8))|(1(0|1|2|4|5|7|9))|(2(0|2|4|5|6|7))|(3(0|1|3|4|5|6|7|8))|(4(0|2|4|5|6|8|9))|(5(1|2|4|6|8))|(6(0|2|4|6|7|8))|(7(0|2|4|5|7|9))|(8(0|2|3|4|6|7|9))|(9[1-6]{1}))[0-9]{1}[0-9]{2}[0-9]{6}");
-
-	public static boolean validateIdNational(String idNational) {
-		Matcher matcher = VALID_IDNATIONAL.matcher(idNational);
-		return matcher.find();
-	}
-
-	// !T
-	public static boolean validateIdNationalCMND(String idNational) {
-		Matcher matcher = VALID_IDNATIONAL_CMND.matcher(idNational);
-		return matcher.find();
-	}
-//    public static String toString(Date ngaySQL, String kieu) { // Date sang chuoi
-//        DateFormat kieuNgay = new SimpleDateFormat(kieu);
-//        return kieuNgay.format(ngaySQL);
-//    }
 
 	/**
 	 * getNhanVien tra ve mot doi tuong nhan vien duoc lay tu cac truong du lieu
@@ -121,14 +91,21 @@ public class EditNhanVien extends javax.swing.JDialog {
 		return entity;
 	}
 
+	/**
+	 * Reset form to default value
+	 */
 	public void clearForm() {
 		txtHoTen.setText("");
 		txtEmail.setText("");
 		txtCCCD.setText("");
 		txtSoDT.setText("");
-		// System.out.println("asdfasds");
 	}
 
+	/**
+	 * Get this.dispose value
+	 * 
+	 * @return
+	 */
 	public boolean getIsDispose() {
 		return this.dispose;
 	}
@@ -144,10 +121,18 @@ public class EditNhanVien extends javax.swing.JDialog {
 		this.isInsert = isInsert;
 	}
 
+	/**
+	 * Set value for this.emp
+	 * 
+	 * @param entity
+	 */
 	public void setNhanVien(ModelNhanVien entity) {
 		this.emp = entity;
 	}
 
+	/**
+	 * Set data to form is isInsert=false
+	 */
 	public void setForm() {
 		if (emp.getPathHinhAnh() != null) {
 			avatar.setIcon(XImage.readImageNhanVien(emp.getPathHinhAnh()));
@@ -161,7 +146,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 			txtSoDT.setText(this.emp.getSoDT());
 		}
 		dateChooser.setSelectedDate(XDate.toDate(emp.getNgaySinh(), "dd-MM-yyyy"));
-		cboChucVu.setSelectedItem(this.emp.chucVuToString(this.emp.getChucVu()));
+		cboChucVu.setSelectedItem(this.emp.getTenChucVu(this.emp.getChucVu()));
 		if (this.emp.isGioiTinh()) {
 			rdoNam.setSelected(true);
 		} else {
@@ -169,6 +154,11 @@ public class EditNhanVien extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Valid form data
+	 * 
+	 * @return is valid
+	 */
 	public boolean valideForm() {
 		// Get form data
 		String fullName = txtHoTen.getText().trim();
@@ -189,12 +179,12 @@ public class EditNhanVien extends javax.swing.JDialog {
 		pathAvatar = avatar.getToolTipText();
 
 		if (!FormValidator.isTextIsNotEmpty(fullName) || !FormValidator.isTextIsNotEmpty(phoneNumber)
-				|| !FormValidator.isTextIsNotEmpty(email) || FormValidator.isTextIsNotEmpty(idNational)) {
+				|| !FormValidator.isTextIsNotEmpty(email) || !FormValidator.isTextIsNotEmpty(idNational)) {
 			// Check if any information is empty
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ dữ liệu!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (FormValidator.isValidFullname(fullName)) {
+		} else if (!FormValidator.isValidFullname(fullName)) {
 			// Check if fullname is invalid
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ họ tên!", ROptionDialog.WARNING, Color.red,
 					Color.black);
@@ -213,7 +203,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 		}
 		if (idNational.length() == 12) {
 			// Is Id National
-			if (FormValidator.isValidGenderCode(idNational, rdoNam.isSelected(), yearOfBirth)) {
+			if (!FormValidator.isValidGenderCode(idNational, rdoNam.isSelected(), yearOfBirth)) {
 				// Check if gender code is invalid
 				ROptionDialog.showAlert(frame, "Lỗi", "Số CCCD không hợp lệ (sai mã giới tính)!", ROptionDialog.WARNING,
 						Color.red, Color.black);
@@ -293,6 +283,9 @@ public class EditNhanVien extends javax.swing.JDialog {
 		return true;
 	}
 
+	/**
+	 * Set image for lblAvatar
+	 */
 	public void setIconLblAvatar() {
 		if (fileChoocer.showOpenDialog(this) == fileChoocer.APPROVE_OPTION) {
 			File file = fileChoocer.getSelectedFile();
@@ -301,6 +294,25 @@ public class EditNhanVien extends javax.swing.JDialog {
 			avatar.setIcon(icon);
 			avatar.setToolTipText(file.getName());
 		}
+	}
+
+	/**
+	 * Insert NhanVien to database
+	 * 
+	 * @param entity
+	 */
+
+	public void insertNhanVien(ModelNhanVien entity) {
+		entity.insert();
+	}
+
+	/**
+	 * Update NhanVien to database
+	 * 
+	 * @param entity
+	 */
+	public void updateNhanVien(ModelNhanVien entity) {
+		entity.update();
 	}
 
 	List<String> listTinh = new ArrayList<String>();
@@ -333,6 +345,9 @@ public class EditNhanVien extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Generate data
+	 */
 	public void createInfor() {
 		addListTinh();
 		if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có muốn sử dụng dữ liệu mẫu", ROptionDialog.WARNING,
@@ -379,7 +394,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 				}
 			}
 			nam = nam.substring(2, 4);
-			int tinh = ThreadLocalRandom.current().nextInt(0, 64);
+			int tinh = ThreadLocalRandom.current().nextInt(0, 63);
 			int tk;
 			int testnam = ThreadLocalRandom.current().nextInt(0, 2);
 			if (testnam == 0) {
@@ -583,6 +598,11 @@ public class EditNhanVien extends javax.swing.JDialog {
 
 	private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXacNhanActionPerformed
 		if (valideForm()) {
+			if (isInsert) {
+				insertNhanVien(this.getNhanVien());
+			} else {
+				updateNhanVien(this.getNhanVien());
+			}
 			dispose = false;
 			dispose();
 		}

@@ -82,14 +82,14 @@ public class ModelTaiKhoan {
     public Object[] toRowTable(EventActionBlackList event) {
         Icon iconAction = new ImageIcon(getClass().getResource("/com/wolvesres/icon/return.png"));
         Icon icon = XImage.readImageNhanVien(getNhanVien().getPathHinhAnh());
-        return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().chucVuToString(getNhanVien().getChucVu()), new ModelActionBlackList(iconAction, this, event)
+        return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().getTenChucVu(getNhanVien().getChucVu()), new ModelActionBlackList(iconAction, this, event)
         };
     }
 
     public Object[] toRowTableTK(EventAction event) {
         Icon icon = XImage.readImageNhanVien(getNhanVien().getPathHinhAnh());
         Icon iconUpdate = new ImageIcon(getClass().getResource("/com/wolvesres/icon/disabled.png"));
-        return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().chucVuToString(getNhanVien().getChucVu()), new ModelAction(iconUpdate, null,this, event)
+        return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().getTenChucVu(getNhanVien().getChucVu()), new ModelAction(iconUpdate, null,this, event)
         };
     }
 }

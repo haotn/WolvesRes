@@ -120,7 +120,7 @@ public class ScanVoucher extends javax.swing.JDialog {
 																	String.valueOf(voucher.getGiamGia()) + "%");
 															setBtnEnabel(true);
 															isScan = false;
-															webcam.wait();
+															webcam.close();
 
 															t.join();
 															break;
@@ -146,6 +146,10 @@ public class ScanVoucher extends javax.swing.JDialog {
 									e.printStackTrace();
 								} catch (NotFoundException ex) {
 									ex.printStackTrace();
+								} catch (IllegalMonitorStateException e) {
+									// TODO: handle exception
+								} catch (IllegalStateException e) {
+									// TODO: handle exception
 								}
 							}
 						}

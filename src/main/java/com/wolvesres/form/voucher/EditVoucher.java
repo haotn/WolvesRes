@@ -19,9 +19,24 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import java.awt.event.WindowEvent;
 
+/**
+ * Cac class lien quan FormVoucher, BlackListVoucher, VoucherDAO, VoucherDAO,
+ * CanVoucher
+ * 
+ * @author Brian
+ *
+ */
 public class EditVoucher extends javax.swing.JDialog {
+	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param parent
+	 * @param modal
+	 */
 	public EditVoucher(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
@@ -30,21 +45,31 @@ public class EditVoucher extends javax.swing.JDialog {
 		init();
 	}
 
+	/**
+	 * Generate global variable
+	 */
 	JFrame frame;
 	private boolean insert = true;
 	private boolean dispose = true;
 	private ModelVouCher voucher = null;
 	private FormVoucher formParent = new FormVoucher(frame);
 	private VoucherDAO dao = new VoucherDAO();
+	private String mavc = null;
 
+	/**
+	 * Init method
+	 */
 	public void init() {
 		sbtnTrangThai.setSelected(true);
-//        if (!insert) {
 		txtMaVoucher.setEditable(true);
-//        }
 		sbtnTrangThai.setVisible(false);
 	}
 
+	/**
+	 * Get form data
+	 * 
+	 * @return ModelVoucher
+	 */
 	public ModelVouCher getForm() {
 		ModelVouCher vc = new ModelVouCher();
 		vc.setMaVoucher(txtMaVoucher.getText().trim());
@@ -56,6 +81,9 @@ public class EditVoucher extends javax.swing.JDialog {
 		return vc;
 	}
 
+	/**
+	 * Set form data
+	 */
 	public void setForm() {
 		txtMaVoucher.setText(voucher.getMaVoucher());
 		txtGiamGia.setText(String.valueOf(voucher.getGiamGia()));
@@ -66,26 +94,56 @@ public class EditVoucher extends javax.swing.JDialog {
 		sbtnTrangThai.setVisible(true);
 	}
 
+	/**
+	 * Set value for this.voucher
+	 * 
+	 * @param vc
+	 */
 	public void setVoucher(ModelVouCher vc) {
 		this.voucher = vc;
 	}
 
+	/**
+	 * Get value of this.voucher
+	 * 
+	 * @return
+	 */
 	public ModelVouCher getVoucher() {
 		return this.voucher;
 	}
 
+	/**
+	 * Check if this action is insert or edit
+	 * 
+	 * @param isInsert
+	 */
 	public void isInsert(boolean isInsert) {
 		this.insert = isInsert;
 	}
 
+	/**
+	 * Get value of isInsert
+	 * 
+	 * @return isInsert
+	 */
 	public boolean isInsert() {
 		return this.insert;
 	}
 
+	/**
+	 * Check if action is dispose
+	 * 
+	 * @return isDispose
+	 */
 	public boolean isDidpose() {
 		return this.dispose;
 	}
 
+	/**
+	 * Valid form data
+	 * 
+	 * @return
+	 */
 	public boolean validateForm() {
 		String maVoucher = txtMaVoucher.getText().trim();
 		String soLuong = txtSoLuong.getText().trim();
@@ -97,7 +155,7 @@ public class EditVoucher extends javax.swing.JDialog {
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ thông tin!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (!FormValidator.isValidTextLength(maVoucher, 5)) {
+		} else if (!FormValidator.isValidTextMinLength(maVoucher, 5)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Mã voucher phải từ 5 ký tự!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
@@ -137,36 +195,40 @@ public class EditVoucher extends javax.swing.JDialog {
 			return false;
 		}
 		if (!insert) {
-			if (now.after(XDate.toDate(voucher.getNgayBatDau(), "dd-MM-yyyy"))) {
-				if (!ngayBatDau.equals(voucher.getNgayBatDau())) {
+			if (!FormValidator.isDateBefore(XDate.toDate(voucher.getNgayBatDau(), "dd-MM-yyyy"), now)) {
+				if (!!FormValidator.isDateEquals(XDate.toDate(ngayBatDau, "yyyy-MM-dd"),
+						XDate.toDate(voucher.getNgayBatDau(), "yyyy-MM-dd"))) {
 					ROptionDialog.showAlert(frame, "Lỗi", "Ngày bắt đầu không thể thay đổi!", ROptionDialog.WARNING,
 							Color.red, Color.black);
 					return false;
 				}
 			}
 		}
-		for (int i = 0; i < formParent.getList().size(); i++) {
-			if (maVoucher.equals(formParent.getList().get(i).getMaVoucher()) && insert) {
-				ROptionDialog.showAlert(frame, "Lỗi", "Mã Voucher đã tồn tại!", ROptionDialog.WARNING, Color.red,
-						Color.black);
-				return false;
-			}
-		}
-		if (!insert) {
-			for (int i = 0; i < formParent.getList().size(); i++) {
-				if (voucher.getMaVoucher().equals(formParent.getList().get(i).getMaVoucher())) {
-				} else {
-					if (!maVoucher.equals(voucher.getMaVoucher())
-							&& maVoucher.equals(formParent.getList().get(i).getMaVoucher())) {
-						ROptionDialog.showAlert(frame, "Lỗi", "Mã Voucher đã tồn tại!", ROptionDialog.WARNING,
-								Color.red, Color.black);
-						return false;
-					}
-				}
-			}
+		if (!FormValidator.isVoucherNotDuplicate(maVoucher, formParent.getList(), insert)) {
+			ROptionDialog.showAlert(frame, "Lỗi", "Mã Voucher đã tồn tại!", ROptionDialog.WARNING, Color.red,
+					Color.black);
+			return false;
 		}
 		setVoucher(getForm());
 		return true;
+	}
+
+	/**
+	 * Insert entity to database
+	 * 
+	 * @param entity
+	 */
+	public void insertVoucher(ModelVouCher entity) {
+		entity.insert();
+	}
+
+	/**
+	 * Update entity to database
+	 * 
+	 * @param entity
+	 */
+	public void updateVoucher(ModelVouCher entity, String mavc) {
+		entity.update(mavc);
 	}
 
 //    private final String qcip = "src\\com\\wolvesres\\qrcode\\";
@@ -188,8 +250,22 @@ public class EditVoucher extends javax.swing.JDialog {
 //            Logger.getLogger(EditVoucher.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //    }
+	/**
+	 * Folder will be save QRCode
+	 */
 	private final String qcip = "QRCode/";
 
+	/**
+	 * Generate QRCode
+	 * 
+	 * @param text
+	 * @param width
+	 * @param height
+	 * @param filePath
+	 * @param fileName
+	 * @return filename
+	 * @throws Exception
+	 */
 	private static String generateQRCode(String text, int width, int height, String filePath, String fileName)
 			throws Exception {
 		QRCodeWriter qcwobj = new QRCodeWriter();
@@ -200,6 +276,9 @@ public class EditVoucher extends javax.swing.JDialog {
 		return filePath + fileName;
 	}
 
+	/**
+	 * Generate and save QRCode
+	 */
 	public void run() {
 		try {
 			String path = generateQRCode(txtMaVoucher.getText(), 1250, 1250, qcip, txtMaVoucher.getText() + ".png");
@@ -211,12 +290,13 @@ public class EditVoucher extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Reset form data
+	 */
 	private void clearForm() {
 		txtMaVoucher.setText("");
 		txtSoLuong.setText("");
 		txtGiamGia.setText("");
-//        txtNgayBatDau.setText("");
-//        txtNgayKetThuc.setText("");
 		dcrNgayBatDau.setSelectedDate(new Date());
 		dcrNgayKetThuc.setSelectedDate(new Date());
 	}
@@ -259,6 +339,13 @@ public class EditVoucher extends javax.swing.JDialog {
 		addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowActivated(java.awt.event.WindowEvent evt) {
 				formWindowActivated(evt);
+			}
+
+			@Override
+			public void windowOpened(WindowEvent e) {
+				if (!insert) {
+					mavc = getVoucher().getMaVoucher();
+				}
 			}
 		});
 
@@ -366,8 +453,13 @@ public class EditVoucher extends javax.swing.JDialog {
 
 	private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXacNhanActionPerformed
 		if (validateForm()) {
-			dispose = false;
 			run();
+			if (isInsert()) {
+				insertVoucher(voucher);
+			} else {
+				updateVoucher(voucher, this.mavc);
+			}
+			dispose = false;
 			dispose();
 		}
 	}// GEN-LAST:event_btnXacNhanActionPerformed

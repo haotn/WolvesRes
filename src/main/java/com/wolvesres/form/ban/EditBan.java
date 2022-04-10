@@ -2,6 +2,7 @@ package com.wolvesres.form.ban;
 
 import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.AutoDAO;
+import com.wolvesres.dao.BanDAO;
 import com.wolvesres.dao.KhuBanDAO;
 import com.wolvesres.form.FormBan;
 import com.wolvesres.helper.FormValidator;
@@ -13,7 +14,18 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
+/**
+ * Cac class lien quan: ModelBan, BanDAO, FormBan
+ * 
+ * @author Brian
+ *
+ */
 public class EditBan extends javax.swing.JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public EditBan(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
@@ -23,38 +35,66 @@ public class EditBan extends javax.swing.JDialog {
 		init();
 	}
 
+	/**
+	 * Generate global variable
+	 */
 	private JFrame frame;
 	private List<ModelKhuBan> listKhuBan = new ArrayList<>();
 	private ModelBan ban = null;
 	private boolean dispose = true;
 	private boolean insert = true;
 	private KhuBanDAO kbDAO = new KhuBanDAO();
+	private BanDAO banDao = new BanDAO();
 	private AutoDAO autoDAO = new AutoDAO();
 	private FormBan formParent = new FormBan(frame);
 	private DefaultComboBoxModel<ModelKhuBan> model = new DefaultComboBoxModel<>();
 
+	/**
+	 * init method
+	 */
 	public void init() {
 		lblMaBan.setText(autoDAO.AuToBan());
 		loadToList();
 		fillToCBO();
 	}
 
+	/**
+	 * Set value of this.insert
+	 * 
+	 * @param insert
+	 */
 	public void setInsert(boolean insert) {
 		this.insert = insert;
 	}
 
+	/**
+	 * Get value of this.insert
+	 * 
+	 * @return is insert
+	 */
 	public boolean isInsert() {
 		return this.insert;
 	}
 
+	/**
+	 * Get value of this.dipose
+	 * 
+	 * @return
+	 */
 	public boolean isDispose() {
 		return this.dispose;
 	}
 
+	/**
+	 * Load to list
+	 */
 	private void loadToList() {
 		listKhuBan.addAll(kbDAO.selectAll());
 	}
 
+	/**
+	 * Fill to combobox
+	 */
 	private void fillToCBO() {
 		cboKhuBan.setModel(model);
 		model.removeAllElements();
@@ -63,14 +103,27 @@ public class EditBan extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Set value of this.ban
+	 * 
+	 * @param ban
+	 */
 	public void setBan(ModelBan ban) {
 		this.ban = ban;
 	}
 
+	/**
+	 * Get value of this.ban
+	 * 
+	 * @return
+	 */
 	public ModelBan getBan() {
 		return this.ban;
 	}
 
+	/**
+	 * Set form data
+	 */
 	public void setForm() {
 		lblMaBan.setText(ban.getMaBan());
 		txtTenBan.setText(ban.getTenBan());
@@ -81,8 +134,13 @@ public class EditBan extends javax.swing.JDialog {
 		}
 	}
 
-	private boolean validForm() {
-		if (FormValidator.isTextIsNotEmpty(txtTenBan.getText())) {
+	/**
+	 * Valid form
+	 * 
+	 * @return is valid
+	 */
+	public boolean validForm() {
+		if (!FormValidator.isTextIsNotEmpty(txtTenBan.getText())) {
 			ROptionDialog.showAlert(frame, "Thông báo", "Tên bàn không được để trống!", ROptionDialog.WARNING,
 					Color.red, Color.black);
 			return false;
@@ -91,7 +149,12 @@ public class EditBan extends javax.swing.JDialog {
 		return true;
 	}
 
-	private ModelBan getForm() {
+	/**
+	 * Get form data
+	 * 
+	 * @return ModelBan
+	 */
+	public ModelBan getForm() {
 		ModelBan tb = new ModelBan();
 		tb.setMaBan(lblMaBan.getText());
 		tb.setTenBan(txtTenBan.getText().trim());
@@ -101,7 +164,10 @@ public class EditBan extends javax.swing.JDialog {
 		return tb;
 	}
 
-	private void clearForm() {
+	/**
+	 * Reset form data
+	 */
+	public void clearForm() {
 		txtTenBan.setText("");
 		cboKhuBan.setSelectedIndex(0);
 	}
@@ -247,6 +313,13 @@ public class EditBan extends javax.swing.JDialog {
 	private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXacNhanActionPerformed
 		if (validForm()) {
 			dispose = false;
+			if (insert) {
+				System.out.println("Insert");
+				getBan().insert();
+			} else {
+				System.out.println("Update");
+				getBan().update();
+			}
 			dispose();
 		}
 	}// GEN-LAST:event_btnXacNhanActionPerformed

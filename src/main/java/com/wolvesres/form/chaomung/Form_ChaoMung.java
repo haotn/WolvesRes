@@ -10,6 +10,7 @@ import javax.swing.Timer;
 
 public class Form_ChaoMung extends javax.swing.JDialog {
 
+	private static final long serialVersionUID = 1L;
 	JDialog dialog;
 
 	public Form_ChaoMung(java.awt.Frame parent, boolean modal) {
@@ -22,17 +23,17 @@ public class Form_ChaoMung extends javax.swing.JDialog {
 		chaoMung();
 	}
 
-	// sử dụng luồng
+	// Timer
 	Timer taiChaoMung;
 	int phanTram = 0;
 
-	// Phương thức tải chào mừng
+	/**
+	 * Welcome method
+	 */
 	private void chaoMung() {
 		taiChaoMung = new Timer(16, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// prg_ChaoMung.setValue(phanTram);
 				phanTram++;
-
 				if (phanTram == 80) {
 					rBLoading2.setVisible(false);
 					lbl_Background.setBackground(new Color(0, 0, 0));
@@ -43,8 +44,6 @@ public class Form_ChaoMung extends javax.swing.JDialog {
 					AnimationShowWindow.closeDialog(dialog);
 					dispose();
 					new FormDangNhap().setVisible(true);
-					// new Main().setVisible(true);
-					// taiChaoMung.stop();
 				}
 			}
 		});
@@ -52,8 +51,6 @@ public class Form_ChaoMung extends javax.swing.JDialog {
 	}
 
 	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
 		pnl_ChaoMung = new javax.swing.JPanel();

@@ -21,7 +21,17 @@ import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * 
+ * Cac class lien quan: FormNhanVien, NhanVienDAO, EditNhanVien,
+ * BlackListNhanVien
+ * 
+ * @author Brian
+ *
+ */
 public class FormNhanVien extends javax.swing.JPanel {
+
+	private static final long serialVersionUID = 1L;
 
 	public FormNhanVien(JFrame frame) {
 		initComponents();
@@ -31,9 +41,8 @@ public class FormNhanVien extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Tao bien cho controller
+	 * Generate variable
 	 */
-
 	private JFrame frame;
 	private List<ModelNhanVien> listNhanVien = new ArrayList<ModelNhanVien>();
 	private List<ModelNhanVien> whiteList = new ArrayList<ModelNhanVien>();
@@ -43,19 +52,18 @@ public class FormNhanVien extends javax.swing.JPanel {
 
 	private DefaultTableModel model;
 	private int index = -1;
+	/**
+	 * Event action on table
+	 */
 	private EventAction<ModelNhanVien> eventAction = new EventAction<ModelNhanVien>() {
 		public void delete(ModelNhanVien entity) {
-			boolean isValid = true;
-			if (Auth.user.getChucVu() == 2) {
-				if (entity.getChucVu() == 2) {
-					isValid = false;
-				}
-			}
-			if (isValid) {
-				if (dao.checkForeignKey(entity.getMaNV()) == null) {
+			if (roleIsValid(entity)) {
+				if (isNotConflicForeignKey(entity, dao)) {
 					if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có chắc muốn xóa nhân viên này không?",
 							ROptionDialog.WARNING, Color.red, Color.black)) {
 						deleteEmployee(entity);
+						listNhanVien.remove(entity);
+						fillToTable();
 						index = 0;
 						showDetail(getEmployeeFromRowTable(index));
 					}
@@ -64,6 +72,9 @@ public class FormNhanVien extends javax.swing.JPanel {
 							"Không thể xóa, xác nhận đưa vào danh sách đen?", ROptionDialog.PRIORITY_HIGHT, Color.red,
 							Color.black)) {
 						addToBlackList(entity);
+						fillToTable();
+						index = 0;
+						showDetail(getEmployeeFromRowTable(index));
 					}
 				}
 			} else {
@@ -80,12 +91,21 @@ public class FormNhanVien extends javax.swing.JPanel {
 			editForm.setForm();
 			editForm.setVisible(true);
 			if (editForm.getIsDispose() == false) {
-				updateEmployee(editForm.getNhanVien());
+				for (int i = 0; i < listNhanVien.size(); i++) {
+					if (listNhanVien.get(i).getMaNV().equals(editForm.getNhanVien().getMaNV())) {
+						listNhanVien.set(i, editForm.getNhanVien());
+						break;
+					}
+				}
+				fillToTable();
 				showDetail(editForm.getNhanVien());
 			}
 		}
 	};
 
+	/**
+	 * Init method
+	 */
 	private void init() {
 		initTable();
 		loadToList();
@@ -113,6 +133,32 @@ public class FormNhanVien extends javax.swing.JPanel {
 			}
 		}
 		listTaiKhoan.addAll(taiKhoanDAO.selectAll());
+	}
+
+	/**
+	 * Check if Auth.user is Manager and entity is not Manager
+	 * 
+	 * @param entity
+	 * @return role is valid
+	 */
+	public Boolean roleIsValid(ModelNhanVien entity) {
+		if (Auth.isBoss()) {
+			return true;
+		} else if (Auth.isManager() && entity.getChucVu() != 2) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Check if entity is not conflic with any foreign key
+	 * 
+	 * @param entity
+	 * @param nvDao
+	 * @return is not conflic
+	 */
+	public Boolean isNotConflicForeignKey(ModelNhanVien entity, NhanVienDAO nvDao) {
+		return nvDao.checkForeignKey(entity.getMaNV()) == null;
 	}
 
 	/**
@@ -188,7 +234,7 @@ public class FormNhanVien extends javax.swing.JPanel {
 		}
 		lblHoTen.setText(emp.getHoTen());
 		lblCCCD.setText(emp.getCMND());
-		lblChucVu.setText(emp.chucVuToString(emp.getChucVu()));
+		lblChucVu.setText(emp.getTenChucVu(emp.getChucVu()));
 		lblEmail.setText(emp.getEmail());
 		lblGioiTinh.setText(emp.isGioiTinh() ? "Nam" : "Nữ");
 		lblMaNV.setText(emp.getMaNV());
@@ -199,40 +245,12 @@ public class FormNhanVien extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Add employee to List
-	 *
-	 * @param entity
-	 */
-	private void insertEmployee(ModelNhanVien entity) {
-		dao.insert(entity);
-		listNhanVien.add(entity);
-		fillToTable();
-	}
-
-	/**
-	 * Update employee to listNhanVien
-	 *
-	 * @param entity
-	 */
-	private void updateEmployee(ModelNhanVien entity) {
-		dao.update(entity, entity.getMaNV());
-		for (int i = 0; i < listNhanVien.size(); i++) {
-			if (listNhanVien.get(i).getMaNV().equals(entity.getMaNV())) {
-				listNhanVien.set(i, entity);
-			}
-		}
-		fillToTable();
-	}
-
-	/**
 	 * Delete employee from listNhanVien
 	 *
 	 * @param entity
 	 */
 	private void deleteEmployee(ModelNhanVien entity) {
-		dao.delete(entity.getMaNV());
-		listNhanVien.remove(entity);
-		fillToTable();
+		entity.remove();
 	}
 
 	/**
@@ -250,33 +268,28 @@ public class FormNhanVien extends javax.swing.JPanel {
 		tblNhanVien.setColumnAction(4);
 	}
 
-	private void findNhanVien(String keyword) {
-		List<ModelNhanVien> listFind = new ArrayList<ModelNhanVien>();
-		listFind.clear();
+	private List<ModelNhanVien> timKiemNhanVien(String keyword, NhanVienDAO dao, List<ModelNhanVien> whiteList) {
+		List<ModelNhanVien> listFound = new ArrayList<ModelNhanVien>();
 		for (int i = 0; i < whiteList.size(); i++) {
 			if (keyword.trim().length() != 0) {
-				if (whiteList.get(i).getHoTen().contains(keyword) || whiteList.get(i).getEmail().contains(keyword)
-						|| whiteList.get(i).getSoDT().contains(keyword)
-						|| whiteList.get(i).getCMND().contains(keyword)) {
-					listFind.add(whiteList.get(i));
-					model.setRowCount(0);
-					for (ModelNhanVien emp : listFind) {
-						tblNhanVien.addRow(emp.toRowTable(eventAction));
-					}
-				}
+				listFound = dao.findNhanVien(keyword);
 			} else {
-				fillToTable();
+				listFound.addAll(whiteList);
 			}
 		}
+		return listFound;
 	}
 
+	/**
+	 * Get ModelTaiKhoan by ma nhan vien
+	 * 
+	 * @param manv
+	 * @return ModelTaiKhoan
+	 */
 	private ModelTaiKhoan getTaiKhoanByMaNV(String manv) {
 		ModelTaiKhoan account = new ModelTaiKhoan();
 		for (int i = 0; i < listTaiKhoan.size(); i++) {
 			if (manv.equals(listTaiKhoan.get(i).getTaiKhoan())) {
-				// System.out.println("Tim thay tai khoan " + listTaiKhoan.get(i).getTaiKhoan()
-				// + " matkhau :" + listTaiKhoan.get(i).getMatKhau() + " TrangThai: " +
-				// listTaiKhoan.get(i).isTrangThai());
 				account = listTaiKhoan.get(i);
 				break;
 			}
@@ -284,10 +297,13 @@ public class FormNhanVien extends javax.swing.JPanel {
 		return account;
 	}
 
+	/**
+	 * Add entity to black list
+	 * 
+	 * @param emp
+	 */
 	private void addToBlackList(ModelNhanVien emp) {
-		emp.setTrangThai(false);
-		dao.update(emp, emp.getMaNV());
-		updateEmployee(emp);
+		emp.addToBlackList();
 		ModelTaiKhoan account = null;
 		account = getTaiKhoanByMaNV(emp.getMaNV());
 		if (account != null) {
@@ -296,9 +312,6 @@ public class FormNhanVien extends javax.swing.JPanel {
 				taiKhoanDAO.update(account, account.getTaiKhoan());
 			}
 		}
-		fillToTable();
-		index = 0;
-		showDetail(getEmployeeFromRowTable(index));
 	}
 
 	@SuppressWarnings("unchecked")
@@ -542,7 +555,8 @@ public class FormNhanVien extends javax.swing.JPanel {
 			for (int i = 0; i < listNhanVien.size(); i++) {
 				for (int j = 0; j < bls.getListReturn().size(); j++) {
 					if (listNhanVien.get(i).getMaNV().equals(bls.getListReturn().get(j).getMaNV())) {
-						updateEmployee(bls.getListReturn().get(j));
+						listNhanVien.set(i, bls.getListReturn().get(j));
+						break;
 					}
 				}
 			}
@@ -558,7 +572,8 @@ public class FormNhanVien extends javax.swing.JPanel {
 		editForm.setInsert(true);
 		editForm.setVisible(true);
 		if (editForm.getNhanVien() != null) {
-			insertEmployee(editForm.getNhanVien());
+			listNhanVien.add(editForm.getNhanVien());
+			fillToTable();
 			showDetail(editForm.getNhanVien());
 		}
 
@@ -577,12 +592,17 @@ public class FormNhanVien extends javax.swing.JPanel {
 			if (index >= 0) {
 				ModelNhanVien emp = getEmployeeFromRowTable(index);
 				addToBlackList(emp);
+				fillToTable();
+				index = 0;
+				showDetail(getEmployeeFromRowTable(index));
 			}
 		}
 	}// GEN-LAST:event_btnDuaVaoDSDenActionPerformed
 
 	private void txtFindKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtFindKeyReleased
-		findNhanVien(txtFind.getText().trim());
+		String keyword = txtFind.getText().trim();
+		listNhanVien = timKiemNhanVien(keyword, dao, whiteList);
+		fillToTable();
 	}// GEN-LAST:event_txtFindKeyReleased
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables

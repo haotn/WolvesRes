@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import com.wolvesres.dao.GhiNhoDAO;
 import com.wolvesres.model.ModelGhiNho;
 import com.wolvesres.model.ModelNhanVien;
+import com.wolvesres.model.ModelVouCher;
 
 public class FormValidator {
 
@@ -50,7 +51,20 @@ public class FormValidator {
 	 * @return is valid
 	 */
 	public static Boolean isValidTextLength(String text, int length) {
-		if (text.trim().length() != 10) {
+		if (text.trim().length() != length) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Check if text min length is valid
+	 * 
+	 * @param phoneNumber
+	 * @return is valid
+	 */
+	public static Boolean isValidTextMinLength(String text, int length) {
+		if (text.trim().length() < length) {
 			return false;
 		}
 		return true;
@@ -64,6 +78,8 @@ public class FormValidator {
 	 */
 	public static Boolean isValidAge(Date birthDay) {
 		Date now = new Date();
+		System.out.println(XDate.toString(XDate.addDays(birthDay, 6570), "dd/MM/yyyy") + " is before "
+				+ XDate.toString(now, "dd/MM/yyyy"));
 		if (XDate.addDays(birthDay, 6570).before(now)) {
 			return false;
 		}
@@ -454,16 +470,54 @@ public class FormValidator {
 		return true;
 	}
 
+	/**
+	 * Valid voucher begin date
+	 * 
+	 * @param beginDate
+	 * @return is valid
+	 */
 	public static Boolean isBeginDateValid(Date beginDate) {
-		if (isDateBefore(beginDate, beginDate)) {
+		if (!isDateBefore(beginDate, beginDate)) {
 			return false;
 		}
 		return true;
 	}
 
+	/**
+	 * Valid voucher end date
+	 * 
+	 * @param beginDate
+	 * @param endDate
+	 * @return is valid
+	 */
 	public static Boolean isEndDayValid(Date beginDate, Date endDate) {
 		if (!isDateAfter(endDate, beginDate)) {
 			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Date is equals
+	 * 
+	 * @param date1
+	 * @param date2
+	 * @return is equals
+	 */
+	public static Boolean isDateEquals(Date date1, Date date2) {
+		if (!date1.equals(date2)) {
+			return false;
+		}
+		return true;
+	}
+
+	public static Boolean isVoucherNotDuplicate(String mavoucher, List<ModelVouCher> list, Boolean isInsert) {
+		for (ModelVouCher item : list) {
+			if (item.getMaVoucher().equals(mavoucher) && isInsert) {
+				return false;
+			} else if (item.getMaVoucher().equals(mavoucher) && !isInsert && !item.getMaVoucher().equals(mavoucher)) {
+				return false;
+			}
 		}
 		return true;
 	}
