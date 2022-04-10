@@ -31,9 +31,11 @@ public class BlackListNhanVien extends javax.swing.JDialog {
 
     FormNhanVien formParent = new FormNhanVien(frame);
     private NhanVienDAO nhanVienDAO = new NhanVienDAO();
-
+    
+    /**
+     * nút update và nút delete trên bảng
+     */
     private EventActionBlackList<ModelNhanVien> eventAction = new EventActionBlackList<ModelNhanVien>() {
-
         @Override
         public void update(ModelNhanVien emp) {
             if (tblBlackList.getSelectedRow() >= 0) {
@@ -50,6 +52,9 @@ public class BlackListNhanVien extends javax.swing.JDialog {
         }
     };
 
+    /**
+     * Hàm tổng hợp các hàm bên dưới
+     */
     public void init() {
         initTable();
         fillToTable();
@@ -59,6 +64,9 @@ public class BlackListNhanVien extends javax.swing.JDialog {
         return this.listReturn;
     }
 
+    /**
+     * Hàm load dữ liệu lên bảng
+     */
     public void loadToBlackList() {
         blackList.clear();
         for (ModelNhanVien emp : formParent.getList()) {
@@ -70,12 +78,16 @@ public class BlackListNhanVien extends javax.swing.JDialog {
 
     public boolean getIsChangeData() {
         return this.isChangeData;
-    }
+    }	
 
     public void addToListReturn(ModelNhanVien emp) {
         listReturn.add(emp);
     }
 
+    /**
+     * Hàm update bảng lại sau khi thao tác
+     * @param emp
+     */
     public void updateToList(ModelNhanVien emp) {
         for (int i = 0; i < formParent.getList().size(); i++) {
             if (formParent.getList().get(i).getMaNV().equals(emp.getMaNV())) {

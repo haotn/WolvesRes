@@ -13,7 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, comment ở các hàm
+ * Liên quan ModelTaiKhoan
+ * @author huynh
+ *
+ */
 public class BlackListTaiKhoan extends javax.swing.JDialog {
 
     public BlackListTaiKhoan(java.awt.Frame parent, boolean modal) {
@@ -33,6 +38,10 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
     FormTaiKhoan formParent = new FormTaiKhoan(frame);
     TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
     NhanVienDAO nhanVienDAO = new NhanVienDAO();
+    
+    /**
+     * nút update trên bảng
+     */
     EventActionBlackList<ModelTaiKhoan> eventAction = new EventActionBlackList<ModelTaiKhoan>() {
         @Override
         public void update(ModelTaiKhoan taikhoan) {
@@ -53,6 +62,9 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         }
     };
 
+    /**
+     * Hàm tổng hợp các hàm bên dưới
+     */
     public void init() {
         listNhanVien.addAll(nhanVienDAO.selectAll());
         initTable();
@@ -60,6 +72,9 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         fillToTable();
     }
 
+    /**
+     * Hàm desigs bảng trên form 
+     */
     public void initTable() {
         tblBLTaiKhoan.setOpaque(true);
         tblBLTaiKhoan.setBackground(new Color(255, 255, 255));
@@ -72,6 +87,9 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         tblBLTaiKhoan.setActionWhiteList(false);
     }
 
+    /**
+     * Hàm load dữ liệu lên bảng đen
+     */
     public void loadToBlackList() {
         listTK.clear();
         for (ModelTaiKhoan tk : formParent.getList()) {
@@ -85,16 +103,10 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         return this.isChangeData;
     }
 
-    public void updateTaiKhoan(ModelTaiKhoan tk) {
-        taiKhoanDAO.update(tk, tk.getTaiKhoan());
-        for (int i = 0; i < formParent.getList().size(); i++) {
-            if (formParent.getList().get(i).getTaiKhoan().endsWith(tk.getTaiKhoan())) {
-                formParent.getList().set(i, tk);
-            }
-        }
-        fillToTable();
-    }
-
+    /**
+     * Hàm return bảng
+     * @param acc
+     */
     private void addToListReturn(ModelTaiKhoan acc) {
         listReturn.add(acc);
     }
@@ -103,6 +115,9 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         return this.listReturn;
     }
 
+    /**
+     * Hàm fill dữ liệu lên bảng
+     */
     public void fillToTable() {
         loadToBlackList();
         model.setRowCount(0);
@@ -111,6 +126,11 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * Hàm lấy mã nhân viên
+     * @param manv
+     * @return
+     */
     private ModelNhanVien getNhanVienByMaNV(String manv) {
         ModelNhanVien emp = new ModelNhanVien();
         for (int i = 0; i < listNhanVien.size(); i++) {
@@ -122,6 +142,9 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         return emp;
     }
 
+    /**
+     * Hàm kiểm tra mã nhân viên
+     */
     private boolean checkNhanVien(String manv) {
         ModelNhanVien emp = getNhanVienByMaNV(manv);
         if (!emp.isTrangThai()) {
@@ -130,6 +153,40 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
         }
         return true;
 
+    }
+    
+    public void updateTaiKhoan(ModelTaiKhoan entity) {
+    	updatedata(entity);
+    	fillupdate(entity);
+    }
+    
+    public void updatedata(ModelTaiKhoan entity) {
+    	taiKhoanDAO.update(entity, entity.getTaiKhoan());
+    }
+    
+    public void fillupdate(ModelTaiKhoan entity) {
+        for (int i = 0; i < formParent.getList().size(); i++) {
+            if (formParent.getList().get(i).getTaiKhoan().endsWith(entity.getTaiKhoan())) {
+                formParent.getList().set(i, entity);
+                break;
+            }
+        }
+        fillToTable();
+    }
+    
+    /**
+     * Tìm kiếm theo tên tài khoản
+     * @param keyword
+     * @return
+     */
+    public List<ModelTaiKhoan> timkiem(String keyword){
+        List<ModelTaiKhoan> listFind = new ArrayList<>();
+        	if(keyword.trim().length() > 0) {
+        		listFind = taiKhoanDAO.timkiem(keyword);
+        	}else {
+        		listFind = taiKhoanDAO.selectAll();
+        	}
+        return listFind;
     }
 
     @SuppressWarnings("unchecked")
@@ -264,22 +321,13 @@ public class BlackListTaiKhoan extends javax.swing.JDialog {
     }//GEN-LAST:event_btnDongActionPerformed
 
     private void txtFindBLTaiKhoanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindBLTaiKhoanKeyReleased
-        String keyword = txtFindBLTaiKhoan.getText().trim();
-        List<ModelTaiKhoan> listFind = new ArrayList<>();
-        listFind.clear();
-        for (int i = 0; i < listTK.size(); i++) {
-            if (keyword.trim().length() != 0) {
-                if (listTK.get(i).getTaiKhoan().contains(keyword)) {
-                    listFind.add(listTK.get(i));
-                    model.setRowCount(0);
-                    for (ModelTaiKhoan tk : listFind) {
-                        tblBLTaiKhoan.addRow(tk.toRowTable(eventAction));
-                    }
-                }
-            } else {
-                fillToTable();
-            }
-        }
+    	String keyword = txtFindBLTaiKhoan.getText().trim();
+    	if(keyword.isEmpty()) {
+    		listTK.clear();
+    	}else {
+    		listTK = timkiem(keyword);
+    	}
+    	fillToTable();
     }//GEN-LAST:event_txtFindBLTaiKhoanKeyReleased
 
     /**

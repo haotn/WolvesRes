@@ -1,6 +1,8 @@
 package com.wolvesres.model;
 
 import com.wolvesres.dao.NhanVienDAO;
+import com.wolvesres.dao.TaiKhoanDAO;
+import com.wolvesres.form.FormTaiKhoan;
 import com.wolvesres.helper.XImage;
 import com.wolvesres.swing.table.EventAction;
 import com.wolvesres.swing.table.EventActionBlackList;
@@ -10,7 +12,13 @@ import com.wolvesres.swing.table.ModelProfile;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
+/**
+ * Thêm các hàm thêm sửa xóa addblacktolist
+ * @author huynh
+ *
+ */
 public class ModelTaiKhoan {
 
     private String taiKhoan;
@@ -92,4 +100,6 @@ public class ModelTaiKhoan {
         return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().chucVuToString(getNhanVien().getChucVu()), new ModelAction(iconUpdate, null,this, event)
         };
     }
+    
+   
 }

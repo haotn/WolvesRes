@@ -32,10 +32,17 @@ public class FormThongKeDoanhThu extends javax.swing.JPanel {
     int type = 1;
     private ActionListener back;
 
+    /**
+    * Sự kiện nút để vè trang thống kê tổng
+    * @param back
+    */
     public void setBack(ActionListener back) {
         this.back = back;
     }
 
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     public FormThongKeDoanhThu() {
         initComponents();
         initTable();
@@ -43,6 +50,9 @@ public class FormThongKeDoanhThu extends javax.swing.JPanel {
         date();
     }
 
+    /**
+     * Hàm chọn ngày này bắt đầu sẽ đc mặc định cách ngày kết thúc 1 năm
+     */
     public void date() {
         Date today = new Date();
         SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
@@ -55,6 +65,9 @@ public class FormThongKeDoanhThu extends javax.swing.JPanel {
         fillToTable();
     }
 
+    /**
+     * hàm desigs bảng
+     */
     private void initTable() {
         tblTKDoanhThu.setOpaque(true);
         tblTKDoanhThu.setBackground(new Color(255, 255, 255));
@@ -64,6 +77,9 @@ public class FormThongKeDoanhThu extends javax.swing.JPanel {
         tblTKDoanhThu.setColumnAction(10);
     }
 
+    /**
+     * fill dữ liệu
+     */
     public void fillToTable() {
         model.setRowCount(0);
         for (Object[] row : listTKDOANHTHU) {
@@ -73,6 +89,9 @@ public class FormThongKeDoanhThu extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Hàm xuất thống kê ra file excel
+     */
     private void xuatTK() {
         try {
             // Excel

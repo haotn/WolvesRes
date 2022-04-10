@@ -3,6 +3,8 @@ package com.wolvesres.dao;
 import com.wolvesres.helper.XDate;
 import com.wolvesres.helper.XJdbc;
 import com.wolvesres.model.ModelLichSuGia;
+import com.wolvesres.model.ModelSanPham;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -67,6 +69,13 @@ public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, String> {
             XJdbc.update(sql, ID);
         } catch (SQLException ex) {
         }
+    }
+    
+    public List<ModelLichSuGia> timkiem(String keyword){
+    	List<ModelLichSuGia> list = new ArrayList<ModelLichSuGia>();
+    	String sql = "select * from LICHSUGIA where TenSP like ?";
+    			list = selectBySQL(sql, "%"+keyword+"%");
+    	return list;
     }
 
 }

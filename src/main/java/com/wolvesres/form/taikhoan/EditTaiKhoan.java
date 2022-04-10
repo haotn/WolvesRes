@@ -4,6 +4,7 @@ import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.NhanVienDAO;
 import com.wolvesres.dao.TaiKhoanDAO;
 import com.wolvesres.form.FormTaiKhoan;
+import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XImage;
 import com.wolvesres.model.ModelNhanVien;
 import com.wolvesres.model.ModelTaiKhoan;
@@ -15,6 +16,11 @@ import java.util.regex.Pattern;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
+/**
+ * Chỉnh sửa hàm bắt lỗi, comment ở các hàm
+ * @author huynh
+ *
+ */
 public class EditTaiKhoan extends javax.swing.JDialog {
 
     JFrame frame;
@@ -36,6 +42,9 @@ public class EditTaiKhoan extends javax.swing.JDialog {
     private List<ModelNhanVien> listNhanVien = new ArrayList<>();
     private List<ModelTaiKhoan> listTaiKhoan = new ArrayList<>();
 
+    /**
+     * Hàm tổng hợp các hàm bên dưới
+     */
     public void init() {
         cboNhanVien.setLabeText("Tên nhân viên");
         txtTenTaiKhoan.setLabelText("Mã nhân viên");
@@ -46,21 +55,31 @@ public class EditTaiKhoan extends javax.swing.JDialog {
         pwdNhapLaiMK.setEchoChar((char) 0);
         loadListNhanVien();
         loadLisTaiKhoan();
+        //Load dư liệu của nhân viên vào combobox
         model = (DefaultComboBoxModel<ModelNhanVien>) cboNhanVien.getModel();
         for (ModelNhanVien emp : listNhanVien()) {
             model.addElement(emp);
         }
     }
 
+    /**
+     * Hàm load dữ liệu
+     */
     private void loadLisTaiKhoan() {
         listTaiKhoan.addAll(tkDAO.selectAll());
     }
 
+    /**
+     * Hàm load dữ liệu
+     */
     private void loadListNhanVien() {
         listNhanVien.addAll(nvDAO.selectAll());
     }
 
-    //sửa load listnhanvien trong Edittaikhoan
+    /**
+     * Hàm load dữ liệu của nhân viên lên combobox
+     * @return
+     */
     public List<ModelNhanVien> listNhanVien() {
         List<ModelNhanVien> listnv = new ArrayList<>();
         for (int i = 0; i < listNhanVien.size(); i++) {
@@ -94,7 +113,7 @@ public class EditTaiKhoan extends javax.swing.JDialog {
         this.isInsert = isInsert;
     }
 
-//sửa setFrom và getForm trong Edittaikhoan
+
     public ModelTaiKhoan getForm() {
         ModelTaiKhoan entity = new ModelTaiKhoan();
         ModelNhanVien NV = (ModelNhanVien) cboNhanVien.getSelectedItem();
@@ -114,6 +133,9 @@ public class EditTaiKhoan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * Hàm clean form như bình thường
+     */
     public void cleanForm() {
         txtTenTaiKhoan.setText("");
         pwdMatKhau.setText("");
@@ -121,18 +143,30 @@ public class EditTaiKhoan extends javax.swing.JDialog {
         cboNhanVien.setSelectedItem(false);
     }
 
+    /**
+     * Hàm bắt lỗi nhập mật khẩu phải có bao nhiêu kí tự...
+     */
     public static final Pattern VALID_PASS_ADDRESS_REGEX = Pattern.compile("[a-z0-9_-]{6,16}$", Pattern.CASE_INSENSITIVE);
 
+    /**
+     * Hàm set thằng ở trên
+     * @param passStr
+     * @return
+     */
     public static boolean validatePass(String passStr) {
         Matcher matcher = VALID_PASS_ADDRESS_REGEX.matcher(passStr);
         return matcher.find();
     }
 
+    /**
+     * Hàm bắt lỗi
+     * @return
+     */
     public boolean valideForm() {
         String Tennv = txtTenTaiKhoan.getText().trim();
         String Matkhau = String.valueOf(pwdMatKhau.getPassword()).trim();
         String NhaplaiMK = String.valueOf(pwdNhapLaiMK.getPassword()).trim();
-        if (Tennv.length() == 0 || Matkhau.length() == 0 || NhaplaiMK.length() == 0) {
+        if (!FormValidator.isTextIsNotEmpty(Tennv) || !FormValidator.isTextIsNotEmpty(Matkhau) || !FormValidator.isTextIsNotEmpty(NhaplaiMK)) {
             ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ thông tin!", ROptionDialog.WARNING, Color.red, Color.black);
             return false;
         } else {

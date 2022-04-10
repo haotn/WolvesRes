@@ -96,4 +96,11 @@ public class DanhMucDAO implements WolvesResDAO<ModelDanhMuc, String> {
 			}
 		}
 	}
+	
+	public List<ModelDanhMuc> timkiem(String keyword){
+    	List<ModelDanhMuc> list = new ArrayList<ModelDanhMuc>();
+    	String sql = "select * from DANHMUCSANPHAM where TenDanhMucSP like ?";
+    			list = selectBySQL(sql, "%"+keyword+"%");
+    	return list;
+    }
 }

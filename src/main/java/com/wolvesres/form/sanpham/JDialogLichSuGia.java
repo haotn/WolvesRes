@@ -7,6 +7,7 @@ package com.wolvesres.form.sanpham;
 
 import com.wolvesres.dao.LichSuGiaDAO;
 import com.wolvesres.form.FormSanPham;
+import com.wolvesres.model.ModelDonViTinh;
 import com.wolvesres.model.ModelLichSuGia;
 import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.swing.table.EventAction;
@@ -17,7 +18,8 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Chỉnh sửa tìm kiếm, comment các hàm
+ * Liên quan: ModelLichSuGia
  * @author FPT
  */
 public class JDialogLichSuGia extends javax.swing.JDialog {
@@ -36,7 +38,9 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
         listLSG1.addAll(dao.selectAll());
         setLocationRelativeTo(null);
     }
-    
+    /**
+     * Nút sửa xóa trên form
+     */
     EventAction<ModelLichSuGia> eventAction = new EventAction<ModelLichSuGia>() {
         @Override
             public void delete(ModelLichSuGia lichsu) {
@@ -54,6 +58,9 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
         this.sp = sp;
     }
     
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     public void init(){
         setBackground(new Color(209,220,208));
         initTable();
@@ -61,6 +68,9 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
         fillToTable();
     }
     
+    /**
+     * Hàm desigs bảng
+     */
     private void initTable() {
         tblLichSuGia.setOpaque(true);
         tblLichSuGia.setBackground(new Color(255, 255, 255));
@@ -70,7 +80,10 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
         tblLichSuGia.setModel(model);
         tblLichSuGia.setColumnAction(10);
     }
-        
+    
+    /**
+     * Hàm load dữ liệu
+     */
     public void loadToList(){
         for(ModelLichSuGia lsGia : listLSG1){
            if(lsGia.getMaSP().equals(sp.getMaSP())){
@@ -79,12 +92,26 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
         }
     }
     
+    /**
+     * Hàm fill dữ liệu
+     */
     public void fillToTable(){
         for(ModelLichSuGia ls : listLSG){
             tblLichSuGia.addRow(ls.toRowTable(eventAction));
         }
-    }    
-
+    } 
+    
+    /**
+     * tìm kiếm theo mã sản phẩm
+     */
+    public List<ModelLichSuGia> timkiem(String keyword){
+        List<ModelLichSuGia> listFind = new ArrayList<>();
+        	if(keyword.trim().length() > 0) {
+        		listFind = dao.timkiem(keyword);
+        		listFind = dao.selectAll();
+        	}
+        return listFind;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -175,22 +202,9 @@ public class JDialogLichSuGia extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFindKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKeyReleased
-        String keyword = txtFind.getText().trim();
-        List<ModelLichSuGia> listFind = new ArrayList<>();
-        listFind.clear();
-        for (int i = 0; i < listLSG.size(); i++) {
-            if (keyword.trim().length() != 0) {
-                if (listLSG.get(i).getMaSP().contains(keyword)){
-                    listFind.add(listLSG.get(i));
-                    model.setRowCount(0);
-                    for (ModelLichSuGia sp : listFind) {
-                        tblLichSuGia.addRow(sp.toRowTable(eventAction));
-                    }
-                }
-            } else {
-                fillToTable();
-            }
-        }
+    	String keyword = txtFind.getText().trim();
+    	listLSG = timkiem(keyword);
+		fillToTable();
     }//GEN-LAST:event_txtFindKeyReleased
 
     private void btnDong1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDong1ActionPerformed

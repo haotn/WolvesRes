@@ -10,10 +10,16 @@ import com.wolvesres.swing.table.EventActionBlackList;
 import com.wolvesres.swing.table.ModelAction;
 import com.wolvesres.swing.table.ModelActionBlackList;
 import com.wolvesres.swing.table.ModelProfile;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
+/**
+ * thêm các hàm thêm sửa xóa
+ * @author huynh
+ *
+ */
 public class ModelSanPham {
 
 	private Icon icon;
@@ -39,29 +45,22 @@ public class ModelSanPham {
 		// return super.toString();
 		return this.getTenSP();
 	}
-
-	public void insert() {
-		dao.insert(this);
-	}
-
-	public void update() {
-		dao.update(this, this.maSP);
-	}
-
-	public void delete() {
-		dao.delete(this.maSP);
-	}
-
+	
+	/**
+	 * Đưa ra khỏi anh sách đen
+	 * @param list
+	 */
 	public void addToBlackList(List<ModelSanPham> list) {
 		this.trangThai = true;
 		dao.update(this, this.getMaSP());
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getMaSP().equals(this.getMaSP())) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getMaSP().equals(this.getMaSP())) {
 				list.set(i, this);
 				break;
 			}
 		}
 	}
+	
 
 	public ModelSanPham() {
 	}

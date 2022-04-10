@@ -3,7 +3,9 @@ package com.wolvesres.form.sanpham;
 import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.DonViTinhDAO;
 import com.wolvesres.form.donvitinh.EditDonviTinh;
+import com.wolvesres.model.ModelDanhMuc;
 import com.wolvesres.model.ModelDonViTinh;
+import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.swing.table.EventAction;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,20 +13,28 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, comment các hàm
+ * Liên quan: ModelDonViTinh
+ * @author huynh
+ *
+ */
 public class JDialogDonViTinh extends javax.swing.JDialog {
 
     private JFrame frame;
     private List<ModelDonViTinh> listDVT = new ArrayList<>();
     private DonViTinhDAO dao = new DonViTinhDAO();
     private DefaultTableModel model;
-    // sự kiện nút tbl
+    /**
+     * Nút sửa xóa trên form
+     */
     private EventAction<ModelDonViTinh> eventAction = new EventAction<ModelDonViTinh>() {
         @Override
         public void delete(ModelDonViTinh entity) {
             if (dao.checkForeignKey(entity.getMaDVT()) == null) {
                 if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận xóa?", ROptionDialog.WARNING, Color.yellow, Color.black)) {
-                    deleteDVT(entity);
+                	deleteDVT(entity);
+                	fillToTable();
                 }
             } else {
                 ROptionDialog.showAlert(frame, "Thông báo", "Đơn vị tính đang được sử dụng!", ROptionDialog.WARNING, Color.red, Color.black);
@@ -39,7 +49,8 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
             editForm.setForm();
             editForm.setVisible(true);
             if (!editForm.isDispose()) {
-                updateDVT(editForm.getDonViTinh());
+            	updateDVT(editForm.getDonViTinh());
+                fillToTable();
             }
         }
     };
@@ -52,13 +63,18 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
         this.frame = (JFrame) parent;
     }
 
-    //
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     private void init() {
         initTable();
         loadToList();
         fillToTable();
     }
 
+    /**
+     * Hàm desigs bảng
+     */
     private void initTable() {
         tblDonViTinh.setOpaque(true);
         tblDonViTinh.setBackground(new Color(255, 255, 255));
@@ -70,6 +86,9 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
         tblDonViTinh.setColumnAction(2);
     }
 
+    /**
+     * HÀm load dữ liệu
+     */
     private void loadToList() {
         listDVT.addAll(dao.selectAll());
     }
@@ -78,6 +97,9 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
         return this.listDVT;
     }
 
+    /**
+     * Hàm fill dữ liệu
+     */
     private void fillToTable() {
         DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã DVT", "Đơn Vị Tính", "Thao Tác"});
         tblDonViTinh.setModel(model);
@@ -85,26 +107,76 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
             tblDonViTinh.addRow(dvt.toRowTable(eventAction));
         }
     }
-
-    private void insertDVT(ModelDonViTinh entity) {
-        dao.insert(entity);
-        listDVT.add(entity);
-        fillToTable();
+    
+    /**
+     * Tìm theo tên đơn vị tính
+     * @param keyword
+     * @return
+     */
+    public List<ModelDonViTinh> timkiem(String keyword){
+        List<ModelDonViTinh> listFind = new ArrayList<>();
+        	if(keyword.trim().length() > 0) {
+        		listFind = dao.timkiem(keyword);
+        	}else {
+        		listFind = dao.selectAll();
+        	}
+        return listFind;
     }
-
-    private void updateDVT(ModelDonViTinh entity) {
-        dao.update(entity, entity.getMaDVT());
+    
+    /**
+     * Thêm đơn vị tính
+     * @param dvt
+     */
+    public void insertDVT(ModelDonViTinh dvt) {
+    	insertdata(dvt);
+    	fillinsertDVT(dvt);
+    }
+    
+    public void insertdata(ModelDonViTinh dvt) {
+    	dao.insert(dvt);
+    }
+    
+    public void fillinsertDVT(ModelDonViTinh dvt) {
+    	listDVT.add(dvt);
+    	fillToTable();
+    }
+    
+    /**
+     * Update đơn vị tính
+     */
+    public void updateDVT(ModelDonViTinh dvt) {
+    	updatedate(dvt);
+    	fillupdateDVT(dvt);
+    }
+    
+    public void updatedate(ModelDonViTinh dvt) {
+        dao.update(dvt, dvt.getMaDVT());
+    }
+    
+    public void fillupdateDVT(ModelDonViTinh dvt) {
         for (int i = 0; i < listDVT.size(); i++) {
-            if (listDVT.get(i).getMaDVT() == entity.getMaDVT()) {
-                listDVT.set(i, entity);
+            if (listDVT.get(i).getMaDVT() == dvt.getMaDVT()) {
+                listDVT.set(i, dvt);
+                break;
             }
         }
         fillToTable();
     }
-
-    private void deleteDVT(ModelDonViTinh entity) {
-        dao.delete(entity.getMaDVT());
-        listDVT.remove(entity);
+    
+    /**
+     * delete đơn vị tính
+     */
+    public void deleteDVT(ModelDonViTinh dvt) {
+    	deletedata(dvt);
+    	filldelete(dvt);
+    }
+    
+    public void deletedata(ModelDonViTinh dvt) {
+        dao.delete(dvt.getMaDVT());
+    }
+    
+    public void filldelete(ModelDonViTinh dvt) {
+        listDVT.remove(dvt);
         fillToTable();
     }
 
@@ -212,28 +284,14 @@ public class JDialogDonViTinh extends javax.swing.JDialog {
         EditDonviTinh editForm = new EditDonviTinh(frame, true);
         editForm.setVisible(true);
         if (!editForm.isDispose()) {
-            insertDVT(editForm.getDonViTinh());
+        	insertDVT(editForm.getDonViTinh());
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void txtFindKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKeyReleased
-        String keyword = txtFind.getText().trim();
-        List<ModelDonViTinh> listFind = new ArrayList<>();
-        DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã DVT", "Đơn Vị Tính", "Thao Tác"});
-        listFind.clear();
-        for (int i = 0; i < listDVT.size(); i++) {
-            if (keyword.trim().length() != 0) {
-                if (listDVT.get(i).getTenDVT().contains(keyword)) {
-                    listFind.add(listDVT.get(i));
-                    tblDonViTinh.setModel(model);
-                    for (ModelDonViTinh dvt : listFind) {
-                        tblDonViTinh.addRow(dvt.toRowTable(eventAction));
-                    }
-                }
-            } else {
-                fillToTable();
-            }
-        }
+    	String keyword = txtFind.getText().trim();
+    	listDVT = timkiem(keyword);
+		fillToTable();
     }//GEN-LAST:event_txtFindKeyReleased
     /**
      * @param args the command line arguments

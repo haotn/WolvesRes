@@ -1,9 +1,17 @@
 package com.wolvesres.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.wolvesres.dao.KhuBanDAO;
 import com.wolvesres.swing.table.EventAction;
 import com.wolvesres.swing.table.ModelAction;
 import com.wolvesres.swing.table.ModelProfile;
-
+/**
+ * Thêm các hàm thêm sửa xóa
+ * @author huynh
+ *
+ */
 public class ModelKhuBan {
 
     private String maKhuBan;
@@ -74,4 +82,9 @@ public class ModelKhuBan {
     public Object[] toRowModel() {
         return new Object[]{getMaKhuBan(), getTenKhuBan(), getGhiChu()};
     }
+    
+    private KhuBanDAO daokb = new KhuBanDAO();
+    
+    
+    
 }

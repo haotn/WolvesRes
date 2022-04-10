@@ -6,6 +6,7 @@ import com.wolvesres.form.danhmuc.EditDanhMuc;
 import com.wolvesres.form.donvitinh.EditDonviTinh;
 import com.wolvesres.model.ModelDanhMuc;
 import com.wolvesres.model.ModelDonViTinh;
+import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.swing.table.EventAction;
 import java.awt.Color;
 import java.awt.Font;
@@ -13,7 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, comment các hàm
+ * Liên quan: ModelDanhMuc
+ * @author huynh
+ *
+ */
 public class JDialogDanhMuc extends javax.swing.JDialog {
 
     private JFrame frame;
@@ -21,6 +27,9 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
     private List<ModelDanhMuc> listDM = new ArrayList<>();
     private DanhMucDAO dao = new DanhMucDAO();
     // sự kiện nút tbl
+    /**
+     * Nút sửa xoá trên form
+     */
     private EventAction<ModelDanhMuc> eventAction = new EventAction<ModelDanhMuc>() {
         @Override
         public void delete(ModelDanhMuc entity) {
@@ -41,7 +50,8 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
             editForm.setForm();
             editForm.setVisible(true);
             if (!editForm.isDispose()) {
-                updateDM(editForm.getDm());
+            	updateDM(editForm.getDm());
+            	fillToTable();
             }
         }
     };
@@ -53,14 +63,19 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
         this.frame = (JFrame) parent;
         init();
     }
-
+    
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     private void init() {
         initTable();
         loadToList();
         fillToTable();
     }
 
-    //
+    /**
+     * Hàm load dứ liệu
+     */
     private void loadToList() {
         listDM.addAll(dao.selectAll());
     }
@@ -69,33 +84,65 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
     public List<ModelDanhMuc> getListDM() {
         return listDM;
     }
-
-    private void insertDM(ModelDanhMuc entity) {
+    
+    /**
+     * Thêm danh mục
+     * @param entity
+     */
+    public void insertDM(ModelDanhMuc entity) {
+    	insertdata(entity);
+    	fillinsert(entity);
+    }
+    
+    public void insertdata(ModelDanhMuc entity) {
         dao.insert(entity);
+    }
+    
+    public void fillinsert(ModelDanhMuc entity) {
         listDM.add(entity);
         fillToTable();
     }
-
-    //    //update list fill
-    private void updateDM(ModelDanhMuc entity) {
+    
+    public void updateDM(ModelDanhMuc entity) {
+    	updatedata(entity);
+    	fillupdate(entity);
+    	fillToTable();
+    }
+    
+    public void updatedata(ModelDanhMuc entity) {
         dao.update(entity, entity.getMaDanhMuc());
+    }
+    
+    public void fillupdate(ModelDanhMuc entity) {
         for (int i = 0; i < listDM.size(); i++) {
             if (listDM.get(i).getMaDanhMuc().equals(entity.getMaDanhMuc())) {
-
                 listDM.set(i, entity);
+                break;
             }
         }
-        fillToTable();
     }
 
-    //deletfromlist
+    /**
+     * Hàm xóa danh mục
+     * @param entity
+     */
     private void deleteDM(ModelDanhMuc entity) {
+    	deletedata(entity);
+    	filldelete(entity);
+    }
+    
+    public void deletedata(ModelDanhMuc entity) {
         dao.delete(entity.getMaDanhMuc());
+    }
+    
+    public void filldelete (ModelDanhMuc entity) {
         listDM.remove(entity);
         fillToTable();
     }
 
-    //
+    /**
+     * Hàm fill dữ liệu lên bảng
+     */
     private void fillToTable() {
         DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã Danh Mục", "Tên Danh Mục", "Loại hàng", "Thao Tác"});
         tblDanhMuc.setModel(model);
@@ -104,7 +151,9 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
         }
     }
 
-    //
+    /**
+     * Hàm desigs bảng
+     */
     private void initTable() {
         tblDanhMuc.setOpaque(true);
         tblDanhMuc.setBackground(new Color(255, 255, 255));
@@ -115,7 +164,21 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
         tblDanhMuc.setModel(model);
         tblDanhMuc.setColumnAction(3);
     }
-    //
+    
+    /**
+     * Hàm tìm kiếm theo tên danh mục
+     * @param keyword
+     * @return
+     */
+    public List<ModelDanhMuc> timkiem(String keyword){
+        List<ModelDanhMuc> listFind = new ArrayList<>();
+        	if(keyword.trim().length() > 0) {
+        		listFind = dao.timkiem(keyword);
+        	}else {
+        		listFind = dao.selectAll();
+        	}
+        return listFind;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -233,28 +296,15 @@ public class JDialogDanhMuc extends javax.swing.JDialog {
         EditDanhMuc editForm = new EditDanhMuc(frame, true);
         editForm.setVisible(true);
         if (!editForm.isDispose()) {
-            insertDM(editForm.getDm());
+        	insertDM(editForm.getDm());
+        	fillToTable();
         }
     }//GEN-LAST:event_btnThemDMActionPerformed
 
     private void txtFindKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKeyReleased
-        String keyword = txtFind.getText().trim();
-        List<ModelDanhMuc> listFind = new ArrayList<>();
-        DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã Danh Mục", "Tên Danh Mục", "Đơn Vị", "Thao Tác"});
-        listFind.clear();
-        for (int i = 0; i < listDM.size(); i++) {
-            if (keyword.trim().length() != 0) {
-                if (listDM.get(i).getTenDanhMuc().contains(keyword)) {
-                    listFind.add(listDM.get(i));
-                    tblDanhMuc.setModel(model);
-                    for (ModelDanhMuc dvt : listFind) {
-                        tblDanhMuc.addRow(dvt.toRowTable(eventAction));
-                    }
-                }
-            } else {
-                fillToTable();
-            }
-        }
+    	String keyword = txtFind.getText().trim();
+    	listDM = timkiem(keyword);
+		fillToTable();
     }//GEN-LAST:event_txtFindKeyReleased
 
     private void btnDVTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDVTActionPerformed

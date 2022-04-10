@@ -19,8 +19,9 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 /**
+ * Comment các hàm
+ * @author huynh
  *
- * @author FPT
  */
 public class FormThongKeKho extends javax.swing.JPanel {
 
@@ -30,22 +31,32 @@ public class FormThongKeKho extends javax.swing.JPanel {
     DefaultTableModel model;
     private ActionListener back;
 
+    /**
+    * Sự kiện nút để vè trang thống kê tổng
+    * @param back
+    */
     public void setBack(ActionListener back) {
         this.back = back;
     }
-
+    
     public FormThongKeKho() {
         initComponents();
         setOpaque(false);
         init();
     }
 
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     public void init() {
         initTable();
         loadToList();
         fillToTable();
     }
 
+    /**
+     * hàm desigs bảng
+     */
     private void initTable() {
         tblTKKho.setOpaque(true);
         tblTKKho.setBackground(new Color(255, 255, 255));
@@ -55,11 +66,17 @@ public class FormThongKeKho extends javax.swing.JPanel {
         tblTKKho.setColumnAction(10);
     }
 
+    /**
+     * load dữ liệu
+     */
     public void loadToList() {
         listTKKHO.clear();
         listTKKHO.addAll(dao.getKho());
     }
 
+    /**
+     * fill dữ liệu
+     */
     public void fillToTable() {
         model.setRowCount(0);
         for (Object[] row : listTKKHO) {
@@ -67,6 +84,9 @@ public class FormThongKeKho extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Hàm xuất thống kê ra file excel
+     */
     private void xuatTK() {
         try {
             // Excel

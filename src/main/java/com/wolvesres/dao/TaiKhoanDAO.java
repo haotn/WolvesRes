@@ -1,6 +1,8 @@
 package com.wolvesres.dao;
 
+import com.wolvesres.helper.Auth;
 import com.wolvesres.helper.XJdbc;
+import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.model.ModelTaiKhoan;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -134,4 +136,11 @@ public class TaiKhoanDAO implements WolvesResDAO<ModelTaiKhoan, String> {
 		}
 		return entity;
 	}
+	
+	public List<ModelTaiKhoan> timkiem(String keyword){
+    	List<ModelTaiKhoan> list = new ArrayList<ModelTaiKhoan>();
+    	String sql = "select tk.TenTaiKhoan, tk.MatKhau, tk.TrangThai from TAIKHOAN tk join NHANVIEN nv on tk.TenTaiKhoan = nv.MaNhanVien where nv.ChucVu != 1 and tk.TenTaiKhoan like ? and tk.TenTaiKhoan != ? and tk.trangthai = 1";
+    			list = selectBySQL(sql, "%"+keyword+"%", Auth.user.getMaNV());
+    	return list;
+    }
 }

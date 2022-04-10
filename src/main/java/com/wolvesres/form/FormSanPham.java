@@ -17,6 +17,7 @@ import com.wolvesres.helper.XFormatMoney;
 import com.wolvesres.helper.XImage;
 import com.wolvesres.model.ModelDanhMuc;
 import com.wolvesres.model.ModelDonViTinh;
+import com.wolvesres.model.ModelKhuBan;
 import com.wolvesres.model.ModelLichSuGia;
 import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.swing.table.EventAction;
@@ -29,7 +30,12 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, comment các hàm
+ * Liên quan: ModelSanPham
+ * @author huynh
+ *
+ */
 public class FormSanPham extends javax.swing.JPanel {
 
 	public FormSanPham(JFrame frame) {
@@ -54,7 +60,9 @@ public class FormSanPham extends javax.swing.JPanel {
 	private boolean desc = true;
 	//////////////////////////////////////////////////////////////
 	DefaultComboBoxModel<ModelDanhMuc> modelcboDanhmuc = new DefaultComboBoxModel();
-
+	/**
+	 * Load dư liệu lên combobox
+	 */
 	public void loadCboDanhmuc() {
 		cboDanhMuc.setModel(modelcboDanhmuc);
 		modelcboDanhmuc.removeAllElements();
@@ -62,13 +70,15 @@ public class FormSanPham extends javax.swing.JPanel {
 			modelcboDanhmuc.addElement(modelDanhMuc);
 		}
 	}
-
+	
 	public void actionCboDanhmuc() {
 		ModelDanhMuc DM = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
 		fillToTable(DM.getMaDanhMuc());
 	}
 
-	////////////////////////////////////////////////////////////////////
+	/**
+     * nút update và nút delete trên bảng
+     */
 	EventAction<ModelSanPham> eventAction = new EventAction<ModelSanPham>() {
 		public void delete(ModelSanPham sanpham) {
 			if (daoSanPham.checkForeignKho(sanpham.getMaSP()) == null
@@ -111,14 +121,17 @@ public class FormSanPham extends javax.swing.JPanel {
 			}
 		}
 	};
-/////////////////////////////////////////////////////
 
+	/**
+     * Hàm tổng hợp các hàm bên dưới
+     */
 	public void init() {
 		initTable();
 		loadToList();
 		loadCboDanhmuc();
 		// fillToTable();
 		getlistDanhMuc();
+		//Phân quyền
 		if (!Auth.isBoss() && !Auth.isManager()) {
 			btnDanhMuc.setVisible(false);
 			btnDuaVaoDSD.setVisible(false);
@@ -140,13 +153,19 @@ public class FormSanPham extends javax.swing.JPanel {
 /////////////////////////////////////////////////////////
 	// Load List San Pham
 
+	/**
+	 * Load dữ liệu lên bảng
+	 */
 	public void loadToList() {
 		listSP.addAll(daoSanPham.selectAll());
 		listDM.addAll(daoDanhMuc.selectAll());
 		listDVT.addAll(daoDonViTinh.selectAll());
 	}
 
-	// Dien Vao Bang
+	/**
+	 * fill dư liệu trên bảng
+	 * @param maDM
+	 */
 	public void fillToTable(String maDM) {
 		loadToWhiteList(maDM);
 		model.setRowCount(0);
@@ -165,7 +184,9 @@ public class FormSanPham extends javax.swing.JPanel {
 		}
 	}
 
-	// Dua nut vao table
+	/**
+     * Hàm desigs bảng trên form 
+     */
 	private void initTable() {
 		tblSanpham.setOpaque(true);
 		tblSanpham.setBackground(new Color(255, 255, 255));
@@ -182,8 +203,11 @@ public class FormSanPham extends javax.swing.JPanel {
 		tblSanpham.setModel(model);
 		tblSanpham.setColumnAction(4);
 	}
-	// Select bang
 
+	/**
+	 * select bảng
+	 * @param selectedRow
+	 */
 	public void showDetail(int selectedRow) {
 		if (selectedRow >= 0) {
 			ModelSanPham sp = whiteList.get(selectedRow);
@@ -204,25 +228,9 @@ public class FormSanPham extends javax.swing.JPanel {
 		return this.listDM;
 	}
 
-	public void insertSanPham(ModelSanPham sp) {
-		daoSanPham.insert(sp);
-		listSP.add(sp);
-	}
-
-	public void updateToList(ModelSanPham entity) {
-		for (int i = 0; i < listSP.size(); i++) {
-			if (listSP.get(i).getMaSP().equals(entity.getMaSP())) {
-				listSP.set(i, entity);
-			}
-		}
-		daoSanPham.update(entity, entity.getMaSP());
-	}
-
-	public void deleteFromList(ModelSanPham entity) {
-		daoSanPham.delete(entity.getMaSP());
-		listSP.remove(entity);
-	}
-
+	/**
+	 * Hàm clear form
+	 */
 	public void clearForm() {
 		lblAvatar.setIcon(null);
 		lblMaSP.setText("");
@@ -238,6 +246,10 @@ public class FormSanPham extends javax.swing.JPanel {
 		return this.listSP;
 	}
 
+	/**
+	 * Add to whitelist
+	 * @param maDM
+	 */
 	public void loadToWhiteList(String maDM) {
 		whiteList.clear();
 		for (ModelSanPham entity : listSP) {
@@ -247,27 +259,115 @@ public class FormSanPham extends javax.swing.JPanel {
 		}
 	}
 
-	public void updateSanPham(ModelSanPham ud) {
-		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+	/**
+	 * Hàm update sản phẩm
+	 * @param ud
+	 */
+	public void updatedata(ModelSanPham ud) {
 		daoSanPham.update(ud, ud.getMaSP());
+	}
+	
+	public void updateList(ModelSanPham ud) {
 		for (int i = 0; i < listSP.size(); i++) {
 			if (ud.getMaSP().equals(listSP.get(i).getMaSP())) {
 				listSP.set(i, ud);
+				break;
 			}
 		}
+	}
+	
+	public void updateSanPham(ModelSanPham ud) {
+		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+		updatedata(ud);
+		updateList(ud);
 		fillToTable(danhMuc.getMaDanhMuc());
 	}
+	
+	
 
-	private void insertLSG(ModelSanPham sp) {
+	/**
+	 * Hàm insert lịch sử giá
+	 * @param ud
+	 */
+	public void insertLSG(ModelSanPham sp) {
+		insertData(sp);
+		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+		fillToTable(danhMuc.getMaDanhMuc());
+	}
+	
+	public void insertData(ModelSanPham sp) {
 		ModelLichSuGia ls = new ModelLichSuGia();
 		ls.setMaSP(sp.getMaSP());
 		ls.setGia(sp.getGiaBan());
 		ls.setNgayThayDoi(XDate.toString(new Date(), "dd-MM-yyyy"));
 		daolsg.insert(ls);
+	}
+	
+	/**
+	 * Hàm thêm sản phẩm
+	 * @param entity
+	 */
+	public void insertSanPham(ModelSanPham entity) {
+		insertdata(entity);
+		fillinsert(entity);
+	}
+	
+	public void insertdata(ModelSanPham entity) {
+		daoSanPham.insert(entity);
+	}
+	
+	public void fillinsert(ModelSanPham entity) {
+		listSP.add(entity);
+//		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+//		fillToTable(danhMuc.getMaDanhMuc());
+	}
+	
+	/**
+	 * Hàm update bảng
+	 */
+	public void updateToList(ModelSanPham entity) {
+		updataToListData(entity);
+		fillupdataToList(entity);
+	}
+	
+	public void updataToListData(ModelSanPham entity) {
+		daoSanPham.update(entity, entity.getMaSP());
+	}
+	
+	public void fillupdataToList(ModelSanPham entity) {
+		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+		for (int i = 0; i < listSP.size(); i++) {
+			if (entity.getMaSP().equals(listSP.get(i).getMaSP())) {
+				listSP.set(i, entity);
+				break;
+			}
+		}
+		fillToTable(danhMuc.getMaDanhMuc());
+	}
+	
+	/**
+	 * xóa trên bảng
+	 */
+	public void deleteFromList(ModelSanPham entity) {
+		deleteFomListData(entity);
+		fillDeleteFromList(entity);
+	}
+	
+	public void deleteFomListData(ModelSanPham entity) {
+		daoSanPham.delete(entity.getMaSP());
+	}
+	
+	public void fillDeleteFromList(ModelSanPham entity) {
+		listSP.remove(entity);
 		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
 		fillToTable(danhMuc.getMaDanhMuc());
 	}
 
+	/**
+	 * Lấy tài khoản từ 1 dòng trên bảng
+	 * @param row
+	 * @return
+	 */
 	private ModelSanPham getSanPhambyRowTable(int row) {
 		ModelSanPham entity = new ModelSanPham();
 		Object o = (Object) tblSanpham.getValueAt(row, 0);
@@ -278,15 +378,28 @@ public class FormSanPham extends javax.swing.JPanel {
 		return entity;
 	}
 
-	private void addToBlackList(ModelSanPham entity) {
-		entity.setTrangThai(false);
-		daoSanPham.update(entity, entity.getMaSP());
+	/**
+	 * Đưa tài khoản vào danh sách đen
+	 * @param entity
+	 */
+	public void addToBlackList(ModelSanPham entity) {
+		addToBlackListData(entity);
 		updateSanPham(entity);
 		model.setRowCount(0);
 		ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
 		fillToTable(danhMuc.getMaDanhMuc());
 	}
+	
+	public void addToBlackListData(ModelSanPham entity) {
+		entity.setTrangThai(false);
+		daoSanPham.update(entity, entity.getMaSP());
+	}
 
+	/**
+	 * Lấy tài khoản từ 1 dòng trên bảng
+	 * @param row
+	 * @return
+	 */
 	private ModelSanPham getSPformRowtable(int row) {
 		ModelSanPham sanPham = new ModelSanPham();
 		Object o = (Object) tblSanpham.getValueAt(row, 0);
@@ -296,6 +409,19 @@ public class FormSanPham extends javax.swing.JPanel {
 		}
 		return sanPham;
 	}
+	
+	/**
+	 * tìm kiếm theo tên sản phẩm
+	 */
+	 public List<ModelSanPham> timkiem(String keyword){
+	        List<ModelSanPham> listFind = new ArrayList<>();
+	        	if(keyword.trim().length() > 0) {
+	        		listFind = daoSanPham.timkiem(keyword);
+	        	}else {
+	        		listFind = daoSanPham.selectAll();
+	        	}
+	        return listFind;
+	    }
 
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
@@ -607,23 +733,9 @@ public class FormSanPham extends javax.swing.JPanel {
 
 	private void txtFindKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtFindKeyReleased
 		String keyword = txtFind.getText().trim();
-		List<ModelSanPham> listFind = new ArrayList<ModelSanPham>();
-		listFind.clear();
-		for (int i = 0; i < whiteList.size(); i++) {
-			if (keyword.trim().length() != 0) {
-				if (whiteList.get(i).getTenSP().contains(keyword)) {
-					listFind.add(whiteList.get(i));
-					model.setRowCount(0);
-					for (ModelSanPham sp : listFind) {
-						tblSanpham.addRow(sp.toRowTable(eventAction, listDM));
-//                        btnXemDSDen
-					}
-				}
-			} else {
-				ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
-				fillToTable(danhMuc.getMaDanhMuc());
-			}
-		}
+    	listSP = timkiem(keyword);
+		ModelDanhMuc DM = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
+		fillToTable(DM.getMaDanhMuc());
 	}// GEN-LAST:event_txtFindKeyReleased
 
 	private void btnLichSuGiaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLichSuGiaActionPerformed

@@ -2,7 +2,11 @@ package com.wolvesres.form.thongke;
 
 import java.awt.event.MouseAdapter;
 import javax.swing.JFrame;
-
+/**
+ * Comment các hàm
+ * @author huynh
+ *
+ */
 public class FormThongKe_TongHop extends javax.swing.JPanel {
 
     public FormThongKe_TongHop(JFrame frame) {
@@ -15,7 +19,11 @@ public class FormThongKe_TongHop extends javax.swing.JPanel {
     private MouseAdapter eventKho;
     private MouseAdapter eventBan;
     private MouseAdapter eventSanPham;
-
+    
+    /**
+     * Sự kiện nút để chuyển đến các bảng
+     * @param eventKho
+     */
     public void setEventKho(MouseAdapter eventKho) {
         this.eventKho = eventKho;
     }

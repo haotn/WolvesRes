@@ -87,4 +87,10 @@ public class KhuBanDAO implements WolvesResDAO<ModelKhuBan, String>{
         return entity;
     }
     
+    public List<ModelKhuBan> timkiem(String keyword){
+    	List<ModelKhuBan> list = new ArrayList<ModelKhuBan>();
+    	String sql = "select * from KHUBAN where TenKhuBan like ?";
+    			list = selectBySQL(sql, "%"+keyword+"%");
+    	return list;
+    }
 }

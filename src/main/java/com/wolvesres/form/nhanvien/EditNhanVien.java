@@ -189,12 +189,12 @@ public class EditNhanVien extends javax.swing.JDialog {
 		pathAvatar = avatar.getToolTipText();
 
 		if (!FormValidator.isTextIsNotEmpty(fullName) || !FormValidator.isTextIsNotEmpty(phoneNumber)
-				|| !FormValidator.isTextIsNotEmpty(email) || FormValidator.isTextIsNotEmpty(idNational)) {
+				|| !FormValidator.isTextIsNotEmpty(email) || !FormValidator.isTextIsNotEmpty(idNational)) {
 			// Check if any information is empty
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ dữ liệu!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (FormValidator.isValidFullname(fullName)) {
+		} else if (!FormValidator.isValidFullname(fullName)) {
 			// Check if fullname is invalid
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ họ tên!", ROptionDialog.WARNING, Color.red,
 					Color.black);
@@ -213,7 +213,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 		}
 		if (idNational.length() == 12) {
 			// Is Id National
-			if (FormValidator.isValidGenderCode(idNational, rdoNam.isSelected(), yearOfBirth)) {
+			if (!FormValidator.isValidGenderCode(idNational, rdoNam.isSelected(), yearOfBirth)) {
 				// Check if gender code is invalid
 				ROptionDialog.showAlert(frame, "Lỗi", "Số CCCD không hợp lệ (sai mã giới tính)!", ROptionDialog.WARNING,
 						Color.red, Color.black);

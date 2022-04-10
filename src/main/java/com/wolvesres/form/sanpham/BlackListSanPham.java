@@ -13,7 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, comment các hàm
+ * Liên quan: ModelSanPhan
+ * @author huynh
+ *
+ */
 public class BlackListSanPham extends javax.swing.JDialog {
 
 	public BlackListSanPham(java.awt.Frame parent, boolean modal) {
@@ -26,7 +31,7 @@ public class BlackListSanPham extends javax.swing.JDialog {
 	}
 
 	/**
-	 * Load blacklist
+	 * hàm load các hàm bên dưới
 	 */
 	public void init() {
 		initTable();
@@ -44,6 +49,9 @@ public class BlackListSanPham extends javax.swing.JDialog {
 	SanPhamDAO daoSP = new SanPhamDAO();
 	public FormSanPham formSP = new FormSanPham(frame);
 	DanhMucDAO danhMucDAO = new DanhMucDAO();
+	/**
+	 * nút sửa xóa trên form
+	 */
 	EventActionBlackList<ModelSanPham> eventAction = new EventActionBlackList<ModelSanPham>() {
 		@Override
 		public void update(ModelSanPham sanpham) {
@@ -57,6 +65,9 @@ public class BlackListSanPham extends javax.swing.JDialog {
 		}
 	};
 
+	/**
+	 * Hàm desigs bảng
+	 */
 	public void initTable() {
 		tblBlackListSP.setOpaque(true);
 		tblBlackListSP.setBackground(new Color(255, 255, 255));
@@ -69,10 +80,16 @@ public class BlackListSanPham extends javax.swing.JDialog {
 		tblBlackListSP.setActionWhiteList(false);
 	}
 
+	/**
+	 * Hàm load dữ liệu
+	 */
 	private void loadToList() {
 		listDanhMuc.addAll(danhMucDAO.selectAll());
 	}
 
+	/**
+	 * Hàm return bảng dữ liệu
+	 */
 	private void addToListReturn(ModelSanPham entity) {
 		listReturn.add(entity);
 	}
@@ -81,6 +98,9 @@ public class BlackListSanPham extends javax.swing.JDialog {
 		return this.listReturn;
 	}
 
+	/**
+	 * Hàm fill dữ liệu trên bảng
+	 */
 	public void fillToTable() {
 		danhMucDAO.loadToBlackList(this);
 		model.setRowCount(0);
@@ -97,6 +117,21 @@ public class BlackListSanPham extends javax.swing.JDialog {
 	public boolean getChangeData() {
 		return this.isChangeData;
 	}
+	
+	/**
+	 * Tìm thoe tên sản phẩm
+	 * @param keyword
+	 * @return
+	 */
+	 public List<ModelSanPham> timkiem(String keyword){
+	        List<ModelSanPham> listFind = new ArrayList<>();
+	        	if(keyword.trim().length() > 0) {
+	        		listFind = daoSP.timkiem(keyword);
+	        	}else {
+	        		listFind = daoSP.selectAll();
+	        	}
+	        return listFind;
+	    }
 
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
@@ -208,21 +243,8 @@ public class BlackListSanPham extends javax.swing.JDialog {
 
 	private void txtFindBlackListKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtFindBlackListKeyReleased
 		String keyword = txtFindBlackList.getText().trim();
-		List<ModelSanPham> listFind = new ArrayList<>();
-		listFind.clear();
-		for (int i = 0; i < listSP.size(); i++) {
-			if (keyword.trim().length() != 0) {
-				if (listSP.get(i).getTenSP().contains(keyword)) {
-					listFind.add(listSP.get(i));
-					model.setRowCount(0);
-					for (ModelSanPham sp : listFind) {
-						tblBlackListSP.addRow(sp.toRowTableBlackList(eventAction, listDanhMuc));
-					}
-				}
-			} else {
-				fillToTable();
-			}
-		}
+    	listSP = timkiem(keyword);
+		fillToTable();
 	}// GEN-LAST:event_txtFindBlackListKeyReleased
 
 	/**
