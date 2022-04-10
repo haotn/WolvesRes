@@ -55,7 +55,7 @@ public class FormKho extends javax.swing.JPanel {
         tblKho.setModel(model);
         tblKho.setColumnAction(10);
     }
-
+//fill dữ liệu lên table kho whitelist(trạng thái true)
     private void fillToTable() {
         //DefaultTableModel model = (DefaultTableModel) tblKho.getModel();
         //tblKho.setModel(model);
@@ -65,7 +65,7 @@ public class FormKho extends javax.swing.JPanel {
             tblKho.addRow(kho.toRowTable(listSP));
         }
     }
-
+//load dữ liệu vào list có trạng thái là true
     private void loadToWhiteList() {
         whiteList.clear();
         for (ModelKho kho : listKho) {
@@ -92,6 +92,7 @@ public class FormKho extends javax.swing.JPanel {
     }
     int index = -1;
 
+//    tìm kiếm sản phẩm trong kho
     private void find(String keyword) {
         List<ModelKho> listFind = new ArrayList<ModelKho>();
         listFind.clear();

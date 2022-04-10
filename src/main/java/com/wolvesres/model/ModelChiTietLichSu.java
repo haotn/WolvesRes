@@ -1,12 +1,15 @@
 package com.wolvesres.model;
 
+import com.wolvesres.dao.ChiTietLichSuDAO;
 import com.wolvesres.dao.DanhMucDAO;
 import com.wolvesres.dao.DonViTinhDAO;
 import com.wolvesres.dao.SanPhamDAO;
 import com.wolvesres.helper.XFormatMoney;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Them : insert
+ * */
 public class ModelChiTietLichSu {
 
     private int id;
@@ -14,7 +17,7 @@ public class ModelChiTietLichSu {
     private String maSP;
     private int soLuong;
     private float donGia;
-
+    private ChiTietLichSuDAO chitietlsdao = new ChiTietLichSuDAO();
     public ModelChiTietLichSu() {
     }
 
@@ -174,5 +177,13 @@ public class ModelChiTietLichSu {
 
     public Object[] toRowTableCTLS() {
         return new Object[]{getTenSanPham(getMaSP()), XFormatMoney.formatMoney(getDonGia()), getSoLuong(), Gia(getDonGia(), getSoLuong())};
+    }
+    //insert
+    public void insert(int idLichSu, String maSanPham, int soLuong, float gia) {
+    	this.setIdLS(idLichSu);
+    	this.setMaSP(maSanPham);
+    	this.setSoLuong(soLuong);
+    	this.setDonGia(gia);
+        chitietlsdao.insert(this);
     }
 }

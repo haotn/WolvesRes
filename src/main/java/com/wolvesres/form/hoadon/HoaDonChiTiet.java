@@ -12,10 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+import com.wolvesres.helper.FormValidator;
 /**
- *
- * @author FPT
+ * Hiện hóa đơn chi tiết, tìm kiếm hóa đơn chi tiết theo hóa đơn.
+ * Lien quan:  
+ * @author  
  */
 public class HoaDonChiTiet extends javax.swing.JDialog {
 
@@ -25,6 +26,7 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
     private List<ModelHoaDon> whiteList = new ArrayList<>();
     private List<ModelHoaDonChiTiet> listHDCT = new ArrayList<>();
     private List<ModelHoaDonChiTiet> listSeen = new ArrayList<>();
+    private FormValidator validator = new FormValidator();
     HoaDonDAO dao = new HoaDonDAO();
     HoaDonChiTietDAO daoCT = new HoaDonChiTietDAO();
     String selectHD = "";
@@ -51,8 +53,8 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
         jScrollPane1.setVerticalScrollBar(new RScrollBarCustom());
         initTableSeen();
         initTable();
-        loadtoList();
-        fillTable();
+        loadListHoaDon();
+        filltableHoaDon();
         selectedRow = 0;
         showDetail(selectedRow);
     }
@@ -68,8 +70,8 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
         tblSeen.setColumnAction(10);
     }
 
-    //
-    public void loadListSeen() {
+    //Load list hiển thị lên hóa đơn chi tiết
+    public void loadListHoaDonChiTiet() {
         listSeen.clear();
         for (ModelHoaDonChiTiet hdct : listHDCT) {
             if (selectHD.equals(hdct.getMaHD())) {
@@ -77,9 +79,9 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
             }
         }
     }
-
-    public void fillTableSeen() {
-        loadListSeen();
+//    Điền lên bảng hóa đơn chi tiết
+    public void filltableHoaDonChiTiet() {
+        loadListHoaDonChiTiet();
         DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Sản Phẩm", "Giá/SP", "Số Lượng", "Giá",});
         tblSeen.setModel(model);
         for (ModelHoaDonChiTiet hd : listSeen) {
@@ -101,8 +103,8 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
     }
 
     //
-    //
-    public void loadtoList() {
+    //load list hóa đơn
+    public void loadListHoaDon() {
         listHD.addAll(dao.selectAll());
         System.out.println(mdhd.getMaHD());
         for (ModelHoaDon modelHoaDon : listHD) {
@@ -115,23 +117,23 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
 
     public void loadwhitetoList() {
         whiteList.clear();
-        for (ModelHoaDon hd : list) {
-            whiteList.add(hd);
+        for (ModelHoaDon hoadon : list) {
+            whiteList.add(hoadon);
         }
     }
-
-    public void fillTable() {
+//    fill table hóa đơn
+    public void filltableHoaDon() {
         loadwhitetoList();
-        DefaultTableModel modela = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã HD", "NV", "Date", "Tiền hàng"});
-        modela.setRowCount(0);
-        tblHDChiTiet.setModel(modela);
-        for (ModelHoaDon hd : whiteList) {
-            tblHDChiTiet.addRow(hd.toRowTableHDCT());
+        DefaultTableModel modeltablehoadon = new DefaultTableModel(new Object[][]{}, new Object[]{"Mã HD", "NV", "Date", "Tiền hàng"});
+        modeltablehoadon.setRowCount(0);
+        tblHDChiTiet.setModel(modeltablehoadon);
+        for (ModelHoaDon hoadon : whiteList) {
+            tblHDChiTiet.addRow(hoadon.toRowTableHDCT());
         }
 
     }
 
-    //
+    //hiển thị dữ liệu lên hóa đơn bên phải
     public void showDetail(int select) {
         if (select >= 0) {
             ModelHoaDon hoaDon = whiteList.get(selectedRow);
@@ -142,11 +144,12 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
         }
     }
 
-    private void find(String keyword) {
+    //tìm kiếm hóa đơn theo mã, ngày
+    private void timkiemhoadon(String keyword) {
         List<ModelHoaDon> listFind = new ArrayList<>();
         listFind.clear();
         for (int i = 0; i < list.size(); i++) {
-            if (keyword.trim().length() != 0) {
+            if (!validator.isTextIsNotEmpty(keyword)) {
                 if (list.get(i).getMaHD().contains(keyword) || list.get(i).toYMD(list.get(i).getNgayXuat()).contains(keyword)) {
                     listFind.add(list.get(i));
                     DefaultTableModel model = new DefaultTableModel(new Object[][]{}, new Object[]{"Sản Phẩm", "Giá/SP", "Số Lượng", "Giá",});
@@ -157,7 +160,7 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
                     }
                 }
             } else {
-                fillTable();
+                filltableHoaDon();
             }
         }
     }
@@ -349,11 +352,11 @@ public class HoaDonChiTiet extends javax.swing.JDialog {
         selectedRow = tblHDChiTiet.getSelectedRow();
         selectHD = (String) tblHDChiTiet.getValueAt(selectedRow, 0);
         showDetail(selectedRow);
-        fillTableSeen();
+        filltableHoaDonChiTiet();
     }//GEN-LAST:event_tblHDChiTietMousePressed
 
     private void txtFindHDChiTietKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindHDChiTietKeyReleased
-        find(txtFindHDChiTiet.getText().trim());
+        timkiemhoadon(txtFindHDChiTiet.getText().trim());
     }//GEN-LAST:event_txtFindHDChiTietKeyReleased
 
     /**

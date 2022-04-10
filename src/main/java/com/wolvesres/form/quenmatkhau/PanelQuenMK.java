@@ -31,13 +31,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
-
+/**
+ * 
+ * Dao: NhanVienDAO, TaiKhoanDAO
+ * Lien quan: ModelNhanVien, ModeltaiKhoan
+ * */
 public class PanelQuenMK extends javax.swing.JPanel {
 
 	JFrame frame;
 	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
 			Pattern.CASE_INSENSITIVE);
-
+	private FormValidator validator = new FormValidator();
 	public static boolean validateEmail(String emailStr) {
 		Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
 		return matcher.find();
@@ -219,23 +223,24 @@ public class PanelQuenMK extends javax.swing.JPanel {
 		String TK = "";
 		// lay tk cuar mail
 		for (ModelNhanVien nv : listNV) {
-			if (email.equals(nv.getEmail())) {
+			if (validator.isTextEqual(email, nv.getEmail() )) {
 				TK = nv.getMaNV();
 				break;
 			}
 		}
 		// kiem tra hop le
-		if (!TK.equals(taiKhoan)) {
+		if (!validator.isTextEqual(TK, taiKhoan)) {
 			return false;
 		}
 		return true;
 	}
 
-	public boolean checkQMK() {
+//	Kiem tra quen mat khau
+	public boolean checkQuenMatKhau() {
 		String username = txtUser.getText();
 		String email = txtEmail.getText();
 		// check trong
-		if (FormValidator.isTextIsNotEmpty(username) || !FormValidator.isTextIsNotEmpty(email)) {
+		if (!FormValidator.isTextIsNotEmpty(username) || !FormValidator.isTextIsNotEmpty(email)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Email hoặc User bị trống!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
@@ -247,7 +252,7 @@ public class PanelQuenMK extends javax.swing.JPanel {
 		boolean existsuser = false, existsEmail = false;
 		// kiem tra user ton tai
 		for (ModelTaiKhoan tk : listTK) {
-			if (txtUser.getText().trim().equals(tk.getTaiKhoan())) {
+			if (validator.isTextEqual(txtUser.getText().trim(), tk.getTaiKhoan())) {
 				existsuser = true;
 				break;
 			}
@@ -259,7 +264,7 @@ public class PanelQuenMK extends javax.swing.JPanel {
 		}
 		// kiem tra email ton tai
 		for (ModelNhanVien nv : listNV) {
-			if (txtEmail.getText().trim().equals(nv.getEmail())) {
+			if (validator.isTextEqual(txtEmail.getText().trim(), nv.getEmail() )) {
 				existsEmail = true;
 				break;
 			}
@@ -290,7 +295,7 @@ public class PanelQuenMK extends javax.swing.JPanel {
 					Color.black);
 			return false;
 		}
-		if (!pwdMatKhauMoi.getText().trim().equals(String.valueOf(pwdXacNhanMatKhauMoi.getPassword()).trim())) {
+		if (!validator.isTextEqual(pwdMatKhauMoi.getText().trim(), String.valueOf(pwdXacNhanMatKhauMoi.getPassword()).trim())) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Mật khẩu mới không trùng khớp", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
@@ -299,11 +304,12 @@ public class PanelQuenMK extends javax.swing.JPanel {
 		return true;
 	}
 
-	// đỏi pas
-	public void ChangePass() {
-		String pass = pwdMatKhauMoi.getText().trim();
-		user = txtUser.getText().trim();
-		tkdao.UpdateChangePass(pass, user);
+	//xử lý đổi password
+	
+	public void ChangPassword() {
+		String username = txtUser.getText().trim();
+		String newpassword = pwdMatKhauMoi.getText().trim();
+		tkdao.UpdateChangePass(newpassword, username);
 		GhiNhoDAO gndao = new GhiNhoDAO();
 		gndao.delete(XIpAddress.getIPAddres());
 	}
@@ -329,6 +335,7 @@ public class PanelQuenMK extends javax.swing.JPanel {
 		}
 	}
 
+//	hàm hổ trợ miglayout
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents

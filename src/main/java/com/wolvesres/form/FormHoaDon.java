@@ -17,7 +17,11 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * 
+ * Chỉnh sửa: Hủy hóa đơn(chuyentrangthaihoadon).
+ * liên quan: ModelHoaDon
+ * */
 public class FormHoaDon extends javax.swing.JPanel {
 
 	JFrame frame;
@@ -52,11 +56,12 @@ public class FormHoaDon extends javax.swing.JPanel {
 		btnHuy.setIcon(iconCancel);
 	}
 
-	//
+	//load vào list hóa đơn từ csdl 
 	public void loadtoList() {
 		list.addAll(dao.selectAll());
 	}
 
+	//lọc những hóa đơn có trạng thái là true(hoạt động)
 	public void loadwhitetoList() {
 		whiteList.clear();
 		for (ModelHoaDon hd : list) {
@@ -66,7 +71,7 @@ public class FormHoaDon extends javax.swing.JPanel {
 		}
 	}
 
-	//
+	//fill table hóa đơn
 	public void fillTable() {
 		loadwhitetoList();
 		model.setRowCount(0);
@@ -76,16 +81,17 @@ public class FormHoaDon extends javax.swing.JPanel {
 
 	}
 
-	//
+	//chuyển trạng thái hóa đơn
+	/**
+	 * chuyenTrangThaiHoaDon
+	 * @param ModelHoaDon
+	 * */
 	public void HuyHoaDon(int select) {
-
 		if (select >= 0) {
-			ModelHoaDon emp = whiteList.get(select);
-			emp.setTrangThai(false);
-			if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có muôn hủy Hoá đơn " + emp.getMaHD() + " không?",
+			ModelHoaDon hoadon = whiteList.get(select);
+			if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có muôn hủy Hoá đơn " + hoadon.getMaHD() + " không?",
 					ROptionDialog.WARNING, Color.yellow, Color.black)) {
-				list.set(select, emp);
-				dao.update(emp, emp.getMaHD());
+				hoadon.chuyenTrangThaiHoaDon(list);
 				fillTable();
 			}
 		} else {
@@ -94,7 +100,7 @@ public class FormHoaDon extends javax.swing.JPanel {
 		}
 	}
 
-//
+// khởi tạo bảng ban đầu khi start chương trình
 	private void initTable() {
 		tblHoaDon.setOpaque(true);
 		tblHoaDon.setBackground(new Color(255, 255, 255));
@@ -106,7 +112,7 @@ public class FormHoaDon extends javax.swing.JPanel {
 		tblHoaDon.setModel(model);
 	}
 
-	//
+	//hiển thị giá trị bảng lên dữ liệu bên phải khi click vào
 	public void showDetail(int select) {
 		if (select >= 0) {
 			ModelHoaDon hoaDon = whiteList.get(selectedRow);
@@ -133,6 +139,7 @@ public class FormHoaDon extends javax.swing.JPanel {
 		this.list = list;
 	}
 
+//	tìm kiếm hóa đơn
 	public List<ModelHoaDon> timKiem(String keyword, HoaDonDAO hdDAo) {
 		List<ModelHoaDon> list = new ArrayList<ModelHoaDon>();
 		if (keyword.length() != 0) {
@@ -143,6 +150,7 @@ public class FormHoaDon extends javax.swing.JPanel {
 		return list;
 	}
 
+//	lấy đối tự hóa đơn tại vị trí đc chọn từ hàng trên bảng
 	private ModelHoaDon getHDformRowtable(int row) {
 		ModelHoaDon hd = new ModelHoaDon();
 		String maHD = String.valueOf(tblHoaDon.getValueAt(row, 0));

@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
-
+/**
+ *  Hổ trựo xử lý giao diện
+ * */
 public class PanelCoverDangNhap extends javax.swing.JPanel {
 
     private final DecimalFormat df = new DecimalFormat("###,###");
@@ -75,6 +77,7 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+    //animation giao diện latout
 @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
@@ -83,11 +86,11 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
         g2.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(grphcs);
     }
-
+//thêm sự kiện
     public void addEvent(ActionListener event) {
         this.event = event;
     }
-
+//xử lý phần layout bên trái
     public void registerLeft(double v) {
         v = Double.valueOf(df.format(v));
         login(false);
@@ -95,7 +98,7 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
         layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
         layout.setComponentConstraints(description1, "pad 0 -" + v + "% 0 0");
     }
-
+  //xử lý phần layout bên trái
     public void registerRight(double v) {
         v = Double.valueOf(df.format(v));
         login(false);
@@ -103,7 +106,7 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
         layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
         layout.setComponentConstraints(description1, "pad 0 -" + v + "% 0 0");
     }
-
+//xử lý phần dữ liệu hiện form bên trái
     public void loginLeft(double v) {
         v = Double.valueOf(df.format(v));
         login(true);
@@ -111,7 +114,7 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
         layout.setComponentConstraints(description, "pad 0 " + v + "% 0 " + v + "%");
         layout.setComponentConstraints(description1, "pad 0 " + v + "% 0 " + v + "%");
     }
-
+  //xử lý phần dữliệu hiện form bên phải
     public void loginRight(double v) {
         v = Double.valueOf(df.format(v));
         login(true);
@@ -119,7 +122,7 @@ public class PanelCoverDangNhap extends javax.swing.JPanel {
         layout.setComponentConstraints(description, "pad 0 " + v + "% 0 " + v + "%");
         layout.setComponentConstraints(description1, "pad 0 " + v + "% 0 " + v + "%");
     }
-
+//xử lý chuyển đổi khi đăng nhập thành công 
     private void login(boolean login) {
         if (this.isLogin != login) {
             if (!login) {
