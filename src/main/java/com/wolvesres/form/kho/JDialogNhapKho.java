@@ -211,7 +211,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		int sl = 0;
 		try {
 			sl = Integer.parseInt(txtSoLuong.getText().trim());
-			if (validator.isLessThan(sl, 1)) {
+			if (validator.isLessOrEqual(sl, 1)) {
 				sl = listNhapKho.get(select).getSoLuong();
 				txtSoLuong.setText(sl + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Số lượng nhập ít nhất là 1!", ROptionDialog.WARNING, Color.red,
@@ -233,7 +233,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		float gia = 0;
 		try {
 			gia = Float.parseFloat(txtGia.getText().trim());
-			if (gia<= 0) {
+			if (!validator.isGreaterThan(gia, 0)) {
 				gia = listNhapKho.get(select).getGia();
 				txtGia.setText(gia + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Giá phải lớn 0!", ROptionDialog.WARNING, Color.red, Color.black);

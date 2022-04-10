@@ -395,6 +395,46 @@ public class FormValidator {
 	}
 
 	/**
+	 * Compare two number int
+	 * 
+	 * @param number
+	 * @param compareTo
+	 * @return is less than
+	 */
+	public static Boolean isLessOrEqual(int number, int compareTo) {
+		if (number >= compareTo) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Compare two number int
+	 * 
+	 * @param number
+	 * @param compareTo
+	 * @return is less than
+	 */
+	public static Boolean isNumberEqual(int number, int compareTo) {
+		if (number != compareTo) {
+			return false;
+		}
+		return true;
+	}
+	/**
+	 * Compare two number int
+	 * 
+	 * @param number
+	 * @param compareTo
+	 * @return is less than
+	 */
+	public static Boolean isGreaterOrEqual(int number, int compareTo) {
+		if (number <= compareTo) {
+			return false;
+		}
+		return true;
+	}
+	/**
 	 * 
 	 * Compare two number int**
 	 * 

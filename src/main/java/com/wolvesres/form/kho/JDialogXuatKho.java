@@ -240,7 +240,7 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 		if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận xuất kho?", ROptionDialog.WARNING, Color.yellow,
 				Color.black)) {
 			String NV = Auth.user.getMaNV();
-			if (listNhapKho.size() < 0) {
+			if (validator.isLessThan(listNhapKho.size(), 0)) {
 				ROptionDialog.showAlert(frame, "Thông báo", "Vui lòng chọn Sản Phẩm để nhập",
 						ROptionDialog.PRIORITY_HIGHT, Color.red, Color.black);
 			} else {
@@ -258,29 +258,31 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 					float Gia = listNhapKho.get(i).getGia();
 					float tongTien = soLuong * Gia;
 					int idkho = listNhapKho.get(i).getIDK();
+					int soLuongXuat =0;
 					// Kho
-
 					ModelKho mdkho = new ModelKho();
 					for (int j = 0; j < listKho.size(); j++) {
 						if (idkho == listKho.get(j).getId()) {
+							mdkho = listKho.get(j);
 							if (soLuong == listKho.get(j).getSoLuong()) {
-								mdkho.setSoLuong(0);
+								soLuongXuat = 0;
+								mdkho.setSoLuong(soLuongXuat);
 								mdkho.setTrangThai(false);
 								break;
 							}
 							if (soLuong < listKho.get(j).getSoLuong()) {
-								mdkho.setSoLuong(listKho.get(j).getSoLuong() - soLuong);
-								mdkho.setTrangThai(true);
+								soLuongXuat = listKho.get(j).getSoLuong() - soLuong;
+								mdkho.setSoLuong(soLuongXuat);
 								break;
 							}
 						}
 					}
 					//update kho
 					mdkho.update(idkho);
-
+					//LS
 					// LSCT
 					ModelChiTietLichSu mdctls = new ModelChiTietLichSu();
-					mdctls.insert(idLS, MSP, soLuong, Gia);
+					mdctls.insert(idLS, MSP,soLuong, Gia);
 				}
 				listKho.clear();
 				listKho.addAll(khoDAO.selectAll());
