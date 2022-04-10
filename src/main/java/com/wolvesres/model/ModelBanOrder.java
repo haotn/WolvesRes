@@ -2,12 +2,17 @@ package com.wolvesres.model;
 
 import com.wolvesres.dao.BanOrderDAO;
 
+/**
+ * 
+ * Thêm: gopbandata, gopbannodata
+ */
 public class ModelBanOrder {
 
 	private String maBan;
 	private String maVoucher;
 	private String ghiChu;
 	private String maBanGop;
+	private BanOrderDAO banoderdao = new BanOrderDAO();
 
 	public ModelBanOrder() {
 	}
@@ -72,6 +77,22 @@ public class ModelBanOrder {
 	 */
 	public void remove() {
 		dao.delete(this.maBan);
+	}
+
+//gop ban có dữ liệu 
+	public void gopbandata(String maBanGop) {
+		this.setMaBanGop(maBanGop);
+		banoderdao.update(this, this.maBan);
+		banoderdao.delete(maBanGop);
+	}
+
+// gộp ban không dữ liệu
+	public void gopnodata(String maBanht, String maBanGop) {
+		this.setMaBan(maBanht);
+		this.setGhiChu(null);
+		this.setMaVoucher("NOVOUCHER");
+		this.setMaBanGop(maBanGop);
+		banoderdao.insert(this);
 	}
 
 }

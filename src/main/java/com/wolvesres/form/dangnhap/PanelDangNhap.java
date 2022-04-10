@@ -36,8 +36,10 @@ import javax.swing.SwingConstants;
 import net.miginfocom.swing.MigLayout;
 
 /**
- *
- * @author hp
+ *Hiển thị lên form bằng miglayout, xử lý đăng nhập.
+ *Lien quan: ModelGhiNho, ModelNhanVien
+ *Dao: TaiKhoanDAO, NhanVienDAO
+ * @author 
  */
 public class PanelDangNhap extends javax.swing.JPanel {
 
@@ -56,9 +58,8 @@ public class PanelDangNhap extends javax.swing.JPanel {
 		loadList();
 		checkRememberme();
 	}
-//    RTextField txtUser;
-//    RPasswordField pwdpass;
-
+ 
+//Chuyen miglayout sang quên mật khẩu
 	private void initQuenMK() {
 		register.setLayout(new MigLayout("", "push[center]push", "push[]25[]10[]10[]25[]push"));
 		JLabel label = new JLabel("Đăng nhập thành công!");
@@ -66,7 +67,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 		label.setForeground(new Color(0, 0, 0));
 		register.add(label);
 	}
-
+//	tạo form bằng code java
 	RTextField txtUser = new RTextField();
 	JLabel label = new JLabel("ĐĂNG NHẬP");
 	RPasswordField pwdPass = new RPasswordField();
@@ -237,6 +238,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 		listNV.addAll(nvdao.selectAll());
 	}
 
+	//kiểm tra login
 	public boolean checkLogin() {
 		loadList();
 		String username = "";
@@ -268,7 +270,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 			return false;
 		}
 		for (int i = 0; i < listNV.size(); i++) {
-			if (user.getNhanVien().getMaNV().equals(listNV.get(i).getMaNV())) {
+			if (FormValidator.isTextEqual(user.getNhanVien().getMaNV(), listNV.get(i).getMaNV())) {
 				Auth.user = listNV.get(i);
 				break;
 			}
@@ -309,7 +311,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 
 	List<ModelGhiNho> listGhiNho = new ArrayList<ModelGhiNho>();
 	GhiNhoDAO gndao = new GhiNhoDAO();
-
+//kiểm tra ghi nhớ đăng nhặp
 	public void rememberme() {
 		if (!checkRememberme()) {
 			if (chkrememberme.isSelected()) {
@@ -320,14 +322,11 @@ public class PanelDangNhap extends javax.swing.JPanel {
 				ghinhopresent.setTaiKhoan(txtUser.getText().trim());
 				ghinhopresent.setPassWord(String.valueOf(pwdPass.getPassword()).trim());
 				if (ghinho == null) {
-//                System.out.println(XIpAddress.getIPAddres());
-//                System.out.println(txtUser.getText().trim());
-//                System.out.println(String.valueOf(pwdPass.getPassword()));
-					gndao.insert(ghinhopresent);
+					ghinhopresent.insert();
 				} else {
-					if (!ghinho.getTaiKhoan().equals(txtUser.getText().trim())) {
+					if (!FormValidator.isTextEqual(ghinho.getTaiKhoan(), txtUser.getText().trim())) {
 						gndao.delete(XIpAddress.getIPAddres());
-						gndao.insert(ghinhopresent);
+						ghinhopresent.insert();
 					}
 				}
 			} else {
@@ -347,6 +346,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 		return ten;
 	}
 
+//	lấy user rememberme
 	private String getTenUserRemember(String user) {
 		String tenOfUser = "";
 		ModelNhanVien nv = nvdao.selectById(user);
@@ -370,7 +370,7 @@ public class PanelDangNhap extends javax.swing.JPanel {
 			// avartar.setVisible(false);
 			avartar.setVisible(true);
 			ModelNhanVien nv = nvdao.selectById(ghinhocheck.getTaiKhoan());
-			if (!nv.getPathHinhAnh().equals("")) {
+			if (!FormValidator.isTextIsNotEmpty(nv.getPathHinhAnh())) {
 				avartar.setIcon(XImage.readImageNhanVien(nv.getPathHinhAnh()));
 			} else {
 				avartar.setIcon(new ImageIcon(getClass().getResource("/com/wolvesres/icon/userRemember.png")));

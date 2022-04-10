@@ -118,7 +118,7 @@ public class FormQuenMK extends javax.swing.JFrame {
         //kiem tra comfirm
         forgerPass.addEventGetCode(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (forgerPass.checkQMK()) {
+                if (forgerPass.checkQuenMatKhau()) {
                     GuiMess();
                     code = ROptionDialog.showInput(frame, "Kiểm tra email và và nhập code vào bên dưới");
                     if (code.trim() != null) {
@@ -140,7 +140,7 @@ public class FormQuenMK extends javax.swing.JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-                    if (forgerPass.checkQMK()) {
+                    if (forgerPass.checkQuenMatKhau()) {
                         GuiMess();
                         code = ROptionDialog.showInput(frame, "Kiểm tra email và và nhập code vào bên dưới");
                         if (code.trim() != null) {
@@ -162,7 +162,8 @@ public class FormQuenMK extends javax.swing.JFrame {
         forgerPass.addEventConfirm(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (forgerPass.checkNewPass()) {
-                    forgerPass.ChangePass();
+                	 
+                    forgerPass.ChangPassword();
                     ROptionDialog.showAlert(frame, "Thông báo", "Tạo mật khẩu mới thành công!", ROptionDialog.NOTIFICATIONS_ACTIVE, new Color(0, 199, 135), Color.black);
                 }
             }
@@ -172,7 +173,7 @@ public class FormQuenMK extends javax.swing.JFrame {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyChar() == KeyEvent.VK_ENTER) {
                     if (forgerPass.checkNewPass()) {
-                        forgerPass.ChangePass();
+                        forgerPass.ChangPassword();
                         ROptionDialog.showAlert(frame, "Thông báo", "Tạo mật khẩu mới thành công!", ROptionDialog.NOTIFICATIONS_ACTIVE, new Color(0, 199, 135), Color.black);
                     }
                 }

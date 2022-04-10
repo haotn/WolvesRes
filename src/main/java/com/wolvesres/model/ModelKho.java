@@ -7,6 +7,10 @@ import com.wolvesres.helper.XFormatMoney;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * Them insert, update
+ */
 public class ModelKho {
 
 	private int id;
@@ -16,6 +20,7 @@ public class ModelKho {
 	private String hanSuDung;
 	private boolean trangThai;
 	private List<ModelSanPham> listSP;
+	private KhoDAO khodao = new KhoDAO();
 /////////////////////////////
 
 	@Override
@@ -238,6 +243,7 @@ public class ModelKho {
 	}
 
 ///////////////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * Convert to Object[]
 	 * 
@@ -246,5 +252,20 @@ public class ModelKho {
 	public Object[] toRowTableXK() {
 		return new Object[] { this, getSoLuong(), XFormatMoney.formatMoney(getGiaSanPham(getIdls(), getMaSP())),
 				getHanSuDung() };
+	}
+
+	// insert
+	public void insert(int idLichSu, String maSanPham, int soLuong, String date) {
+		this.setIdls(idLichSu);
+		this.setMaSP(maSanPham);
+		this.setSoLuong(soLuong);
+		this.setHanSuDung(date);
+		this.setTrangThai(true);
+		khodao.insert(this);
+	}
+
+	// update
+	public void update(int id) {
+		khodao.update(this, id);
 	}
 }

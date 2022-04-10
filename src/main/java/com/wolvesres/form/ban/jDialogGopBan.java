@@ -14,8 +14,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
 /**
- *
- * @author FPT
+ * Gộp 2 bàn laij cùng 1 khu bàn
+ *Phuong thuc: gopbandata, gopbannodata
+ *Liên quan: ModelBanOder
+ * @author 
  */
 public class jDialogGopBan extends javax.swing.JDialog {
 
@@ -39,8 +41,8 @@ public class jDialogGopBan extends javax.swing.JDialog {
         loadToList();
         fillConboboxBanHienTai();
     }
-
-    public ModelBanOrder a(String maBan) {
+//Kiểm tra bàn đã được oder hay chưa có ban>< null
+    public ModelBanOrder kiemTraOder(String maBan) {
         ModelBanOrder ban = new ModelBanOrder();
         boolean exists = false;
         for (ModelBanOrder modelBanOrder : listBanOder) {
@@ -56,17 +58,17 @@ public class jDialogGopBan extends javax.swing.JDialog {
             return null;
         }
     }
-
+// load dữ liệu từ data vào list 
     public void loadToList() {
         listBanOder.clear();
         listBanOder.addAll(banoderdao.selectAll());
         if (listBanOder.size() >= 0) {
-            for (int i = 0; i < listBanOder.size(); i++) {
-
-            }
+//            for (int i = 0; i < listBanOder.size(); i++) {
+//
+//            }
             List<ModelBan> listdel = new ArrayList<>();
             for (ModelBan modelBan : form.getListBan()) {
-                ModelBanOrder banOrder = a(modelBan.getMaBan());
+                ModelBanOrder banOrder = kiemTraOder(modelBan.getMaBan());
                 if (banOrder != null) {
                     if (banOrder.getMaBanGop().trim().length() == 0) {
                         list.add(modelBan);
@@ -83,6 +85,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
                     list.add(modelBan);
                 }
             }
+            
             if (listdel.size() > 0) {
                 for (int i = 0; i < listdel.size(); i++) {
                     for (int j = 0; j < list.size(); j++) {
@@ -100,6 +103,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
 
     }
 
+    //load dữ liệu vào list khu bàn muốn gộp
     public void loadListKB(String maban, String kb) {
         listKB.clear();
         listtemp.clear();
@@ -111,7 +115,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
             }
             List<ModelBan> listdel = new ArrayList<>();
             for (ModelBan modelBan : form.getListBan()) {
-                ModelBanOrder banOrder = a(modelBan.getMaBan());
+                ModelBanOrder banOrder = kiemTraOder(modelBan.getMaBan());
                 if (banOrder != null) {
                     if (banOrder.getMaBanGop().trim().length() == 0) {
                         listtemp.add(modelBan);
@@ -149,6 +153,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
         }
     }
 
+//    fill lên combobox bàn hiện tại
     private void fillConboboxBanHienTai() {
         DefaultComboBoxModel<ModelBan> modelCboChuyenBan = (DefaultComboBoxModel<ModelBan>) cboBanHienTai.getModel();
         cboBanHienTai.setModel(modelCboChuyenBan);
@@ -157,7 +162,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
             modelCboChuyenBan.addElement(ban);
         }
     }
-
+//fill lên conbobox bàn muốn gộp
     private void fillConboboxBanMuonGop() {
         DefaultComboBoxModel<ModelBan> modelCboBanGop = (DefaultComboBoxModel<ModelBan>) cboBanMuonGop.getModel();
         cboBanMuonGop.setModel(modelCboBanGop);
@@ -175,6 +180,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
         this.listBanOder = listBanOder;
     }
 
+//    kiểm tra mã bàn đã được oder true><false
     public boolean isExistsListOder(String maBan) {
         ModelOrder od = oderDao.selectById(maBan);
         if (od == null) {
@@ -184,6 +190,7 @@ public class jDialogGopBan extends javax.swing.JDialog {
         }
     }
 
+//    gộp dữ liệu của 2 bàn 
     public void MergeData(ModelBan banht, ModelBan banGop) {
         String maBan = banht.getMaBan();
         String maBG = banGop.getMaBan();
@@ -214,7 +221,11 @@ public class jDialogGopBan extends javax.swing.JDialog {
 
         oderDao.updateMaBan(maBan, maBG);
     }
-
+/**
+ * gobandata, gopbannodata
+ * @param ModelBanOder
+ * */
+//    gộp bàn
     public void gopBan() {
         ModelBanOrder banOder = new ModelBanOrder();
         ModelBan banht = (ModelBan) cboBanHienTai.getSelectedItem();
@@ -246,15 +257,10 @@ public class jDialogGopBan extends javax.swing.JDialog {
             //check dl
             if (xet) {
                 ModelBanOrder updeBanOrder = banoderdao.selectById(maBan);
-                updeBanOrder.setMaBanGop(gopBan);
-                banoderdao.update(updeBanOrder, maBan);
-                banoderdao.delete(gopBan);
+                updeBanOrder.gopbandata(gopBan);
             } else {
-                banOder.setMaBan(maBan);
-                banOder.setGhiChu(null);
-                banOder.setMaVoucher("NOVOUCHER");
-                banOder.setMaBanGop(gopBan);
-                banoderdao.insert(banOder);
+                banOder.gopnodata(maBan, gopBan);
+                 
             }
 
         }

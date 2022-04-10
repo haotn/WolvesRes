@@ -21,7 +21,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
-
+/**
+ * update(password)
+ * Lien quan: ModelTaiKhoan
+ * */
 public class PanelDoiMK extends javax.swing.JPanel {
 
 	private ActionListener eventIdentify;
@@ -147,6 +150,7 @@ public class PanelDoiMK extends javax.swing.JPanel {
 		pnlIdentify.add(btnIdentify, "w 40%, h 40,, gapleft 130, wrap");
 	}
 
+//	kiemer tra form doi mat khau
 	public boolean identify(ModelTaiKhoan accountLogin) {
 		String user = txtUser.getText().trim();
 		String pass = String.valueOf(pwdPass.getPassword()).trim();
@@ -238,7 +242,7 @@ public class PanelDoiMK extends javax.swing.JPanel {
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ thông tin!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (newPass.length() < 6) {
+		} else if (FormValidator.isLessThan(newPass.length(), 6)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Độ dài mật khẩu quá ngắn!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
@@ -254,11 +258,8 @@ public class PanelDoiMK extends javax.swing.JPanel {
 		if (newPassIsValid()) {
 			String pass = String.valueOf(pwdNewPass.getPassword()).trim();
 			TaiKhoanDAO dao = new TaiKhoanDAO();
-			this.account.setMatKhau(pass);
-			dao.update(this.account, account.getTaiKhoan());
+			this.account.update(pass);
 			success = true;
-			GhiNhoDAO gndao = new GhiNhoDAO();
-			gndao.delete(XIpAddress.getIPAddres());
 			ROptionDialog.showAlert(frame, "Thông báo", "Đổi mật khẩu thành công!", ROptionDialog.NOTIFICATIONS_ACTIVE,
 					new Color(0, 199, 135), Color.black);
 		}

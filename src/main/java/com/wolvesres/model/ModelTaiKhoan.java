@@ -1,7 +1,10 @@
 package com.wolvesres.model;
 
+import com.wolvesres.dao.GhiNhoDAO;
 import com.wolvesres.dao.NhanVienDAO;
+import com.wolvesres.dao.TaiKhoanDAO;
 import com.wolvesres.helper.XImage;
+import com.wolvesres.helper.XIpAddress;
 import com.wolvesres.swing.table.EventAction;
 import com.wolvesres.swing.table.EventActionBlackList;
 import com.wolvesres.swing.table.ModelAction;
@@ -10,13 +13,16 @@ import com.wolvesres.swing.table.ModelProfile;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
+/**
+ * Them: update(password)
+ * */
 public class ModelTaiKhoan {
 
     private String taiKhoan;
     private String matKhau;
     private boolean trangThai;
-
+    private TaiKhoanDAO dao = new TaiKhoanDAO();
+    GhiNhoDAO gndao = new GhiNhoDAO();
     public ModelTaiKhoan() {
     }
 
@@ -92,4 +98,11 @@ public class ModelTaiKhoan {
         return new Object[]{new ModelProfile(icon, getNhanVien().getMaNV()), getNhanVien().getHoTen(), getNhanVien().getTenChucVu(getNhanVien().getChucVu()), new ModelAction(iconUpdate, null,this, event)
         };
     }
+//    update
+    public void update(String password) {
+    	this.setMatKhau(password);
+    	dao.update(this, this.getTaiKhoan());
+		gndao.delete(XIpAddress.getIPAddres());
+    }
+ 
 }

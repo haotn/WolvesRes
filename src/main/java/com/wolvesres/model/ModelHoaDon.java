@@ -1,5 +1,6 @@
 package com.wolvesres.model;
 
+import com.wolvesres.dao.HoaDonDAO;
 import com.wolvesres.dao.NhanVienDAO;
 import com.wolvesres.dao.VoucherDAO;
 import com.wolvesres.helper.XDate;
@@ -11,6 +12,7 @@ import java.util.List;
 
 /**
  *
+ *Thêm hàm: chuyenTrangThaiHoaDon.
  * @author haotn
  */
 public class ModelHoaDon {
@@ -23,7 +25,7 @@ public class ModelHoaDon {
     private float thue;
     private float tienHang;
     private boolean trangThai;
-
+    private HoaDonDAO hoadondao = new HoaDonDAO();
     public ModelHoaDon() {
     }
 
@@ -207,4 +209,16 @@ public class ModelHoaDon {
         return new Object[]{getMaHD(), NguoiXuat(getNguoiXuat()), toYMD(getNgayXuat()), XFormatMoney.formatMoney(getTienHang())};
     }
 
+    //huy hoa don
+    public void chuyenTrangThaiHoaDon(List<ModelHoaDon> list) {
+    	this.setTrangThai(false);
+    	hoadondao.update(this, this.getMaHD());
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getMaHD().equals(this.getMaHD())) {
+				list.set(i, this);
+				break;
+			}
+		}
+    }
+    
 }

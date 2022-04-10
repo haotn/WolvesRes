@@ -11,7 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ *Hiện danh sách hóa đơn có trạng thái là true
+ *Liên Quan: 
  * @author FPT
  */
 public class HuyHoaDon extends javax.swing.JDialog {
@@ -31,7 +32,7 @@ public class HuyHoaDon extends javax.swing.JDialog {
 
         }
     };
-    
+//    hàm tạo start
     public HuyHoaDon(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -41,7 +42,7 @@ public class HuyHoaDon extends javax.swing.JDialog {
         fillTable();
     }
 
-    //
+    //tải dữ liệu vào list danh sách đen 
     public void loadblacktoList() {
         blacklist.clear();
         for (ModelHoaDon hd : fhd.getList()) {
@@ -51,7 +52,7 @@ public class HuyHoaDon extends javax.swing.JDialog {
         }
     }
 
-    //
+    //fill lên bảng
     public void fillTable() {
         loadblacktoList();
         model.setRowCount(0);
@@ -61,7 +62,7 @@ public class HuyHoaDon extends javax.swing.JDialog {
 
     }
 
-//
+//khởi tạo bảng
     private void initTable() {
         tblHoaDon.setOpaque(true);
         tblHoaDon.setBackground(new Color(255,255,255));
