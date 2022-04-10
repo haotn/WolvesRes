@@ -13,7 +13,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
 /**
- *
+ * comment các hàm
  * @author FPT
  */
 public class jDialogChuyenBan extends javax.swing.JDialog {
@@ -42,6 +42,9 @@ public class jDialogChuyenBan extends javax.swing.JDialog {
         return dispose;
     }
     
+    /**
+     * Load dữ liệu lên bảng
+     */
     public void loadToList(){
         for(ModelBan ban : form.getListBan()){
             boolean exists = false;
@@ -58,6 +61,9 @@ public class jDialogChuyenBan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * fill dữ liệu các bàn đã oder lên combobox
+     */
     private void fillConboboxBanHienTai() {
         modelCboChuyenBan = (DefaultComboBoxModel<ModelBan>) cboBanHienTai.getModel();
         cboBanHienTai.setModel(modelCboChuyenBan);
@@ -67,6 +73,9 @@ public class jDialogChuyenBan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * fill dữ liệu các bàn trống lên combobox
+     */
     private void fillConboboxBanMuonChuyen() {
         modelCboChuyenBanMuon = (DefaultComboBoxModel<ModelBan>) cboBanMuonChuyen.getModel();
         cboBanMuonChuyen.setModel(modelCboChuyenBanMuon);
@@ -76,6 +85,11 @@ public class jDialogChuyenBan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * Lấy mã bàn
+     * @param maban
+     * @return
+     */
     private ModelBan getbanByMaBan(String maban) {
         ModelBan ban = new ModelBan();
         for (ModelBan model : form.getListBan()) {
@@ -95,6 +109,9 @@ public class jDialogChuyenBan extends javax.swing.JDialog {
         return banFrom;
     }
 
+    /**
+     * Hàm get form
+     */
     public void getForm() {
         ModelBan Ban1 = (ModelBan) cboBanMuonChuyen.getSelectedItem();
         banTo = Ban1;

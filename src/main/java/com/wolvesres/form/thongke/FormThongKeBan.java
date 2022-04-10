@@ -21,8 +21,9 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 /**
+ * Comment các hàm
+ * @author huynh
  *
- * @author FPT
  */
 public class FormThongKeBan extends javax.swing.JPanel {
 
@@ -33,17 +34,27 @@ public class FormThongKeBan extends javax.swing.JPanel {
     int type = 1;
     private ActionListener back;
 
+    /**
+     * Sự kiện nút để vè trang thống kê tổng
+     * @param back
+     */
     public void setBack(ActionListener back) {
         this.back = back;
     }
 
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     public FormThongKeBan() {
         initComponents();
         setOpaque(false);
         initTable();
         date();
     }
-
+    
+    /**
+     * Hàm chọn ngày này bắt đầu sẽ đc mặc định cách ngày kết thúc 1 năm
+     */
     public void date() {
         Date today = new Date();
         SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
@@ -56,6 +67,9 @@ public class FormThongKeBan extends javax.swing.JPanel {
         fillToTable();
     }
 
+    /**
+     * hàm desigs bảng
+     */
     private void initTable() {
         tblTKBan.setOpaque(true);
         tblTKBan.setBackground(new Color(255, 255, 255));
@@ -65,6 +79,9 @@ public class FormThongKeBan extends javax.swing.JPanel {
         tblTKBan.setColumnAction(10);
     }
 
+    /**
+     * fill dữ liệu
+     */
     public void fillToTable() {
         model.setRowCount(0);
         for (Object[] row : listTKBAN) {
@@ -73,6 +90,9 @@ public class FormThongKeBan extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Hàm xuất thống kê ra file excel
+     */
     private void xuatTK() {
         try {
             // Excel

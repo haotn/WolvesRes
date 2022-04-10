@@ -3,13 +3,21 @@ package com.wolvesres.form.ban;
 import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.AutoDAO;
 import com.wolvesres.dao.KhuBanDAO;
+import com.wolvesres.helper.FormValidator;
 import com.wolvesres.model.ModelKhuBan;
+import com.wolvesres.model.ModelTaiKhoan;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Chỉnh sửa tìm kiếm, bắt lỗi, Commnet các hàm
+ * Liên quan: ModelKhuban
+ * @author huynh
+ *
+ */
 public class KhuBan extends javax.swing.JDialog {
 
     public KhuBan(java.awt.Frame parent, boolean modal) {
@@ -27,17 +35,26 @@ public class KhuBan extends javax.swing.JDialog {
     private ModelKhuBan entity = new ModelKhuBan();
     private ModelKhuBan kb = null;
 
+    /**
+     * Hàm gọi các hàm bên dưới
+     */
     private void init() {
         initAuto();
         initTable();
         loadToList();
         fillToTable();
     }
-
+    
+    /**
+     * Hàm tự xin mã
+     */
     private void initAuto() {
         lblMaKhuBan.setText(autoDao.AuToKhuBan());
     }
 
+    /**
+     * Hàm desigs bảng
+     */
     private void initTable() {
         tblKhuBan.setOpaque(true);
         tblKhuBan.setBackground(new Color(209, 220, 208));
@@ -50,10 +67,16 @@ public class KhuBan extends javax.swing.JDialog {
         txtFindKhuBan.setLabelText("Tìm Kiếm");
     }
 
+    /**
+     * Hàm load dữ liệu
+     */
     public void loadToList() {
         listKB.addAll(daokb.selectAll());
     }
 
+    /**
+     * Hàm fill dữ liệu
+     */
     public void fillToTable() {
         model.setRowCount(0);
         for (ModelKhuBan kb : listKB) {
@@ -61,6 +84,10 @@ public class KhuBan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * Hàm select bảng
+     * @param selectedRow
+     */
     public void showDetail(int selectedRow) {
         if (selectedRow >= 0) {
             ModelKhuBan kb = listKB.get(selectedRow);
@@ -70,6 +97,10 @@ public class KhuBan extends javax.swing.JDialog {
         }
     }
 
+    /**
+     * Hàm get form
+     * @return
+     */
     public ModelKhuBan getForm() {
         ModelKhuBan kb = new ModelKhuBan();
         kb.setMaKhuBan(lblMaKhuBan.getText());
@@ -78,12 +109,18 @@ public class KhuBan extends javax.swing.JDialog {
         return kb;
     }
 
+    /**
+     * Hàm set form
+     */
     public void setForm() {
         lblMaKhuBan.setText(entity.getMaKhuBan());
         txtTenKhuBan.setText(entity.getTenKhuBan());
         txtGhiChu.setText(entity.getGhiChu());
     }
 
+    /**
+     * Hàm clean form
+     */
     public void clearForm() {
         lblMaKhuBan.setText(autoDao.AuToKhuBan());
         txtTenKhuBan.setText("");
@@ -95,11 +132,15 @@ public class KhuBan extends javax.swing.JDialog {
         return this.listKB;
     }
 
+    /**
+     * Hàm bắt lỗi
+     * @return
+     */
     public boolean valideForm() {
         String makb = lblMaKhuBan.getText().trim();
         String tenkb = txtTenKhuBan.getText().trim();
         String ghichu = txtGhiChu.getText().trim();
-        if (makb.length() == 0 || tenkb.length() == 0 || ghichu.length() == 0) {
+        if (!FormValidator.isTextIsNotEmpty(makb) || !FormValidator.isTextIsNotEmpty(tenkb) || !FormValidator.isTextIsNotEmpty(ghichu)) {
             ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ thông tin!", ROptionDialog.WARNING, Color.red, Color.black);
             return false;
         } else if (!tenkb.contains(" ")) {
@@ -113,29 +154,74 @@ public class KhuBan extends javax.swing.JDialog {
     public ModelKhuBan getKhuBan() {
         return this.kb;
     }
-
+    
+    /**
+     * thêm khu bàn
+     * @param entity
+     */
     public void insertKB(ModelKhuBan entity) {
-        daokb.insert(entity);
-        listKB.add(entity);
-        fillToTable();
+    	insertKBData(entity);
+    	fillinsertKB(entity);
     }
-
+    
+    public void insertKBData(ModelKhuBan entity) {
+    	daokb.insert(entity);
+    }
+    
+    public void fillinsertKB(ModelKhuBan entity) {
+    	listKB.add(entity);
+    	fillToTable();
+    }
+    
+    /**
+     * xóa khu bàn
+     * @param entity
+     */
     public void deleteKB(ModelKhuBan entity) {
-        daokb.delete(entity.getMaKhuBan());
+    	deleteKBData(entity);
+    	filldeleteKB(entity);
+    }
+    
+    public void deleteKBData(ModelKhuBan entity) {
+    	daokb.delete(entity.getMaKhuBan());
+      }
+    
+    public void filldeleteKB(ModelKhuBan entity) {
         listKB.remove(entity);
         fillToTable();
-    }
-
+      }
+    
+    /**
+     * sửa khu bàn
+     * @param entity
+     */
     public void updateKB(ModelKhuBan entity) {
-        daokb.update(entity, entity.getMaKhuBan());
+    	updateKBData(entity);
+    	fillupdate(entity);
+    }
+    
+    public void updateKBData(ModelKhuBan entity) {
+    	 daokb.update(entity, entity.getMaKhuBan());
+    }
+    
+    public void fillupdate(ModelKhuBan entity) {
         for (int i = 0; i < listKB.size(); i++) {
             if (entity.getMaKhuBan() == listKB.get(i).getMaKhuBan()) {
                 listKB.set(i, entity);
+                break;
             }
         }
         fillToTable();
-    }
+      }
+    
+    
+    
 
+    /**
+     * Hàm lấy 1 dòng dữ liệu trên bảng
+     * @param index
+     * @return
+     */
     private ModelKhuBan getFormRowTable(int index) {
         ModelKhuBan entity = new ModelKhuBan();
         String ma = String.valueOf(tblKhuBan.getValueAt(index, 0));
@@ -146,6 +232,21 @@ public class KhuBan extends javax.swing.JDialog {
             }
         }
         return entity;
+    }
+    
+    /**
+     * Tìm kiếm theo tên khu bàn
+     * @param keyword
+     * @return
+     */
+    public List<ModelKhuBan> timkiem(String keyword){
+        List<ModelKhuBan> listFind = new ArrayList<>();
+        	if(keyword.trim().length() > 0) {
+        		listFind = daokb.timkiem(keyword);
+        	}else {
+        		listFind = daokb.selectAll();
+        	}
+        return listFind;
     }
 
     @SuppressWarnings("unchecked")
@@ -388,35 +489,24 @@ public class KhuBan extends javax.swing.JDialog {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         if (valideForm()) {
-            insertKB(getKhuBan());
+        	insertKB(getKhuBan());
+        	fillToTable();
             clearForm();
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtFindKhuBanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKhuBanKeyReleased
-        String keyword = txtFindKhuBan.getText().trim();
-        List<ModelKhuBan> listFind = new ArrayList<>();
-        listFind.clear();
-        for (int i = 0; i < listKB.size(); i++) {
-            if (keyword.trim().length() != 0) {
-                if (listKB.get(i).getTenKhuBan().contains(keyword)) {
-                    listFind.add(listKB.get(i));
-                    model.setRowCount(0);
-                    for (ModelKhuBan sp : listFind) {
-                        model.addRow(sp.toRowModel());
-                    }
-                }
-            } else {
-                fillToTable();
-            }
-        }
+    	String keyword = txtFindKhuBan.getText().trim();
+    	listKB = timkiem(keyword);
+    	fillToTable();
     }//GEN-LAST:event_txtFindKhuBanKeyReleased
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         if (getFormRowTable(tblKhuBan.getSelectedRow()) != null) {
             if (valideForm()) {
                 if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận cập nhật thông tin khu bàn?", ROptionDialog.WARNING, Color.yellow, Color.black)) {
-                    updateKB(getForm());
+                	updateKB(getForm());
+                	fillToTable();
                     ROptionDialog.showAlert(frame, "Thông báo", "Cập nhật thành công!", ROptionDialog.NOTIFICATIONS_ACTIVE, new Color(0, 199, 135), Color.black);
                 }
             }
@@ -430,7 +520,8 @@ public class KhuBan extends javax.swing.JDialog {
             ModelKhuBan khuban = getFormRowTable(tblKhuBan.getSelectedRow());
             if (daokb.checkForeignKey(khuban.getMaKhuBan()) == null) {
                 if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận xóa khu bàn?", ROptionDialog.WARNING, Color.yellow, Color.black)) {
-                    deleteKB(getFormRowTable(tblKhuBan.getSelectedRow()));
+                	deleteKB(getFormRowTable(tblKhuBan.getSelectedRow()));
+                	fillToTable();
                     ROptionDialog.showAlert(frame, "Thông báo", "Xóa thành công!", ROptionDialog.NOTIFICATIONS_ACTIVE, new Color(0, 199, 135), Color.black);
                     clearForm();
                 }

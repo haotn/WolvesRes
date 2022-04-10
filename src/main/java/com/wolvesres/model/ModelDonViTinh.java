@@ -1,11 +1,16 @@
 package com.wolvesres.model;
 
+import com.wolvesres.dao.DonViTinhDAO;
 import com.wolvesres.swing.table.EventAction;
 import com.wolvesres.swing.table.ModelAction;
 import com.wolvesres.swing.table.ModelProfile;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Thêm các hàm Thêm sửa xóa 
+ * @author huynh
+ *
+ */
 public class ModelDonViTinh {
 
     private int maDVT;
@@ -53,7 +58,6 @@ public class ModelDonViTinh {
         this.tenDVT = tenDVT;
     }
     
-    //
         public Object[] toRowTable(EventAction event) {
         return new Object[]{getMaDVT(), getTenDVT(), new ModelAction(this, event)};
     }

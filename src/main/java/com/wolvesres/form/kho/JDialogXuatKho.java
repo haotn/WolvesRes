@@ -80,6 +80,7 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 
 //load dữ liệu vào list kho
 	private void loadList() {
+		listKho.clear();
 		for (ModelKho modelKho : khoDAO.selectAll()) {
 			if (modelKho.getSoLuong() > 0) {
 				listKho.add(modelKho);
@@ -131,7 +132,7 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 
 //fill table bảng kho
 	private void fillToTableKho() {
-		DefaultTableModel modelSanPham = (DefaultTableModel) tblXuat.getModel();
+		DefaultTableModel modelSanPham = (DefaultTableModel) tblKho.getModel();
 		modelSanPham.setRowCount(0);
 		for (ModelKho entity : listKho) {
 			tblKho.addRow(entity.toRowTableXK());
@@ -283,9 +284,10 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 					ModelChiTietLichSu mdctls = new ModelChiTietLichSu();
 					mdctls.insert(idLS, MSP, soLuong, Gia);
 				}
-				listKho.clear();
-				listKho.addAll(khoDAO.selectAll());
+//				listKho.clear();
+//				listKho.addAll(khoDAO.selectAll());
 				listNhapKho.clear();
+				loadList();
 				fillToTableXuat();
 				fillToTableKho();
 			}

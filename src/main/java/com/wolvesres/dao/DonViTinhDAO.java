@@ -2,6 +2,8 @@ package com.wolvesres.dao;
 
 import com.wolvesres.helper.XJdbc;
 import com.wolvesres.model.ModelDonViTinh;
+import com.wolvesres.model.ModelSanPham;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -104,6 +106,13 @@ public class DonViTinhDAO implements WolvesResDAO<ModelDonViTinh, Integer> {
             //Logger.getLogger(NhanVienDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return entity;
+    }
+    
+    public List<ModelDonViTinh> timkiem(String keyword){
+    	List<ModelDonViTinh> list = new ArrayList<ModelDonViTinh>();
+    	String sql = "select * from DONVITINH where TenDonViTinh like ?";
+    			list = selectBySQL(sql, "%"+keyword+"%");
+    	return list;
     }
 
 }

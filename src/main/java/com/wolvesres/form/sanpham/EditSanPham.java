@@ -20,7 +20,11 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-
+/**
+ * comment các hàm
+ * @author huynh
+ *
+ */
 public class EditSanPham extends javax.swing.JDialog {
 
 	public EditSanPham(java.awt.Frame parent, boolean modal) {
@@ -45,9 +49,10 @@ public class EditSanPham extends javax.swing.JDialog {
 	FormSanPham formSP = new FormSanPham(frame);
 
 	/**
-	 * Init method
+	 * hàm gọi các hàm bên dưới
 	 */
 	public void init() {
+		//hàm tự xin mã
 		lblMaSP.setText(autodao.AuToSanPham());
 		loadToList();
 		fillConboboxDanhMuc();
@@ -56,12 +61,15 @@ public class EditSanPham extends javax.swing.JDialog {
 	}
 
 	/**
-	 * Load data to list
+	 * Load dữ liệu lên
 	 */
 	private void loadToList() {
 		listDVT.addAll(dvtdao.selectAll());
 	}
 
+	/**
+	 * Hàm fill dữ liệu đơn vị tính vào combobox
+	 */
 	private void fillToComboboxDVT() {
 		// Clear and add data to list
 		listDVT.clear();
@@ -75,6 +83,9 @@ public class EditSanPham extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Hàm fill dữ liệu danh mục vào combobox
+	 */
 	private void fillConboboxDanhMuc() {
 		modelCboDanhMuc = (DefaultComboBoxModel<ModelDanhMuc>) cboMaDanhMuc.getModel();
 		cboMaDanhMuc.setModel(modelCboDanhMuc);
@@ -100,6 +111,10 @@ public class EditSanPham extends javax.swing.JDialog {
 		this.isInsert = isInsert;
 	}
 
+	/**
+	 * Hàm get form
+	 * @return
+	 */
 	public ModelSanPham getForm() {
 		ModelSanPham sp = new ModelSanPham();
 		sp.setMaSP(lblMaSP.getText());
@@ -114,6 +129,10 @@ public class EditSanPham extends javax.swing.JDialog {
 		return sp;
 	}
 
+	/**
+	 * Hàm set form
+	 * @return
+	 */
 	public void setForm() {
 		if (sanPham.getPathAnh() != null) {
 			lblAvata.setIcon(XImage.readImageThucDon(sanPham.getPathAnh()));
@@ -128,7 +147,8 @@ public class EditSanPham extends javax.swing.JDialog {
 			}
 		}
 		cboMaDanhMuc.setSelectedItem(dm);
-		txtGiaSP.setText(String.valueOf(sanPham.getGiaBan()).trim());
+		Long gia = Long.parseLong(String.valueOf(sanPham.getGiaBan()).replace(".", ""));
+		txtGiaSP.setText(String.valueOf(gia));
 		ModelDonViTinh donViTinh = new ModelDonViTinh();
 		for (ModelDonViTinh dvt : listDVT) {
 			if (sanPham.getMaDVT() == dvt.getMaDVT()) {
@@ -138,6 +158,9 @@ public class EditSanPham extends javax.swing.JDialog {
 		cboDVT.setSelectedItem(donViTinh);
 	}
 
+	/**
+	 * Hàm chọn avata
+	 */
 	public void setIconlblAvata() {
 		JFileChooser chon = new JFileChooser();
 		if (chon.showOpenDialog(this) == chon.APPROVE_OPTION) {
@@ -151,6 +174,9 @@ public class EditSanPham extends javax.swing.JDialog {
 		}
 	}
 
+	/**
+	 * Hàm clean form
+	 */
 	public void cleanForm() {
 		lblAvata.setIcon(null);
 		lblMaSP.setText("");
@@ -164,11 +190,23 @@ public class EditSanPham extends javax.swing.JDialog {
 	 * @param entity ModelDonViTinh
 	 */
 	private void insertDonViTinh(ModelDonViTinh entity) {
+		insertdata(entity);
+		fillinsert(entity);
+	}
+	
+	public void insertdata(ModelDonViTinh entity) {
 		dvtdao.insert(entity);
+	}
+	
+	public void fillinsert(ModelDonViTinh entity) {
 		listDVT.add(entity);
 		fillToComboboxDVT();
 	}
 
+	/**
+	 * Hàm bắt lỗi
+	 * @return
+	 */
 	public boolean validForm() {
 		String MaSP = lblMaSP.getText().trim();
 		String TenSP = txtTenSP.getText().trim();

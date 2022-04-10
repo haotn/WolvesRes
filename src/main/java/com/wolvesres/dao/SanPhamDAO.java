@@ -1,6 +1,7 @@
 package com.wolvesres.dao;
 
 import com.wolvesres.helper.XJdbc;
+import com.wolvesres.model.ModelKhuBan;
 import com.wolvesres.model.ModelSanPham;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -146,4 +147,13 @@ public class SanPhamDAO implements WolvesResDAO<ModelSanPham, String> {
 		}
 		return entity;
 	}
+	
+	public List<ModelSanPham> timkiem(String keyword){
+    	List<ModelSanPham> list = new ArrayList<ModelSanPham>();
+    	String sql = "select * from SANPHAM where TenSP like ?";
+    			list = selectBySQL(sql, "%"+keyword+"%");
+    	return list;
+    }
+	
+	
 }

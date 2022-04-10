@@ -1,11 +1,16 @@
 package com.wolvesres.model;
 
+import com.wolvesres.dao.DanhMucDAO;
 import com.wolvesres.dao.DonViTinhDAO;
 import com.wolvesres.swing.table.EventAction;
 import com.wolvesres.swing.table.ModelAction;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Thêm các hàm thêm sửa
+ * @author huynh
+ *
+ */
 public class ModelDanhMuc {
 
     private String maDanhMuc;
@@ -64,16 +69,7 @@ public class ModelDanhMuc {
 
     DonViTinhDAO donViTinhDAO = new DonViTinhDAO();
 
-//    //
-//    public String TenDVT(int ma) {
-//        String TenDVT = "";
-//        for (ModelDonViTinh dvt : donViTinhDAO.selectAll()) {
-//            if (ma == dvt.getMaDVT()) {
-//                TenDVT = dvt.getTenDVT();
-//            }
-//        }
-//        return TenDVT;
-//    }
+
     public String getTenLoaiHang() {
     return isMatHang()?"Mặt hàng":" Món ăn";
     }
@@ -91,5 +87,6 @@ public class ModelDanhMuc {
     public Object[] toRowTable(EventAction event) {
         return new Object[]{getMaDanhMuc(), getTenDanhMuc(), isMatHang() ? "Mặt hàng" : "Món ăn", new ModelAction(this, event)};
     }
+    
 
 }
