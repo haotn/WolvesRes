@@ -18,6 +18,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
+import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
 /**
@@ -66,6 +68,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 	JFrame frame;
 	AutoDAO autoDao = new AutoDAO();
 	FormNhanVien formParent = new FormNhanVien(frame);
+	private DataGenerator data = new DataGenerator();
 
 	/**
 	 * getNhanVien tra ve mot doi tuong nhan vien duoc lay tu cac truong du lieu
@@ -184,7 +187,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ dữ liệu!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (!FormValidator.isValidFullname(fullName)) {
+		} else if (!FormValidator.isTextContainsSpace(fullName)) {
 			// Check if fullname is invalid
 			ROptionDialog.showAlert(frame, "Lỗi", "Vui lòng nhập đầy đủ họ tên!", ROptionDialog.WARNING, Color.red,
 					Color.black);
@@ -313,110 +316,6 @@ public class EditNhanVien extends javax.swing.JDialog {
 	 */
 	public void updateNhanVien(ModelNhanVien entity) {
 		entity.update();
-	}
-
-	List<String> listTinh = new ArrayList<String>();
-
-	public void addListTinh() {
-		listTinh.clear();
-		String[] listIsNotValidStrings = new String[] { "013", "016", "018", "021", "023", "028", "029", "032", "039",
-				"041", "043", "047", "050", "053", "055", "057", "059", "061", "063", "065", "066", "069", "071", "073",
-				"078", "081", "085", "088", "090" };
-
-		for (int i = 1; i < 97; i++) {
-			String nubString = "";
-			if (i < 10) {
-				if (i != 3 && i != 5 && i != 7 && i != 9) {
-					nubString = "00" + i;
-					listTinh.add(nubString);
-				}
-			} else if (i >= 10) {
-				boolean exist = false;
-				for (int j = 0; j < listIsNotValidStrings.length; j++) {
-					nubString = "0" + i;
-					if (nubString.equals(listIsNotValidStrings[j])) {
-						exist = true;
-					}
-				}
-				if (!exist) {
-					listTinh.add(nubString);
-				}
-			}
-		}
-	}
-
-	/**
-	 * Generate data
-	 */
-	public void createInfor() {
-		addListTinh();
-		if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có muốn sử dụng dữ liệu mẫu", ROptionDialog.WARNING,
-				Color.yellow, Color.black)) {
-			String dau = "";
-			int d = ThreadLocalRandom.current().nextInt(1, 5);
-			if (d == 1) {
-				dau = "3";
-			} else if (d == 2) {
-				dau = "7";
-			} else if (d == 3) {
-				dau = "8";
-			} else {
-				dau = "9";
-			}
-			int sdt1 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt2 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt3 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt4 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt5 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt6 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt7 = ThreadLocalRandom.current().nextInt(0, 10);
-			int sdt8 = ThreadLocalRandom.current().nextInt(0, 10);
-			String nam = txtNgaySinh.getText().trim().substring(6, 10);
-			// System.out.println(nam);
-			String gt = "";
-			if (rdoNam.isSelected() == true) {
-				gt = "0";
-			} else {
-				gt = "1";
-			}
-
-			if (Integer.valueOf(nam) < 2000) {
-				if (Integer.valueOf(gt) == 0) {
-					gt = "0";
-				} else {
-					gt = "1";
-				}
-			} else {
-				if (Integer.valueOf(gt) == 0) {
-					gt = "2";
-				} else {
-					gt = "3";
-				}
-			}
-			nam = nam.substring(2, 4);
-			int tinh = ThreadLocalRandom.current().nextInt(0, 63);
-			int tk;
-			int testnam = ThreadLocalRandom.current().nextInt(0, 2);
-			if (testnam == 0) {
-				tk = ThreadLocalRandom.current().nextInt(0, 2);
-			} else {
-				tk = ThreadLocalRandom.current().nextInt(2, 4);
-			}
-			int ranNum1 = ThreadLocalRandom.current().nextInt(0, 10);
-			int ranNum2 = ThreadLocalRandom.current().nextInt(0, 10);
-			int ranNum3 = ThreadLocalRandom.current().nextInt(0, 10);
-			int ranNum4 = ThreadLocalRandom.current().nextInt(0, 10);
-			int ranNum5 = ThreadLocalRandom.current().nextInt(0, 10);
-			int ranNum6 = ThreadLocalRandom.current().nextInt(0, 10);
-			String cccd = listTinh.get(tinh) + gt + nam + String.valueOf(ranNum1) + String.valueOf(ranNum2)
-					+ String.valueOf(ranNum3) + String.valueOf(ranNum4) + String.valueOf(ranNum5)
-					+ String.valueOf(ranNum6);
-			String sdt = "0" + dau + String.valueOf(sdt1) + String.valueOf(sdt2) + String.valueOf(sdt3)
-					+ String.valueOf(sdt4) + String.valueOf(sdt5) + String.valueOf(sdt6) + String.valueOf(sdt7)
-					+ String.valueOf(sdt8);
-			txtCCCD.setText(cccd);
-			txtSoDT.setText(sdt);
-		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -620,7 +519,12 @@ public class EditNhanVien extends javax.swing.JDialog {
 	}// GEN-LAST:event_btnHuyActionPerformed
 
 	private void rImageAvatar1MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_rImageAvatar1MousePressed
-		createInfor();
+		if (ROptionDialog.showConfirm(frame, "Xác nhận", "Bạn có muốn sử dụng dữ liệu mẫu", ROptionDialog.WARNING,
+				Color.yellow, Color.black)) {
+			txtCCCD.setText(
+					data.generateIdNational(XDate.toDate(txtNgaySinh.getText(), "dd-MM-yyyy"), rdoNam.isSelected()));
+			txtSoDT.setText(data.generateSDT());
+		}
 	}// GEN-LAST:event_rImageAvatar1MousePressed
 
 	/**

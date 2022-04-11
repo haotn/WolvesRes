@@ -1,10 +1,14 @@
 package com.wolvesres.helper;
 
+import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.swing.custom.raven.RDialog.ROptionDialog;
 import com.wolvesres.dao.GhiNhoDAO;
 import com.wolvesres.model.ModelGhiNho;
 import com.wolvesres.model.ModelNhanVien;
@@ -62,11 +66,24 @@ public class FormValidator {
 	/**
 	 * Check if text min length is valid
 	 * 
-	 * @param phoneNumber
+	 * @param text
 	 * @return is valid
 	 */
 	public static Boolean isValidTextMinLength(String text, int length) {
 		if (text.trim().length() < length) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Check if text max length is valid
+	 * 
+	 * @param text
+	 * @return is valid
+	 */
+	public static Boolean isValidTextMaxLength(String text, int length) {
+		if (text.trim().length() > length) {
 			return false;
 		}
 		return true;
@@ -105,8 +122,8 @@ public class FormValidator {
 	 * @param hoTen
 	 * @return is valid
 	 */
-	public static Boolean isValidFullname(String hoTen) {
-		if (!hoTen.contains(" ")) {
+	public static Boolean isTextContainsSpace(String text) {
+		if (!text.contains(" ")) {
 			return false;
 		}
 		return true;
@@ -523,4 +540,5 @@ public class FormValidator {
 		}
 		return true;
 	}
+
 }

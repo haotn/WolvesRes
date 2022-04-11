@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wolvesres.login.testclass.TestLoginFail">
+      <class name="com.wolvesres.haotn.taikhoan.TestValidPassword">
         <methods>
-          <include name="testLogin" invocation-numbers="3"/>
-          <include name="initDao"/>
+          <include name="beforeClass"/>
+          <include name="testPasswordFailSpace" invocation-numbers="14 23 29 41 44 54 69"/>
         </methods>
-      </class> <!-- com.wolvesres.login.testclass.TestLoginFail -->
+      </class> <!-- com.wolvesres.haotn.taikhoan.TestValidPassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

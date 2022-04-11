@@ -1,4 +1,4 @@
-package com.wolvesres.test.data;
+package com.wolvesres.helper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

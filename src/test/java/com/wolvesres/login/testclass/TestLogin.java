@@ -9,6 +9,11 @@ import com.wolvesres.model.ModelTaiKhoan;
 
 import junit.framework.Assert;
 
+/**
+ * Test login fail Test login success
+ * 
+ * @author Brian
+ */
 public class TestLogin {
 	private TaiKhoanDAO tkDao;
 

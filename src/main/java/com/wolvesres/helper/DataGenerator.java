@@ -1,4 +1,4 @@
-package com.wolvesres.test.data;
+package com.wolvesres.helper;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,14 +8,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class DataGenerator {
 	private Data data;
 	private SimpleDateFormat formater;
-	private Long userMinId;
-	private Long userMaxId;
-	private Long videoMinId;
-	private Long videoMaxId;
+	private static Long userMinId;
+	private static Long userMaxId;
+	private static Long videoMinId;
+	private static Long videoMaxId;
 	private Long commentMinId;
 	private Long commentMaxId;
 
@@ -224,12 +225,19 @@ public class DataGenerator {
 		return map;
 	}
 
-	public String generatePassword(int length, boolean alowSpace) {
+	public String generatePassword(int minLength, int maxLength, boolean alowSpace) {
 		String password = "";
+		int length = randomMinMax(minLength, maxLength);
+		int spaceIndex = -1;
 		if (alowSpace) {
-			data.setLowerCase(data.getLowerCase() + " ");
+			spaceIndex = randomMinMax(0, length - 1);
 		}
+
 		for (int i = 0; i < length; i++) {
+			if (i == spaceIndex && alowSpace) {
+				password += " ";
+				continue;
+			}
 			int random = (int) (4 * Math.random());
 			switch (random) {
 			case 0:
@@ -247,7 +255,7 @@ public class DataGenerator {
 				password += String.valueOf(data.getSymbol().charAt(randomMinMax(0, data.getSymbol().length() - 1)));
 			}
 		}
-		data.setLowerCase(data.getLowerCase().replace(" ", ""));
+		data.setLowerCase(data.getLowerCase().trim());
 		return password;
 	}
 
@@ -296,6 +304,131 @@ public class DataGenerator {
 			description += data.getLorem().get(randomMinMax(0, data.getLorem().size() - 1));
 		}
 		return description;
+	}
+
+	public List<String> listTinh() {
+		List<String> list = new ArrayList<String>();
+		String[] listIsNotValidStrings = new String[] { "013", "016", "018", "021", "023", "028", "029", "032", "039",
+				"041", "043", "047", "050", "053", "055", "057", "059", "061", "063", "065", "066", "069", "071", "073",
+				"078", "081", "085", "088", "090" };
+
+		for (int i = 1; i < 97; i++) {
+			String nubString = "";
+			if (i < 10) {
+				if (i != 3 && i != 5 && i != 7 && i != 9) {
+					nubString = "00" + i;
+					list.add(nubString);
+				}
+			} else if (i >= 10) {
+				boolean exist = false;
+				for (int j = 0; j < listIsNotValidStrings.length; j++) {
+					nubString = "0" + i;
+					if (nubString.equals(listIsNotValidStrings[j])) {
+						exist = true;
+					}
+				}
+				if (!exist) {
+					list.add(nubString);
+				}
+			}
+		}
+		return list;
+	}
+
+	/**
+	 * Generate data
+	 */
+	public String generateSDT() {
+
+		String dau = "";
+		int d = ThreadLocalRandom.current().nextInt(1, 5);
+		if (d == 1) {
+			dau = "3";
+		} else if (d == 2) {
+			dau = "7";
+		} else if (d == 3) {
+			dau = "8";
+		} else {
+			dau = "9";
+		}
+
+		int sdt1 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt2 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt3 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt4 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt5 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt6 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt7 = ThreadLocalRandom.current().nextInt(0, 10);
+		int sdt8 = ThreadLocalRandom.current().nextInt(0, 10);
+
+		String sdt = "0" + dau + String.valueOf(sdt1) + String.valueOf(sdt2) + String.valueOf(sdt3)
+				+ String.valueOf(sdt4) + String.valueOf(sdt5) + String.valueOf(sdt6) + String.valueOf(sdt7)
+				+ String.valueOf(sdt8);
+		return sdt;
+	}
+
+	public String generateIdNational(Date dateOfBirth, Boolean isMale) {
+		String date = XDate.toString(dateOfBirth, "dd-MM-yyyy");
+		String year = date.substring(date.lastIndexOf("-"));
+		// System.out.println(nam);
+		String gt = "";
+		if (isMale == true) {
+			gt = "0";
+		} else {
+			gt = "1";
+		}
+
+		if (Integer.valueOf(year) < 2000) {
+			if (Integer.valueOf(gt) == 0) {
+				gt = "0";
+			} else {
+				gt = "1";
+			}
+		} else {
+			if (Integer.valueOf(gt) == 0) {
+				gt = "2";
+			} else {
+				gt = "3";
+			}
+		}
+		year = year.substring(2, 4);
+		int tinh = ThreadLocalRandom.current().nextInt(0, 63);
+		int tk;
+		int testnam = ThreadLocalRandom.current().nextInt(0, 2);
+		if (testnam == 0) {
+			tk = ThreadLocalRandom.current().nextInt(0, 2);
+		} else {
+			tk = ThreadLocalRandom.current().nextInt(2, 4);
+		}
+		int ranNum1 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum2 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum3 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum4 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum5 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum6 = ThreadLocalRandom.current().nextInt(0, 10);
+		String cccd = listTinh().get(tinh) + gt + year + String.valueOf(ranNum1) + String.valueOf(ranNum2)
+				+ String.valueOf(ranNum3) + String.valueOf(ranNum4) + String.valueOf(ranNum5) + String.valueOf(ranNum6);
+		return cccd;
+	}
+
+	public String generateIdNationalNotValid(Date dateOfBirth, Boolean isMale) {
+		String idNational = generateIdNational(dateOfBirth, isMale);
+		int ranNumb = randomMinMax(1, 4);
+		for (int j = 0; j < ranNumb; j++) {
+			char symbol = data.getSymbol().charAt(randomMinMax(0, data.getSymbol().length() - 1));
+			char[] arr = idNational.toCharArray();
+			idNational = "";
+			arr[j] = symbol;
+			for (int k = 0; k < arr.length; k++) {
+				idNational += String.valueOf(arr[k]);
+			}
+		}
+		return idNational;
+	}
+
+	public static void main(String[] args) {
+		DataGenerator data = new DataGenerator();
+		System.out.println(data.generateIdNationalNotValid(new Date(), true));
 	}
 
 }
