@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -13,12 +8,17 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -31,15 +31,6 @@
 	<classpathentry kind="lib" path="libs/mssql-jdbc-8.2.2.jre8.jar"/>
 	<classpathentry kind="lib" path="libs/table-custom.jar"/>
 	<classpathentry kind="lib" path="libs/TimingFramework-0.55.jar"/>
-	<classpathentry kind="lib" path="libs/apachePDFBox/pdfbox-app-3.0.0-alpha2.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/commons-math3-3.6.1.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/jgoodies-common-1.2.0.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/jgoodies-looks-2.4.1.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/junit-4.6.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/poi-4.1.2.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/poi-ooxml-4.1.2.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/poi-ooxml-schemas-4.1.2.jar"/>
-	<classpathentry kind="lib" path="libs/apachepoi/xmlbeans-3.1.0.jar"/>
 	<classpathentry kind="lib" path="libs/lib/AbsoluteLayout.jar"/>
 	<classpathentry kind="lib" path="libs/lib/datechooser.jar"/>
 	<classpathentry kind="lib" path="libs/lib/filters-2.0.235.jar"/>
