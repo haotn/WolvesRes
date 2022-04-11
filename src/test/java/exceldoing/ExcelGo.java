@@ -14,6 +14,10 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.BuiltinFormats;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -27,7 +31,9 @@ public class ExcelGo {
 //			2> nên tạo file backup (dự phòng) để tránh mất dữ liệu
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = {{"name4", "data4"}, {"name6", "data6"}, {"namexx", "xxx"}, {"xzzz", "zzzz"}};
+
 		writeExcel("D:\\demo.xlsx", 0, 7, 0, "username,password", dataprovider);
+
 	}
 	
 	private static CellStyle cellStyleFormatNumber = null;
@@ -163,6 +169,7 @@ public class ExcelGo {
 		Cell cell = row.createCell(column);
 		cell.setCellValue(datatemp);
 	}// done
+
 
 	// Auto resize column width
 	private static void autosizeColumn(Sheet sheet, int lastColumn) {
