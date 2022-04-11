@@ -11,52 +11,55 @@ import javax.swing.ImageIcon;
 
 public class XImage {
 
-    public static Image getAppIcon() {
-        URL url = XImage.class.getResource("/com/wolvesres/icon/wolf.png");
-        return new ImageIcon(url).getImage();
-    }
+	public static Image getAppIcon() {
+		URL url = XImage.class.getResource("/com/wolvesres/icon/wolf.png");
+		return new ImageIcon(url).getImage();
+	}
 
-    private static void saveImage(String folderName, File src) {
-        File dst = new File(folderName, src.getName());
-        if (!dst.getParentFile().exists()) {
-            dst.getParentFile().mkdirs();
-        }
-        try {
-            Path from = Paths.get(src.getAbsolutePath());
-            Path to = Paths.get(dst.getAbsolutePath());
-            Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
+	private static void saveImage(String folderName, File src) {
+		File dst = new File(folderName, src.getName());
+		if (!dst.getParentFile().exists()) {
+			dst.getParentFile().mkdirs();
+		}
+		try {
+			Path from = Paths.get(src.getAbsolutePath());
+			Path to = Paths.get(dst.getAbsolutePath());
+			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
 
-    private static ImageIcon readImage(String folderName, String fileName) {
-        File path = new File(folderName, fileName);
-        return new ImageIcon(path.getAbsolutePath());
-    }
+	private static ImageIcon readImage(String folderName, String fileName) {
+		if (fileName == null) {
+			fileName = "";
+		}
+		File path = new File(folderName, fileName);
+		return new ImageIcon(path.getAbsolutePath());
+	}
 
-    public static void saveImageNhanVien(File src) {
-        saveImage("Pictures", src);
-    }
+	public static void saveImageNhanVien(File src) {
+		saveImage("Pictures", src);
+	}
 
-    public static ImageIcon readImageNhanVien(String fileName) {
-        return readImage("Pictures", fileName);
-    }
+	public static ImageIcon readImageNhanVien(String fileName) {
+		return readImage("Pictures", fileName);
+	}
 
-    public static void saveImageThucDon(File src) {
-        saveImage("ThucDon", src);
-    }
+	public static void saveImageThucDon(File src) {
+		saveImage("ThucDon", src);
+	}
 
-    public static ImageIcon readImageThucDon(String fileName) {
-        return readImage("ThucDon", fileName);
-    }
+	public static ImageIcon readImageThucDon(String fileName) {
+		return readImage("ThucDon", fileName);
+	}
 
-    public static void saveImageQR(File src) {
-        saveImage("QRCode", src);
-    }
+	public static void saveImageQR(File src) {
+		saveImage("QRCode", src);
+	}
 
-    public static ImageIcon readImageQRCode(String fileName) {
-        return readImage("QRCode", fileName);
-    }
+	public static ImageIcon readImageQRCode(String fileName) {
+		return readImage("QRCode", fileName);
+	}
 }

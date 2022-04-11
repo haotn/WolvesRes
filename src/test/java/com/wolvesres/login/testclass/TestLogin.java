@@ -9,7 +9,7 @@ import com.wolvesres.model.ModelTaiKhoan;
 
 import junit.framework.Assert;
 
-public class TestLoginFail {
+public class TestLogin {
 	private TaiKhoanDAO tkDao;
 
 	@BeforeClass(groups = { "loginSuccess", "loginFail" })

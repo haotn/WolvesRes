@@ -38,7 +38,9 @@ public class FormValidator {
 	 * @return is phone number not empty
 	 */
 	public static Boolean isTextIsNotEmpty(String text) {
-		if (text.trim().length() == 0) {
+		if (text == null) {
+			return false;
+		} else if (text.trim().isEmpty()) {
 			return false;
 		}
 		return true;
