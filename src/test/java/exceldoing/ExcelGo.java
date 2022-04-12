@@ -114,8 +114,8 @@ public class ExcelGo {
 		}
 
 		// Auto resize column witdth
-		int numberOfColumn = sheet.getRow(0).getPhysicalNumberOfCells();
-		autosizeColumn(sheet, numberOfColumn);
+//		int numberOfColumn = sheet.getRow(0).getPhysicalNumberOfCells();
+//		autosizeColumn(sheet, numberOfColumn);
 
 		// Create file excel
 		createOutputFile(workbook, path);

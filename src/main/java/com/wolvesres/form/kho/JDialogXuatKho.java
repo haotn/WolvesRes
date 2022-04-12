@@ -140,7 +140,7 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 	}
 
 //thêm sản phẩm từ kho vào list nhập kho
-	private void addToListNhapKho(ModelNhapKho entity) {
+	public void addToListNhapKho(ModelNhapKho entity) {
 		listNhapKho.add(entity);
 		fillToTableXuat();
 	}
@@ -313,6 +313,14 @@ public class JDialogXuatKho extends javax.swing.JDialog {
 			entity = (ModelKho) o;
 		}
 		return entity;
+	}
+
+	public com.swing.custom.raven.RTextField.RTextField getTxtGia() {
+		return txtGia;
+	}
+
+	public void setTxtGia(com.swing.custom.raven.RTextField.RTextField txtGia) {
+		this.txtGia = txtGia;
 	}
 
 	@SuppressWarnings("unchecked")
