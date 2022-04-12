@@ -1,16 +1,13 @@
 package com.wolvesres.haotn.taikhoan;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
-
-import junit.framework.Assert;
 
 /**
  * Test valid password length - Password length must be less than 17 letter

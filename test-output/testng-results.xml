@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="100" passed="100" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-11T17:18:20 ICT" name="Default suite" finished-at="2022-04-11T17:18:20 ICT" duration-ms="318">
+  <suite started-at="2022-04-12T23:34:08 ICT" name="Default suite" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1218">
     <groups>
     </groups>
-    <test started-at="2022-04-11T17:18:20 ICT" name="Default test" finished-at="2022-04-11T17:18:20 ICT" duration-ms="318">
+    <test started-at="2022-04-12T23:34:08 ICT" name="Default test" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1218">
       <class name="com.wolvesres.haotn.nhanvien.TestValidFullname">
-        <test-method is-config="true" signature="beforClass()[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="beforClass" finished-at="2022-04-11T17:18:20 ICT" duration-ms="42" status="PASS">
+        <test-method is-config="true" signature="beforClass()[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:08 ICT" name="beforClass" finished-at="2022-04-12T23:34:08 ICT" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforClass -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="15" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="14" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Đào Huỳnh Thảo Trinh]]>
+                <![CDATA[nguyễn huyền ngân]]>
               </value>
             </param>
             <param index="1">
@@ -27,11 +27,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phạm Văn Tuấn]]>
+                <![CDATA[TRẦN KIÊN]]>
               </value>
             </param>
             <param index="1">
@@ -43,11 +43,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Thị Chi]]>
+                <![CDATA[Lê Thanh Hậu]]>
               </value>
             </param>
             <param index="1">
@@ -59,11 +59,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Thanh Mạnh]]>
+                <![CDATA[trần chi]]>
               </value>
             </param>
             <param index="1">
@@ -75,11 +75,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="12" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Lê Thanh Hậu]]>
+                <![CDATA[LÊ THANH TUẤN]]>
               </value>
             </param>
             <param index="1">
@@ -91,11 +91,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phạm Huỳnh Liễu]]>
+                <![CDATA[lê thanh huy]]>
               </value>
             </param>
             <param index="1">
@@ -107,11 +107,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Huyền Thanh]]>
+                <![CDATA[TRẦN THANH]]>
               </value>
             </param>
             <param index="1">
@@ -123,11 +123,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Thanh Kiên]]>
+                <![CDATA[NGUYỄN CHI]]>
               </value>
             </param>
             <param index="1">
@@ -139,11 +139,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Tuấn Kiên]]>
+                <![CDATA[Phạm Trân]]>
               </value>
             </param>
             <param index="1">
@@ -155,11 +155,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Thanh Hậu]]>
+                <![CDATA[Huỳnh Văn Nhân]]>
               </value>
             </param>
             <param index="1">
@@ -171,11 +171,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Huỳnh Văn Trung]]>
+                <![CDATA[trần huyền quỳnh]]>
               </value>
             </param>
             <param index="1">
@@ -187,11 +187,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="6" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huyền Trâm]]>
+                <![CDATA[lê huỳnh hạnh]]>
               </value>
             </param>
             <param index="1">
@@ -203,11 +203,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Đào Huỳnh Thảo Trâm]]>
+                <![CDATA[trần đạt]]>
               </value>
             </param>
             <param index="1">
@@ -219,11 +219,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Văn Quang]]>
+                <![CDATA[Huỳnh Đào]]>
               </value>
             </param>
             <param index="1">
@@ -235,11 +235,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Thanh Mạnh]]>
+                <![CDATA[LÊ HUỲNH QUỲNH]]>
               </value>
             </param>
             <param index="1">
@@ -251,11 +251,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Huỳnh Văn Trung]]>
+                <![CDATA[LÊ VIỆT HUY]]>
               </value>
             </param>
             <param index="1">
@@ -267,11 +267,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Huỳnh Thảo]]>
+                <![CDATA[Phan Anh]]>
               </value>
             </param>
             <param index="1">
@@ -283,11 +283,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huỳnh Kiên]]>
+                <![CDATA[NGUYỄN HOA]]>
               </value>
             </param>
             <param index="1">
@@ -299,567 +299,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phạm Văn Hoàng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phan Huỳnh Liễu]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Thanh Hoàng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Việt Đức]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Văn Anh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Việt Đạt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Bảo Đạt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Huỳnh Lan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Thị Cúc]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phan Thị Huỳnh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Tiến Kiên]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Thị Trâm]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Lê Huỳnh Thúy]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Huỳnh Tuấn]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Lê Huỳnh Anh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Lê Huỳnh Trân]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Thanh Trung]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Huyền Hạnh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Thanh Kiệt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="11" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Huỳnh Liễu]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Bảo Dũng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Việt Kiên]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phan Huỳnh Trâm]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phan Huyền Trúc]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Nguyễn Huỳnh Đào]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Huỳnh Tiến]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phạm Huyền Loan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Huỳnh Ngân]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Tuấn Hoàng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Tiến Hoàng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Huỳnh Anh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Văn Nam]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Việt Dũng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Lê Huỳnh An]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Lê Văn Anh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -875,11 +315,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Văn Minh]]>
+                <![CDATA[Nguyễn Thị Cúc]]>
               </value>
             </param>
             <param index="1">
@@ -891,11 +331,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Tiến Kiên]]>
+                <![CDATA[Lê Thanh Đức]]>
               </value>
             </param>
             <param index="1">
@@ -907,11 +347,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phạm Huyền Loan]]>
+                <![CDATA[trần huỳnh]]>
               </value>
             </param>
             <param index="1">
@@ -923,11 +363,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huỳnh Thanh]]>
+                <![CDATA[trần anh]]>
               </value>
             </param>
             <param index="1">
@@ -939,11 +379,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Huỳnh Ngân]]>
+                <![CDATA[Trần Thị Thảo]]>
               </value>
             </param>
             <param index="1">
@@ -955,11 +395,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Văn Hoàng]]>
+                <![CDATA[TRẦN TUẤN QUANG]]>
               </value>
             </param>
             <param index="1">
@@ -971,11 +411,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Thị Loan]]>
+                <![CDATA[trần chi]]>
               </value>
             </param>
             <param index="1">
@@ -987,11 +427,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Đào Huỳnh Thảo Lan]]>
+                <![CDATA[Lê Huyền Huỳnh]]>
               </value>
             </param>
             <param index="1">
@@ -1003,11 +443,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Huyền Anh]]>
+                <![CDATA[Trần Hạnh]]>
               </value>
             </param>
             <param index="1">
@@ -1019,11 +459,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Thị Đào]]>
+                <![CDATA[Đào Lan]]>
               </value>
             </param>
             <param index="1">
@@ -1035,11 +475,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Huyền Thảo]]>
+                <![CDATA[Nguyễn Huyền An]]>
               </value>
             </param>
             <param index="1">
@@ -1051,11 +491,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Huyền Loan]]>
+                <![CDATA[TRẦN HẬU]]>
               </value>
             </param>
             <param index="1">
@@ -1067,11 +507,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Lê Thanh Kiên]]>
+                <![CDATA[lê tuấn trường]]>
               </value>
             </param>
             <param index="1">
@@ -1083,11 +523,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huỳnh Thanh]]>
+                <![CDATA[Lê Văn Mạnh]]>
               </value>
             </param>
             <param index="1">
@@ -1099,11 +539,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huỳnh Trung]]>
+                <![CDATA[phạm thị thanh]]>
               </value>
             </param>
             <param index="1">
@@ -1115,11 +555,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Tuấn Tuấn]]>
+                <![CDATA[phạm loan]]>
               </value>
             </param>
             <param index="1">
@@ -1131,119 +571,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Huỳnh Thị Quỳnh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Nguyễn Thanh Hùng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Tuấn Nam]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Huỳnh Huỳnh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Tuấn Anh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Nguyễn Huỳnh Thúy]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Thị Thanh]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1259,11 +587,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Thanh Dũng]]>
+                <![CDATA[lê quang]]>
               </value>
             </param>
             <param index="1">
@@ -1275,11 +603,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Nguyễn Huỳnh Hạnh]]>
+                <![CDATA[NGUYỄN ĐẠT]]>
               </value>
             </param>
             <param index="1">
@@ -1291,11 +619,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Văn Huy]]>
+                <![CDATA[Huỳnh Kiệt]]>
               </value>
             </param>
             <param index="1">
@@ -1307,11 +635,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Đào Huỳnh Thảo Thúy]]>
+                <![CDATA[Trần Tiến Kiên]]>
               </value>
             </param>
             <param index="1">
@@ -1323,11 +651,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Huỳnh Hạnh]]>
+                <![CDATA[trần lê huỳnh thúy]]>
               </value>
             </param>
             <param index="1">
@@ -1339,11 +667,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phạm Văn Trung]]>
+                <![CDATA[đào liễu]]>
               </value>
             </param>
             <param index="1">
@@ -1355,11 +683,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Nguyễn Huỳnh Huỳnh]]>
+                <![CDATA[TRẦN TRÚC]]>
               </value>
             </param>
             <param index="1">
@@ -1371,11 +699,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Thanh Quang]]>
+                <![CDATA[Trần Việt Trường]]>
               </value>
             </param>
             <param index="1">
@@ -1387,11 +715,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lê Văn Đức]]>
+                <![CDATA[Trần Nguyễn Huỳnh Cúc]]>
               </value>
             </param>
             <param index="1">
@@ -1403,11 +731,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Huỳnh Đào]]>
+                <![CDATA[Nguyễn Lê Huỳnh Loan]]>
               </value>
             </param>
             <param index="1">
@@ -1419,11 +747,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Huỳnh Thị Chi]]>
+                <![CDATA[HUỲNH THỊ LOAN]]>
               </value>
             </param>
             <param index="1">
@@ -1435,11 +763,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Huỳnh Trân]]>
+                <![CDATA[Nguyễn Thị Anh]]>
               </value>
             </param>
             <param index="1">
@@ -1451,11 +779,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Huỳnh Thị Anh]]>
+                <![CDATA[NGUYỄN TRƯỜNG]]>
               </value>
             </param>
             <param index="1">
@@ -1467,11 +795,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Thanh Tiến]]>
+                <![CDATA[trần tiến]]>
               </value>
             </param>
             <param index="1">
@@ -1483,11 +811,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Huỳnh Văn Trung]]>
+                <![CDATA[Nguyễn Tuấn]]>
               </value>
             </param>
             <param index="1">
@@ -1499,7 +827,727 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Văn Huy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Anh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nguyễn Trân]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Văn Kiệt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:09 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:09 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lê huyền liễu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phan Anh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Huỳnh Ngân]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PHAN THANH HUY]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TRẦN TIẾN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[trần minh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Dũng]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Việt Anh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LÊ VĂN TIẾN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[phạm thị anh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nguyễn thị thảo]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phạm Huỳnh Trinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phạm Hoa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PHẠM VĂN ĐẠT]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lê văn nhân]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Kiệt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[trần huy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ĐÀO HUỲNH]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TRẦN LOAN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phan Thanh Kiên]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Trung]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Việt Đạt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nguyễn Lê Huỳnh Ngân]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LÊ LAN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TRẦN NHÂN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Huỳnh Chi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nguyễn Lê Huỳnh Trân]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Huỳnh Quỳnh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lê Tuấn Đức]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Đào Thúy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[trần văn hậu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LÊ THANH KIỆT]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phan Văn Kiên]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phạm Thị Thảo]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[trần đức]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LÊ TRƯỜNG]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Phan Huyền Hoa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[huỳnh thị loan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nguyễn Anh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Huỳnh Lan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Trần Huy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidFullnameSuccess -->
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1515,11 +1563,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Trần Văn Trường]]>
+                <![CDATA[nguyễn trường]]>
               </value>
             </param>
             <param index="1">
@@ -1531,11 +1579,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Nguyễn Thanh Hậu]]>
+                <![CDATA[LÊ HUYỀN LAN]]>
               </value>
             </param>
             <param index="1">
@@ -1547,59 +1595,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Phan Huyền Đào]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Thanh Hoàng]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Phan Thị Cúc]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-        <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@7a69b07]" started-at="2022-04-11T17:18:20 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-11T17:18:20 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trần Huỳnh Trân]]>
+                <![CDATA[Nguyễn Trúc]]>
               </value>
             </param>
             <param index="1">

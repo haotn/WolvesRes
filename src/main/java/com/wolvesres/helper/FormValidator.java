@@ -2,6 +2,7 @@ package com.wolvesres.helper;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -97,12 +98,10 @@ public class FormValidator {
 	 */
 	public static Boolean isValidAge(Date birthDay) {
 		Date now = new Date();
-		System.out.println(XDate.toString(XDate.addDays(birthDay, 6570), "dd/MM/yyyy") + " is before "
-				+ XDate.toString(now, "dd/MM/yyyy"));
 		if (XDate.addDays(birthDay, 6570).before(now)) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -268,7 +267,7 @@ public class FormValidator {
 			Long.parseLong(text);
 			return true;
 		} catch (Exception e) {
-			return true;
+			return false;
 		}
 	}
 
@@ -469,10 +468,10 @@ public class FormValidator {
 	 * @return is after
 	 */
 	public static Boolean isDateAfter(Date date, Date compareTo) {
-		if (date.before(compareTo)) {
-			return false;
+		if (date.after(compareTo)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -483,10 +482,10 @@ public class FormValidator {
 	 * @return is before
 	 */
 	public static Boolean isDateBefore(Date date, Date compareTo) {
-		if (date.after(compareTo)) {
-			return false;
+		if (date.before(compareTo)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -530,6 +529,14 @@ public class FormValidator {
 		return true;
 	}
 
+	/**
+	 * Check if maVoucher is not duplicate
+	 * 
+	 * @param mavoucher
+	 * @param list
+	 * @param isInsert
+	 * @return is not duplicate
+	 */
 	public static Boolean isVoucherNotDuplicate(String mavoucher, List<ModelVouCher> list, Boolean isInsert) {
 		for (ModelVouCher item : list) {
 			if (item.getMaVoucher().equals(mavoucher) && isInsert) {
@@ -541,4 +548,185 @@ public class FormValidator {
 		return true;
 	}
 
+	public static Boolean isValidFormNhanVien(Boolean isInsert, ModelNhanVien emp, List<ModelNhanVien> list) {
+		// Get form data
+		Date today = new Date();
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(today);
+		int yearOfBirth = Integer.parseInt(emp.getNgaySinh().substring(emp.getNgaySinh().lastIndexOf("/") + 1));
+		// Set value for pathAvatar
+		if (!isTextIsNotEmpty(emp.getHoTen()) || !isTextIsNotEmpty(emp.getSoDT()) || !isTextIsNotEmpty(emp.getEmail())
+				|| !isTextIsNotEmpty(emp.getCMND())) {
+			// Check if any information is empty
+			System.out.println("Thông tin không được bỏ trống!");
+			return false;
+		} else if (!isTextContainsSpace(emp.getHoTen())) {
+			// Check if fullname is invalid
+			System.out.println("Họ tên phải có từ hai từ trở lên!");
+			return false;
+		} else if (!isValidTextLength(emp.getCMND(), 12) && !isValidTextLength(emp.getCMND(), 9)) {
+			// Check if idNational's length is invalid
+			System.out.println("Độ dài CCCD/CMND không hợp lệ!");
+			return false;
+		} else if (!isNumber(emp.getCMND())) {
+			// Check if idNational is not number
+			System.out.println("CMND/CCCD phải là số!");
+			return false;
+		}
+		if (emp.getCMND().length() == 12) {
+			// Is Id National
+			if (!isValidGenderCode(emp.getCMND(), emp.isGioiTinh(), yearOfBirth)) {
+				// Check if gender code is invalid
+				System.out.println("CCCD Không hợp lệ (sai mã giới tính)!");
+				return false;
+			} else if (!isValidYearOfBirthCode(emp.getCMND(), yearOfBirth)) {
+				// Check if year of birth code in id national is invalid
+				System.out.println("CCCD không hợp lệ (sai mã năm sinh)!");
+				return false;
+			} else if (!isValidIdNational(emp.getCMND())) {
+				// Check if id national is invalid
+				System.out.println("CCCD sai định dạng!");
+				return false;
+			}
+		} else {
+			// Is CMND
+			if (!isValidIdCMND(emp.getCMND())) {
+				// Check if CMND is invalid
+				System.out.println("CMND sai định dạng!");
+				return false;
+			}
+		}
+		if (!isValidEmail(emp.getEmail())) {
+			// Check if email format is invalid
+			System.out.println("Email không đúng định dạng!");
+			return false;
+		} else if (!isValidTextLength(emp.getSoDT(), 10)) {
+			// Check if phone number length is invalid
+			System.out.println("Số điện thoại phải có 10 số!");
+			return false;
+		} else if (!isValidPhoneNumber(emp.getSoDT())) {
+			// Check if phone number format is invalid
+			System.out.println("Số điện thoại sai định dạng!");
+			return false;
+		} else if (emp.getPathHinhAnh() == null) {
+			// Check if avatar is null
+			System.out.println("Hình ảnh chưa được chọn!");
+			return false;
+		} else if (!isValidAge(XDate.toDate(emp.getNgaySinh(), "dd-MM-yyyy"))) {
+			// Check if birth day is invalid
+			System.out.println("Tuổi nhân viên phải từ 18!");
+			return false;
+		}
+		if (emp.getCMND().length() == 12) {
+			// Is Id National
+			if (!isIdNationalNotDuplicate(emp.getCMND(), list, isInsert, emp.getMaNV())) {
+				// Check if id national duplicate
+				System.out.println("CCCD đã được sử dụng bởi người khác!");
+				return false;
+			}
+		} else {
+			// Is CMND
+			if (!isCMNDNotDuplicate(emp.getCMND(), list, isInsert, emp.getMaNV())) {
+				// Check if cmnd duplicate
+				System.out.println("CMND đã được sử dụng bởi người khác!");
+				return false;
+			}
+		}
+		if (!isPhoneNumberNotDuplicate(emp.getSoDT(), list, isInsert, emp.getMaNV())) {
+			// Check if phone number is duplicate
+			System.out.println("Số điện thoại đã được sử dụng bởi người khác!");
+			return false;
+		}
+		if (!isEmailNotDuplicate(emp.getEmail(), list, isInsert, emp.getMaNV())) {
+			// Check if email is duplicate
+			System.out.println("Email đã được sử dụng bởi người khác!");
+			return false;
+		}
+		return true;
+	}
+
+	public static Boolean validFormSanPham(String masp, String tenSP, String giaSP, String path) {
+		if (!isTextIsNotEmpty(masp) || !isTextIsNotEmpty(tenSP) || !isTextIsNotEmpty(giaSP)) {
+			System.out.println("Thông tin chưa được nhập đầy đủ!");
+			return false;
+		} else if (Long.parseLong(giaSP.trim()) < 1) {
+			System.out.println("Giá sản phẩm phải lớn hơn 0!");
+			return false;
+		} else if (isTextIsNotEmpty(path)) {
+			System.out.println("Ảnh sản phẩm chưa được chọn!");
+			return false;
+		}
+		return true;
+	}
+
+	public boolean validFormVoucher(String maVoucher, String soLuong, String ngayKetThuc, String ngayBatDau,
+			String giamGia, Boolean isInsert, ModelVouCher oldVoucer, List<ModelVouCher> list) {
+		if (!FormValidator.isTextIsNotEmpty(maVoucher) || !FormValidator.isTextIsNotEmpty(soLuong)
+				|| !FormValidator.isTextIsNotEmpty(giamGia)) {
+			System.out.println("Thông tin không được bỏ trống!");
+			return false;
+		} else if (!FormValidator.isValidTextMinLength(maVoucher, 5)) {
+			System.out.println("Mã voucher phải có ít nhất 5 ký tự!");
+			return false;
+		}
+		if (!FormValidator.isNumber(soLuong)) {
+			System.out.println("Số lượng chỉ chấp nhận số nguyên!");
+			return false;
+		}
+		if (!FormValidator.isGreaterThan(Integer.parseInt(soLuong), 0)) {
+			System.out.println("Số lượng phải lớn hơn 0!");
+			return false;
+		}
+		try {
+			Float.parseFloat(giamGia);
+		} catch (Exception e) {
+			System.out.println("Phần trăm giảm giá chỉ chấp nhận giá trị số!");
+			return false;
+		}
+		if (!FormValidator.isLessThan(Float.parseFloat(giamGia), 101)
+				|| !FormValidator.isGreaterThan(Float.parseFloat(giamGia), 0)) {
+			System.out.println("Phần trăm giảm giá chỉ chấp nhận giá trị số từ lớn hơn 0 đến dưới 100!");
+			return false;
+		}
+		Date now = new Date();
+		if (!FormValidator.isBeginDateValid(XDate.toDate(ngayBatDau, "dd-MM-yyyy")) && isInsert) {
+			System.out.println("Ngày bắt đầu phải bắt đầu từ ngày hiện tại hoặc sau ngày hiện tại!");
+			return false;
+		} else if (!FormValidator.isEndDayValid(XDate.toDate(ngayBatDau, "dd-MM-yyyy"),
+				XDate.toDate(ngayKetThuc, "dd-MM-yyyy"))) {
+			System.out.println("Ngày kết thúc phải sau ngày bắt đầu!");
+			return false;
+		}
+		if (!isInsert) {
+			if (!FormValidator.isDateBefore(XDate.toDate(oldVoucer.getNgayBatDau(), "dd-MM-yyyy"), now)) {
+				if (!!FormValidator.isDateEquals(XDate.toDate(ngayBatDau, "yyyy-MM-dd"),
+						XDate.toDate(oldVoucer.getNgayBatDau(), "yyyy-MM-dd"))) {
+					System.out.println("Ngày bắt đầu không thể thay đổi!");
+					return false;
+				}
+			}
+		}
+		if (!FormValidator.isVoucherNotDuplicate(maVoucher, list, isInsert)) {
+			System.out.println("Mã voucher đã tồn tại!");
+			return false;
+		}
+		return true;
+	}
+
+	public boolean validFormTaiKhoan(String tenTK, String matkhau, String nhapLaiMatKhau) {
+		if (!isTextIsNotEmpty(tenTK) || !isTextIsNotEmpty(matkhau) || !FormValidator.isTextIsNotEmpty(nhapLaiMatKhau)) {
+			System.out.println("Thông tin không được bỏ trống!");
+			return false;
+		} else {
+			if (!nhapLaiMatKhau.equalsIgnoreCase(matkhau)) {
+				System.out.println("Nhập lại mật khẩu không khớp!");
+				return false;
+			}
+			if (isValidTextMinLength(matkhau, 6)) {
+				System.out.println("Mật khẩu phải có từ 6 đến 16 ký tự!");
+				return false;
+			}
+		}
+		return true;
+	}
 }
