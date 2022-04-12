@@ -30,7 +30,7 @@ public class ExcelGo {
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
 				{ "xzzz", "zzzz" } };
-		writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "username,password", dataprovider);
+		writeExcel("D:\\demo.xlsx", 0, 1, 0, "username,password", dataprovider);
 	}
 
 	private static CellStyle cellStyleFormatNumber = null;
@@ -114,6 +114,11 @@ public class ExcelGo {
 			writeBook(row, namedata, data[i], column);
 			rowstart++;
 		}
+
+		// Auto resize column witdth
+//		int numberOfColumn = sheet.getRow(0).getPhysicalNumberOfCells();
+//		autosizeColumn(sheet, numberOfColumn);
+
 		// Create file excel
 		createOutputFile(workbook, path);
 		System.out.println("Done!!!");

@@ -4,6 +4,7 @@
   <test thread-count="5" name="Default test(failed)">
     <classes>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.nhanvien.TestValidFullname">
         <methods>
           <include name="beforClass"/>
@@ -17,6 +18,14 @@
         </methods>
       </class> <!-- com.wolvesres.ducvh.kho.StockQuanExportTestSuccess -->
 >>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
+=======
+      <class name="com.wolvesres.quanghn.nhanvien.TestValidHoTen">
+        <methods>
+          <include name="testValidFullNameNhapSoFail" invocation-numbers="0"/>
+          <include name="beforClass"/>
+        </methods>
+      </class> <!-- com.wolvesres.quanghn.nhanvien.TestValidHoTen -->
+>>>>>>> tempmoi
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
