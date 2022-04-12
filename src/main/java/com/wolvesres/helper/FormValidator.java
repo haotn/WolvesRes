@@ -268,7 +268,7 @@ public class FormValidator {
 			Long.parseLong(text);
 			return true;
 		} catch (Exception e) {
-			return true;
+			return false;
 		}
 	}
 
