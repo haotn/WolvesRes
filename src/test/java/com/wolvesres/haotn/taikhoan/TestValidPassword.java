@@ -1,7 +1,5 @@
 package com.wolvesres.haotn.taikhoan;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
