@@ -14,6 +14,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.BuiltinFormats;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -28,7 +30,7 @@ public class ExcelGo {
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
 				{ "xzzz", "zzzz" } };
-		writeExcel("D:\\demo.xlsx", 0, 7, 0, "username,password", dataprovider);
+		writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "username,password", dataprovider);
 	}
 
 	private static CellStyle cellStyleFormatNumber = null;
@@ -113,10 +115,6 @@ public class ExcelGo {
 			rowstart++;
 		}
 
-//		// Auto resize column witdth
-//		int numberOfColumn = sheet.getRow(0).getPhysicalNumberOfCells();
-//		autosizeColumn(sheet, numberOfColumn);
-
 		// Create file excel
 		createOutputFile(workbook, path);
 		System.out.println("Done!!!");
@@ -127,7 +125,7 @@ public class ExcelGo {
 		Workbook workbook = null;
 		// Get file
 		InputStream inputStream = new FileInputStream(new File(path));
-
+		//
 		if (path.endsWith("xlsx")) {
 			workbook = new XSSFWorkbook(inputStream);
 		} else if (path.endsWith("xls")) {
@@ -138,20 +136,23 @@ public class ExcelGo {
 		return workbook;
 	}// done
 
+	// Create workbook
+	private static Workbook getNewWorkbook(String path) throws IOException {
+		Workbook workbook = null;
+		//
+		if (path.endsWith("xlsx")) {
+			workbook = new XSSFWorkbook();
+		} else if (path.endsWith("xls")) {
+			workbook = new HSSFWorkbook();
+		} else {
+			throw new IllegalArgumentException("The specified file is not Excel file");
+		}
+		return workbook;
+	}// done
+
 	// Write data
 	private static void writeBook(Row row, String namedata, Object[] datarow, int column) {
-		if (cellStyleFormatNumber == null) {
-			// Format number
-			short format = (short) BuiltinFormats.getBuiltinFormat("#,##0");
-			// DataFormat df = workbook.createDataFormat();
-			// short format = df.getFormat("#,##0");
-
-			// Create CellStyle
-			Workbook workbook = row.getSheet().getWorkbook();
-			cellStyleFormatNumber = workbook.createCellStyle();
-			cellStyleFormatNumber.setDataFormat(format);
-		}
-
+		//
 		String[] nametemp = namedata.split(",");
 		String datatemp = "";
 		//
@@ -178,5 +179,127 @@ public class ExcelGo {
 			workbook.write(os);
 		}
 	}
+
+	//
+	public static void writeExcelv2(String path, int sheetnum, int rowstart, int column, String namedata,
+			Object[][] data) throws IOException {
+		// đọc workbook(excel) nào
+		Workbook workbook = getWorkbook(path);
+		// lấy sheet mấy
+		Sheet sheet = workbook.getSheetAt(sheetnum);
+		// tạo workbook tạm
+		Workbook workbooktemp = getWorkbook(path);
+		// tạo sheet tạm
+		Sheet sheettemp = workbooktemp.getSheetAt(sheetnum);
+		// xử lý dữ liệu
+		String[] nametemp = namedata.split(",");
+		int rowIndex = rowstart;
+		// lấy all rows có dữ liệu
+		Iterator<Row> iteratorRow = sheet.iterator();
+		Iterator<Row> iteratorRowtemp = sheettemp.iterator();
+		while (iteratorRow.hasNext()) {
+			// lấy row
+			Row nextRow = iteratorRow.next();
+			// continue nếu chưa tới, dữ liệu phía trên dòng bắt đầu được giữ nguyên
+			if (nextRow.getRowNum() < rowstart) {
+				continue;
+			} else if (nextRow.getRowNum() == rowstart) {
+				// lấy all cells
+				Iterator<Cell> iteratorCell = nextRow.cellIterator();
+				List<String> list = new ArrayList<String>();
+				// chạy hết dữ liệu
+				for (int i = 0; i < data.length; i++) {
+					System.out.println(i + 1);
+					// tạo row theo rowstart
+					Row row = sheettemp.createRow(rowIndex);
+					// xử lý namedata
+					String datatemp = "";
+					//
+					for (int k = 0; k < nametemp.length; k++) {
+						datatemp = datatemp + nametemp[k] + "= " + data[i][k] + ";";
+					}
+					datatemp = datatemp.substring(0, datatemp.length() - 1);
+					while (iteratorCell.hasNext()) {
+						// xét từng cell
+						Cell cell = iteratorCell.next();
+						Object cellValue = getCellValue(cell);
+						if (cellValue == null) {
+							list.add("");
+						} else {
+							list.add(String.valueOf(cellValue));
+						}
+					}
+					//
+					for (int z = 0; z < list.size(); z++) {//
+						if (list.get(z) == null) {
+							continue;
+						}
+						//
+						if (z != column) {
+							Cell celltemp = row.createCell(z);
+							celltemp.setCellValue(String.valueOf(list.get(z)));
+						} else if (z == column) {
+							Cell celltemp = row.createCell(z);
+							celltemp.setCellValue(String.valueOf(datatemp));
+						}
+					}
+					rowIndex++;
+				}
+			} else {
+				// lấy all cells
+				Iterator<Cell> iteratorCell = nextRow.cellIterator();
+				Row row = sheettemp.createRow(rowIndex);
+				while (iteratorCell.hasNext()) {
+					// xét từng cell
+					Cell cell = iteratorCell.next();
+					Object cellValue = getCellValue(cell);
+					if (cellValue == null || cellValue.toString().isEmpty()) {
+						continue;
+					}
+					// Set value for book object
+					int columnIndex = cell.getColumnIndex();
+					//
+					Cell celltemp = row.createCell(columnIndex);
+					celltemp.setCellValue(String.valueOf(cellValue));
+				}
+				rowIndex++;
+			}
+		}
+		// Create file excel
+		createOutputFile(workbooktemp, path);
+		System.out.println("Done!!!");
+	}
+
+	// Get cell value
+	private static Object getCellValue(Cell cell) {
+		CellType cellType = cell.getCellTypeEnum();
+		Object cellValue = null;
+		switch (cellType) {
+		case BOOLEAN:
+			cellValue = cell.getBooleanCellValue();
+			break;
+		case FORMULA:
+			Workbook workbook = cell.getSheet().getWorkbook();
+			FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+			cellValue = evaluator.evaluate(cell).getNumberValue();
+			break;
+		case NUMERIC:
+			cellValue = cell.getNumericCellValue();
+			break;
+		case STRING:
+			cellValue = cell.getStringCellValue();
+			break;
+		case _NONE:
+		case BLANK:
+		case ERROR:
+			break;
+		default:
+			break;
+		}
+
+		return cellValue;
+	}
+
+	//
 
 }

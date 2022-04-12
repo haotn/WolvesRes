@@ -1,8 +1,9 @@
-package com.wolvesres.haotn.thucdon;
+package com.wolvesres.haotn.sanpham;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,8 +12,12 @@ import com.wolvesres.dao.AutoDAO;
 import com.wolvesres.dao.SanPhamDAO;
 import com.wolvesres.model.ModelSanPham;
 
-import junit.framework.Assert;
-
+/**
+ * Test auto generate idProduct
+ * 
+ * @author Brian
+ *
+ */
 public class TestAutoGenerateIdProduct {
 	private SanPhamDAO spDao;
 	private AutoDAO autoDao;
@@ -30,11 +35,17 @@ public class TestAutoGenerateIdProduct {
 		listProduct.addAll(spDao.selectAll());
 	}
 
+	/**
+	 * Before test Generate value for this.idProduct
+	 */
 	@BeforeMethod
 	public void beforeTest() {
 		this.idProduct = autoDao.AuToSanPham();
 	}
 
+	/**
+	 * TestCase testAutoGenerateIdProduct
+	 */
 	@Test
 	public void testAutoGenerateIdProduct() {
 		Boolean exist = false;
