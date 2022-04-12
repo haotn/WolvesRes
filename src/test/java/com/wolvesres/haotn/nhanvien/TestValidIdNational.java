@@ -3,14 +3,13 @@ package com.wolvesres.haotn.nhanvien;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
-
-import junit.framework.Assert;
 
 /**
  * Test valid idNational fail

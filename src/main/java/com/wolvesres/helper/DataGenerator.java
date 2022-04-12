@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.wolvesres.model.ModelNhanVien;
+
 public class DataGenerator {
 	private Data data;
 	private SimpleDateFormat formater;
@@ -35,6 +37,30 @@ public class DataGenerator {
 		Random random = new Random();
 		Long numb = random.nextLong(max + 1 - min) + min;
 		return numb;
+	}
+
+	public double randomMinMax(double min, double max) {
+		Random random = new Random();
+		double numb = random.nextDouble(max + 1 - min) + min;
+		return numb;
+	}
+
+	public String generateTextAndNumber(double min, double max) {
+		String text = "";
+		int countLetter = 1;
+		double price = randomMinMax(min, max);
+		text = String.valueOf(price);
+		for (int i = 0; i < countLetter; i++) {
+			char[] arr = text.toCharArray();
+			text = "";
+			int index = randomMinMax(0, String.valueOf(price).length() - 1);
+			char letter = data.getUpperCase().charAt(randomMinMax(0, data.getUpperCase().length() - 1));
+			arr[index] = letter;
+			for (int j = 0; j < arr.length; j++) {
+				text += String.valueOf(arr[j]);
+			}
+		}
+		return text;
 	}
 
 	public Long randVideoId() {
@@ -111,7 +137,8 @@ public class DataGenerator {
 		return date;
 	}
 
-	public String generateFullname() {
+	public String generateFullname(boolean threeWord, boolean randUpperCase, boolean symbol) {
+		String fullname = "";
 		int gender = randomMinMax(0, 1);
 		List<String> firstnames = data.getMaleFirstnameVi();
 		List<String> lastnames = data.getMaleLastnameVi();
@@ -119,15 +146,56 @@ public class DataGenerator {
 			firstnames = data.getFemaleFirstnameVi();
 			lastnames = data.getFemaleLastnameVi();
 		}
-		String firstname = String.valueOf(firstnames.get(randomMinMax(0, firstnames.size() - 1)));
-		String lastname = String.valueOf(lastnames.get(randomMinMax(0, lastnames.size() - 1)));
+		String firstname = firstnames.get(randomMinMax(0, firstnames.size() - 1));
+		String lastname = lastnames.get(randomMinMax(0, lastnames.size() - 1));
+
+		if (!threeWord) {
+			lastname = lastname.substring(0, lastname.indexOf(" "));
+		}
+		fullname = lastname + firstname;
+		Double countUpper = Math.floor(fullname.length() / 2);
+		if (randUpperCase) {
+			for (int i = 0; i < countUpper.intValue(); i++) {
+				int index = randomMinMax(0, fullname.length() - 1);
+				char[] arr = fullname.toCharArray();
+				fullname = "";
+				for (int j = 0; j < arr.length; j++) {
+					if (j == index) {
+						fullname += String.valueOf(arr[j]).toUpperCase();
+					}
+					fullname += String.valueOf(arr[j]);
+				}
+			}
+		}
+		if (symbol) {
+			for (int i = 0; i < countUpper.intValue(); i++) {
+				int index = randomMinMax(0, fullname.length() - 1);
+				char[] arr = fullname.toCharArray();
+				fullname = "";
+				for (int j = 0; j < arr.length; j++) {
+					if (j == index) {
+						fullname += String
+								.valueOf(data.getSymbol().charAt(randomMinMax(0, data.getSymbol().length() - 1)));
+					}
+					fullname += String.valueOf(arr[j]);
+				}
+			}
+		}
 		return lastname + " " + firstname;
 	}
 
-	public List<String> generateListFullname(int amount, boolean allowDuplicate) {
+	public List<String> generateListFullname(int amount, boolean allowDuplicate, boolean isValid) {
 		List<String> list = new ArrayList<String>();
 		for (int i = 0; i < amount; i++) {
-			String fullname = generateFullname();
+			int upper = randomMinMax(0, 1);
+			String fullname = generateFullname(true, true, true);
+			if (upper == 0) {
+				fullname = generateFullname(true, false, true);
+			}
+
+			if (!isValid) {
+				fullname = generateFullname(true, false, false);
+			}
 			if (allowDuplicate) {
 				list.add(fullname);
 			} else {
@@ -142,7 +210,10 @@ public class DataGenerator {
 					}
 					if (exist != null) {
 						while (fullname.equals(exist)) {
-							fullname = generateFullname();
+							fullname = generateFullname(true, false, false);
+							if (!isValid) {
+								fullname = generateFullname(true, true, false);
+							}
 						}
 						list.add(fullname);
 					} else {
@@ -487,9 +558,45 @@ public class DataGenerator {
 		return idNational;
 	}
 
-	public static void main(String[] args) {
-		DataGenerator data = new DataGenerator();
-		System.out.println(data.generateIdNationalNotValid(new Date(), true));
+	public List<ModelNhanVien> generateListNhanVien(Boolean isFullnameValid, Boolean isIdNationalValid,
+			Boolean isEmailValid, Boolean isPhoneNumberValid, Boolean isBirthDateValid, int amount) {
+		List<ModelNhanVien> list = new ArrayList<ModelNhanVien>();
+		List<String> fullnames = generateListFullname(amount, true, true);
+		if (!isFullnameValid) {
+			fullnames = generateListFullname(amount, true, false);
+		}
+		Map<String, String> mapEmails = generateMapEmail(fullnames);
+		int i = 0;
+		for (String key : mapEmails.keySet()) {
+			ModelNhanVien nhanVien = new ModelNhanVien();
+			int role = randomMinMax(2, 4);
+			nhanVien.setChucVu(role);
+			int gender = randomMinMax(0, 1);
+			if (gender == 1) {
+				nhanVien.setGioiTinh(true);
+			} else {
+				nhanVien.setGioiTinh(false);
+			}
+			nhanVien.setNgaySinh(XDate.toString(generateDate(1990, 2003), "dd-MM-yyyy"));
+			nhanVien.setCMND(
+					generateIdNational(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"), nhanVien.isGioiTinh()));
+			nhanVien.setMaNV("NV" + String.valueOf(i + 20));
+			nhanVien.setPathHinhAnh("anhNhanVien" + String.valueOf(i + 20));
+			nhanVien.setSoDT(generateSDT());
+			nhanVien.setTrangThai(true);
+			nhanVien.setEmail(key);
+			nhanVien.setHoTen(mapEmails.get(key));
+			for (int j = 0; j < list.size(); j++) {
+				while (nhanVien.getSoDT().equals(list.get(j).getSoDT())) {
+					nhanVien.setSoDT(generateSDT());
+				}
+				while (nhanVien.getCMND().equals(list.get(j).getCMND())) {
+					nhanVien.setCMND(generateIdNational(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"),
+							nhanVien.isGioiTinh()));
+				}
+			}
+			i++;
+		}
+		return list;
 	}
-
 }
