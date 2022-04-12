@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="100" passed="100" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-04-12T23:34:08 ICT" name="Default suite" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1218">
     <groups>
     </groups>
@@ -1568,50 +1569,88 @@
             <param index="0">
               <value>
                 <![CDATA[nguyễn trường]]>
+=======
+  <suite started-at="2022-04-12T17:48:46 ICT" name="Default suite" finished-at="2022-04-12T17:48:46 ICT" duration-ms="45">
+    <groups>
+    </groups>
+    <test started-at="2022-04-12T17:48:46 ICT" name="Default test" finished-at="2022-04-12T17:48:46 ICT" duration-ms="45">
+      <class name="com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail">
+        <test-method signature="f(java.lang.String,boolean)[pri:0, instance:com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@5fd4f8f5]" started-at="2022-04-12T17:48:46 ICT" name="f" data-provider="stockpriceempty" finished-at="2022-04-12T17:48:46 ICT" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[true]]>
+=======
+                <![CDATA[false]]>
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testValidFullnameSuccess -->
         <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[LÊ HUYỀN LAN]]>
+=======
+        </test-method> <!-- f -->
+        <test-method signature="f(java.lang.String,boolean)[pri:0, instance:com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@5fd4f8f5]" started-at="2022-04-12T17:48:46 ICT" name="f" data-provider="stockpriceempty" finished-at="2022-04-12T17:48:46 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ ]]>
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[true]]>
+=======
+                <![CDATA[false]]>
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testValidFullnameSuccess -->
         <test-method signature="testValidFullnameSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.nhanvien.TestValidFullname@13e39c73]" started-at="2022-04-12T23:34:10 ICT" name="testValidFullnameSuccess" data-provider="data" finished-at="2022-04-12T23:34:10 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[Nguyễn Trúc]]>
+=======
+        </test-method> <!-- f -->
+        <test-method signature="f(java.lang.String,boolean)[pri:0, instance:com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@5fd4f8f5]" started-at="2022-04-12T17:48:46 ICT" name="f" data-provider="stockpriceempty" finished-at="2022-04-12T17:48:46 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[true]]>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testValidFullnameSuccess -->
-      </class> <!-- com.wolvesres.haotn.nhanvien.TestValidFullname -->
+        </test-method> <!-- f -->
+      </class> <!-- com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

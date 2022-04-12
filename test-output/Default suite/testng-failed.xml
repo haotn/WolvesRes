@@ -3,12 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.nhanvien.TestValidFullname">
         <methods>
           <include name="beforClass"/>
           <include name="testValidFullnameSuccess"/>
         </methods>
       </class> <!-- com.wolvesres.haotn.nhanvien.TestValidFullname -->
+=======
+      <class name="com.wolvesres.ducvh.kho.StockQuanExportTestSuccess">
+        <methods>
+          <include name="f" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.wolvesres.ducvh.kho.StockQuanExportTestSuccess -->
+>>>>>>> 9eba24953a85cd6bdcaf36d84414958b58b4825b
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
