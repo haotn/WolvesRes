@@ -262,11 +262,12 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		today = XDate.toDate(XDate.toString(today, "dd-MM-yyyy"), "dd-MM-yyyy");
 		Date minDay = XDate.addDays(today, 364);
 		Date day = XDate.toDate(txtNgayHetHan.getText().trim(), "dd-MM-yyyy");
-//        if (!day.after(today)) {
-//            ROptionDialog.showAlert(frame, "Hạn sử dụng đã hết hạn");
-//            txtNgayHetHan.setText(listNhapKho.get(select).getHanSD());
-//            return false;
-//        }
+        if (validator.isDateAfter(today, day)) {
+        	ROptionDialog.showAlert(frame, "Lỗi", "Hết hạn sử dụng!", ROptionDialog.WARNING, Color.red,
+			Color.black);
+            txtNgayHetHan.setText(listNhapKho.get(select).getHanSD());
+            return false;
+        }
 		if (!validator.isDateAfter(day, minDay)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Hạn sử dụng ít nhất!", ROptionDialog.WARNING, Color.red,
 					Color.black);

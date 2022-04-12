@@ -268,7 +268,7 @@ public class FormValidator {
 			Long.parseLong(text);
 			return true;
 		} catch (Exception e) {
-			return true;
+			return false;
 		}
 	}
 
@@ -469,10 +469,10 @@ public class FormValidator {
 	 * @return is after
 	 */
 	public static Boolean isDateAfter(Date date, Date compareTo) {
-		if (date.before(compareTo)) {
-			return false;
+		if (date.after(compareTo)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -483,10 +483,10 @@ public class FormValidator {
 	 * @return is before
 	 */
 	public static Boolean isDateBefore(Date date, Date compareTo) {
-		if (date.after(compareTo)) {
-			return false;
+		if (date.before(compareTo)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -496,7 +496,7 @@ public class FormValidator {
 	 * @return is valid
 	 */
 	public static Boolean isBeginDateValid(Date beginDate) {
-		if (!isDateBefore(beginDate, beginDate)) {
+		if (isDateBefore(beginDate, new Date())) {
 			return false;
 		}
 		return true;
