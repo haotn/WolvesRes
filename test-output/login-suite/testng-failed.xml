@@ -10,7 +10,8 @@
     <classes>
       <class name="com.wolvesres.quanghn.voucher.TestValidVoucher">
         <methods>
-          <include name="testValidVoucherChonNgayFail" invocation-numbers="0"/>
+          <include name="testValidVoucherChonNgayFail" invocation-numbers="9"/>
+          <include name="InFileExcel3"/>
         </methods>
       </class> <!-- com.wolvesres.quanghn.voucher.TestValidVoucher -->
     </classes>

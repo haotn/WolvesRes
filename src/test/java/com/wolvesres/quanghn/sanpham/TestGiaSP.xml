@@ -4,7 +4,7 @@
 	<test name="Test-GiaSP">
 		<groups>
 			<run>
-				<include name="GiaSP" />
+				<include name="GiaSPKiTuDacBiet" />
 			</run>
 		</groups>
 		<classes>

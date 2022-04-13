@@ -1,6 +1,9 @@
 package com.wolvesres.quanghn.voucher;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,6 +15,8 @@ import com.wolvesres.helper.XDate;
  * Tên groups: VoucherGia
  * @author huynh
  */
+
+import exceldoing.ExcelGo;
 
 /**
  * Kiểm tra số lượng voucher thành công
@@ -57,6 +62,19 @@ public class TestValidVoucher {
 		}
 		Assert.assertEquals(expected, actual);
 	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "VoucherGia")
+	public void InFileExcel() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia Voucher", data());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 	/**
@@ -83,6 +101,19 @@ public class TestValidVoucher {
 		}
 		Assert.assertEquals(expected, actual);
 	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "VoucherSoLuong")
+	public void InFileExcel2() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong Voucher", data2());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	/**
 	 * DataProvider for testValidVoucherChonNgayFail
@@ -91,7 +122,7 @@ public class TestValidVoucher {
 	 */
 	@DataProvider
 	public Object[][] data3() {
-		return new Object[][] { {"04-07-2020", false}, {"04-07-2020", false}, {"11-03-2021", false}, {"02-12-2020", false}, {"09-09-2021", false}};
+		return new Object[][] { {"14-07-2020", false}, {"04-06-2020", false}, {"11-03-2021", false}, {"02-12-2020", false}, {"09-09-2021", false}};
 	}
 
 	/**
@@ -107,6 +138,19 @@ public class TestValidVoucher {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
+	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "VoucherChonNgay")
+	public void InFileExcel3() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Ngay Bat Dau Voucher", data3());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

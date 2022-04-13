@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -31,7 +32,7 @@ public class TestValidEmail {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "huynhnhatquang281@gmail.com", true }, { "nhuttruong282@gmail.com", true }, { "haotnpc01545@fpt.edu.vn", true }, { "hottpc02096@fpt.edu.vn", true }, { "ducvhpc01395@fpt.edu.vn", true }};
+		return new Object[][] { { "quanghnpc01597@fpt.edu.vn", true }, { "truongnvnpc01752@gmail.com", true }, { "haotnpc01545@fpt.edu.vn", true }, { "hottpc02096@fpt.edu.vn", true }, { "ducvhpc01395@fpt.edu.vn", true }};
 	}
 
 	/**
@@ -47,11 +48,19 @@ public class TestValidEmail {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
+	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass
+	public void InFileExcel() {
 		try {
-			ExcelGo.writeExcel("D:\\demo.xlsx", 0, 1, 0, "email", data());
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Email", data());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 }

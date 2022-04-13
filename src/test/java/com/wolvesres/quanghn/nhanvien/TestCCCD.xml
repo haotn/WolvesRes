@@ -4,7 +4,7 @@
 	<test name="Test-CCCD">
 		<groups>
 			<run>
-				<include name="CCCDBoTrong" />
+				<include name="CCCDFailTinh" />
 			</run>
 		</groups>
 		<classes>

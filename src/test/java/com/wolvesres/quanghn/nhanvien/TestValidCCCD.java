@@ -1,12 +1,17 @@
 package com.wolvesres.quanghn.nhanvien;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Kiểm tra định dạng căn cước công dân thất bại do bỏ trống
@@ -56,6 +61,19 @@ public class TestValidCCCD {
 		Assert.assertEquals(expected, actual);
 
 	}
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "CCCDBoTrong")
+	public void InFileExcel() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataFail());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	/**
 	 * DataProvider for testValidCCCDFail
@@ -63,8 +81,8 @@ public class TestValidCCCD {
 	 * @return Object[][]
 	 */
 	@DataProvider
-	public Object[][] data2() {
-		return new Object[][] { { "091202014730", false }};
+	public Object[][] dataMaTinh() {
+		return new Object[][] { {"091202014730", false }, {"096091276189", false }, {"093091826874", false }, {"092091273586", false }, {"099162763975", false }};
 	}
 
 	/**
@@ -73,7 +91,7 @@ public class TestValidCCCD {
 	 * @param cccd
 	 * @param expected
 	 */
-	@Test(dataProvider = "data2", groups = "CCCDFailTinh")
+	@Test(dataProvider = "dataMaTinh", groups = "CCCDFailTinh")
 	public void testValidCCCDMaTinhFail(String cccd, Boolean expected) {
 		
 		Boolean actual = true;
@@ -83,6 +101,17 @@ public class TestValidCCCD {
 		Assert.assertEquals(expected, actual);
 
 	}
-	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "CCCDFailTinh")
+	public void InFileExcel2() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataMaTinh());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }

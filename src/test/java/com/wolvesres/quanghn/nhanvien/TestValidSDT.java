@@ -1,10 +1,15 @@
 package com.wolvesres.quanghn.nhanvien;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 /**
  * Kiểm tra định dạng số điện thoại thất bại do nhập chữ
  * @author huynh
@@ -42,5 +47,18 @@ public class TestValidSDT {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass
+	public void InFileExcel() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "SDT", data());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

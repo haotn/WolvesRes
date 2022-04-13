@@ -30,7 +30,7 @@ public class ExcelGo {
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
 				{ "xzzz", "zzzz" } };
-		writeExcel("D:\\demo.xlsx", 0, 1, 0, "username,password", dataprovider);
+		writeExcel("D:\\ExcelFile.xlsx", 0, 1, 6, "username,password", dataprovider);
 	}
 
 	private static CellStyle cellStyleFormatNumber = null;

@@ -1,10 +1,14 @@
 package com.wolvesres.quanghn.banhang;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
+import exceldoing.ExcelGo;
 /**
  * Kiểm tra nhập tiền khách đưa thất bại do nhập kí tự đặc biệt
  * Tên groups: NhapTienCoKiTyDB
@@ -52,6 +56,19 @@ public class TestValidNhapTien {
 		Assert.assertEquals(expected, actual);
 
 	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "NhapTienCoKiTyDB")
+	public void InFileExcel() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 /////////////////////////////////////////////////////////////////////////////////////////////////	
 	/**
 	 * DataProvider for testValidNhapTienBoTrongFail
@@ -60,7 +77,7 @@ public class TestValidNhapTien {
 	 */
 	@DataProvider
 	public Object[][] data2() {
-		return new Object[][] { { " ", false}};
+		return new Object[][] { {" ", false}, {"", false}, {"\t", false}, {null, false}};
 	}
 
 	/**
@@ -76,6 +93,18 @@ public class TestValidNhapTien {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
-
+	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "NhapTienBoTrong")
+	public void InFileExcel2() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data2());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

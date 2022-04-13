@@ -1,6 +1,9 @@
 package com.wolvesres.quanghn.sanpham;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -8,6 +11,13 @@ import com.wolvesres.helper.FormValidator;
 /**
  * Kiểm tra giá sản phẩm thất bại do nhập chữ
  * tên groups: GiaSP
+ * @author huynh
+ */
+
+import exceldoing.ExcelGo;
+/**
+ * Kiểm tra giá sản phẩm thất bại do nhập chữ
+ * tên groups: GiaSPNhapChu
  * @author huynh
  */
 
@@ -34,13 +44,26 @@ public class TestValidGiaSP {
 	 * @param gia
 	 * @param expected
 	 */
-	@Test(dataProvider = "data", groups = "GiaSP")
+	@Test(dataProvider = "data", groups = "GiaSPNhapChu")
 	public void testValidGiaSPFail(String gia, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isNumber(gia)) {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
+	}
+	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "GiaSP")
+	public void InFileExcel() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -64,11 +87,22 @@ public class TestValidGiaSP {
 	@Test(dataProvider = "data2", groups = "GiaSPKiTuDacBiet")
 	public void testValidGiaSPKiTuDacBietFail(String gia, Boolean expected) {
 		Boolean actual = true;
-		if (!FormValidator.isTextIsNotEmpty(gia)) {
+		if (!FormValidator.isNumber(gia)) {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
 	}
 	
-	
+	/**
+	 * Hàm xuất file Excel
+	 */
+	@AfterClass(groups = "GiaSPKiTuDacBiet")
+	public void InFileExcel2() {
+		try {
+			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data2());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
