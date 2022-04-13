@@ -486,6 +486,67 @@ public class DataGenerator {
 		return cccd;
 	}
 
+	public String generateIdNational() {
+		Date dateOfBirth;
+		Boolean isMale;
+ 
+		int so2=0;
+		int rany1 = ThreadLocalRandom.current().nextInt(1, 3);
+		if(rany1==1) {
+			so2=9;
+		}else {
+			so2=0;
+		}
+		int rany3 = ThreadLocalRandom.current().nextInt(0, 10);
+		int rany4 = ThreadLocalRandom.current().nextInt(0, 10);
+		String year=""+rany1+so2+rany3+rany4;
+		int gioitinh = ThreadLocalRandom.current().nextInt(1, 3);
+		if(gioitinh==1) {
+			isMale =true;
+		}else {
+			isMale= false;
+		}
+		// System.out.println(nam);
+		String gt = "";
+		if (isMale == true) {
+			gt = "0";
+		} else {
+			gt = "1";
+		}
+
+		if (Integer.valueOf(year) < 2000) {
+			if (Integer.valueOf(gt) == 0) {
+				gt = "0";
+			} else {
+				gt = "1";
+			}
+		} else {
+			if (Integer.valueOf(gt) == 0) {
+				gt = "2";
+			} else {
+				gt = "3";
+			}
+		}
+		year = year.substring(2, 4);
+		int tinh = ThreadLocalRandom.current().nextInt(0, 63);
+		int tk;
+		int testnam = ThreadLocalRandom.current().nextInt(0, 2);
+		if (testnam == 0) {
+			tk = ThreadLocalRandom.current().nextInt(0, 2);
+		} else {
+			tk = ThreadLocalRandom.current().nextInt(2, 4);
+		}
+		int ranNum1 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum2 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum3 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum4 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum5 = ThreadLocalRandom.current().nextInt(0, 10);
+		int ranNum6 = ThreadLocalRandom.current().nextInt(0, 10);
+		String cccd = listTinh().get(tinh) + gt + year + String.valueOf(ranNum1) + String.valueOf(ranNum2)
+				+ String.valueOf(ranNum3) + String.valueOf(ranNum4) + String.valueOf(ranNum5) + String.valueOf(ranNum6);
+		return cccd;
+	}
+
 	public String generateIdNationalNotValid(Date dateOfBirth, Boolean isMale) {
 		String idNational = generateIdNational(dateOfBirth, isMale);
 		int ranNumb = randomMinMax(1, 4);

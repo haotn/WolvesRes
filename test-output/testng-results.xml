@@ -1,126 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2022-04-13T17:41:22 ICT" name="Default suite" finished-at="2022-04-13T17:41:23 ICT" duration-ms="997">
-    <groups>
-    </groups>
-    <test started-at="2022-04-13T17:41:22 ICT" name="Default test" finished-at="2022-04-13T17:41:23 ICT" duration-ms="997">
-      <class name="com.wolvesres.haotn.voucher.TestEndDateVoucher">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="beforeClass" finished-at="2022-04-13T17:41:22 ICT" duration-ms="33" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail" data-provider="dataForValidEndDate" finished-at="2022-04-13T17:41:22 ICT" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
+<testng-results ignored="0" total="5" passed="5"
+	failed="0" skipped="0">
+	<reporter-output>
+	</reporter-output>
+	<suite started-at="2022-04-13T17:41:22 ICT" name="Default suite"
+		finished-at="2022-04-13T17:41:23 ICT" duration-ms="997">
+		<groups>
+			<group name="soluongnull">
+				<method
+					signature="TestSoluongXuatKho.testValidGia(float,java.lang.Boolean)[pri:1, instance:com.wolvesres.truongnvn.kho.TestSoluongXuatKho@429bffaa]"
+					name="testValidGia"
+					class="com.wolvesres.truongnvn.kho.TestSoluongXuatKho" />
+			</group> <!-- soluongnull -->
+		</groups>
+		<test started-at="2022-04-13T17:41:22 ICT" name="Default test"
+			finished-at="2022-04-13T17:41:23 ICT" duration-ms="997">
+			<class name="com.wolvesres.haotn.voucher.TestEndDateVoucher">
+				<test-method is-config="true"
+					signature="beforeClass()[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="beforeClass"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="33"
+					status="PASS">
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- beforeClass -->
+				<test-method
+					signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail"
+					data-provider="dataForValidEndDate"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="20"
+					status="PASS">
+					<params>
+						<param index="0">
+							<value>
                 <![CDATA[Sun Feb 25 00:00:00 ICT 2018]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
+							</value>
+						</param>
+						<param index="1">
+							<value>
                 <![CDATA[Sat Aug 15 00:00:00 ICT 2020]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
+							</value>
+						</param>
+						<param index="2">
+							<value>
                 <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEndDateVoucherFail -->
-        <test-method signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail" data-provider="dataForValidEndDate" finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
+							</value>
+						</param>
+					</params>
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- testEndDateVoucherFail -->
+				<test-method
+					signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail"
+					data-provider="dataForValidEndDate"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
+					<params>
+						<param index="0">
+							<value>
                 <![CDATA[Wed Mar 22 00:00:00 ICT 2017]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
+							</value>
+						</param>
+						<param index="1">
+							<value>
+
                 <![CDATA[Sat Jan 09 00:00:00 ICT 2021]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
+							</value>
+						</param>
+						<param index="2">
+							<value>
                 <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEndDateVoucherFail -->
-        <test-method signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail" data-provider="dataForValidEndDate" finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
+							</value>
+						</param>
+					</params>
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- testEndDateVoucherFail -->
+				<test-method
+					signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail"
+					data-provider="dataForValidEndDate"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
+					<params>
+						<param index="0">
+							<value>
                 <![CDATA[Thu Nov 15 00:00:00 ICT 2018]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
+							</value>
+						</param>
+						<param index="1">
+							<value>
                 <![CDATA[Thu May 21 00:00:00 ICT 2020]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
+							</value>
+						</param>
+						<param index="2">
+							<value>
                 <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEndDateVoucherFail -->
-        <test-method signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail" data-provider="dataForValidEndDate" finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
+							</value>
+						</param>
+					</params>
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- testEndDateVoucherFail -->
+				<test-method
+					signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail"
+					data-provider="dataForValidEndDate"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
+					<params>
+						<param index="0">
+							<value>
                 <![CDATA[Tue May 21 00:00:00 ICT 2019]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
+							</value>
+						</param>
+						<param index="1">
+							<value>
                 <![CDATA[Thu Aug 05 00:00:00 ICT 2021]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
+							</value>
+						</param>
+						<param index="2">
+							<value>
                 <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEndDateVoucherFail -->
-        <test-method signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail" data-provider="dataForValidEndDate" finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
+							</value>
+						</param>
+					</params>
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- testEndDateVoucherFail -->
+				<test-method
+					signature="testEndDateVoucherFail(java.util.Date,java.util.Date,java.lang.Boolean)[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="testEndDateVoucherFail"
+					data-provider="dataForValidEndDate"
+					finished-at="2022-04-13T17:41:22 ICT" duration-ms="1" status="PASS">
+					<params>
+						<param index="0">
+							<value>
                 <![CDATA[Mon Dec 30 00:00:00 ICT 2019]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
+							</value>
+						</param>
+						<param index="1">
+							<value>
                 <![CDATA[Tue Mar 31 00:00:00 ICT 2020]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
+							</value>
+						</param>
+						<param index="2">
+							<value>
                 <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEndDateVoucherFail -->
-        <test-method is-config="true" signature="writeResult()[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]" started-at="2022-04-13T17:41:22 ICT" name="writeResult" finished-at="2022-04-13T17:41:23 ICT" duration-ms="889" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- writeResult -->
-      </class> <!-- com.wolvesres.haotn.voucher.TestEndDateVoucher -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+							</value>
+						</param>
+					</params>
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- testEndDateVoucherFail -->
+				<test-method is-config="true"
+					signature="writeResult()[pri:0, instance:com.wolvesres.haotn.voucher.TestEndDateVoucher@9225652]"
+					started-at="2022-04-13T17:41:22 ICT" name="writeResult"
+					finished-at="2022-04-13T17:41:23 ICT" duration-ms="889"
+					status="PASS">
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- writeResult -->
+			</class> <!-- com.wolvesres.haotn.voucher.TestEndDateVoucher -->
+		</test> <!-- Default test -->
+	</suite> <!-- Default suite -->
 </testng-results>

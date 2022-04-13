@@ -233,7 +233,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		float gia = 0;
 		try {
 			gia = Float.parseFloat(txtGia.getText().trim());
-			if (gia <= 0) {
+			if (!FormValidator.isGreaterThan(gia, 0)) {
 				gia = listNhapKho.get(select).getGia();
 				txtGia.setText(gia + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Giá phải lớn 0!", ROptionDialog.WARNING, Color.red, Color.black);

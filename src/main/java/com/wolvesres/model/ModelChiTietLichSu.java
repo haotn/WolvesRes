@@ -179,7 +179,7 @@ public class ModelChiTietLichSu {
         return new Object[]{getTenSanPham(getMaSP()), XFormatMoney.formatMoney(getDonGia()), getSoLuong(), Gia(getDonGia(), getSoLuong())};
     }
     //insert
-    public void insert(int idLichSu, String maSanPham, int soLuong, float gia) {
+    public void insert(int idLichSu, String maSanPham,int soLuong, float gia) {
     	this.setIdLS(idLichSu);
     	this.setMaSP(maSanPham);
     	this.setSoLuong(soLuong);

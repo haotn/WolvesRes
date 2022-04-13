@@ -3,6 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.voucher.TestVoucherCode">
         <methods>
           <include name="testVoucherCodeLength"/>
@@ -10,6 +11,15 @@
           <include name="beforeClass"/>
         </methods>
       </class> <!-- com.wolvesres.haotn.voucher.TestVoucherCode -->
+=======
+      <class name="com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong">
+        <methods>
+          <include name="writreExcel"/>
+          <include name="beforClass"/>
+          <include name="testValidSoLuongEmpty" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong -->
+>>>>>>> ce953484b24440455f3bc23e692e4d757af26ced
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
