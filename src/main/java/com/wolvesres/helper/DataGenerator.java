@@ -10,7 +10,11 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.wolvesres.dao.DanhMucDAO;
+import com.wolvesres.dao.DonViTinhDAO;
+import com.wolvesres.dao.SanPhamDAO;
 import com.wolvesres.model.ModelNhanVien;
+import com.wolvesres.model.ModelSanPham;
 
 public class DataGenerator {
 	private Data data;
@@ -517,8 +521,13 @@ public class DataGenerator {
 				nhanVien.setGioiTinh(false);
 			}
 			nhanVien.setNgaySinh(XDate.toString(generateDate(1990, 2003), "dd-MM-yyyy"));
+
 			nhanVien.setCMND(
 					generateIdNational(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"), nhanVien.isGioiTinh()));
+			if (!isIdNationalValid) {
+				nhanVien.setCMND(generateIdNationalNotValid(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"),
+						nhanVien.isGioiTinh()));
+			}
 			nhanVien.setMaNV("NV" + String.valueOf(i + 20));
 			nhanVien.setPathHinhAnh("anhNhanVien" + String.valueOf(i + 20));
 			nhanVien.setSoDT(generateSDT());
@@ -532,10 +541,30 @@ public class DataGenerator {
 				while (nhanVien.getCMND().equals(list.get(j).getCMND())) {
 					nhanVien.setCMND(generateIdNational(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"),
 							nhanVien.isGioiTinh()));
+					if (!isIdNationalValid) {
+						nhanVien.setCMND(generateIdNationalNotValid(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"),
+								nhanVien.isGioiTinh()));
+					}
 				}
 			}
+			list.add(nhanVien);
 			i++;
 		}
+		return list;
+	}
+
+	public List<ModelSanPham> generateListSanPham(Boolean pdNameValid, Boolean priceNegative, String cagoreValid,
+			String pathImg, int unitValid, Boolean statusValid, int amount) {
+		DanhMucDAO dmDao = new DanhMucDAO();
+		DonViTinhDAO dvtDao = new DonViTinhDAO();
+
+		List<ModelSanPham> list = new ArrayList<ModelSanPham>();
+		for (int i = 0; i < amount; i++) {
+			ModelSanPham sp = new ModelSanPham();
+			sp.setMaSP("SP00000" + (i + 1));
+			sp.setGiaBan(randomMinMax(500000, 200000));
+		}
+
 		return list;
 	}
 }

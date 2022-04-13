@@ -20,7 +20,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReadExcelExample {
 
 	public static void main(String[] args) throws IOException {
-		final String path = "D:\\demo.xlsx";
+		final String path = "excel-file/fullname-data.xlsx";
 		List<Object[]> list = readExcel(path, 0, 6, 0);
 		for (Object[] book : list) {
 			System.out.println(String.valueOf(book[0]) + " - " + String.valueOf(book[1]));

@@ -39,7 +39,6 @@ public class ModelKho {
 		this.soLuong = soLuong;
 		this.hanSuDung = hanSuDung;
 		this.trangThai = trangThai;
-		this.listSP = listSP;
 	}
 
 	/**

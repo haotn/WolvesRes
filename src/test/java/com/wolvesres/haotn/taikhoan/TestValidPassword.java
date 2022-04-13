@@ -1,13 +1,17 @@
 package com.wolvesres.haotn.taikhoan;
 
+import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Test valid password length - Password length must be less than 17 letter
@@ -34,8 +38,8 @@ public class TestValidPassword {
 	 */
 	@DataProvider(name = "dataForFailLength")
 	public Object[][] dataForFailLength() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][2];
+		for (int i = 0; i < 5; i++) {
 			data[i][0] = this.dataGenerator.generatePassword(17, 25, false);
 			data[i][1] = false;
 		}
@@ -53,6 +57,9 @@ public class TestValidPassword {
 		Boolean actual = true;
 		if (!FormValidator.isValidTextMaxLength(password, 16)) {
 			actual = false;
+			System.out.println("Độ dài mật khẩu chỉ chấp nhật từ 6 đến 16 ký tự!");
+		} else {
+			System.out.println("Độ dài mật khẩu hợp lệ!");
 		}
 		Assert.assertEquals(expectes, actual);
 	}
@@ -64,8 +71,8 @@ public class TestValidPassword {
 	 */
 	@DataProvider(name = "dataForFailSpace")
 	public Object[][] dataForFailSpace() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][2];
+		for (int i = 0; i < 5; i++) {
 			data[i][0] = this.dataGenerator.generatePassword(6, 16, true);
 			data[i][1] = false;
 		}
@@ -83,6 +90,9 @@ public class TestValidPassword {
 		Boolean actual = true;
 		if (FormValidator.isTextContainsSpace(password)) {
 			actual = false;
+			System.out.println("Mật khẩu không hợp lệ (không được chứa khoảng trắng)!");
+		} else {
+			System.out.println("Mật khẩu hợp lệ (không chứa khoảng trắng)!");
 		}
 		Assert.assertEquals(expected, actual);
 	}
@@ -92,8 +102,8 @@ public class TestValidPassword {
 	 */
 	@DataProvider(name = "dataForConfirmNotMath")
 	public Object[][] dataForConfirmNotMath() {
-		Object[][] data = new Object[100][3];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][3];
+		for (int i = 0; i < 5; i++) {
 			String password = this.dataGenerator.generatePassword(6, 16, false);
 			String confirm = dataGenerator.generatePassword(6, 16, false);
 			while (confirm.equals(password)) {
@@ -115,7 +125,25 @@ public class TestValidPassword {
 		Boolean actual = true;
 		if (!FormValidator.isTextEqual(password, confirm)) {
 			actual = false;
+			System.out.println("Mật khẩu và xác nhận mật khẩu không khớp!");
+		} else {
+			System.out.println("Mật khẩu và xác nhận mật khẩu hợp lệ!");
 		}
 		Assert.assertEquals(expected, actual);
 	}
+
+//	@AfterClass
+//	public void writeFile() {
+//		Object[][] dataWrite = new Object[dataForConfirmNotMath().length][2];
+//		for (int i = 0; i < dataForConfirmNotMath().length; i++) {
+//			dataWrite[i][0] = dataForConfirmNotMath()[i][0];
+//			dataWrite[i][1] = dataForConfirmNotMath()[i][1];
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 210, 6, "MatKhau,XacNhanMatKhau", dataWrite);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

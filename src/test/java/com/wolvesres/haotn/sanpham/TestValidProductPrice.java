@@ -1,10 +1,15 @@
 package com.wolvesres.haotn.sanpham;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Test valid product price (not empty)
@@ -20,7 +25,7 @@ public class TestValidProductPrice {
 	 */
 	@DataProvider(name = "dataForTestEmpty")
 	public Object[][] dataForTestProductPriceIsNotEmpty() {
-		return new Object[][] { { "", false } };
+		return new Object[][] { { "", false }, { "\t", false }, { " ", false } };
 	}
 
 	/**
@@ -34,8 +39,11 @@ public class TestValidProductPrice {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(productPrice)) {
 			actual = false;
+			System.out.println("Giá sản phẩm không được để trống!");
+		} else {
+			System.out.println("Giá sản phẩm hợp lệ (không để trống)!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 	}
 
 	/**
@@ -57,7 +65,7 @@ public class TestValidProductPrice {
 	 * @param productPrice
 	 * @param expected
 	 */
-	@Test(dataProvider = "dataForTestNegative")
+	@Test(dataProvider = "dataForTestNegative", groups = { "productPrigeNegative" })
 	public void testProductPriceNegative(double productPrice, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isGreaterThan(productPrice, 0)) {
@@ -65,4 +73,26 @@ public class TestValidProductPrice {
 		}
 		Assert.assertEquals(expected, actual);
 	}
+
+	@AfterClass
+	public void write() {
+		Object[][] dataWrite = new Object[dataForTestProductPriceIsNotEmpty().length][1];
+		for (int i = 0; i < dataForTestProductPriceIsNotEmpty().length; i++) {
+			if (dataForTestProductPriceIsNotEmpty()[0].equals("")) {
+				dataWrite[i][0] = "\"empty\"";
+			} else if (dataForTestProductPriceIsNotEmpty()[0].equals(" ")) {
+				dataWrite[i][0] = "\"space\"";
+			} else if (dataForTestProductPriceIsNotEmpty()[0].equals("\t")) {
+				dataWrite[i][0] = "\"\t\"";
+			}
+			dataWrite[i][0] = dataForTestProductPriceIsNotEmpty()[0];
+		}
+		try {
+			ExcelGo.writeExcel("excel-file/asm-temp-demo.xlsx", 2, 224, 6, "GiaNhapKho", dataWrite);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

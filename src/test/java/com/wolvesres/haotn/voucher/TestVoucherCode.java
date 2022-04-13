@@ -1,12 +1,17 @@
 package com.wolvesres.haotn.voucher;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Test Voucher Code
@@ -25,18 +30,25 @@ public class TestVoucherCode {
 		dataGenerator = new DataGenerator();
 	}
 
+	@DataProvider(name = "dataForTestVoucherCode")
+	public Object[][] dataForTestVoucherCode() {
+		Object[][] data = new Object[][] { { "", false }, { " ", false }, { "\t", false } };
+		return data;
+	}
+
 	/**
 	 * TestCase testInvalidVoucherCode
 	 */
-	@Test(groups = "testVoucherCodeEmpty")
-	public void testVoucherCodeEmpty() {
-		String voucherCode = "";
-		Boolean expected = false;
+	@Test(dataProvider = "dataForTestVoucherCode", groups = "testVoucherCodeEmpty")
+	public void testVoucherCodeEmpty(String voucherCode, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(voucherCode)) {
 			actual = false;
+			System.out.println("Mã voucher không được để trống!");
+		} else {
+			System.out.println("Mã voucher hợp lệ!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 	}
 
 	/**
@@ -46,8 +58,8 @@ public class TestVoucherCode {
 	 */
 	@DataProvider(name = "dataForTestVoucherCodeLength")
 	public Object[][] dataForTestVoucherCodeLength() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][2];
+		for (int i = 0; i < 5; i++) {
 			data[i][0] = dataGenerator.generatePassword(1, 4, false);
 			data[i][1] = false;
 		}
@@ -59,7 +71,24 @@ public class TestVoucherCode {
 		Boolean actual = true;
 		if (!FormValidator.isValidTextMinLength(voucherCode, 5)) {
 			actual = false;
+			System.out.println("Mã voucher phải có ít nhất 5 ký tự!");
+		} else {
+			System.out.println("Mã voucher hợp lệ!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
+	}
+
+	@AfterClass
+	public void writeResult() {
+		Object[][] dataWrite = new Object[dataForTestVoucherCodeLength().length][1];
+		for (int i = 0; i < dataForTestVoucherCodeLength().length; i++) {
+			dataWrite[i][0] = dataForTestVoucherCodeLength()[i][0];
+		}
+		try {
+			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 258, 6, "MaVoucher", dataWrite);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

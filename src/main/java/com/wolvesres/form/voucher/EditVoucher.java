@@ -160,7 +160,7 @@ public class EditVoucher extends javax.swing.JDialog {
 					Color.black);
 			return false;
 		}
-		if (!FormValidator.isNumber(soLuong)) {
+		if (!FormValidator.isIntNumber(soLuong)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Trường số lượng chỉ chấp nhận số nguyên!", ROptionDialog.WARNING,
 					Color.red, Color.black);
 			return false;

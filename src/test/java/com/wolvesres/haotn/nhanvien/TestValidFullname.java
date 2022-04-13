@@ -7,10 +7,12 @@ import java.util.Map;
 
 import org.apache.commons.collections4.map.HashedMap;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.wolvesres.dao.NhanVienDAO;
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XDate;
@@ -25,11 +27,7 @@ import exceldoing.ExcelGo;
  *
  */
 public class TestValidFullname {
-
-	private DataGenerator data;
-	private ExcelGo excelHandle;
-
-	private List<String> listFullname;
+	private NhanVienDAO nvDao;
 
 	/**
 	 * Before class - Generate global variable value
@@ -37,39 +35,7 @@ public class TestValidFullname {
 	 */
 	@BeforeClass
 	public void beforClass() {
-		data = new DataGenerator();
-		listFullname = new ArrayList<String>();
-		for (int i = 0; i < 100; i++) {
-			String fullname = "";
-			int rand = data.randomMinMax(0, 6);
-			switch (rand) {
-			case 0:
-				fullname = data.generateFullname(true, false, false);
-				break;
-			case 1:
-				fullname = data.generateFullname(true, false, false).toUpperCase();
-				break;
-			case 2:
-				fullname = data.generateFullname(true, false, false).toLowerCase();
-				break;
-			case 3:
-				fullname = data.generateFullname(true, false, true);
-				break;
-			case 4:
-				fullname = data.generateFullname(false, false, false);
-				break;
-			case 5:
-				fullname = data.generateFullname(false, false, false).toUpperCase();
-				break;
-			case 6:
-				fullname = data.generateFullname(false, false, false).toLowerCase();
-				break;
-			case 7:
-				fullname = data.generateFullname(false, false, true);
-				break;
-			}
-			listFullname.add(fullname);
-		}
+		nvDao = new NhanVienDAO();
 	}
 
 	/**
@@ -79,50 +45,31 @@ public class TestValidFullname {
 	 */
 	@DataProvider(name = "data")
 	public Object[][] data() {
-		List<String> fullnames = new ArrayList<String>();
-		Object[][] data = new Object[listFullname.size()][2];
-		for (int i = 0; i < listFullname.size(); i++) {
-			data[i][0] = listFullname.get(i);
-			data[i][1] = true;
-			fullnames.add(listFullname.get(i));
-		}
-		Object[][] toWrite = new Object[100][8];
-		Map<String, String> email = this.data.generateMapEmail(fullnames);
-		int i = 0;
-		for (String key : email.keySet()) {
-			ModelNhanVien nhanVien = new ModelNhanVien();
-			int role = this.data.randomMinMax(2, 4);
-			nhanVien.setChucVu(role);
-			int gender = this.data.randomMinMax(0, 1);
-			if (gender == 1) {
-				nhanVien.setGioiTinh(true);
-			} else {
-				nhanVien.setGioiTinh(false);
-			}
-			nhanVien.setNgaySinh(XDate.toString(this.data.generateDate(1990, 2003), "dd-MM-yyyy"));
-			nhanVien.setCMND(this.data.generateIdNational(XDate.toDate(nhanVien.getNgaySinh(), "dd-MM-yyyy"),
-					nhanVien.isGioiTinh()));
-			nhanVien.setMaNV("NV" + String.valueOf(i + 20));
-			nhanVien.setPathHinhAnh("anhNhanVien" + String.valueOf(i + 20));
-			nhanVien.setSoDT(this.data.generateSDT());
-			nhanVien.setTrangThai(true);
-			nhanVien.setEmail(key);
-			nhanVien.setHoTen(email.get(key));
-			toWrite[i][0] = nhanVien.getMaNV();
-			toWrite[i][1] = nhanVien.getHoTen();
-			toWrite[i][2] = nhanVien.getChucVu();
-			toWrite[i][3] = nhanVien.getCMND();
-			toWrite[i][4] = nhanVien.getEmail();
-			toWrite[i][5] = nhanVien.getSoDT();
-			toWrite[i][6] = nhanVien.getNgaySinh();
-			toWrite[i][7] = nhanVien.getPathHinhAnh();
-			i++;
-		}
+		/**
+		 * New data
+		 */
+		List<Object[]> list = new ArrayList<Object[]>();
 		try {
-			ExcelGo.writeExcel("E:\\demo.xlsx", 0, 1, 0,
-					"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh", toWrite);
+			list = ExcelGo.readExcel("excel-file/nhanvien-fullname-true-data.xlsx", 0, 11, 0);
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		Object[][] data = new Object[list.size()][2];
+		for (int i = 0; i < list.size(); i++) {
+			ModelNhanVien emp = new ModelNhanVien();
+			emp.setMaNV(String.valueOf(list.get(i)[0]));
+			emp.setHoTen(String.valueOf(list.get(i)[1]));
+			emp.setChucVu(Integer.parseInt(String.valueOf(list.get(i)[2])));
+			emp.setCMND(String.valueOf(list.get(i)[3]));
+			emp.setEmail(String.valueOf(list.get(i)[4]));
+			emp.setSoDT(String.valueOf(list.get(i)[5]));
+			emp.setNgaySinh(String.valueOf(list.get(i)[6]));
+			emp.setPathHinhAnh(String.valueOf(list.get(i)[7]));
+			emp.setGioiTinh(Boolean.parseBoolean(String.valueOf(list.get(i)[8])));
+			emp.setTrangThai(Boolean.parseBoolean(String.valueOf(list.get(i)[9])));
+			data[i][0] = emp;
+			data[i][1] = true;
 		}
 		return data;
 	}
@@ -134,12 +81,43 @@ public class TestValidFullname {
 	 * @param expected
 	 */
 	@Test(dataProvider = "data")
-	public void testValidFullnameSuccess(String fullname, Boolean expected) {
-		Boolean actual = true;
-		if (!FormValidator.isTextContainsSpace(fullname)) {
-			actual = false;
+	public void testValidFullnameSuccess(Object[] o) {
+		ModelNhanVien emp = (ModelNhanVien) o[0];
+		Boolean e = (Boolean) o[1];
+		Boolean actual = false;
+		if (FormValidator.isValidFormNhanVien(true, emp, nvDao.selectAll())) {
+			actual = true;
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, e);
 	}
 
+	@AfterClass
+	public void writeResult() {
+		Object[][] datac = new Object[data().length][10];
+		for (int i = 0; i < data().length; i++) {
+			System.err.println(data()[i][0]);
+			if (data()[i][0] instanceof ModelNhanVien) {
+				System.out.println("Converted");
+				ModelNhanVien nv = (ModelNhanVien) data()[i][0];
+				datac[i][0] = nv.getMaNV();
+				datac[i][1] = nv.getHoTen();
+				datac[i][2] = nv.getChucVu();
+				datac[i][3] = nv.getCMND();
+				datac[i][4] = nv.getEmail();
+				datac[i][5] = nv.getSoDT();
+				datac[i][6] = nv.getNgaySinh();
+				datac[i][7] = nv.getPathHinhAnh();
+				datac[i][8] = nv.isGioiTinh();
+				datac[i][9] = nv.isTrangThai();
+			}
+		}
+		try {
+			ExcelGo.writeExcelv2("excel-file/asm-temp.xlsx", 2, 169, 6,
+					"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh,Gender,TrangThai", datac);
+			System.err.println("Save Success");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

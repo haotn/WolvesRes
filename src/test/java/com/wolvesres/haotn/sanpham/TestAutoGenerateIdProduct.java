@@ -49,11 +49,19 @@ public class TestAutoGenerateIdProduct {
 	@Test
 	public void testAutoGenerateIdProduct() {
 		Boolean exist = false;
-		for (ModelSanPham item : listProduct) {
-			if (item.getMaSP().equals(this.idProduct)) {
-				exist = true;
-				break;
+		if (idProduct != null) {
+			for (ModelSanPham item : listProduct) {
+				if (item.getMaSP().equals(this.idProduct)) {
+					exist = true;
+					System.out.println("Mã sản phẩm bị trùng!");
+					break;
+				}
 			}
+		} else {
+			System.out.println("Mã sản phẩm tự tạo không thành công!");
+		}
+		if (!exist) {
+			System.out.println("Mã sản phẩm tự sinh hợp lệ!");
 		}
 		Assert.assertTrue(!exist);
 	}

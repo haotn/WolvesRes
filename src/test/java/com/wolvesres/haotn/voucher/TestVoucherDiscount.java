@@ -1,12 +1,17 @@
 package com.wolvesres.haotn.voucher;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Test voucher discount
@@ -32,11 +37,8 @@ public class TestVoucherDiscount {
 	 */
 	@DataProvider(name = "dataForTestVoucherDiscount")
 	public Object[][] dataForTestVoucherDiscount() {
-		Object[][] data = new Object[50][2];
-		for (int i = 0; i < 50; i++) {
-			data[i][0] = dataGenerator.randomMinMax(0.1, 100);
-			data[i][1] = true;
-		}
+		Object[][] data = new Object[][] { { 0.1, true }, { 99.9, true }, { 50.5, true }, { 75.75, true },
+				{ 25.25, true } };
 		return data;
 	}
 
@@ -51,8 +53,11 @@ public class TestVoucherDiscount {
 		Boolean actual = false;
 		if (discount <= 100 && discount > 0) {
 			actual = true;
+			System.out.println("Phần trăm giảm giá của voucher hợp lệ!");
+		} else {
+			System.out.println("Phần trăm giảm giá của voucher không hợp lệ!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 	}
 
 	/**
@@ -62,8 +67,8 @@ public class TestVoucherDiscount {
 	 */
 	@DataProvider(name = "dataForTestVoucherDiscountLetter")
 	public Object[][] dataForTestVoucherDiscountLetter() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][2];
+		for (int i = 0; i < 5; i++) {
 			data[i][0] = dataGenerator.generateTextAndNumber(0.1, 100);
 			data[i][1] = false;
 		}
@@ -79,16 +84,19 @@ public class TestVoucherDiscount {
 	@Test(dataProvider = "dataForTestVoucherDiscountLetter")
 	public void testVoucherDiscountLetter(String discount, Boolean expected) {
 		Boolean actual = true;
-		if (!FormValidator.isNumber(discount)) {
+		if (!FormValidator.isIntNumber(discount)) {
 			actual = false;
+			System.out.println("Phần trăm giảm giá phải là số!");
+		} else {
+			System.out.println("Phần trăm giảm hợp lệ (là số)!");
 		}
 		Assert.assertEquals(expected, actual);
 	}
 
 	@DataProvider(name = "dataForTestVoucherDiscountGreaterThan100")
 	public Object[][] dataForTestVoucherDiscountGreaterThan100() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
+		Object[][] data = new Object[5][2];
+		for (int i = 0; i < 5; i++) {
 			data[i][0] = dataGenerator.randomMinMax(101.1, 999.9);
 			data[i][1] = false;
 		}
@@ -100,7 +108,23 @@ public class TestVoucherDiscount {
 		Boolean actual = true;
 		if (discount > 100) {
 			actual = false;
+			System.out.println("Phần trăm giảm giá phải là số nằm trong khoảng 0 đến 100!");
+		} else {
+			System.out.println("Phần trăm giảm giá hợp lệ!");
 		}
 		Assert.assertEquals(expected, actual);
+	}
+
+	@AfterClass
+	public void writeResult() {
+		Object[][] dataWrite = new Object[dataForTestVoucherDiscountGreaterThan100().length][1];
+		for (int i = 0; i < dataForTestVoucherDiscountGreaterThan100().length; i++) {
+			dataWrite[i][0] = dataForTestVoucherDiscountGreaterThan100()[i][0];
+		}
+		try {
+			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 275, 6, "PhanTramGiamGia", dataWrite);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

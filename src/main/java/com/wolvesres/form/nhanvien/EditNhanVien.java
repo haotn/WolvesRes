@@ -198,7 +198,7 @@ public class EditNhanVien extends javax.swing.JDialog {
 			ROptionDialog.showAlert(frame, "Lỗi", "Độ dài số CMND/CCCD không hợp lệ!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			return false;
-		} else if (!FormValidator.isNumber(idNational)) {
+		} else if (!FormValidator.isIntNumber(idNational)) {
 			// Check if idNational is not number
 			ROptionDialog.showAlert(frame, "Lỗi", "CMND/CCCD phải là số!", ROptionDialog.WARNING, Color.red,
 					Color.black);

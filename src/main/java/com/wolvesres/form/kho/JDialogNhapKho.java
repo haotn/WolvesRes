@@ -28,8 +28,8 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Nhập kho, lưu lịch sử nhập kho, lưu lịch sử chi tiết nhập kho
- * Lien Quan:ModelKho(insert),ModelLichSu(insert),ModelChiTietLichSu(insert),
+ * Nhập kho, lưu lịch sử nhập kho, lưu lịch sử chi tiết nhập kho Lien
+ * Quan:ModelKho(insert),ModelLichSu(insert),ModelChiTietLichSu(insert),
  */
 public class JDialogNhapKho extends javax.swing.JDialog {
 
@@ -211,7 +211,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		int sl = 0;
 		try {
 			sl = Integer.parseInt(txtSoLuong.getText().trim());
-			if (validator.isLessThan(sl, 1)) {
+			if (FormValidator.isLessThan(sl, 1)) {
 				sl = listNhapKho.get(select).getSoLuong();
 				txtSoLuong.setText(sl + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Số lượng nhập ít nhất là 1!", ROptionDialog.WARNING, Color.red,
@@ -233,14 +233,14 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		float gia = 0;
 		try {
 			gia = Float.parseFloat(txtGia.getText().trim());
-			if (gia<= 0) {
+			if (gia <= 0) {
 				gia = listNhapKho.get(select).getGia();
 				txtGia.setText(gia + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Giá phải lớn 0!", ROptionDialog.WARNING, Color.red, Color.black);
 				return false;
 			}
 			float gt = listNhapKho.get(select).getGia() + (listNhapKho.get(select).getGia() / 2);
-			if (validator.isGreaterThan(gia, gt)) {
+			if (FormValidator.isGreaterThan(gia, gt)) {
 				gia = listNhapKho.get(select).getGia();
 				txtGia.setText(gia + "");
 				ROptionDialog.showAlert(frame, "Lỗi", "Giá nhập quá lớn so với giá hiện tại!", ROptionDialog.WARNING,
@@ -262,12 +262,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		today = XDate.toDate(XDate.toString(today, "dd-MM-yyyy"), "dd-MM-yyyy");
 		Date minDay = XDate.addDays(today, 364);
 		Date day = XDate.toDate(txtNgayHetHan.getText().trim(), "dd-MM-yyyy");
-//        if (!day.after(today)) {
-//            ROptionDialog.showAlert(frame, "Hạn sử dụng đã hết hạn");
-//            txtNgayHetHan.setText(listNhapKho.get(select).getHanSD());
-//            return false;
-//        }
-		if (!validator.isDateAfter(day, minDay)) {
+		if (!FormValidator.isDateAfter(day, minDay)) {
 			ROptionDialog.showAlert(frame, "Lỗi", "Hạn sử dụng ít nhất!", ROptionDialog.WARNING, Color.red,
 					Color.black);
 			txtNgayHetHan.setText(listNhapKho.get(select).getHanSD());
@@ -276,15 +271,16 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 		return true;
 	}
 
-	/** xử lý nhập kho
+	/**
+	 * xử lý nhập kho
 	 * 
-	 * @param Modelkho 
+	 * @param Modelkho
 	 * @method insert
-	 * @param ModelLichSu 
+	 * @param ModelLichSu
 	 * @method insert
-	 *  @param ModelChiTietLichSu 
+	 * @param ModelChiTietLichSu
 	 * @method insert
-	 * */
+	 */
 	public void NhapKho() {
 		if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận nhập kho?", ROptionDialog.WARNING, Color.yellow,
 				Color.black)) {
@@ -296,7 +292,7 @@ public class JDialogNhapKho extends javax.swing.JDialog {
 				// Lịch sử
 				ModelLichSu mdLS = new ModelLichSu();
 				// thêm lịch sử nhập
-				mdLS.insert(listNhapKho,true, NV);
+				mdLS.insert(listNhapKho, true, NV);
 				listLS.clear();
 				listLS.addAll(lsDAO.selectAll());
 				int idLS = listLS.get(listLS.size() - 1).getId();

@@ -1,6 +1,9 @@
 package com.wolvesres.haotn.kho;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +12,9 @@ import org.testng.annotations.Test;
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XDate;
+import com.wolvesres.model.ModelKho;
 
+import exceldoing.ExcelGo;
 
 /**
  * Test date product import
@@ -28,36 +33,40 @@ public class TestDateProduct {
 		dataGenerator = new DataGenerator();
 	}
 
-//	public static void main(String[] args) {
-//		NhanVienDAO dao = new NhanVienDAO();
-//		Auth.user = dao.selectById("BOSS01");
-//		Main main = new Main();
-//		EditNhanVien editForm = new EditNhanVien(main, false);
-//		editForm.setNhanVien(new ModelNhanVien("NV001", "", false, "2000-11-11", "", "", "", "", 0, false));
-//		editForm.setForm();
-//		if (editForm.valideForm()) {
-//			System.out.println("Is valid");
-//		} else {
-//			System.out.println("In valid");
-//		}
-//	}
 	@DataProvider(name = "dateProductImport")
 	public Object[][] dataForDateProductImport() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
-			data[i][0] = dataGenerator.generateDate(2022, 2022);
+
+		List<Object[]> list = new ArrayList<Object[]>();
+		try {
+			list = ExcelGo.readExcel("excel-file/sanpham-fail-date.xlsx", 0, 11, 0);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Object[][] data = new Object[list.size()][2];
+		for (int i = 0; i < list.size(); i++) {
+			ModelKho item = new ModelKho();
+			item.setId(Integer.parseInt(String.valueOf(list.get(i)[0])));
+			item.setIdls(Integer.parseInt(String.valueOf(list.get(i)[1])));
+			item.setMaSP(String.valueOf(list.get(i)[2]));
+			item.setSoLuong(Integer.parseInt(String.valueOf(list.get(i)[3])));
+			item.setHanSuDung(String.valueOf(list.get(i)[4]));
+			item.setTrangThai(Boolean.parseBoolean(String.valueOf(list.get(i)[5])));
+			data[i][0] = item;
 			data[i][1] = false;
 		}
 		return data;
 	}
 
 	@Test(dataProvider = "dateProductImport")
-	public void testDateProductImportFail(Date dateProduct, Boolean expected) {
+	public void testDateProductImportFail(Object[] o) {
+		Boolean expected = Boolean.parseBoolean(String.valueOf(o[1]));
+		ModelKho entity = (ModelKho) o[0];
 		Boolean actual = true;
-		Date date = XDate.addDays(new Date(), 365);
-		if (FormValidator.isDateBefore(dateProduct, date)) {
+		if (!FormValidator.validFormKho(String.valueOf(entity.getSoLuong()), "50000",
+				XDate.toDate(entity.getHanSuDung(), "dd-MM-yyyy"))) {
 			actual = false;
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 	}
 }

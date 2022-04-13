@@ -20,7 +20,7 @@ public class TestValidTableAreaName {
 	 */
 	@DataProvider(name = "dataForTestTableAreaName")
 	public Object[][] dataForTestTableAreaName() {
-		return new Object[][] { { "", false } };
+		return new Object[][] { { "", false }, { " ", false }, { "\t", false } };
 	}
 
 	@Test(dataProvider = "dataForTestTableAreaName")
@@ -28,6 +28,9 @@ public class TestValidTableAreaName {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(tableAreaName)) {
 			actual = false;
+			System.out.println("Tên khu bàn không được để trống!");
+		}else {
+			System.out.println("Tên khu bàn hợp lệ!");
 		}
 		Assert.assertEquals(expected, actual);
 	}

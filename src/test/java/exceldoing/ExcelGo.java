@@ -21,6 +21,13 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.wolvesres.dao.DanhMucDAO;
+import com.wolvesres.dao.DonViTinhDAO;
+import com.wolvesres.dao.SanPhamDAO;
+import com.wolvesres.helper.DataGenerator;
+import com.wolvesres.helper.XDate;
+import com.wolvesres.model.ModelNhanVien;
+
 public class ExcelGo {
 
 	public static void main(String[] args) throws IOException {
@@ -30,7 +37,42 @@ public class ExcelGo {
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
 				{ "xzzz", "zzzz" } };
-		writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "username,password", dataprovider);
+		DataGenerator dataG = new DataGenerator();
+//		List<ModelNhanVien> list = dataG.generateListNhanVien(true, false, true, true, true, 5);
+//		Object[][] data = new Object[list.size()][10];
+//		for (int i = 0; i < list.size(); i++) {
+//			data[i][0] = list.get(i).getMaNV();
+//			data[i][1] = list.get(i).getHoTen();
+//			data[i][2] = list.get(i).getChucVu();
+//			data[i][3] = list.get(i).getCMND();
+//			data[i][4] = list.get(i).getEmail();
+//			data[i][5] = list.get(i).getSoDT();
+//			data[i][6] = list.get(i).getNgaySinh();
+//			data[i][7] = list.get(i).getPathHinhAnh();
+//			data[i][8] = list.get(i).isGioiTinh();
+//			data[i][9] = list.get(i).isTrangThai();
+//			if (i == list.size() - 1) {
+//				System.out.println("=100");
+//				writeExcelv2("excel-file/nhanVien-fail-idNational-data.xlsx", 0, 0, 0,
+//						"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh,Gender,TrangThai", data);
+//			}
+//		}
+		SanPhamDAO spDao = new SanPhamDAO();
+		Object[][] data = new Object[5][6];
+		for (int i = 0; i < 5; i++) {
+			data[i][0] = i + 50;
+			data[i][1] = i + 150;
+			data[i][2] = spDao.selectAll().get(dataG.randomMinMax(0, spDao.selectAll().size() - 1)).getMaSP();
+			data[i][3] = dataG.randomMinMax(10, 1000);
+			data[i][4] = XDate.toString(dataG.generateDate(2022, 2022), "dd-MM-yyyy");
+			data[i][5] = true;
+			if (i == data.length - 1) {
+				System.out.println("=100");
+				writeExcelv2("excel-file/sanpham-fail-date.xlsx", 0, 0, 0, "ID,IDLS,MaSP,SoLuong,HanSuDung,TrangThai",
+						data);
+			}
+		}
+
 	}
 
 	private static CellStyle cellStyleFormatNumber = null;

@@ -262,9 +262,18 @@ public class FormValidator {
 	 * @param idNational
 	 * @return is number
 	 */
-	public static Boolean isNumber(String text) {
+	public static Boolean isIntNumber(String text) {
 		try {
-			Long.parseLong(text);
+			Integer.parseInt(text);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public static Boolean isFloatNumber(String text) {
+		try {
+			Float.parseFloat(text);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -553,7 +562,7 @@ public class FormValidator {
 		Date today = new Date();
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(today);
-		int yearOfBirth = Integer.parseInt(emp.getNgaySinh().substring(emp.getNgaySinh().lastIndexOf("/") + 1));
+		int yearOfBirth = Integer.parseInt(emp.getNgaySinh().substring(emp.getNgaySinh().lastIndexOf("-")));
 		// Set value for pathAvatar
 		if (!isTextIsNotEmpty(emp.getHoTen()) || !isTextIsNotEmpty(emp.getSoDT()) || !isTextIsNotEmpty(emp.getEmail())
 				|| !isTextIsNotEmpty(emp.getCMND())) {
@@ -568,7 +577,7 @@ public class FormValidator {
 			// Check if idNational's length is invalid
 			System.out.println("Độ dài CCCD/CMND không hợp lệ!");
 			return false;
-		} else if (!isNumber(emp.getCMND())) {
+		} else if (!isIntNumber(emp.getCMND())) {
 			// Check if idNational is not number
 			System.out.println("CMND/CCCD phải là số!");
 			return false;
@@ -669,7 +678,7 @@ public class FormValidator {
 			System.out.println("Mã voucher phải có ít nhất 5 ký tự!");
 			return false;
 		}
-		if (!FormValidator.isNumber(soLuong)) {
+		if (!FormValidator.isIntNumber(soLuong)) {
 			System.out.println("Số lượng chỉ chấp nhận số nguyên!");
 			return false;
 		}
@@ -726,6 +735,31 @@ public class FormValidator {
 				System.out.println("Mật khẩu phải có từ 6 đến 16 ký tự!");
 				return false;
 			}
+		}
+		return true;
+	}
+
+	public static Boolean validFormKho(String soLuong, String gia, Date ngay) {
+		if (!isIntNumber(soLuong)) {
+			System.out.println("Số lượng phải là số nguyên!");
+			return false;
+		} else if (!isGreaterThan(Integer.parseInt(soLuong), 1)) {
+			System.out.println("Số lượng ít nhất là 1!");
+			return false;
+		}
+		if (!isFloatNumber(gia)) {
+			System.out.println("Giá chỉ chấp nhận giá trị số!");
+			return false;
+		} else if (!isGreaterThan(Float.parseFloat(gia), 0)) {
+			System.out.println("Giá phải lớn hơn 0!");
+			return false;
+		}
+		Date today = new Date();
+		today = XDate.toDate(XDate.toString(today, "dd-MM-yyyy"), "dd-MM-yyyy");
+		Date minDay = XDate.addDays(today, 36);
+		if (!isDateAfter(ngay, minDay)) {
+			System.out.println("Hạn sử dụng ít nhất là 1 năm!");
+			return false;
 		}
 		return true;
 	}

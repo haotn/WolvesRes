@@ -104,7 +104,7 @@ public class ExtractedModule {
 			System.out.println("c.w.f.voucher: EditVoucher.line147.validateForm(): mã - 5 ký tự");
 			return false;
 		}
-		if (!FormValidator.isNumber(soLuong)) {
+		if (!FormValidator.isIntNumber(soLuong)) {
 			System.out.println("c.w.f.voucher: EditVoucher.line147.validateForm(): số lượng - thực");
 			return false;
 		}
@@ -324,7 +324,7 @@ public class ExtractedModule {
 			// Check if idNational's length is invalid
 			System.out.println("c.w.f.nhanvien: EditNhanVien.line165.valideForm(): CMND/CCCD <9 || >12");
 			return false;
-		} else if (!FormValidator.isNumber(idNational)) {
+		} else if (!FormValidator.isIntNumber(idNational)) {
 			// Check if idNational is not number
 			System.out.println("c.w.f.nhanvien: EditNhanVien.line165.valideForm(): CMND/CCCD - chữ");
 			return false;

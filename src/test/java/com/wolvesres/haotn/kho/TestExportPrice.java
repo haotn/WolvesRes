@@ -1,42 +1,15 @@
 package com.wolvesres.haotn.kho;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-/**
- * Test product export price
- * @author Brian
- *
- */
-
-import com.wolvesres.helper.DataGenerator;
-import com.wolvesres.model.ModelNhanVien;
 
 import exceldoing.ExcelGo;
 
 public class TestExportPrice {
-	private DataGenerator dataGenerator;
-	private List<ModelNhanVien> listNhanVien;
-
-	/**
-	 * Before class - Generate global variable value
-	 */
-	@BeforeClass
-	public void beforeClass() {
-		dataGenerator = new DataGenerator();
-		listNhanVien = new ArrayList<ModelNhanVien>();
-		try {
-			List<Object[]> readData = ExcelGo.readExcel("excel-file/nhanvien-data.xlsx", 0, 99, 1);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * DataProvider for testProductExportPrice
@@ -45,11 +18,9 @@ public class TestExportPrice {
 	 */
 	@DataProvider(name = "dataForExportPrice")
 	public Object[][] dataForExportPrice() {
-		Object[][] data = new Object[100][2];
-		for (int i = 0; i < 100; i++) {
-			data[i][0] = dataGenerator.randomMinMax(-100000000.1, -0.000000000001);
-			data[i][1] = false;
-		}
+		Object[][] data = new Object[][] { { -0.000001, false }, { -100000.000001, false }, { -50000.0000050, false },
+				{ -750000.0000075, false }, { -250000.0000025, false } };
+
 		return data;
 	}
 
@@ -64,8 +35,25 @@ public class TestExportPrice {
 		Boolean actual = true;
 		if (price < 0) {
 			actual = false;
+			System.out.println("Giá sản phẩm phải lớn hơn 0!");
+		} else {
+			System.out.println("Giá sản phẩm hợp lệ (lớn hơn 0)!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
+	}
+
+	@AfterClass
+	public void writeResult() {
+		Object[][] dataWrite = new Object[dataForExportPrice().length][1];
+		for (int i = 0; i < dataForExportPrice().length; i++) {
+			dataWrite[i][0] = dataForExportPrice()[i][0];
+		}
+		try {
+			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 286, 6, "GiaXuatKho", dataWrite);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

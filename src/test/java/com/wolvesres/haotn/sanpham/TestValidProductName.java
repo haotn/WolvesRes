@@ -1,10 +1,15 @@
 package com.wolvesres.haotn.sanpham;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.FormValidator;
+
+import exceldoing.ExcelGo;
 
 /**
  * Test valid product name (not empty)
@@ -36,7 +41,24 @@ public class TestValidProductName {
 		Boolean actual = false;
 		if (FormValidator.isTextContainsSpace(productName)) {
 			actual = true;
+			System.out.println("Tên sản phẩm hợp lệ!");
+		} else {
+			System.out.println("Tên sản phẩm không hợp lệ!");
 		}
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
+	}
+
+	@AfterClass
+	public void writeResult() {
+		Object[][] dataWrite = new Object[data().length][1];
+		for (int i = 0; i < data().length; i++) {
+			dataWrite[i][0] = data()[i][0];
+		}
+		try {
+			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 216, 6, "TenSanPham", dataWrite);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
