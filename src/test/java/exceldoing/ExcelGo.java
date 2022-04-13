@@ -37,6 +37,7 @@ public class ExcelGo {
 //			3> dataname cách nhau bằng dấu phẩy: ,
 		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
 				{ "xzzz", "zzzz" } };
+
 		DataGenerator dataG = new DataGenerator();
 //		List<ModelNhanVien> list = dataG.generateListNhanVien(true, false, true, true, true, 5);
 //		Object[][] data = new Object[list.size()][10];
@@ -156,7 +157,6 @@ public class ExcelGo {
 			writeBook(row, namedata, data[i], column);
 			rowstart++;
 		}
- 
 		// Create file excel
 		createOutputFile(workbook, path);
 		System.out.println("Done!!!");

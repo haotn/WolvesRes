@@ -544,7 +544,7 @@ public class FormValidator {
 	 * @return is valid
 	 */
 	public static Boolean isBeginDateValid(Date beginDate) {
-		if (!isDateBefore(beginDate, beginDate)) {
+		if (isDateBefore(beginDate, new Date())) {
 			return false;
 		}
 		return true;

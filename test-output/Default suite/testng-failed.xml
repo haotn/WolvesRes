@@ -4,6 +4,7 @@
   <test thread-count="5" name="Default test(failed)">
     <classes>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.voucher.TestVoucherCode">
         <methods>
           <include name="testVoucherCodeLength"/>
@@ -20,6 +21,14 @@
         </methods>
       </class> <!-- com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong -->
 >>>>>>> ce953484b24440455f3bc23e692e4d757af26ced
+=======
+      <class name="com.wolvesres.taikhoan.TestValidXacNhanMatKhau">
+        <methods>
+          <include name="beforClass"/>
+          <include name="testValidXacNhanMatKhauSuccess" invocation-numbers="4"/>
+        </methods>
+      </class> <!-- com.wolvesres.taikhoan.TestValidXacNhanMatKhau -->
+>>>>>>> 5790c9fa2db3ae5f0005f1101af10bc0e89d571a
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
