@@ -1,8 +1,10 @@
 package com.wolvesres.truongnvn.khuban;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -15,6 +17,7 @@ import com.wolvesres.helper.FormValidator;
 import com.wolvesres.model.ModelBan;
 import com.wolvesres.model.ModelKhuBan;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 /**
  * Kiểm tra tên khu bàn thất bại do nhập trùng khu bàn
@@ -57,4 +60,8 @@ public class TestEqualsKhuBan {
 		
 		Assert.assertEquals(expected, actual);
 	}
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "khuBan",data());
+//	}
 }

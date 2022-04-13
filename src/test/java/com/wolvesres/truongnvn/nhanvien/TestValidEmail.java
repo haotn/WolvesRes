@@ -1,10 +1,14 @@
 package com.wolvesres.truongnvn.nhanvien;
 
+import java.io.IOException;
+
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 public class TestValidEmail {
@@ -57,4 +61,8 @@ public class TestValidEmail {
 		Boolean actual = FormValidator.isTextIsNotEmpty(email);
 		Assert.assertEquals(expected, actual);
 	}
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "email", dataEmpty());
+//	}
 }

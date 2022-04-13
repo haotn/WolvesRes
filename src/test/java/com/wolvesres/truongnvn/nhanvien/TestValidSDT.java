@@ -1,8 +1,14 @@
 package com.wolvesres.truongnvn.nhanvien;
-
+import java.io.IOException;
+/**
+ * Kiểm tra định dạng số điện thoại thành công
+ * 
+ * Kiểm tra định dạng số điện thoại thất bại do nhập đầu số không hợp lệ
+ * */
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,6 +16,7 @@ import org.testng.annotations.Test;
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 public class TestValidSDT {
@@ -80,4 +87,8 @@ public class TestValidSDT {
 		Boolean actual = FormValidator.isValidPhoneNumber(sdt);
 		Assert.assertEquals(expected, actual);
 	}
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "SDT", datafalse());
+//	}
 }

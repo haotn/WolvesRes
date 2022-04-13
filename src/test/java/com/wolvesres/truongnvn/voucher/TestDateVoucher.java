@@ -2,8 +2,10 @@ package com.wolvesres.truongnvn.voucher;
 
 
 
+import java.io.IOException;
 import java.util.Date;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,6 +13,7 @@ import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XDate;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 /**
  * Kiểm tra ngày bắt đầu của voucher thất bại do chọn ngày bắt đầu sau ngày kết thúc
@@ -63,4 +66,9 @@ public class TestDateVoucher {
 		Boolean actual = FormValidator.isDateAfter(startdate, enddate);
 		Assert.assertEquals(expected, actual);
 	}
+	
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "ngayBatDau,ngayKetThuc",datadateafter());
+//	}
 }

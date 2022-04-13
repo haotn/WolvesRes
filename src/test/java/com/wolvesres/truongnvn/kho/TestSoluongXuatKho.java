@@ -1,11 +1,13 @@
 package com.wolvesres.truongnvn.kho;
 
 import java.awt.Frame;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -17,6 +19,7 @@ import com.wolvesres.main.Main;
 import com.wolvesres.model.ModelKho;
 import com.wolvesres.model.ModelNhapKho;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 /**
@@ -51,7 +54,7 @@ public class TestSoluongXuatKho {
 	 */
 	@DataProvider(name = "dataSoluong")
 	public Object[][] data() {
-		return new Object[][] { { "", false } };
+		return new Object[][] { { "", false } ,{ "\t", false } ,{ " ", false } };
 	}
 
 	/**
@@ -84,5 +87,10 @@ public class TestSoluongXuatKho {
 		xuatkho.getTxtGia().setText(String.valueOf(gia));
 		Boolean actual = xuatkho.checkGia(0);
 		Assert.assertEquals(expected, actual);
+	}
+	
+	@AfterClass
+	public void writreExcel() throws IOException{
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "gia",dataGia() );
 	}
 }

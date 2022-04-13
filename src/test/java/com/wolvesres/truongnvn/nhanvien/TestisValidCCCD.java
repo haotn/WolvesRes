@@ -1,8 +1,10 @@
 package com.wolvesres.truongnvn.nhanvien;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,6 +12,7 @@ import org.testng.annotations.Test;
 import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 /**
@@ -30,7 +33,7 @@ public class TestisValidCCCD {
 	public void beforClass() {
 		data = new DataGenerator();
 		listCCCD = new ArrayList<String>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 50; i++) {
 			String cccd = data.generateIdNational();
 			listCCCD.add(cccd);
 		}
@@ -131,4 +134,8 @@ public class TestisValidCCCD {
 		Boolean actual = FormValidator.isYearOfBirthInCentury(nam,maTheKi);
 		Assert.assertEquals(expected, actual);
 	}
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "maNam,maTheKi", dataFalseNSTK() );
+//	}
 }

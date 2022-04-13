@@ -1,9 +1,12 @@
 package com.wolvesres.truongnvn.nhanvien;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.dao.NhanVienDAO;
@@ -12,6 +15,11 @@ import com.wolvesres.helper.Auth;
 import com.wolvesres.main.Main;
 import com.wolvesres.model.ModelNhanVien;
 
+import exceldoing.ExcelGo;
+
+/**
+ * Them nhan vien do bo trong thong tin
+ */
 public class TestAddNV {
 	private NhanVienDAO nvdao;
 	private List<ModelNhanVien> listNhanVien;
@@ -22,27 +30,44 @@ public class TestAddNV {
 	@BeforeClass
 	public void beforeClass() {
 		nvdao = new NhanVienDAO();
-				
+
 	}
- 
+
+	/**
+	 * DataProvider for them nha nvien that bai
+	 * 
+	 * @return Object[][]
+	 */
+	@DataProvider(name = "dataNV")
+	public Object[][] data() {
+		return new Object[][] { { "NV01", "", false, "2000-10-10", "", "", "", "", 0, false ,false} };
+	}
+
 	/**
 	 * Test them nhan vien that bai voi du lieu trong
 	 * 
-	 * @param 
+	 * @param
 	 */
-	@Test(groups = "themnhanvienthatbai", priority = 0)
-	public void testThemNhanVien() {
-		Boolean actual;
+	@Test(dataProvider = "dataNV", groups = "themnhanvienthatbai", priority = 0)
+	public void testThemNhanVien(String maNV, String hoTen, boolean gioiTinh, String ngaySinh, String CMND, String soDT,
+			String email, String pathHinhAnh, int ChucVu, boolean trangThai, boolean expected) {
+		boolean actual = true;
 		Auth.user = nvdao.selectById("BOSS02");
 		Main main = new Main();
 		EditNhanVien edit = new EditNhanVien(main, false);
-		edit.setNhanVien(new ModelNhanVien("NV01", "", false, "2000-10-10", "", "", "", "", 0, false));
+		edit.setNhanVien(
+				new ModelNhanVien(maNV, hoTen, gioiTinh, ngaySinh, CMND, soDT, email, pathHinhAnh, ChucVu, trangThai));
 		edit.setForm();
 		if (edit.valideForm()) {
-			actual = false;
+			actual = true;
 		} else {
-			actual= true;
+			actual = false;
 		}
-		Assert.assertTrue(actual);
+		Assert.assertEquals(actual, expected);
 	}
+	
+//	@AfterClass
+//	public void writreExcel() throws IOException{
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "maNV,hoTen,gioiTinh,ngaySinh,CMND,soDT,email,pathHinhAnh,ChucVu,trangThai", data());
+//	}
 }
