@@ -1,5 +1,6 @@
 package com.wolvesres.hott.donvitinh;
 
+import org.testng.annotations.AfterClass;
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 //import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra định dạng đơn vị tính thành công
@@ -20,7 +22,7 @@ public class TestUnit {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "lon", true }, { "chai", true }, { "ly", true }};
+		return new Object[][] { { "lon", true }, { "chai", true }, { "ly", true }, { "bịch", true }, { "cây", true }};
 	}
 
 	/**
@@ -37,5 +39,11 @@ public class TestUnit {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	@AfterClass
+	public void exportExcel() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "unit", data());
+		
 	}
 }

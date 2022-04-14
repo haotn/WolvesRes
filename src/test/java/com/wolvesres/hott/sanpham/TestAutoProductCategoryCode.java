@@ -3,6 +3,7 @@ package com.wolvesres.hott.sanpham;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,6 +13,7 @@ import com.wolvesres.dao.DanhMucDAO;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.model.ModelDanhMuc;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra mã danh mục sản phẩm tự sinh thành công
@@ -53,4 +55,5 @@ public class TestAutoProductCategoryCode {
 		}
 		Assert.assertTrue(!exist);
 	}
+	
 }

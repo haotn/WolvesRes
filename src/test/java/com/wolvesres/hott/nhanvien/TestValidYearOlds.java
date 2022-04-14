@@ -1,5 +1,6 @@
 package com.wolvesres.hott.nhanvien;
 
+import org.testng.annotations.AfterClass;
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
 import com.wolvesres.helper.XDate;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra định dạng thứ tự trước sau của ngày thất bại do chọn dưới 18 tuổi
@@ -39,5 +41,11 @@ public class TestValidYearOlds {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	@AfterClass
+	public void exportExcel() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "birthday", data());
+		
 	}
 }

@@ -1,10 +1,12 @@
 package com.wolvesres.hott.ban;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra định dạng tên bàn thất bại do bỏ trống
@@ -17,7 +19,7 @@ public class TestTableName {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "", false}, { " ", false}};
+		return new Object[][] { { "", false}, { " ", false}, { "\t", false}};
 	}
 
 	/**
@@ -34,5 +36,11 @@ public class TestTableName {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	@AfterClass
+	public void exportExcel() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "tableName", data());
+		
 	}
 }

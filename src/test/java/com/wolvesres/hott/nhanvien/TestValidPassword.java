@@ -1,5 +1,6 @@
 package com.wolvesres.hott.nhanvien;
 
+import org.testng.annotations.AfterClass;
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 //import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra định dạng mật khẩu thành công
@@ -21,7 +23,7 @@ public class TestValidPassword {
 	 */
 	@DataProvider
 	public Object[][] dataA() {
-		return new Object[][] {{ "ksng39sd", true}, {"hfnfkd32sdd", true}};
+		return new Object[][] {{ "ksng39sd", true}, {"hfnfkd32sdd", true}, {"123hde", true}, {"123456789mjskehf", true}, {"123456789", true}, {"abchsjds", true}};
 	}
 
 	/**
@@ -47,7 +49,7 @@ public class TestValidPassword {
 	 */
 	@DataProvider
 	public Object[][] dataB() {
-		return new Object[][] {{ "x2sds", false}, {"346dfjdmfdfgjdjfjgfdjgjddffdfsdfsdfsdffgjdfgjdfjgdfd", false}};
+		return new Object[][] {{ "", false}, {" ", false}, {"\t", false}};
 	}
 
 	/**
@@ -59,10 +61,23 @@ public class TestValidPassword {
 	@Test(dataProvider = "dataB", groups = "PasswordFail")
 	public void testValidPasswordFail(String password, Boolean expected) {
 		Boolean actual = true;
-		if (!FormValidator.validatePass(password)) {
+		if (!FormValidator.isTextIsNotEmpty(password)) {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+
+	@AfterClass(groups = "PasswordSuccess")
+	public void exportExcelA() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "password", dataA());
+		
+	}
+	
+	@AfterClass(groups = "PasswordFail")
+	public void exportExcelB() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "password", dataB());
+		
 	}
 }

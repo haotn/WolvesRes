@@ -1,5 +1,6 @@
 package com.wolvesres.hott.nhanvien;
 
+import org.testng.annotations.AfterClass;
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 //import com.wolvesres.helper.DataGenerator;
 import com.wolvesres.helper.FormValidator;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 //Kiểm tra định dạng email thất bại do viết số ở đầu
@@ -20,7 +22,8 @@ public class TestValidEmail {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "1testmotcaigido@gmail.com", false }, { "2testmotcaigido@gmail.com", false }, { "3testmotcaigido@gmail.com", false }};
+		return new Object[][] { { "1testmotcaigido@gmail.com", false }, { "2testmotcaigido@gmail.com", false }, { "3testmotcaigido@gmail.com", false }
+		, { "4testmotcaigido@gmail.com", false }, { "5testmotcaigido@gmail.com", false }};
 	}
 
 	/**
@@ -37,5 +40,11 @@ public class TestValidEmail {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	@AfterClass
+	public void exportExcel() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "email", data());
+		
 	}
 }

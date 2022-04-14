@@ -2,11 +2,13 @@ package com.wolvesres.hott.voucher;
 
 import java.util.Date;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.wolvesres.helper.XDate;
 
+import exceldoing.ExcelGo;
 import junit.framework.Assert;
 
 
@@ -20,7 +22,9 @@ public class TestVoucherEndDay {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { XDate.toDate("13-4-2021", "dd-MM-yyyy"), false}, { XDate.toDate("14-4-2021", "dd-MM-yyyy"), false}};
+		return new Object[][] { { XDate.toDate("12-4-2020", "dd-MM-yyyy"), false}, { XDate.toDate("13-4-2020", "dd-MM-yyyy"), false}, 
+			{ XDate.toDate("12-4-2021", "dd-MM-yyyy"), false}, { XDate.toDate("13-4-2021", "dd-MM-yyyy"), false},
+			{ XDate.toDate("12-4-2021", "dd-MM-yyyy"), false}, { XDate.toDate("13-4-2021", "dd-MM-yyyy"), false}};
 	}
 
 	/**
@@ -37,5 +41,11 @@ public class TestVoucherEndDay {
 		}
 		Assert.assertEquals(expected, actual);
 
+	}
+	
+	@AfterClass
+	public void exportExcel() throws Exception {
+		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "voucherEndDay", data());
+		
 	}
 }
