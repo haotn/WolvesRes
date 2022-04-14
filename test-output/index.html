@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Brian\AppData\Local\Temp\testng-eclipse-1036347793\testng-customsuite.xml</span>
+                    <span>C:\Users\Brian\AppData\Local\Temp\testng-eclipse-1500827251\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods,   15 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginFail(BOSS01, 12345678, false)">testLoginFail(BOSS01, 12345678, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,77 +118,32 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscount(0.1, true)">testVoucherDiscount(0.1, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginFail(nguoidungnn, 123456, false)">testLoginFail(nguoidungnn, 123456, false)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscount(75.75, true)">testVoucherDiscount(75.75, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginFail(user00002, 123456, false)">testLoginFail(user00002, 123456, false)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscount(25.25, true)">testVoucherDiscount(25.25, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginFail(user0001, 12345678, false)">testLoginFail(user0001, 12345678, false)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscount(99.9, true)">testVoucherDiscount(99.9, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginSuccess(BOSS03, 123456, true)">testLoginSuccess(BOSS03, 123456, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscount(50.5, true)">testVoucherDiscount(50.5, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginSuccess(BOSS01, 12345678, true)">testLoginSuccess(BOSS01, 12345678, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountGreaterThan100(906.7954187567643, false)">testVoucherDiscountGreaterThan100(906.7954187567643, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountGreaterThan100(261.9511840180654, false)">testVoucherDiscountGreaterThan100(261.9511840180654, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountGreaterThan100(998.1706836070524, false)">testVoucherDiscountGreaterThan100(998.1706836070524, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountGreaterThan100(722.6370086049126, false)">testVoucherDiscountGreaterThan100(722.6370086049126, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountGreaterThan100(678.0983662451416, false)">testVoucherDiscountGreaterThan100(678.0983662451416, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountLetter(50.21295781g7921, false)">testVoucherDiscountLetter(50.21295781g7921, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountLetter(94.3869184227296r, false)">testVoucherDiscountLetter(94.3869184227296r, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountLetter(99.5376164f442122, false)">testVoucherDiscountLetter(99.5376164f442122, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountLetter(15.9725610121413d, false)">testVoucherDiscountLetter(15.9725610121413d, false)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.haotn.voucher.TestVoucherDiscount" class="method navigator-link" hash-for-method="testVoucherDiscountLetter(32.3983m241891531, false)">testVoucherDiscountLetter(32.3983m241891531, false)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.wolvesres.login.testclass.TestLogin" class="method navigator-link" hash-for-method="testLoginSuccess(BOSS02, 123456, true)">testLoginSuccess(BOSS02, 123456, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -189,130 +158,111 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.wolvesres.haotn.voucher.TestVoucherDiscount</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.wolvesres.login.testclass.TestLogin</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscount(0.1, true)">
-                  </a> <!-- testVoucherDiscount(0.1, true) -->
-                  <span class="method-name">testVoucherDiscount</span>
-                  <span class="parameters">(0.1, true)</span>
+                  <a name="testLoginFail(BOSS01, 12345678, false)">
+                  </a> <!-- testLoginFail(BOSS01, 12345678, false) -->
+                  <span class="method-name">testLoginFail</span>
+                  <span class="parameters">(BOSS01, 12345678, false)</span>
+                  <div class="stack-trace">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:149)
+	at junit.framework.Assert.assertEquals(Assert.java:155)
+	at com.wolvesres.login.testclass.TestLogin.testLoginFail(TestLogin.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.wolvesres.login.testclass.TestLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLoginFail(nguoidungnn, 123456, false)">
+                  </a> <!-- testLoginFail(nguoidungnn, 123456, false) -->
+                  <span class="method-name">testLoginFail</span>
+                  <span class="parameters">(nguoidungnn, 123456, false)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscount(75.75, true)">
-                  </a> <!-- testVoucherDiscount(75.75, true) -->
-                  <span class="method-name">testVoucherDiscount</span>
-                  <span class="parameters">(75.75, true)</span>
+                  <a name="testLoginFail(user00002, 123456, false)">
+                  </a> <!-- testLoginFail(user00002, 123456, false) -->
+                  <span class="method-name">testLoginFail</span>
+                  <span class="parameters">(user00002, 123456, false)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscount(25.25, true)">
-                  </a> <!-- testVoucherDiscount(25.25, true) -->
-                  <span class="method-name">testVoucherDiscount</span>
-                  <span class="parameters">(25.25, true)</span>
+                  <a name="testLoginFail(user0001, 12345678, false)">
+                  </a> <!-- testLoginFail(user0001, 12345678, false) -->
+                  <span class="method-name">testLoginFail</span>
+                  <span class="parameters">(user0001, 12345678, false)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscount(99.9, true)">
-                  </a> <!-- testVoucherDiscount(99.9, true) -->
-                  <span class="method-name">testVoucherDiscount</span>
-                  <span class="parameters">(99.9, true)</span>
+                  <a name="testLoginSuccess(BOSS03, 123456, true)">
+                  </a> <!-- testLoginSuccess(BOSS03, 123456, true) -->
+                  <span class="method-name">testLoginSuccess</span>
+                  <span class="parameters">(BOSS03, 123456, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscount(50.5, true)">
-                  </a> <!-- testVoucherDiscount(50.5, true) -->
-                  <span class="method-name">testVoucherDiscount</span>
-                  <span class="parameters">(50.5, true)</span>
+                  <a name="testLoginSuccess(BOSS01, 12345678, true)">
+                  </a> <!-- testLoginSuccess(BOSS01, 12345678, true) -->
+                  <span class="method-name">testLoginSuccess</span>
+                  <span class="parameters">(BOSS01, 12345678, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVoucherDiscountGreaterThan100(906.7954187567643, false)">
-                  </a> <!-- testVoucherDiscountGreaterThan100(906.7954187567643, false) -->
-                  <span class="method-name">testVoucherDiscountGreaterThan100</span>
-                  <span class="parameters">(906.7954187567643, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountGreaterThan100(261.9511840180654, false)">
-                  </a> <!-- testVoucherDiscountGreaterThan100(261.9511840180654, false) -->
-                  <span class="method-name">testVoucherDiscountGreaterThan100</span>
-                  <span class="parameters">(261.9511840180654, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountGreaterThan100(998.1706836070524, false)">
-                  </a> <!-- testVoucherDiscountGreaterThan100(998.1706836070524, false) -->
-                  <span class="method-name">testVoucherDiscountGreaterThan100</span>
-                  <span class="parameters">(998.1706836070524, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountGreaterThan100(722.6370086049126, false)">
-                  </a> <!-- testVoucherDiscountGreaterThan100(722.6370086049126, false) -->
-                  <span class="method-name">testVoucherDiscountGreaterThan100</span>
-                  <span class="parameters">(722.6370086049126, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountGreaterThan100(678.0983662451416, false)">
-                  </a> <!-- testVoucherDiscountGreaterThan100(678.0983662451416, false) -->
-                  <span class="method-name">testVoucherDiscountGreaterThan100</span>
-                  <span class="parameters">(678.0983662451416, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountLetter(50.21295781g7921, false)">
-                  </a> <!-- testVoucherDiscountLetter(50.21295781g7921, false) -->
-                  <span class="method-name">testVoucherDiscountLetter</span>
-                  <span class="parameters">(50.21295781g7921, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountLetter(94.3869184227296r, false)">
-                  </a> <!-- testVoucherDiscountLetter(94.3869184227296r, false) -->
-                  <span class="method-name">testVoucherDiscountLetter</span>
-                  <span class="parameters">(94.3869184227296r, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountLetter(99.5376164f442122, false)">
-                  </a> <!-- testVoucherDiscountLetter(99.5376164f442122, false) -->
-                  <span class="method-name">testVoucherDiscountLetter</span>
-                  <span class="parameters">(99.5376164f442122, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountLetter(15.9725610121413d, false)">
-                  </a> <!-- testVoucherDiscountLetter(15.9725610121413d, false) -->
-                  <span class="method-name">testVoucherDiscountLetter</span>
-                  <span class="parameters">(15.9725610121413d, false)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVoucherDiscountLetter(32.3983m241891531, false)">
-                  </a> <!-- testVoucherDiscountLetter(32.3983m241891531, false) -->
-                  <span class="method-name">testVoucherDiscountLetter</span>
-                  <span class="parameters">(32.3983m241891531, false)</span>
+                  <a name="testLoginSuccess(BOSS02, 123456, true)">
+                  </a> <!-- testLoginSuccess(BOSS02, 123456, true) -->
+                  <span class="method-name">testLoginSuccess</span>
+                  <span class="parameters">(BOSS02, 123456, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -320,7 +270,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Brian\AppData\Local\Temp\testng-eclipse-1036347793\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Brian\AppData\Local\Temp\testng-eclipse-1500827251\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -329,7 +279,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.wolvesres.haotn.voucher.TestVoucherDiscount&quot;/&gt;
+      &lt;class name=&quot;com.wolvesres.login.testclass.TestLogin&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -354,10 +304,18 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">discountGreaterThan100</span>
+              <span class="test-group-name">loginFail</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">testVoucherDiscountGreaterThan100</span>
+                <span class="method-in-group-name">testLoginFail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">loginSuccess</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testLoginSuccess</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -377,72 +335,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(15);
+data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testVoucherDiscount')
-data.setCell(0, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(0, 3, 7);
+data.setCell(0, 1, 'testLoginFail')
+data.setCell(0, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(0, 3, 444);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testVoucherDiscountLetter')
-data.setCell(1, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(1, 3, 3);
+data.setCell(1, 1, 'testLoginSuccess')
+data.setCell(1, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(1, 3, 38);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testVoucherDiscountGreaterThan100')
-data.setCell(2, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(2, 3, 2);
+data.setCell(2, 1, 'testLoginSuccess')
+data.setCell(2, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(2, 3, 31);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testVoucherDiscount')
-data.setCell(3, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(3, 3, 2);
+data.setCell(3, 1, 'testLoginFail')
+data.setCell(3, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(3, 3, 29);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testVoucherDiscount')
-data.setCell(4, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(4, 3, 1);
+data.setCell(4, 1, 'testLoginFail')
+data.setCell(4, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(4, 3, 29);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testVoucherDiscountLetter')
-data.setCell(5, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(5, 3, 1);
+data.setCell(5, 1, 'testLoginSuccess')
+data.setCell(5, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(5, 3, 23);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testVoucherDiscount')
-data.setCell(6, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(6, 3, 1);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testVoucherDiscountGreaterThan100')
-data.setCell(7, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(7, 3, 1);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testVoucherDiscountLetter')
-data.setCell(8, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(8, 3, 1);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testVoucherDiscount')
-data.setCell(9, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(9, 3, 1);
-data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testVoucherDiscountGreaterThan100')
-data.setCell(10, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(10, 3, 1);
-data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testVoucherDiscountGreaterThan100')
-data.setCell(11, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(11, 3, 1);
-data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testVoucherDiscountLetter')
-data.setCell(12, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(12, 3, 1);
-data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testVoucherDiscountLetter')
-data.setCell(13, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(13, 3, 0);
-data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testVoucherDiscountGreaterThan100')
-data.setCell(14, 2, 'com.wolvesres.haotn.voucher.TestVoucherDiscount')
-data.setCell(14, 3, 0);
+data.setCell(6, 1, 'testLoginFail')
+data.setCell(6, 2, 'com.wolvesres.login.testclass.TestLogin')
+data.setCell(6, 3, 22);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 ms</span>
+              <span class="suite-total-time">Total running time: 616 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -468,70 +394,40 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.wolvesres.haotn.voucher.TestVoucherDiscount</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.wolvesres.login.testclass.TestLogin</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">beforeClass</span>
+                <span class="method-name">initDao</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscount(0.1, true)</span>
-                <span class="method-start">47 ms</span>
+                <span class="method-name">testLoginFail(user0001, 12345678, false)</span>
+                <span class="method-start">23 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscount(99.9, true)</span>
-                <span class="method-start">57 ms</span>
+                <span class="method-name">testLoginFail(user00002, 123456, false)</span>
+                <span class="method-start">469 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscount(50.5, true)</span>
-                <span class="method-start">59 ms</span>
+                <span class="method-name">testLoginFail(nguoidungnn, 123456, false)</span>
+                <span class="method-start">499 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscount(75.75, true)</span>
-                <span class="method-start">62 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLoginFail(BOSS01, 12345678, false)</span>
+                <span class="method-start">522 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscount(25.25, true)</span>
-                <span class="method-start">64 ms</span>
+                <span class="method-name">testLoginSuccess(BOSS01, 12345678, true)</span>
+                <span class="method-start">554 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscountGreaterThan100(678.0983662451416, false)</span>
-                <span class="method-start">68 ms</span>
+                <span class="method-name">testLoginSuccess(BOSS02, 123456, true)</span>
+                <span class="method-start">577 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testVoucherDiscountGreaterThan100(998.1706836070524, false)</span>
-                <span class="method-start">70 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountGreaterThan100(906.7954187567643, false)</span>
-                <span class="method-start">73 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountGreaterThan100(261.9511840180654, false)</span>
-                <span class="method-start">74 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountGreaterThan100(722.6370086049126, false)</span>
-                <span class="method-start">77 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountLetter(94.3869184227296r, false)</span>
-                <span class="method-start">80 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountLetter(99.5376164f442122, false)</span>
-                <span class="method-start">84 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountLetter(32.3983m241891531, false)</span>
-                <span class="method-start">85 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountLetter(50.21295781g7921, false)</span>
-                <span class="method-start">87 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVoucherDiscountLetter(15.9725610121413d, false)</span>
-                <span class="method-start">88 ms</span>
+                <span class="method-name">testLoginSuccess(BOSS03, 123456, true)</span>
+                <span class="method-start">609 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

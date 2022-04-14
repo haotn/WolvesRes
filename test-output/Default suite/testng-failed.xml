@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wolvesres.haotn.nhanvien.TestValidIdNational">
+      <class name="com.wolvesres.login.testclass.TestLogin">
         <methods>
-          <include name="testIdNationalFail" invocation-numbers="0 1 2 3 4"/>
+          <include name="testLoginFail" invocation-numbers="3"/>
+          <include name="initDao"/>
         </methods>
-      </class> <!-- com.wolvesres.haotn.nhanvien.TestValidIdNational -->
+      </class> <!-- com.wolvesres.login.testclass.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
