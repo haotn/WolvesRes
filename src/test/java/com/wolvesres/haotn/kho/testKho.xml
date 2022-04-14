@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+			<class
+				name="com.wolvesres.ducvh.kho.StockPriceImportTestSuccess" />
+			<class
+				name="com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail" />
+			<class name="com.wolvesres.haotn.voucher.TestEndDateVoucher" />
+			<class name="com.wolvesres.haotn.sanpham.TestValidProductPrice" />
+			<class name="com.wolvesres.ducvh.kho.StockQuanExportOverTestFail" />
+			<class
+				name="com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail" />
+			<class name="com.wolvesres.haotn.kho.TestExportPriceFail" />
+			<class name="com.wolvesres.haotn.sanpham.TestValidProductName" />
+			<class
+				name="com.wolvesres.ducvh.kho.StockQuanImportABCTestFail" />
+			<class
+				name="com.wolvesres.haotn.sanpham.TestAutoGenerateIdProduct" />
+			<class name="com.wolvesres.quanghn.kho.TestValidXuatKho" />
+			<class name="com.wolvesres.quanghn.banhang.TestValidNhapTien" />
+			<class name="com.wolvesres.haotn.taikhoan.TestValidPassword" />
+			<class name="com.wolvesres.quanghn.nhanvien.TestValidHoTen" />
+			<class name="com.wolvesres.truongnvn.voucher.TestDateVoucher" />
+			<class name="com.wolvesres.ducvh.danhmuc.CategoryTestSuccess" />
+			<class
+				name="com.wolvesres.ducvh.kho.StockQuanExportTestSuccess" />
+			<class name="com.wolvesres.truongnvn.khuban.TestEqualsKhuBan" />
+			<class
+				name="com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail" />
+			<class
+				name="com.wolvesres.login.testclass.TestLoginSuccessWithBossRole" />
+			<class name="com.wolvesres.haotn.khuban.TestValidTableAreaName" />
+			<class name="com.wolvesres.ducvh.ban.checkTableSuccess" />
+			<class name="com.wolvesres.haotn.login.ThemNhanVien" />
+			<class name="com.wolvesres.quanghn.hoadon.TestAutoMaHoaDon" />
+			<class name="com.wolvesres.truongnvn.nhanvien.TestAddNV" />
+			<class name="com.wolvesres.truongnvn.nhanvien.TestValidSDT" />
+			<class name="com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail" />
+			<class
+				name="com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail" />
+			<class name="com.wolvesres.quanghn.danhmuc.TestValidDanhMuc" />
+			<class
+				name="com.wolvesres.ducvh.kho.StockPriceImportABCTestFail" />
+			<class name="com.wolvesres.haotn.nhanvien.TestValidFullname" />
+			<class
+				name="com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail" />
+			<class
+				name="com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail" />
+			<class name="com.wolvesres.quanghn.voucher.TestValidVoucher" />
+			<class name="com.wolvesres.quanghn.nhanvien.TestValidCCCD" />
+			<class
+				name="com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong" />
+			<class
+				name="com.wolvesres.truongnvn.nhanvien.TestValidFullname" />
+			<class
+				name="com.wolvesres.quanghn.taikhoan.TestValidXacNhanMatKhau" />
+			<class
+				name="com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail" />
+			<class name="com.wolvesres.truongnvn.kho.TestSoluongXuatKho" />
+			<class name="com.wolvesres.quanghn.sanpham.TestValidGiaSP" />
+			<class name="com.wolvesres.truongnvn.ban.TestCreateAutoIDBan" />
+			<class
+				name="com.wolvesres.ducvh.voucher.VoucherEndPastTestFail" />
+			<class name="com.wolvesres.quanghn.kho.TestValidNhapKho" />
+			<class
+				name="com.wolvesres.ducvh.matkhau.PasswordLengthTestFail" />
+			<class name="com.wolvesres.quanghn.nhanvien.TestValidSDT" />
+			<class name="com.wolvesres.login.testclass.TestLogin" />
+			<class name="com.wolvesres.haotn.kho.TestDateImport" />
+			<class name="com.wolvesres.truongnvn.sanpham.TestNameSanPham" />
+			<class name="com.wolvesres.haotn.voucher.TestVoucherCode" />
+			<class name="com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail" />
+			<class name="com.wolvesres.truongnvn.nhanvien.TestisValidCCCD" />
+			<class name="com.wolvesres.quanghn.nhanvien.TestValidEmail" />
+			<class name="com.wolvesres.truongnvn.nhanvien.TestValidEmail" />
+			<class
+				name="com.wolvesres.truongnvn.nhanvien.TetAutoCreateIDNhanVien" />
+			<class name="com.wolvesres.haotn.nhanvien.TestValidIdNational" />
+			<class name="com.wolvesres.haotn.voucher.TestVoucherDiscount" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -49,7 +49,7 @@ public class TestVoucherDiscount {
 	 * @param expected
 	 */
 	@Test(dataProvider = "dataForTestVoucherDiscount")
-	public void testVoucherDiscount(double discount, Boolean expected) {
+	public void testVoucherDiscountPass(double discount, Boolean expected) {
 		Boolean actual = false;
 		if (discount <= 100 && discount > 0) {
 			actual = true;
@@ -82,7 +82,7 @@ public class TestVoucherDiscount {
 	 * @param expected
 	 */
 	@Test(dataProvider = "dataForTestVoucherDiscountLetter")
-	public void testVoucherDiscountLetter(String discount, Boolean expected) {
+	public void testVoucherDiscountIsNumberFail(String discount, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isIntNumber(discount)) {
 			actual = false;
@@ -104,7 +104,7 @@ public class TestVoucherDiscount {
 	}
 
 	@Test(dataProvider = "dataForTestVoucherDiscountGreaterThan100", groups = "discountGreaterThan100")
-	public void testVoucherDiscountGreaterThan100(double discount, Boolean expected) {
+	public void testVoucherDiscountGreaterThan100Fail(double discount, Boolean expected) {
 		Boolean actual = true;
 		if (discount > 100) {
 			actual = false;
@@ -115,16 +115,16 @@ public class TestVoucherDiscount {
 		Assert.assertEquals(expected, actual);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] dataWrite = new Object[dataForTestVoucherDiscountGreaterThan100().length][1];
-		for (int i = 0; i < dataForTestVoucherDiscountGreaterThan100().length; i++) {
-			dataWrite[i][0] = dataForTestVoucherDiscountGreaterThan100()[i][0];
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 275, 6, "PhanTramGiamGia", dataWrite);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] dataWrite = new Object[dataForTestVoucherDiscountGreaterThan100().length][1];
+//		for (int i = 0; i < dataForTestVoucherDiscountGreaterThan100().length; i++) {
+//			dataWrite[i][0] = dataForTestVoucherDiscountGreaterThan100()[i][0];
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 275, 6, "PhanTramGiamGia", dataWrite);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

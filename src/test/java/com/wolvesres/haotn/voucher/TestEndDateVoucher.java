@@ -66,20 +66,20 @@ public class TestEndDateVoucher {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] dataWrite = new Object[dataForEndateVoucher().length][2];
-		for (int i = 0; i < dataForEndateVoucher().length; i++) {
-			dataWrite[i][0] = XDate.toString((Date) dataForEndateVoucher()[i][0], "dd-MM-yyyy");
-			dataWrite[i][1] = XDate.toString((Date) dataForEndateVoucher()[i][1], "dd-MM-yyyy");
-			System.out.println(dataWrite[i][0]);
-			System.out.println(dataWrite[i][1]);
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 290, 6, "NgayBatDau,NgayKetThuc", dataWrite);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] dataWrite = new Object[dataForEndateVoucher().length][2];
+//		for (int i = 0; i < dataForEndateVoucher().length; i++) {
+//			dataWrite[i][0] = XDate.toString((Date) dataForEndateVoucher()[i][0], "dd-MM-yyyy");
+//			dataWrite[i][1] = XDate.toString((Date) dataForEndateVoucher()[i][1], "dd-MM-yyyy");
+//			System.out.println(dataWrite[i][0]);
+//			System.out.println(dataWrite[i][1]);
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 290, 6, "NgayBatDau,NgayKetThuc", dataWrite);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 }

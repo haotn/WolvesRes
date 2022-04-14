@@ -22,7 +22,7 @@ import exceldoing.ExcelGo;
  * @author Brian
  *
  */
-public class TestDateProduct {
+public class TestDateImport {
 	private DataGenerator dataGenerator;
 
 	/**
@@ -58,7 +58,7 @@ public class TestDateProduct {
 		return data;
 	}
 
-	@Test(dataProvider = "dateProductImport")
+	@Test(dataProvider = "dateProductImport", groups = "testDateImport")
 	public void testDateProductImportFail(Object[] o) {
 		Boolean expected = Boolean.parseBoolean(String.valueOf(o[1]));
 		ModelKho entity = (ModelKho) o[0];
@@ -66,6 +66,8 @@ public class TestDateProduct {
 		if (!FormValidator.validFormKho(String.valueOf(entity.getSoLuong()), "50000",
 				XDate.toDate(entity.getHanSuDung(), "dd-MM-yyyy"))) {
 			actual = false;
+		} else {
+			System.out.println("Dữ liệu hợp lệ");
 		}
 		Assert.assertEquals(actual, expected);
 	}

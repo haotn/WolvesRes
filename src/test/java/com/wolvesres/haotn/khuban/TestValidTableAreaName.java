@@ -24,7 +24,7 @@ public class TestValidTableAreaName {
 	}
 
 	@Test(dataProvider = "dataForTestTableAreaName")
-	public void testInvalidTableAreaName(String tableAreaName, Boolean expected) {
+	public void testInvalidTableAreaNameFail(String tableAreaName, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(tableAreaName)) {
 			actual = false;

@@ -37,7 +37,7 @@ public class TestValidProductName {
 	 */
 
 	@Test(dataProvider = "data")
-	public void testValidProductName(String productName, Boolean expected) {
+	public void testValidProductNamePass(String productName, Boolean expected) {
 		Boolean actual = false;
 		if (FormValidator.isTextContainsSpace(productName)) {
 			actual = true;
@@ -48,17 +48,16 @@ public class TestValidProductName {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] dataWrite = new Object[data().length][1];
-		for (int i = 0; i < data().length; i++) {
-			dataWrite[i][0] = data()[i][0];
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 216, 6, "TenSanPham", dataWrite);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] dataWrite = new Object[data().length][1];
+//		for (int i = 0; i < data().length; i++) {
+//			dataWrite[i][0] = data()[i][0];
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 216, 6, "TenSanPham", dataWrite);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

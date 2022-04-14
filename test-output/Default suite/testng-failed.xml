@@ -3,32 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <class name="com.wolvesres.haotn.voucher.TestVoucherCode">
+      <class name="com.wolvesres.haotn.nhanvien.TestValidIdNational">
         <methods>
-          <include name="testVoucherCodeLength"/>
-          <include name="writeResult"/>
-          <include name="beforeClass"/>
+          <include name="testIdNationalFail" invocation-numbers="0 1 2 3 4"/>
         </methods>
-      </class> <!-- com.wolvesres.haotn.voucher.TestVoucherCode -->
-=======
-      <class name="com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong">
-        <methods>
-          <include name="writreExcel"/>
-          <include name="beforClass"/>
-          <include name="testValidSoLuongEmpty" invocation-numbers="1"/>
-        </methods>
-      </class> <!-- com.wolvesres.truongnvn.voucher.TestSoluongVouvherBoTrong -->
->>>>>>> ce953484b24440455f3bc23e692e4d757af26ced
-=======
-      <class name="com.wolvesres.taikhoan.TestValidXacNhanMatKhau">
-        <methods>
-          <include name="beforClass"/>
-          <include name="testValidXacNhanMatKhauSuccess" invocation-numbers="4"/>
-        </methods>
-      </class> <!-- com.wolvesres.taikhoan.TestValidXacNhanMatKhau -->
->>>>>>> 5790c9fa2db3ae5f0005f1101af10bc0e89d571a
+      </class> <!-- com.wolvesres.haotn.nhanvien.TestValidIdNational -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

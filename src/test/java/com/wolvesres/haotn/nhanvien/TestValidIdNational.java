@@ -34,24 +34,24 @@ public class TestValidIdNational {
 	 */
 	@BeforeClass
 	public void beforeClass() {
-		data = new DataGenerator();
-		listIdNational = new ArrayList<String>();
 		nvDao = new NhanVienDAO();
-		// Generate 100 idNational
-		for (int i = 0; i < 100; i++) {
-			Boolean isMale = false;
-			int gender = data.randomMinMax(0, 1);
-			switch (gender) {
-			case 0:
-				isMale = false;
-				break;
-			case 1:
-				isMale = true;
-				break;
-			}
-			String idNational = data.generateIdNationalNotValid(data.generateDate(1990, 2003), isMale);
-			listIdNational.add(idNational);
-		}
+//		data = new DataGenerator();
+//		listIdNational = new ArrayList<String>();
+//		// Generate 100 idNational
+//		for (int i = 0; i < 100; i++) {
+//			Boolean isMale = false;
+//			int gender = data.randomMinMax(0, 1);
+//			switch (gender) {
+//			case 0:
+//				isMale = false;
+//				break;
+//			case 1:
+//				isMale = true;
+//				break;
+//			}
+//			String idNational = data.generateIdNationalNotValid(data.generateDate(1990, 2003), isMale);
+//			listIdNational.add(idNational);
+//		}
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class TestValidIdNational {
 	/**
 	 * Write result to file
 	 */
-	@AfterClass
-	public void writeResult() {
-		WriteResult.writeResultNhanVien(data(), 165);
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		WriteResult.writeResultNhanVien(data(), 165);
+//	}
 }

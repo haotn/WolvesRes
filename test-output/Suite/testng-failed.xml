@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.wolvesres.login.testclass.TestLogin">
+        <methods>
+          <include name="testLoginFail" invocation-numbers="3"/>
+          <include name="initDao"/>
+        </methods>
+      </class> <!-- com.wolvesres.login.testclass.TestLogin -->
+      <class name="com.wolvesres.haotn.nhanvien.TestValidFullname">
+        <methods>
+          <include name="beforClass"/>
+          <include name="writeResult"/>
+          <include name="testValidFullnameSuccess" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11"/>
+        </methods>
+      </class> <!-- com.wolvesres.haotn.nhanvien.TestValidFullname -->
+      <class name="com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail">
+        <methods>
+          <include name="f" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail -->
+      <class name="com.wolvesres.haotn.kho.TestDateImport">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="testDateProductImportFail" invocation-numbers="3"/>
+        </methods>
+      </class> <!-- com.wolvesres.haotn.kho.TestDateImport -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

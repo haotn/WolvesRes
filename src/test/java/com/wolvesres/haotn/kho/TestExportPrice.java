@@ -30,8 +30,8 @@ public class TestExportPrice {
 	 * @param price    testProductExportPrice
 	 * @param expected
 	 */
-	@Test(dataProvider = "dataForExportPrice")
-	public void testProductExportPrice(double price, Boolean expected) {
+	@Test(dataProvider = "dataForExportPrice", groups = "testPriceExport")
+	public void testProductExportPriceFail(double price, Boolean expected) {
 		Boolean actual = true;
 		if (price < 0) {
 			actual = false;
@@ -42,18 +42,18 @@ public class TestExportPrice {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] dataWrite = new Object[dataForExportPrice().length][1];
-		for (int i = 0; i < dataForExportPrice().length; i++) {
-			dataWrite[i][0] = dataForExportPrice()[i][0];
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 286, 6, "GiaXuatKho", dataWrite);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] dataWrite = new Object[dataForExportPrice().length][1];
+//		for (int i = 0; i < dataForExportPrice().length; i++) {
+//			dataWrite[i][0] = dataForExportPrice()[i][0];
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 286, 6, "GiaXuatKho", dataWrite);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 }

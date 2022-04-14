@@ -81,7 +81,7 @@ public class TestValidFullname {
 	 * @param expected
 	 */
 	@Test(dataProvider = "data")
-	public void testValidFullnameSuccess(Object[] o) {
+	public void testValidFullnamePass(Object[] o) {
 		ModelNhanVien emp = (ModelNhanVien) o[0];
 		Boolean e = (Boolean) o[1];
 		Boolean actual = false;
@@ -91,33 +91,33 @@ public class TestValidFullname {
 		Assert.assertEquals(actual, e);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] datac = new Object[data().length][10];
-		for (int i = 0; i < data().length; i++) {
-			System.err.println(data()[i][0]);
-			if (data()[i][0] instanceof ModelNhanVien) {
-				System.out.println("Converted");
-				ModelNhanVien nv = (ModelNhanVien) data()[i][0];
-				datac[i][0] = nv.getMaNV();
-				datac[i][1] = nv.getHoTen();
-				datac[i][2] = nv.getChucVu();
-				datac[i][3] = nv.getCMND();
-				datac[i][4] = nv.getEmail();
-				datac[i][5] = nv.getSoDT();
-				datac[i][6] = nv.getNgaySinh();
-				datac[i][7] = nv.getPathHinhAnh();
-				datac[i][8] = nv.isGioiTinh();
-				datac[i][9] = nv.isTrangThai();
-			}
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp.xlsx", 2, 169, 6,
-					"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh,Gender,TrangThai", datac);
-			System.err.println("Save Success");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] datac = new Object[data().length][10];
+//		for (int i = 0; i < data().length; i++) {
+//			System.err.println(data()[i][0]);
+//			if (data()[i][0] instanceof ModelNhanVien) {
+//				System.out.println("Converted");
+//				ModelNhanVien nv = (ModelNhanVien) data()[i][0];
+//				datac[i][0] = nv.getMaNV();
+//				datac[i][1] = nv.getHoTen();
+//				datac[i][2] = nv.getChucVu();
+//				datac[i][3] = nv.getCMND();
+//				datac[i][4] = nv.getEmail();
+//				datac[i][5] = nv.getSoDT();
+//				datac[i][6] = nv.getNgaySinh();
+//				datac[i][7] = nv.getPathHinhAnh();
+//				datac[i][8] = nv.isGioiTinh();
+//				datac[i][9] = nv.isTrangThai();
+//			}
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp.xlsx", 2, 169, 6,
+//					"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh,Gender,TrangThai", datac);
+//			System.err.println("Save Success");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

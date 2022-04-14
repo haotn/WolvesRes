@@ -24,7 +24,7 @@ public class TestValidProductPrice {
 	 * @return Object[][]
 	 */
 	@DataProvider(name = "dataForTestEmpty")
-	public Object[][] dataForTestProductPriceIsNotEmpty() {
+	public Object[][] dataForTestProductPriceIsNotEmptyFail() {
 		return new Object[][] { { "", false }, { "\t", false }, { " ", false } };
 	}
 
@@ -35,7 +35,7 @@ public class TestValidProductPrice {
 	 * @param expected
 	 */
 	@Test(dataProvider = "dataForTestEmpty", groups = { "productPriceIsEmpty" })
-	public void testProductPriceEmpty(String productPrice, Boolean expected) {
+	public void testProductPriceEmptyFail(String productPrice, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(productPrice)) {
 			actual = false;
@@ -52,7 +52,7 @@ public class TestValidProductPrice {
 	 * @return
 	 */
 	@DataProvider(name = "dataForTestNegative")
-	public Object[][] dataForTestProductPriceNegative() {
+	public Object[][] dataForTestProductPriceNegativeFail() {
 		return new Object[][] { { -0.1, false }, { -100000000.1f, false }, { -11f, false }, { -999999999f, false },
 				{ -50000000f, false }, { -7500000f, false }, { -25000000f, false }, { -0.0000000000001f, false }
 
@@ -66,7 +66,7 @@ public class TestValidProductPrice {
 	 * @param expected
 	 */
 	@Test(dataProvider = "dataForTestNegative", groups = { "productPrigeNegative" })
-	public void testProductPriceNegative(double productPrice, Boolean expected) {
+	public void testProductPriceNegativeFail(double productPrice, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isGreaterThan(productPrice, 0)) {
 			actual = false;
@@ -74,25 +74,24 @@ public class TestValidProductPrice {
 		Assert.assertEquals(expected, actual);
 	}
 
-	@AfterClass
-	public void write() {
-		Object[][] dataWrite = new Object[dataForTestProductPriceIsNotEmpty().length][1];
-		for (int i = 0; i < dataForTestProductPriceIsNotEmpty().length; i++) {
-			if (dataForTestProductPriceIsNotEmpty()[0].equals("")) {
-				dataWrite[i][0] = "\"empty\"";
-			} else if (dataForTestProductPriceIsNotEmpty()[0].equals(" ")) {
-				dataWrite[i][0] = "\"space\"";
-			} else if (dataForTestProductPriceIsNotEmpty()[0].equals("\t")) {
-				dataWrite[i][0] = "\"\t\"";
-			}
-			dataWrite[i][0] = dataForTestProductPriceIsNotEmpty()[0];
-		}
-		try {
-			ExcelGo.writeExcel("excel-file/asm-temp-demo.xlsx", 2, 224, 6, "GiaNhapKho", dataWrite);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void write() {
+//		Object[][] dataWrite = new Object[dataForTestProductPriceIsNotEmpty().length][1];
+//		for (int i = 0; i < dataForTestProductPriceIsNotEmpty().length; i++) {
+//			if (dataForTestProductPriceIsNotEmpty()[0].equals("")) {
+//				dataWrite[i][0] = "\"empty\"";
+//			} else if (dataForTestProductPriceIsNotEmpty()[0].equals(" ")) {
+//				dataWrite[i][0] = "\"space\"";
+//			} else if (dataForTestProductPriceIsNotEmpty()[0].equals("\t")) {
+//				dataWrite[i][0] = "\"\t\"";
+//			}
+//			dataWrite[i][0] = dataForTestProductPriceIsNotEmpty()[0];
+//		}
+//		try {
+//			ExcelGo.writeExcel("excel-file/asm-temp-demo.xlsx", 2, 224, 6, "GiaNhapKho", dataWrite);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 }

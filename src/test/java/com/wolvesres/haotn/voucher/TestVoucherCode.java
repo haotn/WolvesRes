@@ -40,7 +40,7 @@ public class TestVoucherCode {
 	 * TestCase testInvalidVoucherCode
 	 */
 	@Test(dataProvider = "dataForTestVoucherCode", groups = "testVoucherCodeEmpty")
-	public void testVoucherCodeEmpty(String voucherCode, Boolean expected) {
+	public void testVoucherCodeNotEmptyFail(String voucherCode, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(voucherCode)) {
 			actual = false;
@@ -67,7 +67,7 @@ public class TestVoucherCode {
 	}
 
 	@Test(dataProvider = "dataForTestVoucherCodeLength", groups = "testVoucherCodeLength")
-	public void testVoucherCodeLength(String voucherCode, Boolean expected) {
+	public void testVoucherCodeLengthFail(String voucherCode, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isValidTextMinLength(voucherCode, 5)) {
 			actual = false;
@@ -78,17 +78,17 @@ public class TestVoucherCode {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterClass
-	public void writeResult() {
-		Object[][] dataWrite = new Object[dataForTestVoucherCodeLength().length][1];
-		for (int i = 0; i < dataForTestVoucherCodeLength().length; i++) {
-			dataWrite[i][0] = dataForTestVoucherCodeLength()[i][0];
-		}
-		try {
-			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 258, 6, "MaVoucher", dataWrite);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void writeResult() {
+//		Object[][] dataWrite = new Object[dataForTestVoucherCodeLength().length][1];
+//		for (int i = 0; i < dataForTestVoucherCodeLength().length; i++) {
+//			dataWrite[i][0] = dataForTestVoucherCodeLength()[i][0];
+//		}
+//		try {
+//			ExcelGo.writeExcelv2("excel-file/asm-temp-demo.xlsx", 2, 258, 6, "MaVoucher", dataWrite);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

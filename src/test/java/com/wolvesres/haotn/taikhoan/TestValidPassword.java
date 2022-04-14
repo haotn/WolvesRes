@@ -53,7 +53,7 @@ public class TestValidPassword {
 	 * @param expectes
 	 */
 	@Test(dataProvider = "dataForFailLength", groups = "failLength", priority = 0)
-	public void testValidPasswordFailLength(String password, Boolean expectes) {
+	public void testValidPassworLengthFail(String password, Boolean expectes) {
 		Boolean actual = true;
 		if (!FormValidator.isValidTextMaxLength(password, 16)) {
 			actual = false;
@@ -86,7 +86,7 @@ public class TestValidPassword {
 	 * @param expected
 	 */
 	@Test(dataProvider = "dataForFailSpace", groups = "failSpace", priority = 1)
-	public void testPasswordFailSpace(String password, Boolean expected) {
+	public void testPasswordSpaceFail(String password, Boolean expected) {
 		Boolean actual = true;
 		if (FormValidator.isTextContainsSpace(password)) {
 			actual = false;
@@ -121,7 +121,7 @@ public class TestValidPassword {
 	 * 
 	 */
 	@Test(dataProvider = "dataForConfirmNotMath", groups = "failConfirmNotMath", priority = 2)
-	public void tesConfirmPasswordNotMath(String password, String confirm, Boolean expected) {
+	public void tesConfirmPasswordNotMathFail(String password, String confirm, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextEqual(password, confirm)) {
 			actual = false;

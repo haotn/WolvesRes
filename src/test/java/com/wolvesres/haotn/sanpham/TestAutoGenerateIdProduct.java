@@ -47,7 +47,7 @@ public class TestAutoGenerateIdProduct {
 	 * TestCase testAutoGenerateIdProduct
 	 */
 	@Test
-	public void testAutoGenerateIdProduct() {
+	public void testAutoGenerateIdProductPass() {
 		Boolean exist = false;
 		if (idProduct != null) {
 			for (ModelSanPham item : listProduct) {
