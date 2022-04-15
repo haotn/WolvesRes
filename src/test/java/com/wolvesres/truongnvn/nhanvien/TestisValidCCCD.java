@@ -129,11 +129,11 @@ public class TestisValidCCCD {
 	 * @param sdt
 	 * @param expected
 	 */
-	@Test(dataProvider = "dataCCCDFalseNamTK", groups = "cccdfalsenamtheotheki", priority = 3)
-	public void testValidCCCDNamTheoTheKi( int nam, int maTheKi, Boolean expected) {
-		Boolean actual = FormValidator.isYearOfBirthInCentury(nam,maTheKi);
-		Assert.assertEquals(expected, actual);
-	}
+//	@Test(dataProvider = "dataCCCDFalseNamTK", groups = "cccdfalsenamtheotheki", priority = 3)
+//	public void testValidCCCDNamTheoTheKi( int nam, int maTheKi, Boolean expected) {
+//		Boolean actual = FormValidator.isYearOfBirthInCentury(nam,maTheKi);
+//		Assert.assertEquals(expected, actual);
+//	}
 //	@AfterClass
 //	public void writreExcel() throws IOException{
 //		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 1, 6, "maNam,maTheKi", dataFalseNSTK() );
