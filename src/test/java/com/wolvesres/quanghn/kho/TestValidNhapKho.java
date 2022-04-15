@@ -15,8 +15,10 @@ import com.wolvesres.helper.XDate;
 import com.wolvesres.model.ModelNhapKho;
 
 import exceldoing.ExcelGo;
+
 /**
  * Kiểm tra số lượng nhập kho thất bại do nhập số âm
+ * 
  * @author huynh
  *
  */
@@ -35,7 +37,7 @@ public class TestValidNhapKho {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {-5, false}, {-56, false}, {-12,9, false}, {-593485, false}, {-231, false}};
+		return new Object[][] { { -5, false }, { -56, false }, { -12, 9, false }, { -593485, false }, { -231, false } };
 	}
 
 	/**
@@ -56,13 +58,13 @@ public class TestValidNhapKho {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }
