@@ -64,15 +64,15 @@ public class TestValidCCCD {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "CCCDBoTrong")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataFail());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "CCCDBoTrong")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataFail());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 	
 	/**
@@ -104,14 +104,14 @@ public class TestValidCCCD {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "CCCDFailTinh")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataMaTinh());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "CCCDFailTinh")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "CCCD", dataMaTinh());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 }

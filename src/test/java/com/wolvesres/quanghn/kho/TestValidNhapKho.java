@@ -35,7 +35,7 @@ public class TestValidNhapKho {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {-5, false}, {-56, false}, {-12, false}, {-593485, false}, {-231, false}};
+		return new Object[][] { {-5, false}, {-56, false}, {-12,9, false}, {-593485, false}, {-231, false}};
 	}
 
 	/**

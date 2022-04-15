@@ -35,7 +35,7 @@ public class TestValidGiaSP {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"abcdi", false}, {"posdf", false}, {"fhhfda", false}, {"bnmc", false}, {"eeqqwr", false}};
+		return new Object[][] { {"abcdi", false}, {"posdfghfd", false}, {"fhhfdaa", false}, {"bnmc", false}, {"eeqqwr", false}};
 	}
 
 	/**
@@ -56,15 +56,15 @@ public class TestValidGiaSP {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "GiaSP")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "GiaSP")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 	
 	
@@ -96,13 +96,13 @@ public class TestValidGiaSP {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "GiaSPKiTuDacBiet")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data2());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "GiaSPKiTuDacBiet")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data2());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

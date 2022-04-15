@@ -32,7 +32,7 @@ public class TestValidEmail {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "quanghnpc01597@fpt.edu.vn", true }, { "truongnvnpc01752@gmail.com", true }, { "haotnpc01545@fpt.edu.vn", true }, { "hottpc02096@fpt.edu.vn", true }, { "ducvhpc01395@fpt.edu.vn", true }};
+		return new Object[][] { { "quanghnpc01597@fpt.edu.vn", true }, { "truongnvnpc01752@gmail.com", true }, { "haotnpc01545@canhsat-cnc.vn", true }, { "hottpc02096@lookout.vn", true }, { "ducvhpc01395@mmgroup.vn", true }};
 	}
 
 	/**
@@ -53,14 +53,14 @@ public class TestValidEmail {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Email", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Email", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 }

@@ -45,7 +45,7 @@ public class TestValidVoucher {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"-23412", false}, {"-23324", false}, {"-56654", false}, {"-456223", false}, {"-76747", false}};
+		return new Object[][] { {"-23412", false}, {"-2332", false}, {"-56,89", false}, {"-456223", false}, {"-767,8", false}};
 	}
 
 	/**
@@ -66,15 +66,15 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherGia")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia Voucher", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherGia")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia Voucher", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 	/**
@@ -84,7 +84,7 @@ public class TestValidVoucher {
 	 */
 	@DataProvider
 	public Object[][] data2() {
-		return new Object[][] { {"232", true}, {"231", true}, {"456", true}, {"6754", true}, {"1234", true}};
+		return new Object[][] { {"232", true}, {"23", true}, {"4", true}, {"6754", true}, {"123456", true}};
 	}
 
 	/**
@@ -105,15 +105,15 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherSoLuong")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong Voucher", data2());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherSoLuong")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong Voucher", data2());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	/**
 	 * DataProvider for testValidVoucherChonNgayFail
@@ -122,7 +122,7 @@ public class TestValidVoucher {
 	 */
 	@DataProvider
 	public Object[][] data3() {
-		return new Object[][] { {"14-07-2020", false}, {"04-06-2020", false}, {"11-03-2021", false}, {"02-12-2020", false}, {"09-09-2021", false}};
+		return new Object[][] { {"14-07-2020", false}, {"04-06-2018", false}, {"11-03-2015", false}, {"02-12-2019", false}, {"09-09-2021", false}};
 	}
 
 	/**
@@ -143,14 +143,14 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherChonNgay")
-	public void InFileExcel3() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Ngay Bat Dau Voucher", data3());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherChonNgay")
+//	public void InFileExcel3() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Ngay Bat Dau Voucher", data3());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 }

@@ -23,7 +23,7 @@ public class TestValidXuatKho {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"fgjkfdkj", false}, {"hgjdsf", false}, {"cvbxcb", false}, {"reytu", false}, {"jlhj", false}};
+		return new Object[][] { {"fgjkfdkj", false}, {"hgjdsf", false}, {"Hvbxcb", false}, {"reytU", false}, {"jlhj2334", false}};
 	}
 
 	/**
@@ -44,13 +44,13 @@ public class TestValidXuatKho {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

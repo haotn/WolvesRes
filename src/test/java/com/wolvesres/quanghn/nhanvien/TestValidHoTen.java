@@ -62,15 +62,15 @@ public class TestValidHoTen {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "FullNameBoTrong")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Fullname", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "FullNameBoTrong")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Fullname", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 	/**
 	 * DataProvider for testValidFullNameNhapSoFail
@@ -79,7 +79,7 @@ public class TestValidHoTen {
 	 */
 	@DataProvider
 	public Object[][] data2() {
-		return new Object[][] { {"345345435", false}, {"343424", false}, {"2343415", false}, {"76796", false}, {"12368", false}};
+		return new Object[][] { {"100000000", false}, {"100000", false}, {"1000000", false}, {"100000", false}, {"1", false}};
 	}
 
 	/**
@@ -100,13 +100,13 @@ public class TestValidHoTen {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "FullNameNhapSo")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Fullname", data2());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "FullNameNhapSo")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Fullname", data2());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

@@ -60,15 +60,15 @@ public class TestValidNhapTien {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "NhapTienCoKiTyDB")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "NhapTienCoKiTyDB")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 /////////////////////////////////////////////////////////////////////////////////////////////////	
 	/**
 	 * DataProvider for testValidNhapTienBoTrongFail
@@ -98,13 +98,13 @@ public class TestValidNhapTien {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "NhapTienBoTrong")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data2());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "NhapTienBoTrong")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Tien", data2());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

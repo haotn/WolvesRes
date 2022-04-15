@@ -2,7 +2,11 @@
 <testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-04-15T12:16:25 ICT" name="Default suite" finished-at="2022-04-15T12:16:25 ICT" duration-ms="102">
+=======
+  <suite started-at="2022-04-15T11:44:01 ICT" name="Default suite" finished-at="2022-04-15T11:44:02 ICT" duration-ms="150">
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
     <groups>
       <group name="ImportMoneyFailB">
         <method signature="TestImportMoney.testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" name="testImportMoneyFailB" class="com.wolvesres.hott.banhang.TestImportMoney"/>
@@ -11,9 +15,19 @@
         <method signature="TestImportMoney.testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" name="testImportMoneyFailA" class="com.wolvesres.hott.banhang.TestImportMoney"/>
       </group> <!-- ImportMoneyFailA -->
     </groups>
+<<<<<<< HEAD
     <test started-at="2022-04-15T12:16:25 ICT" name="Default test" finished-at="2022-04-15T12:16:25 ICT" duration-ms="102">
       <class name="com.wolvesres.hott.banhang.TestImportMoney">
         <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="13" status="PASS">
+=======
+    <test started-at="2022-04-15T11:44:01 ICT" name="Default test" finished-at="2022-04-15T11:44:02 ICT" duration-ms="150">
+      <class name="com.wolvesres.quanghn.nhanvien.TestValidEmail">
+        <test-method is-config="true" signature="beforClass()[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="beforClass" finished-at="2022-04-15T11:44:02 ICT" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforClass -->
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="9" status="PASS">
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
           <params>
             <param index="0">
               <value>
@@ -28,8 +42,13 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testImportMoneyFailA -->
         <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
+=======
+        </test-method> <!-- testValidEmailSuccess -->
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="1" status="PASS">
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
           <params>
             <param index="0">
               <value>
@@ -44,12 +63,21 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testImportMoneyFailA -->
         <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[-1]]>
+=======
+        </test-method> <!-- testValidEmailSuccess -->
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[haotnpc01545@canhsat-cnc.vn]]>
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
               </value>
             </param>
             <param index="1">
@@ -60,12 +88,21 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testImportMoneyFailA -->
         <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[-0.9]]>
+=======
+        </test-method> <!-- testValidEmailSuccess -->
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hottpc02096@lookout.vn]]>
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
               </value>
             </param>
             <param index="1">
@@ -76,12 +113,21 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testImportMoneyFailA -->
         <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[-1000]]>
+=======
+        </test-method> <!-- testValidEmailSuccess -->
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ducvhpc01395@mmgroup.vn]]>
+>>>>>>> b40ccb8f85c39a0a68cdc8e3d9de13756902c8ef
               </value>
             </param>
             <param index="1">
