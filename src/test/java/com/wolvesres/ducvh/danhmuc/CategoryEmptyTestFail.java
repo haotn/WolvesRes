@@ -25,11 +25,15 @@ public class CategoryEmptyTestFail {
 		// empty: rỗng, khoảng cách, tab, null
 		return new Object[][] { { true, "", "Ten Danh Muc 1", true, false },
 				{ true, " ", "Ten Danh Muc 1", true, false }, { true, "\t", "Ten Danh Muc 1", true, false },
-				{ true, null, "Ten Danh Muc 1", true, false } };
+				{ true, null, "Ten Danh Muc 1", true, false },
+				{ true, "Mã Danh Muc 1", "", true, false },
+				{ true, "Mã Danh Muc 1", " ", true, false },
+				{ true, "Mã Danh Muc 1", "\t", true, false },
+				{ true, "Mã Danh Muc 1", null, true, false } };
 	}
-	
+
 	@AfterClass
 	public void excelGo() throws IOException {
-		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 4, 6, "insert,MaDM,TenDM,matHang", categoryemptyfail());
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "isInsert,maDanhMuc,tenDanhMuc,isMatHang", categoryemptyfail());
 	}
 }

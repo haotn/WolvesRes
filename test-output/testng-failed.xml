@@ -5,6 +5,7 @@
     <classes>
       <class name="com.wolvesres.ducvh.kho.StockQuanExportTestSuccess">
         <methods>
+          <include name="excelGo"/>
           <include name="f" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.wolvesres.ducvh.kho.StockQuanExportTestSuccess -->

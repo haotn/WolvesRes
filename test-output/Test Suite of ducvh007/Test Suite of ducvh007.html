@@ -1,0 +1,534 @@
+<html>
+<head>
+<title>TestNG:  Test Suite of ducvh007</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test Suite of ducvh007</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>91/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Apr 15 02:58:15 ICT 2022</td>
+</tr>
+<tr><td>Total time:</td><td>1 seconds (1399 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail<br>Parameters: true, v0001, -10, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail@25fb8912</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherEndPastTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherEndPastTestFail<br>Parameters: true, v0001, 1, 25-02-2022, 15-04-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherEndPastTestFail@5d7148e2</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportOverTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportOverTestFail<br>Parameters: 1001, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportOverTestFail@18d87d80</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail<br>Parameters: true, Lon, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail@5acf93bb</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: 1a3, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportTestSuccess<br>Parameters: 10, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportTestSuccess@1af2d44a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail<br>Parameters: true, v0001, 0.00001, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail@7c24b813</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: 12a, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportOverTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportOverTestFail<br>Parameters: 1000000, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportOverTestFail@18d87d80</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail<br>Parameters: true, 	, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail@7e7be63f</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters:    , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanImportABCTestFail<br>Parameters: 1111a, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanImportABCTestFail@58695725</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail<br>Parameters: true, v0001, 1, 15-04-2022, 17-02-2022, , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail@4fb3ee4e</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail<br>Parameters: true, v0001, 1, 15-04-2022, 17-02-2022, 	, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail@4fb3ee4e</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, Mã Danh Muc 1,  , true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail<br>Parameters: true,  , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail@7e7be63f</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportTestSuccess<br>Parameters: 999, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportTestSuccess@618425b5</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail<br>Parameters: -999, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail@1e04fa0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail<br>Parameters:  , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail@543588e6</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail<br>Parameters: true, Ly, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail@5acf93bb</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherEndPastTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherEndPastTestFail<br>Parameters: true, v0001, 1, 14-04-2022, 15-04-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherEndPastTestFail@5d7148e2</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: giá có dấu, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail<br>Parameters: true, v0001, -999999999, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail@25fb8912</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail<br>Parameters: null, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@6cd28fa7</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportOverTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportOverTestFail<br>Parameters: 999999999, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportOverTestFail@18d87d80</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail<br>Parameters: true, v0001, 1, 15-04-2022, 17-02-2022,  , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail@4fb3ee4e</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail<br>Parameters: true, v0001, 999.000999, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail@7c24b813</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail<br>Parameters: true, Hộp, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail@5acf93bb</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, Mã Danh Muc 1, null, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: tên bàn có !@#, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherEndPastTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherEndPastTestFail<br>Parameters: true, v0001, 1, 16-03-2022, 15-04-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherEndPastTestFail@5d7148e2</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportTestSuccess<br>Parameters: 2, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportTestSuccess@618425b5</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail<br>Parameters: true, null, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail@7e7be63f</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail<br>Parameters: true, v0001, 999.999, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail@7c24b813</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail<br>Parameters: true, , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitEmptyTestFail@7e7be63f</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail<br>Parameters: true, v0001, 0.1, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail@7c24b813</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail<br>Parameters: true, Chai, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail@5acf93bb</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true,  , Ten Danh Muc 1, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail<br>Parameters: , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@6cd28fa7</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanImportABCTestFail<br>Parameters: aaaa2222aaaa, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanImportABCTestFail@58695725</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryTestSuccess<br>Parameters: true, mã danh mục 1, tên danh mục 2, true, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryTestSuccess@1a18644</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail<br>Parameters: 	, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@6cd28fa7</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanImportABCTestFail<br>Parameters: abc, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanImportABCTestFail@58695725</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryTestSuccess<br>Parameters: true, ma danh muc, ten danh muc, true, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryTestSuccess@1a18644</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail<br>Parameters: , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail@543588e6</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportTestSuccess<br>Parameters: 100, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportTestSuccess@618425b5</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail<br>Parameters: true, v0001, 1, 15-04-2022, 17-02-2022, null, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherDiscountEmptyTestFail@4fb3ee4e</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail<br>Parameters: true, Chiếc, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.donvitinh.CalcUnitDuplicateTestFail@5acf93bb</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportOverTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportOverTestFail<br>Parameters: 2000, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportOverTestFail@18d87d80</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportOverTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportOverTestFail<br>Parameters: 5000, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportOverTestFail@18d87d80</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryTestSuccess<br>Parameters: false, mã danh mục 1, tên danh mục 2, true, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryTestSuccess@1a18644</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail<br>Parameters: true, v0001, -1, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail@25fb8912</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: 123, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportTestSuccess<br>Parameters: 999, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportTestSuccess@1af2d44a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryTestSuccess<br>Parameters: true, mã danh mục, tên danh mục, true, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryTestSuccess@1a18644</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: tên bàn có só 2, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: ten ban khong dau, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: 12345, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail<br>Parameters: true, v0001, -1000000, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail@25fb8912</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail<br>Parameters: true, v0001, 900.009, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanRealTestFail@7c24b813</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherEndPastTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherEndPastTestFail<br>Parameters: true, v0001, 1, 21-07-2019, 15-04-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherEndPastTestFail@5d7148e2</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, Mã Danh Muc 1, , true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: AZV, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: aaa, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportTestSuccess<br>Parameters: 10, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportTestSuccess@618425b5</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, null, Ten Danh Muc 1, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: 123345, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, 	, Ten Danh Muc 1, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportTestSuccess<br>Parameters: 500, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportTestSuccess@1af2d44a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanImportABCTestFail<br>Parameters: a, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanImportABCTestFail@58695725</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail<br>Parameters: -1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail@1e04fa0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail<br>Parameters:  , false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceExportEmptyTestFail@6cd28fa7</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail<br>Parameters: 	, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordEmptyTestFail@543588e6</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: !@#$%^, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportTestSuccess<br>Parameters: 1, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportTestSuccess@1af2d44a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail<br>Parameters: true, v0001, -777, 15-04-2022, 17-02-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherQuanMinusTestFail@25fb8912</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail<br>Parameters: -100, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail@1e04fa0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportTestSuccess<br>Parameters: 100, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportTestSuccess@1af2d44a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanExportTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanExportTestSuccess<br>Parameters: 500, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanExportTestSuccess@618425b5</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: abc, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, Mã Danh Muc 1, 	, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryTestSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryTestSuccess<br>Parameters: true, MDM001, @#!@#!, true, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryTestSuccess@1a18644</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.voucher.VoucherEndPastTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.voucher.VoucherEndPastTestFail<br>Parameters: true, v0001, 1, 15-04-2021, 15-04-2022, 1, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.voucher.VoucherEndPastTestFail@5d7148e2</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail<br>Parameters: -99999999999, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportMinusTestFail@1e04fa0a</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.ban.checkTableSuccess.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.ban.checkTableSuccess<br>Parameters: tên bàn có dấu, true</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.ban.checkTableSuccess@3fb1549b</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockQuanImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockQuanImportABCTestFail<br>Parameters: a1b2c3, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockQuanImportABCTestFail@58695725</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.matkhau.PasswordLengthTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.matkhau.PasswordLengthTestFail<br>Parameters: -_-, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.matkhau.PasswordLengthTestFail@f5acb9d</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.kho.StockPriceImportABCTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.kho.StockPriceImportABCTestFail<br>Parameters: a11, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.kho.StockPriceImportABCTestFail@614ca7df</td></tr>
+<tr>
+<td title='com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail.f()'><b>f</b><br>Test class: com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail<br>Parameters: true, , Ten Danh Muc 1, true, false</td>
+<td></td>
+<td>0</td>
+<td>com.wolvesres.ducvh.danhmuc.CategoryEmptyTestFail@a530d0a</td></tr>
+</table><p>
+</body>
+</html>
