@@ -35,7 +35,7 @@ public class TestValidGiaSP {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"abcdi", false}, {"posdf", false}, {"fhhfda", false}, {"bnmc", false}, {"eeqqwr", false}};
+		return new Object[][] { {"abcdi", false}, {"posdfghfd", false}, {"fhhfdaa", false}, {"bnmc", false}, {"eeqqwr", false}};
 	}
 
 	/**

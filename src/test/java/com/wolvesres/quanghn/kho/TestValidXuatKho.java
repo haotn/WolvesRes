@@ -23,7 +23,7 @@ public class TestValidXuatKho {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"fgjkfdkj", false}, {"hgjdsf", false}, {"cvbxcb", false}, {"reytu", false}, {"jlhj", false}};
+		return new Object[][] { {"fgjkfdkj", false}, {"hgjdsf", false}, {"Hvbxcb", false}, {"reytU", false}, {"jlhj2334", false}};
 	}
 
 	/**

@@ -79,7 +79,7 @@ public class TestValidHoTen {
 	 */
 	@DataProvider
 	public Object[][] data2() {
-		return new Object[][] { {"345345435", false}, {"343424", false}, {"2343415", false}, {"76796", false}, {"12368", false}};
+		return new Object[][] { {"100000000", false}, {"100000", false}, {"1000000", false}, {"100000", false}, {"1", false}};
 	}
 
 	/**

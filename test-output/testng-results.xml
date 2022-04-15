@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-13T15:38:22 ICT" name="Default suite" finished-at="2022-04-13T15:38:22 ICT" duration-ms="128">
+  <suite started-at="2022-04-15T11:44:01 ICT" name="Default suite" finished-at="2022-04-15T11:44:02 ICT" duration-ms="150">
     <groups>
     </groups>
-    <test started-at="2022-04-13T15:38:22 ICT" name="Default test" finished-at="2022-04-13T15:38:22 ICT" duration-ms="128">
+    <test started-at="2022-04-15T11:44:01 ICT" name="Default test" finished-at="2022-04-15T11:44:02 ICT" duration-ms="150">
       <class name="com.wolvesres.quanghn.nhanvien.TestValidEmail">
-        <test-method is-config="true" signature="beforClass()[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="beforClass" finished-at="2022-04-13T15:38:22 ICT" duration-ms="28" status="PASS">
+        <test-method is-config="true" signature="beforClass()[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="beforClass" finished-at="2022-04-15T11:44:02 ICT" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforClass -->
-        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-13T15:38:22 ICT" duration-ms="17" status="PASS">
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidEmailSuccess -->
-        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-13T15:38:22 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -43,11 +43,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidEmailSuccess -->
-        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-13T15:38:22 ICT" duration-ms="1" status="PASS">
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[haotnpc01545@fpt.edu.vn]]>
+                <![CDATA[haotnpc01545@canhsat-cnc.vn]]>
               </value>
             </param>
             <param index="1">
@@ -59,11 +59,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidEmailSuccess -->
-        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-13T15:38:22 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[hottpc02096@fpt.edu.vn]]>
+                <![CDATA[hottpc02096@lookout.vn]]>
               </value>
             </param>
             <param index="1">
@@ -75,11 +75,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidEmailSuccess -->
-        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-13T15:38:22 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-13T15:38:22 ICT" duration-ms="2" status="PASS">
+        <test-method signature="testValidEmailSuccess(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.quanghn.nhanvien.TestValidEmail@2053d869]" started-at="2022-04-15T11:44:02 ICT" name="testValidEmailSuccess" data-provider="data" finished-at="2022-04-15T11:44:02 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ducvhpc01395@fpt.edu.vn]]>
+                <![CDATA[ducvhpc01395@mmgroup.vn]]>
               </value>
             </param>
             <param index="1">
