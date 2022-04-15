@@ -66,15 +66,15 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherGia")
-	public void InFileExcel() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia Voucher", data());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherGia")
+//	public void InFileExcel() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Gia Voucher", data());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 	/**
@@ -105,15 +105,15 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherSoLuong")
-	public void InFileExcel2() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong Voucher", data2());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherSoLuong")
+//	public void InFileExcel2() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "So Luong Voucher", data2());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	/**
 	 * DataProvider for testValidVoucherChonNgayFail
@@ -143,14 +143,14 @@ public class TestValidVoucher {
 	/**
 	 * Hàm xuất file Excel
 	 */
-	@AfterClass(groups = "VoucherChonNgay")
-	public void InFileExcel3() {
-		try {
-			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Ngay Bat Dau Voucher", data3());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@AfterClass(groups = "VoucherChonNgay")
+//	public void InFileExcel3() {
+//		try {
+//			ExcelGo.writeExcelv2("D:\\Excel_File\\Xuat_File_Excel.xlsx", 0, 1, 6, "Ngay Bat Dau Voucher", data3());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 }
