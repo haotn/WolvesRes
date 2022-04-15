@@ -40,7 +40,7 @@ public class TestValidHoTen {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { " ", false}, { "", false}, { null, false}, { "\t", false}};
+		return new Object[][] { { " ", false}, { "", false}, { "\t", false}};
 	}
 
 	/**

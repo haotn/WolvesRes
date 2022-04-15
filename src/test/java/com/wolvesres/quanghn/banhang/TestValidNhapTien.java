@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.wolvesres.helper.FormValidator;
 import exceldoing.ExcelGo;
+
 /**
  * Kiểm tra nhập tiền khách đưa thất bại do nhập kí tự đặc biệt
  * Tên groups: NhapTienCoKiTyDB
@@ -17,8 +18,8 @@ import exceldoing.ExcelGo;
  */
 
 /**
- * Kiểm tra nhập tiền khách đưa thất bại do bỏ trống
- * Tên groups: NhapTienBoTrong
+ * Kiểm tra nhập tiền khách đưa thất bại do bỏ trống Tên groups: NhapTienBoTrong
+ * 
  * @author huynh
  *
  */
@@ -30,7 +31,6 @@ public class TestValidNhapTien {
 	public void beforClass() {
 	}
 
-
 	/**
 	 * DataProvider for testValidNhapTienFail
 	 * 
@@ -38,7 +38,8 @@ public class TestValidNhapTien {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {"324@#$#42324@#4", false}, {"349$#234@424234", false}, {"678^*78^*785685", false}, {"@@312321%45", false}, {"23!23@!#123", false}};
+		return new Object[][] { { "324@#$#42324@#4", false }, { "349$#234@424234", false },
+				{ "678^*78^*785685", false }, { "@@312321%45", false }, { "23!23@!#123", false } };
 	}
 
 	/**
@@ -56,7 +57,7 @@ public class TestValidNhapTien {
 		Assert.assertEquals(expected, actual);
 
 	}
-	
+
 	/**
 	 * Hàm xuất file Excel
 	 */
@@ -77,7 +78,7 @@ public class TestValidNhapTien {
 	 */
 	@DataProvider
 	public Object[][] data2() {
-		return new Object[][] { {" ", false}, {"", false}, {"\t", false}, {null, false}};
+		return new Object[][] { { " ", false }, { "", false }, { "\t", false } };
 	}
 
 	/**
@@ -94,7 +95,7 @@ public class TestValidNhapTien {
 		}
 		Assert.assertEquals(expected, actual);
 	}
-	
+
 	/**
 	 * Hàm xuất file Excel
 	 */
