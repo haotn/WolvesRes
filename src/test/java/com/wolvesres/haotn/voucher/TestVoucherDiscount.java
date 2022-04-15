@@ -95,11 +95,8 @@ public class TestVoucherDiscount {
 
 	@DataProvider(name = "dataForTestVoucherDiscountGreaterThan100")
 	public Object[][] dataForTestVoucherDiscountGreaterThan100() {
-		Object[][] data = new Object[5][2];
-		for (int i = 0; i < 5; i++) {
-			data[i][0] = dataGenerator.randomMinMax(101.1, 999.9);
-			data[i][1] = false;
-		}
+		Object[][] data = new Object[][] { { 526.255, false }, { 809.036, false }, { 794.352, false },
+				{ 348.832, false }, { 523.381, false }, { 100.001, false }, { 101.101, false } };
 		return data;
 	}
 

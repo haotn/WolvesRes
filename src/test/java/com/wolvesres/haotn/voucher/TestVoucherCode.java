@@ -58,11 +58,8 @@ public class TestVoucherCode {
 	 */
 	@DataProvider(name = "dataForTestVoucherCodeLength")
 	public Object[][] dataForTestVoucherCodeLength() {
-		Object[][] data = new Object[5][2];
-		for (int i = 0; i < 5; i++) {
-			data[i][0] = dataGenerator.generatePassword(1, 4, false);
-			data[i][1] = false;
-		}
+		Object[][] data = new Object[][] { { "t", false }, { "$", false }, { "38", false }, { "wNk", false },
+				{ "7m", false }, { "dvg3", false } };
 		return data;
 	}
 

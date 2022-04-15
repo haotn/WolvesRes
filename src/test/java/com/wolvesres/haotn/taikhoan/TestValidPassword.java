@@ -120,7 +120,7 @@ public class TestValidPassword {
 	 * TestCase testConfirmPasswordNotMath
 	 * 
 	 */
-	@Test(dataProvider = "dataForConfirmNotMath", groups = "failConfirmNotMath", priority = 2)
+	@Test(dataProvider = "dataForConfirmNotMath", groups = "confirmNotMath", priority = 2)
 	public void tesConfirmPasswordNotMathFail(String password, String confirm, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextEqual(password, confirm)) {

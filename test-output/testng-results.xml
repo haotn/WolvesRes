@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-14T23:30:35 ICT" name="Default suite" finished-at="2022-04-14T23:30:36 ICT" duration-ms="718">
+  <suite started-at="2022-04-15T12:16:25 ICT" name="Default suite" finished-at="2022-04-15T12:16:25 ICT" duration-ms="102">
     <groups>
-      <group name="loginSuccess">
-        <method signature="TestLogin.testLoginSuccess(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" name="testLoginSuccess" class="com.wolvesres.login.testclass.TestLogin"/>
-      </group> <!-- loginSuccess -->
-      <group name="loginFail">
-        <method signature="TestLogin.testLoginFail(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" name="testLoginFail" class="com.wolvesres.login.testclass.TestLogin"/>
-      </group> <!-- loginFail -->
+      <group name="ImportMoneyFailB">
+        <method signature="TestImportMoney.testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" name="testImportMoneyFailB" class="com.wolvesres.hott.banhang.TestImportMoney"/>
+      </group> <!-- ImportMoneyFailB -->
+      <group name="ImportMoneyFailA">
+        <method signature="TestImportMoney.testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" name="testImportMoneyFailA" class="com.wolvesres.hott.banhang.TestImportMoney"/>
+      </group> <!-- ImportMoneyFailA -->
     </groups>
-    <test started-at="2022-04-14T23:30:35 ICT" name="Default test" finished-at="2022-04-14T23:30:36 ICT" duration-ms="718">
-      <class name="com.wolvesres.login.testclass.TestLogin">
-        <test-method is-config="true" signature="initDao()[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:35 ICT" name="initDao" finished-at="2022-04-14T23:30:35 ICT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initDao -->
-        <test-method signature="testLoginFail(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:35 ICT" name="testLoginFail" data-provider="dbFail" finished-at="2022-04-14T23:30:36 ICT" duration-ms="444" status="PASS">
+    <test started-at="2022-04-15T12:16:25 ICT" name="Default test" finished-at="2022-04-15T12:16:25 ICT" duration-ms="102">
+      <class name="com.wolvesres.hott.banhang.TestImportMoney">
+        <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[user0001]]>
+                <![CDATA[-505.2]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[12345678]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[false]]>
               </value>
@@ -37,20 +28,15 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginFail -->
-        <test-method signature="testLoginFail(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginFail" data-provider="dbFail" finished-at="2022-04-14T23:30:36 ICT" duration-ms="29" status="PASS">
+        </test-method> <!-- testImportMoneyFailA -->
+        <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[user00002]]>
+                <![CDATA[-100]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[false]]>
               </value>
@@ -58,20 +44,15 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginFail -->
-        <test-method signature="testLoginFail(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginFail" data-provider="dbFail" finished-at="2022-04-14T23:30:36 ICT" duration-ms="22" status="PASS">
+        </test-method> <!-- testImportMoneyFailA -->
+        <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[nguoidungnn]]>
+                <![CDATA[-1]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[false]]>
               </value>
@@ -79,135 +60,136 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginFail -->
-        <test-method signature="testLoginFail(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginFail" data-provider="dbFail" finished-at="2022-04-14T23:30:36 ICT" duration-ms="29" status="FAIL">
+        </test-method> <!-- testImportMoneyFailA -->
+        <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[BOSS01]]>
+                <![CDATA[-0.9]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[12345678]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[false]]>
               </value>
             </param>
           </params>
-          <exception class="junit.framework.AssertionFailedError">
-            <message>
-              <![CDATA[expected:<false> but was:<true>]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[junit.framework.AssertionFailedError: expected:<false> but was:<true>
-at junit.framework.Assert.fail(Assert.java:47)
-at junit.framework.Assert.failNotEquals(Assert.java:282)
-at junit.framework.Assert.assertEquals(Assert.java:64)
-at junit.framework.Assert.assertEquals(Assert.java:149)
-at junit.framework.Assert.assertEquals(Assert.java:155)
-at com.wolvesres.login.testclass.TestLogin.testLoginFail(TestLogin.java:50)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- junit.framework.AssertionFailedError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginFail -->
-        <test-method signature="testLoginSuccess(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginSuccess" data-provider="dbSuccess" finished-at="2022-04-14T23:30:36 ICT" duration-ms="23" status="PASS">
+        </test-method> <!-- testImportMoneyFailA -->
+        <test-method signature="testImportMoneyFailA(double,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailA" data-provider="dataA" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[BOSS01]]>
+                <![CDATA[-1000]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[12345678]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[true]]>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginSuccess -->
-        <test-method signature="testLoginSuccess(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginSuccess" data-provider="dbSuccess" finished-at="2022-04-14T23:30:36 ICT" duration-ms="31" status="PASS">
+        </test-method> <!-- testImportMoneyFailA -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[BOSS02]]>
+                <![CDATA[cs3]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[true]]>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginSuccess -->
-        <test-method signature="testLoginSuccess(java.lang.String,java.lang.String,boolean)[pri:0, instance:com.wolvesres.login.testclass.TestLogin@9225652]" started-at="2022-04-14T23:30:36 ICT" name="testLoginSuccess" data-provider="dbSuccess" finished-at="2022-04-14T23:30:36 ICT" duration-ms="38" status="PASS">
+        </test-method> <!-- testImportMoneyFailB -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[BOSS03]]>
+                <![CDATA[heheehe]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[true]]>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginSuccess -->
-      </class> <!-- com.wolvesres.login.testclass.TestLogin -->
+        </test-method> <!-- testImportMoneyFailB -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[a]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImportMoneyFailB -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Z]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImportMoneyFailB -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aaaaaaaaa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImportMoneyFailB -->
+        <test-method signature="testImportMoneyFailB(java.lang.String,java.lang.Boolean)[pri:0, instance:com.wolvesres.hott.banhang.TestImportMoney@47d90b9e]" started-at="2022-04-15T12:16:25 ICT" name="testImportMoneyFailB" data-provider="dataB" finished-at="2022-04-15T12:16:25 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ZZZZZZZZ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImportMoneyFailB -->
+      </class> <!-- com.wolvesres.hott.banhang.TestImportMoney -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

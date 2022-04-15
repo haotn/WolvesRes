@@ -19,7 +19,7 @@ public class TestQuantityExport {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { {-5, false}, { -6.9, false}, { -10, false}, { -100, false}, { -10000, false}};
+		return new Object[][] { {-1, false}, { -10000000, false}, { -500000, false}, { -123456.5, false}, { -0.1, false}};
 	}
 
 	/**

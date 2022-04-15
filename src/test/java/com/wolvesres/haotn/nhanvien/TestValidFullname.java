@@ -33,7 +33,7 @@ public class TestValidFullname {
 	 * Before class - Generate global variable value
 	 * 
 	 */
-	@BeforeClass
+	@BeforeClass(groups = { "testValidFullnamePass" })
 	public void beforClass() {
 		nvDao = new NhanVienDAO();
 	}
@@ -80,15 +80,18 @@ public class TestValidFullname {
 	 * @param fullname
 	 * @param expected
 	 */
-	@Test(dataProvider = "data")
+	@Test(dataProvider = "data", groups = "testValidFullnamePass")
 	public void testValidFullnamePass(Object[] o) {
 		ModelNhanVien emp = (ModelNhanVien) o[0];
-		Boolean e = (Boolean) o[1];
+		Boolean expected = (Boolean) o[1];
 		Boolean actual = false;
-		if (FormValidator.isValidFormNhanVien(true, emp, nvDao.selectAll())) {
+		if (FormValidator.isTextContainsSpace(emp.getHoTen())) {
 			actual = true;
+			System.out.println("Thông tin hợp lệ!");
+		} else {
+			System.out.println("Họ tên phải có từ hai từ!");
 		}
-		Assert.assertEquals(actual, e);
+		Assert.assertEquals(actual, expected);
 	}
 
 //	@AfterClass

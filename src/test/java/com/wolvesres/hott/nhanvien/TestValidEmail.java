@@ -22,8 +22,9 @@ public class TestValidEmail {
 	 */
 	@DataProvider
 	public Object[][] data() {
-		return new Object[][] { { "1testmotcaigido@gmail.com", false }, { "2testmotcaigido@gmail.com", false }, { "3testmotcaigido@gmail.com", false }
-		, { "4testmotcaigido@gmail.com", false }, { "5testmotcaigido@gmail.com", false }};
+		return new Object[][] { { "1testmotcaigido@gmail.com", false }, { "12testmotcaigido@gmail.com", false },
+				{ "123testmotcaigido@gmail.com", false }, { "1234testmotcaigido@gmail.com", false },
+				{ "12345testmotcaigido@gmail.com", false } };
 	}
 
 	/**
@@ -41,7 +42,7 @@ public class TestValidEmail {
 		Assert.assertEquals(expected, actual);
 
 	}
-	
+
 //	@AfterClass
 //	public void exportExcel() throws Exception {
 //		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "email", data());

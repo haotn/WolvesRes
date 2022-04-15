@@ -32,7 +32,7 @@ public class TestValidIdNational {
 	/**
 	 * Before class Generate global variable value
 	 */
-	@BeforeClass
+	@BeforeClass(groups = "testIdNationalFail")
 	public void beforeClass() {
 		nvDao = new NhanVienDAO();
 //		data = new DataGenerator();
@@ -93,7 +93,7 @@ public class TestValidIdNational {
 	 * @param idNational
 	 * @param expected
 	 */
-	@Test(dataProvider = "data")
+	@Test(dataProvider = "data", groups = "testIdNationalFail")
 	public void testIdNationalFail(Object[] o) {
 		Boolean actual = true;
 		Boolean expected = Boolean.parseBoolean(String.valueOf(o[1]));

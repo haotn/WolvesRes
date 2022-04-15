@@ -19,7 +19,8 @@ public class TestExportPrice {
 	@DataProvider(name = "dataForExportPrice")
 	public Object[][] dataForExportPrice() {
 		Object[][] data = new Object[][] { { -0.000001, false }, { -100000.000001, false }, { -50000.0000050, false },
-				{ -750000.0000075, false }, { -250000.0000025, false } };
+				{ -750000.0000075, false }, { -250000.0000025, false }, { -125000.0000125, false },
+				{ -175000.0000175, false } };
 
 		return data;
 	}

@@ -20,7 +20,7 @@ public class TestImportMoney {
 	 */
 	@DataProvider
 	public Object[][] dataA() {
-		return new Object[][] {{ -505.2, false}, {-100, false}, {-1, false}, {-0.9, false}, {-1000, false}};
+		return new Object[][] { { -505.2, false }, { -100, false }, { -1, false }, { -0.9, false }, { -1000, false } };
 	}
 
 	/**
@@ -32,12 +32,13 @@ public class TestImportMoney {
 	@Test(dataProvider = "dataA", groups = "ImportMoneyFailA")
 	public void testImportMoneyFailA(double money, Boolean expected) {
 		Boolean actual = true;
-		if (money<0) {
+		if (money < 0) {
 			actual = false;
 		}
 		Assert.assertEquals(expected, actual);
 
 	}
+
 	/******************************************************************************/
 	/**
 	 * DataProvider for testImportMoneyFailB (Thất bại do nhập chữ)
@@ -46,7 +47,8 @@ public class TestImportMoney {
 	 */
 	@DataProvider
 	public Object[][] dataB() {
-		return new Object[][] {{ "cs3", false}, {"heheehe", false}, {"a", false}, {"Z", false}, {"aaaaaaaaa", false}, {"ZZZZZZZZ", false}};
+		return new Object[][] { { "cs3", false }, { "heheehe", false }, { "a", false }, { "Z", false },
+				{ "aaaaaaaaa", false }, { "ZZZZZZZZ", false } };
 	}
 
 	/**
@@ -64,13 +66,13 @@ public class TestImportMoney {
 		Assert.assertEquals(expected, actual);
 
 	}
-	
-	@AfterClass(groups = "ImportMoneyFailA")
-	public void exportExcelA() throws Exception {
-		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "money", dataA());
-		
-	}
-	
+
+//	@AfterClass(groups = "ImportMoneyFailA")
+//	public void exportExcelA() throws Exception {
+//		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "money", dataA());
+//
+//	}
+
 //	@AfterClass(groups = "ImportMoneyFailB")
 //	public void exportExcelB() throws Exception {
 //		ExcelGo.writeExcelv2("D:\\demo.xlsx", 0, 0, 6, "money", dataB());

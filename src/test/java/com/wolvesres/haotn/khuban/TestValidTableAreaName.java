@@ -23,7 +23,7 @@ public class TestValidTableAreaName {
 		return new Object[][] { { "", false }, { " ", false }, { "\t", false } };
 	}
 
-	@Test(dataProvider = "dataForTestTableAreaName")
+	@Test(dataProvider = "dataForTestTableAreaName", groups = "testTableAreaName")
 	public void testInvalidTableAreaNameFail(String tableAreaName, Boolean expected) {
 		Boolean actual = true;
 		if (!FormValidator.isTextIsNotEmpty(tableAreaName)) {
