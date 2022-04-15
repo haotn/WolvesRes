@@ -5,7 +5,12 @@
     <classes>
       <class name="com.wolvesres.hott.nhanvien.TestValidEmail">
         <methods>
+<<<<<<< HEAD
           <include name="testValidEmailFail" invocation-numbers="0 1 2 3 4"/>
+=======
+          <include name="excelGo"/>
+          <include name="f" invocation-numbers="0"/>
+>>>>>>> 77d50fb4162fe7b153232f88c687aa6bdb020a1a
         </methods>
       </class> <!-- com.wolvesres.hott.nhanvien.TestValidEmail -->
     </classes>

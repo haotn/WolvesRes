@@ -23,7 +23,12 @@ public class ExtractedModule {
 //	hàm check danh mục
 	public static boolean checkCategory(boolean insert, String MaDM, String TenDM, boolean matHang) {
 		List<ModelDanhMuc> listDM = new ArrayList<>();
-		if (!FormValidator.isTextIsNotEmpty(TenDM) || !FormValidator.isTextIsNotEmpty(MaDM)) {
+		try {
+			if (!FormValidator.isTextIsNotEmpty(TenDM) || !FormValidator.isTextIsNotEmpty(MaDM)) {
+				System.out.println("c.w.f.danhmuc: EditDanhMuc.line84.valideForm(): trống");
+				return false;
+			}
+		} catch (Exception e) {
 			System.out.println("c.w.f.danhmuc: EditDanhMuc.line84.valideForm(): trống");
 			return false;
 		}
@@ -63,7 +68,7 @@ public class ExtractedModule {
 		for (int i = 0; i < formParent.getList().size(); i++) {
 			if (insert) {
 				if (formParent.getList().get(i).getTenDVT().equalsIgnoreCase(DVT)) {
-					System.out.println("c.w.f.donvitinh: EditDonviTinh.line64.valideForm(): trùng mã");
+					System.out.println("c.w.f.donvitinh: EditDonviTinh.line64.valideForm(): trùng tên");
 					return false;
 				}
 			} else {
@@ -240,6 +245,7 @@ public class ExtractedModule {
 			}
 		} catch (Exception e) {
 			sl = listNhapKho.get(select).getSoLuong();
+			System.err.println(e);
 //			txtSoLuong.setText(sl + "");
 			System.out.println("c.w.f.kho: JDialogXuatKho.line170.checkSL(): lượng xuất - chữ");
 			return false;
