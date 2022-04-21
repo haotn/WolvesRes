@@ -17,10 +17,9 @@ public class ModelDonViTinh {
     private String tenDVT;
 
     @Override
-    public String toString() {
-        //return super.toString();
-        return this.tenDVT;
-    }
+	public String toString() {
+		return "ModelDonViTinh [maDVT=" + maDVT + ", tenDVT=" + tenDVT + "]";
+	}
 
     public ModelDonViTinh() {
     }
@@ -61,4 +60,5 @@ public class ModelDonViTinh {
         public Object[] toRowTable(EventAction event) {
         return new Object[]{getMaDVT(), getTenDVT(), new ModelAction(this, event)};
     }
+        
 }

@@ -34,6 +34,15 @@ public class ChiTietLichSuDAO implements WolvesResDAO<ModelChiTietLichSu, Intege
         return list.get(0);
     }
 
+    public ModelChiTietLichSu selectByObject(int idls, String masp) {
+        // List tạm
+        List<ModelChiTietLichSu> list = new ArrayList<>();
+
+        // Nhận đối tượng đầu tiên của list
+        list = selectBySQL("SELECT * FROM CHITIETLICHSU WHERE IDLS = ? and MaSP= ?", idls, masp);
+
+        return list.get(0);
+    }
     @Override
     public List<ModelChiTietLichSu> selectBySQL(String sql, Object... Entity) {
         // List tạm

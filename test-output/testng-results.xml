@@ -1,211 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="23" passed="23" failed="0" skipped="0">
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-21T22:14:24 ICT" name="Default suite" finished-at="2022-04-21T22:14:26 ICT" duration-ms="2563">
+  <suite started-at="2022-04-22T03:50:28 ICT" name="Default suite" finished-at="2022-04-22T03:50:30 ICT" duration-ms="2211">
     <groups>
-      <group name="themNhanVien">
-        <method signature="TestNhanVien.testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" name="testThemNhanVien" class="com.wolvesres.haotn.nhanvien.TestNhanVien"/>
-      </group> <!-- themNhanVien -->
+      <group name="themdonvitinh">
+        <method signature="TestDonViTinh.testDonViTinh([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" name="testDonViTinh" class="com.wolvesres.truongnvn.donvitinh.TestDonViTinh"/>
+      </group> <!-- themdonvitinh -->
     </groups>
-    <test started-at="2022-04-21T22:14:24 ICT" name="Default test" finished-at="2022-04-21T22:14:26 ICT" duration-ms="2563">
-      <class name="com.wolvesres.haotn.nhanvien.TestNhanVien">
-        <test-method is-config="true" signature="beforeClassNhanVien()[pri:0, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:24 ICT" name="beforeClassNhanVien" finished-at="2022-04-21T22:14:24 ICT" duration-ms="9" status="PASS">
+    <test started-at="2022-04-22T03:50:28 ICT" name="Default test" finished-at="2022-04-22T03:50:30 ICT" duration-ms="2211">
+      <class name="com.wolvesres.truongnvn.donvitinh.TestDonViTinh">
+        <test-method is-config="true" signature="beforeClassNhanVien()[pri:0, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:28 ICT" name="beforeClassNhanVien" finished-at="2022-04-22T03:50:28 ICT" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClassNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:24 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="414" status="PASS">
+        <test-method signature="testDonViTinh([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:29 ICT" name="testDonViTinh" description="Test dao them don vi tinh" data-provider="dataThemDonViTinh" finished-at="2022-04-22T03:50:29 ICT" duration-ms="495" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@6e46d9f4]]>
+                <![CDATA[[Ljava.lang.Object;@62df0ff3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="75" status="PASS">
+        </test-method> <!-- testDonViTinh -->
+        <test-method signature="testDonViTinh([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:29 ICT" name="testDonViTinh" description="Test dao them don vi tinh" data-provider="dataThemDonViTinh" finished-at="2022-04-22T03:50:29 ICT" duration-ms="114" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@2fab4aff]]>
+                <![CDATA[[Ljava.lang.Object;@51671b08]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="113" status="PASS">
+        </test-method> <!-- testDonViTinh -->
+        <test-method signature="testDonViTinh([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:29 ICT" name="testDonViTinh" description="Test dao them don vi tinh" data-provider="dataThemDonViTinh" finished-at="2022-04-22T03:50:29 ICT" duration-ms="116" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@6b5176f2]]>
+                <![CDATA[[Ljava.lang.Object;@1b70203f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="116" status="PASS">
+        </test-method> <!-- testDonViTinh -->
+        <test-method signature="testDonViTinh([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:29 ICT" name="testDonViTinh" description="Test dao them don vi tinh" data-provider="dataThemDonViTinh" finished-at="2022-04-22T03:50:29 ICT" duration-ms="99" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@74cec793]]>
+                <![CDATA[[Ljava.lang.Object;@15051a0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="117" status="PASS">
+        </test-method> <!-- testDonViTinh -->
+        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:29 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat don vi tinh" data-provider="dataCapNhatDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="101" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@f9b7332]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="107" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@192f2f27]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="104" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@8a589a2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:25 ICT" duration-ms="110" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@6fefce9e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:25 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="109" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@b672aa8]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="124" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@209775a9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="116" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@2c177f9e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testThemNhanVien([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testThemNhanVien" description="Test dao them nhan vien" data-provider="dataThemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="117" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@5db4c359]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemNhanVien -->
-        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat nhan vien" data-provider="dataCapNhatNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="74" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.Object;@1bdf8190]]>
+                <![CDATA[[Ljava.lang.Object;@62e8f862]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCapNhatNhanVien -->
-        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat nhan vien" data-provider="dataCapNhatNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="67" status="PASS">
+        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat don vi tinh" data-provider="dataCapNhatDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="92" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@4f8969b0]]>
+                <![CDATA[[Ljava.lang.Object;@26f3d90c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCapNhatNhanVien -->
-        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat nhan vien" data-provider="dataCapNhatNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="56" status="PASS">
+        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat don vi tinh" data-provider="dataCapNhatDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="108" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@18e7143f]]>
+                <![CDATA[[Ljava.lang.Object;@1162410a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCapNhatNhanVien -->
-        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat nhan vien" data-provider="dataCapNhatNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="59" status="PASS">
+        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat don vi tinh" data-provider="dataCapNhatDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="109" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@c65a5ef]]>
+                <![CDATA[[Ljava.lang.Object;@61019f59]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCapNhatNhanVien -->
-        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat nhan vien" data-provider="dataCapNhatNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="52" status="PASS">
+        <test-method signature="testCapNhatNhanVien([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testCapNhatNhanVien" description="Test dao cap nhat don vi tinh" data-provider="dataCapNhatDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="109" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@ec0c838]]>
+                <![CDATA[[Ljava.lang.Object;@b09fac1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCapNhatNhanVien -->
-        <test-method signature="testDeleteNhanVien(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testDeleteNhanVien" description="Test delete nhan vien" data-provider="dataDeleteNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="57" status="PASS">
+        <test-method signature="testDeleteDonViTinh(int,java.lang.Boolean)[pri:3, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testDeleteDonViTinh" description="Test delete don vi tinh" data-provider="dataDeleteDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="148" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[NV020]]>
+                <![CDATA[38]]>
               </value>
             </param>
             <param index="1">
@@ -216,12 +128,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteNhanVien -->
-        <test-method signature="testDeleteNhanVien(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testDeleteNhanVien" description="Test delete nhan vien" data-provider="dataDeleteNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="38" status="PASS">
+        </test-method> <!-- testDeleteDonViTinh -->
+        <test-method signature="testDeleteDonViTinh(int,java.lang.Boolean)[pri:3, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testDeleteDonViTinh" description="Test delete don vi tinh" data-provider="dataDeleteDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="144" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[NV021]]>
+                <![CDATA[39]]>
               </value>
             </param>
             <param index="1">
@@ -232,28 +144,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteNhanVien -->
-        <test-method signature="testDeleteNhanVien(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testDeleteNhanVien" description="Test delete nhan vien" data-provider="dataDeleteNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="39" status="PASS">
+        </test-method> <!-- testDeleteDonViTinh -->
+        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testTimKiemNhanVien" description="Test tim kiem don vi tinh theo ten" data-provider="dataTimKiemDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[NV022]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[true]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteNhanVien -->
-        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testTimKiemNhanVien" description="Test tim kiem nhan vien theo ho ten" data-provider="dataTimKiemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="16" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trường]]>
+                <![CDATA[Chén]]>
               </value>
             </param>
             <param index="1">
@@ -265,11 +161,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTimKiemNhanVien -->
-        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testTimKiemNhanVien" description="Test tim kiem nhan vien theo ho ten" data-provider="dataTimKiemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="15" status="PASS">
+        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testTimKiemNhanVien" description="Test tim kiem don vi tinh theo ten" data-provider="dataTimKiemDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="49" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Quang]]>
+                <![CDATA[Hộp]]>
               </value>
             </param>
             <param index="1">
@@ -281,11 +177,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTimKiemNhanVien -->
-        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.haotn.nhanvien.TestNhanVien@57c758ac]" started-at="2022-04-21T22:14:26 ICT" name="testTimKiemNhanVien" description="Test tim kiem nhan vien theo ho ten" data-provider="dataTimKiemNhanVien" finished-at="2022-04-21T22:14:26 ICT" duration-ms="15" status="PASS">
+        <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testTimKiemNhanVien" description="Test tim kiem don vi tinh theo ten" data-provider="dataTimKiemDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Thành]]>
+                <![CDATA[Đĩa]]>
               </value>
             </param>
             <param index="1">
@@ -297,7 +193,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTimKiemNhanVien -->
-      </class> <!-- com.wolvesres.haotn.nhanvien.TestNhanVien -->
+      </class> <!-- com.wolvesres.truongnvn.donvitinh.TestDonViTinh -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
