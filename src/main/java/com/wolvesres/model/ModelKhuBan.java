@@ -18,13 +18,14 @@ public class ModelKhuBan {
     private String tenKhuBan;
     private String ghiChu;
 
-    @Override
-    public String toString() {
-        // return super.toString(); 
-        return this.getTenKhuBan();
-    }
 
-    public ModelKhuBan() {
+
+    @Override
+	public String toString() {
+		return maKhuBan + " - " + tenKhuBan + " - " + ghiChu;
+	}
+
+	public ModelKhuBan() {
     }
 
     public ModelKhuBan(String maKhuBan, String tenKhuBan, String ghiChu) {

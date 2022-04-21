@@ -34,8 +34,10 @@ public class HoaDonDAO implements WolvesResDAO<ModelHoaDon, String> {
 
 		// Nhận đối tượng đầu tiên của list
 		list = selectBySQL("SELECT * FROM HOADON WHERE maHoaDon = ?", id);
-
-		return list.get(0);
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
 	}
 
 	@Override

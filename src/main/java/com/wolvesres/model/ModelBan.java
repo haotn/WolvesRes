@@ -11,10 +11,11 @@ public class ModelBan {
 	private boolean hoatDong;
 	private String maKhuBan;
 
+
+
 	@Override
 	public String toString() {
-		// return super.toString();
-		return this.getTenBan();
+		return maBan + " - " + tenBan + " - " + hoatDong + " - " + maKhuBan;
 	}
 
 	public ModelBan() {

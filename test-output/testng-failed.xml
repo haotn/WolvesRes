@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wolvesres.haotn.nhanvien.TestNhanVien">
+      <class name="com.wolvesres.hott.hoadon.TestHoaDon">
         <methods>
-          <include name="testThemNhanVien"/>
-          <include name="testCapNhatNhanVien" invocation-numbers="4"/>
-          <include name="beforeClassNhanVien"/>
+          <include name="testTimKiemHoaDon" invocation-numbers="0 1"/>
+          <include name="testThemHoaDon" invocation-numbers="0"/>
+          <include name="beforeClassKhuBan"/>
+          <include name="testCapNhatHoaDon" invocation-numbers="0 1 2 3 4"/>
         </methods>
-      </class> <!-- com.wolvesres.haotn.nhanvien.TestNhanVien -->
+      </class> <!-- com.wolvesres.hott.hoadon.TestHoaDon -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
