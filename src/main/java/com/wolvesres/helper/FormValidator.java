@@ -24,7 +24,8 @@ public class FormValidator {
 			"0((0(1|2|4|6|8))|(1(0|1|2|4|5|7|9))|(2(0|2|4|5|6|7))|(3(0|1|3|4|5|6|7|8))|(4(0|2|4|5|6|8|9))|(5(1|2|4|6|8))|(6(0|2|4|6|7|8))|(7(0|2|4|5|7|9))|(8(0|2|3|4|6|7|9))|(9[1-6]{1}))[0-9]{1}[0-9]{2}[0-9]{6}");
 	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
 			Pattern.CASE_INSENSITIVE);
-	public static final Pattern VALID_PASS_ADDRESS_REGEX = Pattern.compile("[a-z0-9_-]{6,16}$", Pattern.CASE_INSENSITIVE);
+	public static final Pattern VALID_PASS_ADDRESS_REGEX = Pattern.compile("[a-z0-9_-]{6,16}$",
+			Pattern.CASE_INSENSITIVE);
 
 	/**
 	 * Check if id national is valid
@@ -36,17 +37,17 @@ public class FormValidator {
 		Matcher matcher = VALID_IDNATIONAL.matcher(idNational);
 		return matcher.find();
 	}
-	
+
 	/**
 	 * Check if password is valid
 	 * 
 	 * @param password
 	 * @return is valid
 	 */
-    public static boolean validatePass(String passStr) {
-        Matcher matcher = VALID_PASS_ADDRESS_REGEX.matcher(passStr);
-        return matcher.find();
-    }
+	public static boolean validatePass(String passStr) {
+		Matcher matcher = VALID_PASS_ADDRESS_REGEX.matcher(passStr);
+		return matcher.find();
+	}
 
 	/**
 	 * Check if string is not empty
@@ -462,7 +463,7 @@ public class FormValidator {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Compare two number int
 	 * 
@@ -476,6 +477,7 @@ public class FormValidator {
 		}
 		return true;
 	}
+
 	/**
 	 * Compare two number int
 	 * 
@@ -489,6 +491,7 @@ public class FormValidator {
 		}
 		return true;
 	}
+
 	/**
 	 * 
 	 * Compare two number int**
@@ -808,7 +811,7 @@ public class FormValidator {
 		}
 		Date today = new Date();
 		today = XDate.toDate(XDate.toString(today, "dd-MM-yyyy"), "dd-MM-yyyy");
-		Date minDay = XDate.addDays(today, 36);
+		Date minDay = XDate.addDays(today, 365);
 		if (!isDateAfter(ngay, minDay)) {
 			System.out.println("Hạn sử dụng ít nhất là 1 năm!");
 			return false;

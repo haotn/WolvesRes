@@ -34,7 +34,9 @@ public class ModelNhanVien {
 
 	@Override
 	public String toString() {
-		return this.getHoTen();
+		return this.getMaNV() + " - " + this.getHoTen() + " - " + this.isGioiTinh() + " - " + this.getNgaySinh() + " - "
+				+ this.getCMND() + " - " + this.getSoDT() + " - " + this.getEmail() + " - " + this.getPathHinhAnh()
+				+ " - " + this.getChucVu() + " - " + this.isTrangThai();
 	}
 
 	public ModelNhanVien() {

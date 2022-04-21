@@ -30,7 +30,10 @@ public class NhanVienDAO implements WolvesResDAO<ModelNhanVien, String> {
 	public ModelNhanVien selectById(String ID) {
 		List<ModelNhanVien> list = new ArrayList<>();
 		list = selectBySQL("select * from NHANVIEN where MaNhanVien = ?", ID);
-		return list.get(0);
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
 	}
 
 	@Override
