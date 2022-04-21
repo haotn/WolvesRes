@@ -28,7 +28,11 @@ public class TaiKhoanDAO implements WolvesResDAO<ModelTaiKhoan, String> {
 	public ModelTaiKhoan selectById(String ID) {
 		List<ModelTaiKhoan> list = new ArrayList<>();
 		list = selectBySQL("select * from TAIKHOAN WHERE TenTaiKhoan like ?", ID);
-		return list.get(0);
+		if(list.size()>0) {
+			return list.get(0);
+		}
+			return null;
+		
 	}
 
 	@Override

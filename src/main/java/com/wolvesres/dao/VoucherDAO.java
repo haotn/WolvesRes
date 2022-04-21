@@ -35,7 +35,10 @@ public class VoucherDAO implements WolvesResDAO<ModelVouCher, String> {
 	public ModelVouCher selectById(String id) {
 		List<ModelVouCher> list = new ArrayList<>();
 		list = selectBySQL("SELECT * FROM VOUCHER WHERE MaVoucher = ?", id);
-		return list.get(0);
+		if(list.size()>0) {
+			return list.get(0);
+		}
+			return null;
 	}
 
 	/**

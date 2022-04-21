@@ -31,12 +31,15 @@ public class ModelNhanVien {
 	private String pathHinhAnh;
 	private int ChucVu;
 	private boolean trangThai;
-
-	@Override
-	public String toString() {
+	
+	public String print() {
 		return this.getMaNV() + " - " + this.getHoTen() + " - " + this.isGioiTinh() + " - " + this.getNgaySinh() + " - "
 				+ this.getCMND() + " - " + this.getSoDT() + " - " + this.getEmail() + " - " + this.getPathHinhAnh()
 				+ " - " + this.getChucVu() + " - " + this.isTrangThai();
+	}
+	
+	public String toString() {
+		return this.getMaNV() + " - " + this.getHoTen();
 	}
 
 	public ModelNhanVien() {

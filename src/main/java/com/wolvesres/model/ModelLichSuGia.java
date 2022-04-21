@@ -22,8 +22,13 @@ public class ModelLichSuGia {
    private String maSP;
    private String ngayThayDoi;
    private float gia;
+   
+    @Override
+	public String toString() {
+		return "ModelLichSuGia [id=" + id + ", maSP=" + maSP + ", ngayThayDoi=" + ngayThayDoi + ", gia=" + gia + "]";
+	}
 
-    public ModelLichSuGia() {
+	public ModelLichSuGia() {
     }
 
     public ModelLichSuGia(int id, String maSP, String ngayThayDoi, float gia) {
