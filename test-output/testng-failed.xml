@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wolvesres.haotn.nhanvien.TestNhanVien">
+      <class name="com.wolvesres.ducvh.sanpham.TestSanPham">
         <methods>
-          <include name="testThemNhanVien"/>
-          <include name="testCapNhatNhanVien" invocation-numbers="4"/>
-          <include name="beforeClassNhanVien"/>
+          <include name="ThemSP" invocation-numbers="1 2"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.wolvesres.haotn.nhanvien.TestNhanVien -->
+      </class> <!-- com.wolvesres.ducvh.sanpham.TestSanPham -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -25,10 +25,11 @@ public class ModelDanhMuc {
         this.matHang = matHang;
     }
 
-    @Override
-    public String toString() {
-        return this.getTenDanhMuc();
-    }
+	@Override
+	public String toString() {
+		String temp = String.format("%s-%s-%s", this.maDanhMuc, this.tenDanhMuc, this.matHang);
+		return temp;
+	}
 
     public ModelDanhMuc() {
     }

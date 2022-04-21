@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import com.swing.custom.raven.RDialog.ROptionDialog;
@@ -18,7 +19,7 @@ import com.wolvesres.model.ModelNhapKho;
 import com.wolvesres.model.ModelSanPham;
 import com.wolvesres.model.ModelVouCher;
 
-public class ExtractedModule {
+public class DTool {
 
 //	hàm check danh mục
 	public static boolean checkCategory(boolean insert, String MaDM, String TenDM, boolean matHang) {
@@ -403,6 +404,33 @@ public class ExtractedModule {
 		}
 //		setNhanVien(getForm());
 		return true;
+	}
+	
+	//
+	
+	public static int minInThem(int...mangList) {
+		int min = 999;
+		for (int i = 0; i < mangList.length; i++) {
+			if(mangList[i] < min) {
+				min = mangList[i];
+			}
+		}
+		System.out.println(min);
+		return min;
+	}
+	
+	//
+	
+	public static int OneOrZero(Object checkNum) {
+		int num = 0;
+		try {
+			if (Integer.valueOf(String.valueOf(checkNum)) > num) {
+				num = 1;
+			}
+		} catch (Exception e) {
+			num = 0;
+		}
+		return num;
 	}
 
 	//

@@ -2,7 +2,7 @@ package com.wolvesres.ducvh.kho;
 
 import org.testng.annotations.Test;
 
-import com.wolvesres.ducvh.module.ExtractedModule;
+import com.wolvesres.ducvh.module.DTool;
 
 import exceldoing.ExcelGo;
 
@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 public class StockQuanExportTestSuccess {
 	@Test(dataProvider = "stockquan")
 	public void f(String txtSoluong, boolean expect) {
-		boolean actual = ExtractedModule.checkStockQuanExport(txtSoluong);
+		boolean actual = DTool.checkStockQuanExport(txtSoluong);
 		assertEquals(actual, expect);
 	}
 

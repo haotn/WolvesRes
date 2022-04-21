@@ -2,7 +2,7 @@ package com.wolvesres.ducvh.ban;
 
 import org.testng.annotations.Test;
 
-import com.wolvesres.ducvh.module.ExtractedModule;
+import com.wolvesres.ducvh.module.DTool;
 
 import exceldoing.ExcelGo;
 
@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 public class checkTableSuccess {
 	@Test(dataProvider = "tablesuccess")
 	public void f(String tenBan, boolean expect) {
-		boolean actual = ExtractedModule.checkTable(tenBan);
+		boolean actual = DTool.checkTable(tenBan);
 		assertEquals(actual, expect);
 	}
 
