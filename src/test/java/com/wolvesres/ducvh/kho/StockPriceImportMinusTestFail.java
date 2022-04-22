@@ -2,7 +2,7 @@ package com.wolvesres.ducvh.kho;
 
 import org.testng.annotations.Test;
 
-import com.wolvesres.ducvh.module.ExtractedModule;
+import com.wolvesres.ducvh.module.DTool;
 
 import exceldoing.ExcelGo;
 
@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 public class StockPriceImportMinusTestFail {
 	@Test(dataProvider = "stockpriceminus")
 	public void f(String txtGia, boolean expect) {
-		boolean actual = ExtractedModule.checkStockPriceImport(txtGia);
+		boolean actual = DTool.checkStockPriceImport(txtGia);
 		assertEquals(actual, expect);
 	}
 

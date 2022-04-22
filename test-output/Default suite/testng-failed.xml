@@ -3,12 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.wolvesres.login.testclass.TestLogin">
         <methods>
           <include name="testLoginFail" invocation-numbers="3"/>
           <include name="initDao"/>
         </methods>
       </class> <!-- com.wolvesres.login.testclass.TestLogin -->
+=======
+      <class name="com.wolvesres.ducvh.danhmuc.TestDanhMuc">
+        <methods>
+          <include name="ThemDM" invocation-numbers="2"/>
+          <include name="beforeClass"/>
+          <include name="excelGo"/>
+        </methods>
+      </class> <!-- com.wolvesres.ducvh.danhmuc.TestDanhMuc -->
+>>>>>>> 64df9de597cd308ea19d6c5798796460ba655376
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

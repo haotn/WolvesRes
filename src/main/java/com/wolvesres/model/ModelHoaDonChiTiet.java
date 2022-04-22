@@ -120,4 +120,10 @@ public class ModelHoaDonChiTiet {
     public Object[] toRowTableHDCT() {
         return new Object[]{TenSP(getMaSP()), XFormatMoney.formatMoney(getDonGia()), getSoLuong(), XFormatMoney.formatMoney(Gia(getDonGia(), getSoLuong()))};
     }
+
+	@Override
+	public String toString() {
+		String temp = String.format("%s-%s-%s-%s", this.maHD, this.maSP, this.soLuong, this.donGia);
+		return temp;
+	}
 }

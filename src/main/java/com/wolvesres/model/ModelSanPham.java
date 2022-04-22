@@ -42,8 +42,8 @@ public class ModelSanPham {
 
 	@Override
 	public String toString() {
-		// return super.toString();
-		return this.getTenSP();
+		String temp = String.format("%s-%s-%s-%s-%s-%s-%s", this.maSP, this.tenSP, this.giaBan, this.maDanhMuc, this.pathAnh, this.maDVT, this.trangThai);
+		return temp;
 	}
 	
 	/**

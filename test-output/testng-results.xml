@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-04-22T11:26:40 ICT" name="Default suite" finished-at="2022-04-22T11:26:49 ICT" duration-ms="8600">
     <groups>
     </groups>
@@ -24,6 +25,58 @@
           </reporter-output>
         </test-method> <!-- FillLoginDetails -->
       </class> <!-- com.wolvesres.selenium.test_login_website.TestLoginLMS -->
+=======
+  <suite started-at="2022-04-22T10:52:03 ICT" name="Default suite" finished-at="2022-04-22T10:52:05 ICT" duration-ms="1720">
+    <groups>
+      <group name="dataThemHDCT">
+        <method signature="TestHoaDonChiTiet.testThemHDCT([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" name="testThemHDCT" class="com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet"/>
+      </group> <!-- dataThemHDCT -->
+    </groups>
+    <test started-at="2022-04-22T10:52:03 ICT" name="Default test" finished-at="2022-04-22T10:52:05 ICT" duration-ms="1720">
+      <class name="com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" started-at="2022-04-22T10:52:03 ICT" name="beforeClass" finished-at="2022-04-22T10:52:03 ICT" duration-ms="435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="testThemHDCT([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" started-at="2022-04-22T10:52:04 ICT" name="testThemHDCT" description="ThemHDCT" data-provider="dataThemHDCT" finished-at="2022-04-22T10:52:04 ICT" duration-ms="54" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7d0332e1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThemHDCT -->
+        <test-method signature="testThemHDCT([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" started-at="2022-04-22T10:52:04 ICT" name="testThemHDCT" description="ThemHDCT" data-provider="dataThemHDCT" finished-at="2022-04-22T10:52:04 ICT" duration-ms="30" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7a356a0d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThemHDCT -->
+        <test-method signature="testThemHDCT([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" started-at="2022-04-22T10:52:04 ICT" name="testThemHDCT" description="ThemHDCT" data-provider="dataThemHDCT" finished-at="2022-04-22T10:52:04 ICT" duration-ms="41" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@c827db]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThemHDCT -->
+        <test-method is-config="true" signature="excelGo()[pri:0, instance:com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet@ea6147e]" started-at="2022-04-22T10:52:04 ICT" name="excelGo" finished-at="2022-04-22T10:52:05 ICT" duration-ms="837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- excelGo -->
+      </class> <!-- com.wolvesres.ducvh.hoadonchitiet.TestHoaDonChiTiet -->
+>>>>>>> 64df9de597cd308ea19d6c5798796460ba655376
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

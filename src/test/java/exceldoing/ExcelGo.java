@@ -35,10 +35,10 @@ public class ExcelGo {
 //			1> chú ý số dòng, số cột
 //			2> nên tạo file backup (dự phòng) để tránh mất dữ liệu
 //			3> dataname cách nhau bằng dấu phẩy: ,
-		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
-				{ "xzzz", "zzzz" } };
-
-		DataGenerator dataG = new DataGenerator();
+//		Object[][] dataprovider = { { "name4", "data4" }, { "name6", "data6" }, { "namexx", "xxx" },
+//				{ "xzzz", "zzzz" } };
+//
+//		DataGenerator dataG = new DataGenerator();
 //		List<ModelNhanVien> list = dataG.generateListNhanVien(true, false, true, true, true, 5);
 //		Object[][] data = new Object[list.size()][10];
 //		for (int i = 0; i < list.size(); i++) {
@@ -58,21 +58,21 @@ public class ExcelGo {
 //						"MaNhanVien,HoTen,ChucVu,CCCD/CMND,Email,SDT,NgaySinh,PathHinhAnh,Gender,TrangThai", data);
 //			}
 //		}
-		SanPhamDAO spDao = new SanPhamDAO();
-		Object[][] data = new Object[5][6];
-		for (int i = 0; i < 5; i++) {
-			data[i][0] = i + 50;
-			data[i][1] = i + 150;
-			data[i][2] = spDao.selectAll().get(dataG.randomMinMax(0, spDao.selectAll().size() - 1)).getMaSP();
-			data[i][3] = dataG.randomMinMax(10, 1000);
-			data[i][4] = XDate.toString(dataG.generateDate(2022, 2022), "dd-MM-yyyy");
-			data[i][5] = true;
-			if (i == data.length - 1) {
-				System.out.println("=100");
-				writeExcelv2("excel-file/sanpham-fail-date.xlsx", 0, 0, 0, "ID,IDLS,MaSP,SoLuong,HanSuDung,TrangThai",
-						data);
-			}
-		}
+//		SanPhamDAO spDao = new SanPhamDAO();
+//		Object[][] data = new Object[5][6];
+//		for (int i = 0; i < 5; i++) {
+//			data[i][0] = i + 50;
+//			data[i][1] = i + 150;
+//			data[i][2] = spDao.selectAll().get(dataG.randomMinMax(0, spDao.selectAll().size() - 1)).getMaSP();
+//			data[i][3] = dataG.randomMinMax(10, 1000);
+//			data[i][4] = XDate.toString(dataG.generateDate(2022, 2022), "dd-MM-yyyy");
+//			data[i][5] = true;
+//			if (i == data.length - 1) {
+//				System.out.println("=100");
+//				writeExcelv2("excel-file/sanpham-fail-date.xlsx", 0, 0, 0, "ID,IDLS,MaSP,SoLuong,HanSuDung,TrangThai",
+//						data);
+//			}
+//		}
 
 	}
 
@@ -306,6 +306,110 @@ public class ExcelGo {
 					celltemp.setCellValue(String.valueOf(cellValue));
 				}
 				rowIndex++;
+			}
+		}
+		// Create file excel
+		createOutputFile(workbooktemp, path);
+		System.out.println("Done!!!");
+	}
+
+	//
+	public static void writeExcelv3(String path, int sheetnum, int rowstart, int column, String namedata,
+			Object[][] data) throws IOException {
+		// đọc workbook(excel) nào
+		Workbook workbook = getWorkbook(path);
+		// lấy sheet mấy
+		Sheet sheet = workbook.getSheetAt(sheetnum);
+		// tạo workbook tạm
+		Workbook workbooktemp = getWorkbook(path);
+		// tạo sheet tạm
+		Sheet sheettemp = workbooktemp.getSheetAt(sheetnum+1);
+		// xử lý dữ liệu
+		String[] nametemp = namedata.split(",");
+		int rowIndex = rowstart;
+		// lấy all rows có dữ liệu
+		Iterator<Row> iteratorRow = sheet.iterator();
+		Iterator<Row> iteratorRowTemp = sheettemp.iterator();
+		while (iteratorRow.hasNext()) {
+			// lấy row
+			Row nextRow = iteratorRow.next();
+			// continue nếu chưa tới, dữ liệu phía trên dòng bắt đầu được giữ nguyên
+			if (nextRow.getRowNum() < rowstart) {
+				continue;
+			} else if (nextRow.getRowNum() == rowstart) {
+				// lấy all cells
+				Iterator<Cell> iteratorCell = nextRow.cellIterator();
+				List<String> list = new ArrayList<String>();
+				// chạy hết dữ liệu
+				int sheetTempIndex = 0;
+				int checkRow = 1;
+				for (int i = 0; i < data.length; i++) {
+					// xử lý namedata
+					String datatemp = "";
+					//
+					for (int k = 0; k < nametemp.length; k++) {
+						datatemp = datatemp + nametemp[k] + "= " + data[i][k] + ";";
+					}
+					datatemp = datatemp.substring(0, datatemp.length() - 1);
+					//
+					while (iteratorCell.hasNext()) {
+						// xét từng cell
+						Cell cell = iteratorCell.next();
+						Object cellValue = getCellValue(cell);
+						if (cellValue == null) {
+							list.add("");
+						} else {
+							list.add(String.valueOf(cellValue));
+						}
+					}
+					while (iteratorRowTemp.hasNext() && checkRow == 1) {
+						Row nextRowTemp = iteratorRowTemp.next();
+						Iterator<Cell> iteratorCellTemp = nextRowTemp.cellIterator();
+						while(iteratorCellTemp.hasNext() && checkRow == 1) {
+							Cell cellTemp = iteratorCellTemp.next();
+							if (cellTemp.getColumnIndex() == 1) {
+								System.err.print((sheetTempIndex)+" ");
+								Object cellValue = getCellValue(cellTemp);
+								if (cellValue == null) {
+									checkRow = 0;
+									sheetTempIndex++;
+									break;
+								} else {
+									if (String.valueOf(cellValue).isEmpty()) {
+										checkRow = 0;
+										sheetTempIndex++;
+										break;
+									}else {
+										sheetTempIndex++;
+										break;
+									}
+								}
+							}
+						}
+					}
+					// tạo row theo rowstart
+					Row row = sheettemp.createRow(sheetTempIndex);
+					System.err.print((sheetTempIndex)+" ");
+					//
+					for (int z = 0; z < list.size(); z++) {//
+//						if (list.get(z) == null) {
+//							continue;
+//						}
+						//
+						if (z != column) {
+							Cell celltemp = row.createCell(z);
+							if (list.get(z)==null) {
+								celltemp.setCellValue("");
+							}else {
+								celltemp.setCellValue(String.valueOf(list.get(z)));
+							}
+						} else if (z == column) {
+							Cell celltemp = row.createCell(z);
+							celltemp.setCellValue(String.valueOf(datatemp));
+						}
+					}
+					sheetTempIndex++;
+				}
 			}
 		}
 		// Create file excel
