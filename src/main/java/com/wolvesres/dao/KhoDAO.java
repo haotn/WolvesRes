@@ -36,6 +36,14 @@ public class KhoDAO implements WolvesResDAO<ModelKho, Integer> {
         return list.get(0);
     }
 
+    public ModelKho selectByObject(String maSp, int idls) {
+        // List tạm
+        List<ModelKho> list = new ArrayList<>();
+
+        // Nhận đối tượng đầu tiên của list
+        list = selectBySQL("SELECT * FROM KHO WHERE MaSP = ? AND IDLS = ?", maSp,idls);
+        return list.get(0);
+    }
     @Override
     public List<ModelKho> selectBySQL(String sql, Object... Entity) {
         // List tạm

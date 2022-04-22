@@ -25,9 +25,9 @@ public class ModelKho {
 
 	@Override
 	public String toString() {
-		return getSanPham().getTenSP();
+		return "ModelKho [id=" + id + ", idls=" + idls + ", maSP=" + maSP + ", soLuong=" + soLuong + ", hanSuDung="
+				+ hanSuDung + ", trangThai=" + trangThai + "]";
 	}
-	///////////////////////////////////
 
 	public ModelKho() {
 	}
@@ -40,7 +40,15 @@ public class ModelKho {
 		this.hanSuDung = hanSuDung;
 		this.trangThai = trangThai;
 	}
-
+ 
+	public ModelKho( int idls, String maSP, int soLuong, String hanSuDung, boolean trangThai) {
+		this.id = id;
+		this.idls = idls;
+		this.maSP = maSP;
+		this.soLuong = soLuong;
+		this.hanSuDung = hanSuDung;
+		this.trangThai = trangThai;
+	}
 	/**
 	 * @return the id
 	 */
@@ -267,4 +275,5 @@ public class ModelKho {
 	public void update(int id) {
 		khodao.update(this, id);
 	}
+	
 }

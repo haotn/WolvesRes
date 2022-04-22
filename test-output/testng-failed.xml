@@ -4,6 +4,7 @@
   <test thread-count="5" name="Default test(failed)">
     <classes>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.order_entity.TestOrder">
         <methods>
           <include name="testThemOrder" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
@@ -20,6 +21,14 @@
         </methods>
       </class> <!-- com.wolvesres.hott.hoadon.TestHoaDon -->
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+      <class name="com.wolvesres.truongnvn.kho.TestKho">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="testNhapKho"/>
+        </methods>
+      </class> <!-- com.wolvesres.truongnvn.kho.TestKho -->
+>>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

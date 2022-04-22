@@ -157,4 +157,11 @@ public class ModelLichSu {
 		this.setNguoiNhap(nguoiNhap);
 		lsDAO.insert(this);
 	}
+
+	@Override
+	public String toString() {
+		return "ModelLichSu [id=" + id + ", nhapKho=" + nhapKho + ", thoiGian=" + thoiGian + ", tongTien=" + tongTien
+				+ ", nguoiNhap=" + nguoiNhap + "]";
+	}
+	
 }

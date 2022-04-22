@@ -29,6 +29,13 @@ public class ModelChiTietLichSu {
         this.donGia = donGia;
     }
 
+    public ModelChiTietLichSu(int idLS, String maSP, int soLuong, float donGia) {
+        this.id = id;
+        this.idLS = idLS;
+        this.maSP = maSP;
+        this.soLuong = soLuong;
+        this.donGia = donGia;
+    }
     /**
      * @return the id
      */
@@ -186,4 +193,11 @@ public class ModelChiTietLichSu {
     	this.setDonGia(gia);
         chitietlsdao.insert(this);
     }
+
+	@Override
+	public String toString() {
+		return "ModelChiTietLichSu [id=" + id + ", idLS=" + idLS + ", maSP=" + maSP + ", soLuong=" + soLuong
+				+ ", donGia=" + donGia + "]";
+	}
+    
 }

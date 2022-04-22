@@ -31,8 +31,11 @@ public class DonViTinhDAO implements WolvesResDAO<ModelDonViTinh, Integer> {
 
         // Nhận đối tượng đầu tiên của list
         list = selectBySQL("SELECT * FROM DONVITINH WHERE MaDonViTinh = ?", id);
-
-        return list.get(0);
+        if(list.size()>0) {
+        	return list.get(0);
+        }else {
+        	return null;
+        }
     }
 
     @Override
