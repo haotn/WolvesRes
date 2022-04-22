@@ -16,6 +16,12 @@ public class ModelOrder {
 	private float gia;
 	private int soLuong;
 
+	@Override
+	public String toString() {
+		return "ModelOrder [maSP=" + maSP + ", maBan=" + maBan + ", gia=" + gia + ", soLuong=" + soLuong
+				+ "]";
+	}
+
 	public ModelOrder() {
 	}
 

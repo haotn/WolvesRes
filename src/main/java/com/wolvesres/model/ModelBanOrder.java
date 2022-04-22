@@ -14,6 +14,12 @@ public class ModelBanOrder {
 	private String maBanGop;
 	private BanOrderDAO banoderdao = new BanOrderDAO();
 
+	@Override
+	public String toString() {
+		return "ModelBanOrder [maBan=" + maBan + ", maVoucher=" + maVoucher + ", ghiChu=" + ghiChu + ", maBanGop="
+				+ maBanGop + "]";
+	}
+
 	public ModelBanOrder() {
 	}
 

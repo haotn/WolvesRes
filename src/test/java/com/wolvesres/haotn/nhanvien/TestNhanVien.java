@@ -70,8 +70,8 @@ public class TestNhanVien {
 		if (nhanVien.toString().equals(fromDatabase.toString())) {
 			actual = true;
 		}
-		System.out.println("Du lieu truyen vao: " + nhanVien);
-		System.out.println("Sau khi them: " + fromDatabase);
+		System.out.println("Dữ liệu thêm mới mong muốn: " + nhanVien);
+		System.out.println("Dữ liệu thêm mới thực tế: " + fromDatabase);
 		System.out.println("\n");
 		Assert.assertEquals(actual, expected);
 	}
@@ -98,8 +98,8 @@ public class TestNhanVien {
 		Boolean actual = false;
 		nvDao.update(nhanVien, nhanVien.getMaNV());
 		ModelNhanVien fromDatabase = nvDao.selectById(nhanVien.getMaNV());
-		System.out.println("Du lieu mong muon chinh sua: " + nhanVien.toString());
-		System.out.println("Du lieu sau khi cap nhat: " + fromDatabase.toString());
+		System.out.println("Dữ liệu cập nhật mong muốn: " + nhanVien.toString());
+		System.out.println("Dữ liệu cập nhật thực tế: " + fromDatabase.toString());
 		System.out.println("\n");
 		if (nhanVien.toString().equals(fromDatabase.toString())) {
 			actual = true;
@@ -118,10 +118,11 @@ public class TestNhanVien {
 		ModelNhanVien entity = nvDao.selectById(maNhanVien);
 		nvDao.delete(maNhanVien);
 		ModelNhanVien nhanVien = nvDao.selectById(maNhanVien);
-		System.out.println("Truoc khi xoa: " + entity);
-		System.out.println("Sau khi xoa: " + nhanVien);
 		if (nhanVien == null) {
 			actual = true;
+			System.out.println("Xóa thành công!");
+		}else {
+			System.out.println("Xóa thất bại, dữ liệu còn tồn tại là: " + nhanVien);
 		}
 		Assert.assertEquals(actual, expected);
 	}
