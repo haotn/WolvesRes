@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -62,11 +63,34 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@62df0ff3]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-22T03:46:18 ICT" name="Default suite" finished-at="2022-04-22T03:46:19 ICT" duration-ms="1515">
+    <groups>
+      <group name="themVoucher">
+        <method signature="testVoucher.testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" name="testThemVoucher" class="com.wolvesres.quanghn.voucher.testVoucher"/>
+      </group> <!-- themVoucher -->
+    </groups>
+    <test started-at="2022-04-22T03:46:18 ICT" name="Default test" finished-at="2022-04-22T03:46:19 ICT" duration-ms="1515">
+      <class name="com.wolvesres.quanghn.voucher.testVoucher">
+        <test-method is-config="true" signature="beforeClassNhanVien()[pri:0, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:18 ICT" name="beforeClassNhanVien" finished-at="2022-04-22T03:46:18 ICT" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClassNhanVien -->
+        <test-method signature="testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:18 ICT" name="testThemVoucher" description="Test dao them Voucher" data-provider="dataThemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2a415aa9]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
@@ -91,11 +115,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@51671b08]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testThemVoucher -->
+        <test-method signature="testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testThemVoucher" description="Test dao them Voucher" data-provider="dataThemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="42" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7e11ab3d]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
@@ -120,11 +153,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@1b70203f]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testThemVoucher -->
+        <test-method signature="testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testThemVoucher" description="Test dao them Voucher" data-provider="dataThemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="43" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5fa47fea]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
@@ -149,11 +191,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@15051a0]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testThemVoucher -->
+        <test-method signature="testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testThemVoucher" description="Test dao them Voucher" data-provider="dataThemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="48" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@420745d7]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
@@ -170,11 +221,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@3c9168dc]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testThemVoucher -->
+        <test-method signature="testThemVoucher([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testThemVoucher" description="Test dao them Voucher" data-provider="dataThemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="48" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@71ea1fda]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="53" status="PASS">
@@ -190,11 +250,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@7859e786]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testThemVoucher -->
+        <test-method signature="testCapNhatVoucher([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testCapNhatVoucher" description="Test dao cap nhat voucher" data-provider="dataCapNhatVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="54" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@53cdecf6]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="76" status="PASS">
@@ -210,11 +279,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@71104a4]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testCapNhatVoucher -->
+        <test-method signature="testCapNhatVoucher([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testCapNhatVoucher" description="Test dao cap nhat voucher" data-provider="dataCapNhatVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="85" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@62b3df3a]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="91" status="PASS">
@@ -230,11 +308,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@314b8f2d]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testCapNhatVoucher -->
+        <test-method signature="testCapNhatVoucher([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testCapNhatVoucher" description="Test dao cap nhat voucher" data-provider="dataCapNhatVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="31" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2392212b]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="143" status="PASS">
@@ -250,11 +337,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@4a3e3e8b]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testCapNhatVoucher -->
+        <test-method signature="testCapNhatVoucher([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testCapNhatVoucher" description="Test dao cap nhat voucher" data-provider="dataCapNhatVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="75" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@232024b9]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="115" status="PASS">
@@ -270,11 +366,20 @@
               <value>
                 <![CDATA[[Ljava.lang.Object;@72f46e16]]>
 >>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
+=======
+        </test-method> <!-- testCapNhatVoucher -->
+        <test-method signature="testCapNhatVoucher([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testCapNhatVoucher" description="Test dao cap nhat voucher" data-provider="dataCapNhatVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="64" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@55a8dc49]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="513" status="PASS">
@@ -447,6 +552,14 @@
               <value>
                 <![CDATA[38]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testCapNhatVoucher -->
+        <test-method signature="testDeleteVoucher(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testDeleteVoucher" description="Test delete voucher" data-provider="dataDeleteVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="53" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VC095]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
             <param index="1">
@@ -462,6 +575,7 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         </test-method> <!-- testDeleteOrder -->
@@ -486,6 +600,14 @@
               <value>
                 <![CDATA[39]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testDeleteVoucher -->
+        <test-method signature="testDeleteVoucher(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testDeleteVoucher" description="Test delete voucher" data-provider="dataDeleteVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="43" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VC096]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
             <param index="1">
@@ -503,6 +625,7 @@
           </reporter-output>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         </test-method> <!-- testDeleteOrder -->
         <test-method signature="testDeleteOrder(java.lang.String,java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testDeleteOrder" description="Test delete order" data-provider="dataDeleteOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="49" status="PASS">
           <params>
@@ -517,6 +640,14 @@
               <value>
                 <![CDATA[Chén]]>
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testDeleteVoucher -->
+        <test-method signature="testDeleteVoucher(java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testDeleteVoucher" description="Test delete voucher" data-provider="dataDeleteVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="43" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VC097]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
             <param index="1">
@@ -536,6 +667,7 @@
           <reporter-output>
           </reporter-output>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </test-method> <!-- testDeleteOrder -->
       </class> <!-- com.wolvesres.haotn.order_entity.TestOrder -->
 =======
@@ -549,6 +681,14 @@
             <param index="0">
               <value>
                 <![CDATA[Hộp]]>
+=======
+        </test-method> <!-- testDeleteVoucher -->
+        <test-method signature="testTimKiemTaiKhoan(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testTimKiemTaiKhoan" description="Test tim kiem voucher theo ma voucher, ngay bat dau, ngay ket thuc" data-provider="dataTimKiemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VC01]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
             <param index="1">
@@ -559,12 +699,21 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testTimKiemNhanVien -->
         <test-method signature="testTimKiemNhanVien(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.truongnvn.donvitinh.TestDonViTinh@1e683a3e]" started-at="2022-04-22T03:50:30 ICT" name="testTimKiemNhanVien" description="Test tim kiem don vi tinh theo ten" data-provider="dataTimKiemDonViTinh" finished-at="2022-04-22T03:50:30 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[Đĩa]]>
+=======
+        </test-method> <!-- testTimKiemTaiKhoan -->
+        <test-method signature="testTimKiemTaiKhoan(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testTimKiemTaiKhoan" description="Test tim kiem voucher theo ma voucher, ngay bat dau, ngay ket thuc" data-provider="dataTimKiemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="12" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[14-04-2021]]>
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
               </value>
             </param>
             <param index="1">
@@ -575,9 +724,30 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testTimKiemNhanVien -->
       </class> <!-- com.wolvesres.truongnvn.donvitinh.TestDonViTinh -->
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+        </test-method> <!-- testTimKiemTaiKhoan -->
+        <test-method signature="testTimKiemTaiKhoan(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.quanghn.voucher.testVoucher@1e683a3e]" started-at="2022-04-22T03:46:19 ICT" name="testTimKiemTaiKhoan" description="Test tim kiem voucher theo ma voucher, ngay bat dau, ngay ket thuc" data-provider="dataTimKiemVoucher" finished-at="2022-04-22T03:46:19 ICT" duration-ms="21" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15-01-2022]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimKiemTaiKhoan -->
+      </class> <!-- com.wolvesres.quanghn.voucher.testVoucher -->
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

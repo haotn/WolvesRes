@@ -32,6 +32,11 @@ public class ModelTaiKhoan {
 	private TaiKhoanDAO dao = new TaiKhoanDAO();
 	GhiNhoDAO gndao = new GhiNhoDAO();
 
+	@Override
+	public String toString() {
+		return "ModelTaiKhoan [taiKhoan=" + taiKhoan + ", matKhau=" + matKhau + ", trangThai=" + trangThai + "]";
+	}
+
 	public ModelTaiKhoan() {
 	}
 

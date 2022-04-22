@@ -8,13 +8,14 @@ import com.wolvesres.model.ModelSanPham;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author FPT
  */
-public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, String> {
+public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, Integer> {
 
     @Override
     public List<ModelLichSuGia> selectAll() {
@@ -24,10 +25,13 @@ public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, String> {
     }
 
     @Override
-    public ModelLichSuGia selectById(String ID) {
+    public ModelLichSuGia selectById(Integer ID) {
         List<ModelLichSuGia> list = new ArrayList<>();
-        list = selectBySQL("select * from LICHSUGIA where ID like ?", ID);
-        return list.get(0);
+        list = selectBySQL("select * from LICHSUGIA where ID = ?", ID);
+        if(list.size()>0) {
+        	return list.get(0);
+        }
+        	return null;
     }
 
     @Override
@@ -38,7 +42,7 @@ public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, String> {
             try {
                 result = XJdbc.query(sql, Entity);
                 while (result.next()) {
-                    ModelLichSuGia sanPham = new ModelLichSuGia(result.getInt(1), result.getString(3), XDate.toString(result.getDate(2), "dd-MM-yyyy"), result.getFloat(4));
+                    ModelLichSuGia sanPham = new ModelLichSuGia(result.getInt(1), result.getString(3), XDate.toString(result.getDate(2), "dd-MM-yyyy HH:mm:ss"), result.getFloat(4));
                     list.add(sanPham);
                 }
             } finally {
@@ -53,17 +57,17 @@ public class LichSuGiaDAO implements WolvesResDAO<ModelLichSuGia, String> {
     public void insert(ModelLichSuGia entity) {
         try {
             String sql = "INSERT INTO LICHSUGIA (MaSP, NgayThayDoi, Gia) VALUES (?,?,?)";
-            XJdbc.update(sql, entity.getMaSP(), XDate.toDate(XDate.toString(XDate.toDate(entity.getNgayThayDoi(), "dd-MM-yyyy"), "yyyy-MM-dd"), "yyyy-MM-dd"), entity.getGia());
+            XJdbc.update(sql, entity.getMaSP(), XDate.toDate(XDate.toString(XDate.toDate(entity.getNgayThayDoi(), "dd-MM-yyyy HH:mm:ss"), "yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss"), entity.getGia());
         } catch (SQLException ex) {
         }
     }
 
     @Override
-    public void update(ModelLichSuGia Entity, String ID) {
+    public void update(ModelLichSuGia Entity, Integer ID) {
     }
 
     @Override
-    public void delete(String ID) {
+    public void delete(Integer ID) {
         try {
             String sql = "DELETE FROM LICHSUGIA WHERE MASP = ?";
             XJdbc.update(sql, ID);

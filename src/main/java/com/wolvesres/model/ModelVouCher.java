@@ -39,9 +39,13 @@ public class ModelVouCher {
 		this.trangThai = trangThai;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return this.maVoucher + " " + this.giamGia + " - " + this.ngayBatDau + " - " + this.ngayKetThuc;
+		return "ModelVouCher [maVoucher=" + maVoucher + ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc
+				+ ", giamGia=" + giamGia + ", soLuong=" + soLuong + ", pathQR=" + pathQR + ", trangThai=" + trangThai
+				+ "]";
 	}
 
 	/**

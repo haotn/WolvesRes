@@ -27,7 +27,6 @@ public class TestNhanVien {
 	}
 
 	// Data Provider
-
 	@DataProvider(name = "dataThemNhanVien")
 	public Object[][] dataThemNhanVien() {
 		List<Object[]> list = new ArrayList<Object[]>();

@@ -5,6 +5,7 @@
     <classes>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <class name="com.wolvesres.haotn.order_entity.TestOrder">
         <methods>
           <include name="testThemOrder" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
@@ -29,6 +30,14 @@
         </methods>
       </class> <!-- com.wolvesres.truongnvn.kho.TestKho -->
 >>>>>>> 2db543cf7b71210022030848e1b0c682e0280e7c
+=======
+      <class name="com.wolvesres.quanghn.sanpham.TestLichSuGia">
+        <methods>
+          <include name="beforeClassNhanVien"/>
+          <include name="testThemTaiKhoan" invocation-numbers="0 1 2 3 4"/>
+        </methods>
+      </class> <!-- com.wolvesres.quanghn.sanpham.TestLichSuGia -->
+>>>>>>> 482090e497cf16d908cdfed63e200f54e52578bd
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -86,7 +86,7 @@ public class FormSanPham extends javax.swing.JPanel {
 					&& daoSanPham.checkForeignHoaDonCT(sanpham.getMaSP()) == null) {
 				if (ROptionDialog.showConfirm(frame, "Xác nhận", "Xác nhận xóa sản phẩm?", ROptionDialog.WARNING,
 						Color.yellow, Color.black)) {
-					daolsg.delete(sanpham.getMaSP());
+					daolsg.delete(Integer.parseInt(sanpham.getMaSP()));
 					daoSanPham.delete(sanpham.getMaSP());
 					ModelDanhMuc danhMuc = (ModelDanhMuc) cboDanhMuc.getSelectedItem();
 					deleteFromList(sanpham);
