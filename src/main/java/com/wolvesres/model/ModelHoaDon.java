@@ -220,5 +220,13 @@ public class ModelHoaDon {
 			}
 		}
     }
+
+	@Override
+	public String toString() {
+		return maHD + " - " + nguoiXuat + " - " + ngayXuat + " - " + maBan
+				+ " - " + maVoucher + " - " + thue + " - " + tienHang + " - " + trangThai;
+	}
+    
+    
     
 }

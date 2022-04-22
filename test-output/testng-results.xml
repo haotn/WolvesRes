@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -16,171 +17,328 @@
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@13ad5cd3]]>
+=======
+<testng-results ignored="0" total="17" passed="17" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-22T03:26:38 ICT" name="Default suite" finished-at="2022-04-22T03:26:39 ICT" duration-ms="1054">
+    <groups>
+      <group name="themHoaDon">
+        <method signature="TestHoaDon.testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" name="testThemHoaDon" class="com.wolvesres.hott.hoadon.TestHoaDon"/>
+      </group> <!-- themHoaDon -->
+    </groups>
+    <test started-at="2022-04-22T03:26:38 ICT" name="Default test" finished-at="2022-04-22T03:26:39 ICT" duration-ms="1054">
+      <class name="com.wolvesres.hott.hoadon.TestHoaDon">
+        <test-method is-config="true" signature="beforeClassKhuBan()[pri:0, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:38 ICT" name="beforeClassKhuBan" finished-at="2022-04-22T03:26:38 ICT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClassKhuBan -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:38 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="252" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5af28b27]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:30 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:30 ICT" duration-ms="41" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@3cdf2c61]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="39" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4985cbcb]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:30 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@1e097d59]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="38" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5118388b]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="55" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@4b23c30a]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="42" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@332a7fce]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="59" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@1603cd68]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="40" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3c9168dc]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@9ebe38b]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="37" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7859e786]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="76" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@673be18f]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="37" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@71104a4]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="91" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@30e868be]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="38" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@314b8f2d]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="143" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@1c33c17b]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="39" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4a3e3e8b]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testThemOrder([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testThemOrder" description="Test them order" data-provider="dataThemOrder" finished-at="2022-04-22T02:25:31 ICT" duration-ms="115" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@5bf0fe62]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testThemHoaDon([Ljava.lang.Object;)[pri:1, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testThemHoaDon" description="Test dao them hoa don" data-provider="dataThemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="34" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@72f46e16]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testThemOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:31 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="513" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@332796d3]]>
+=======
+        </test-method> <!-- testThemHoaDon -->
+        <test-method signature="testCapNhatHoaDon([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testCapNhatHoaDon" description="Test dao cap nhat hoa don" data-provider="dataCapNhatHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="22" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@285d851a]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testCapNhatOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="173" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@4f0100a7]]>
+=======
+        </test-method> <!-- testCapNhatHoaDon -->
+        <test-method signature="testCapNhatHoaDon([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testCapNhatHoaDon" description="Test dao cap nhat hoa don" data-provider="dataCapNhatHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="22" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7876d598]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testCapNhatOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="97" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@3899782c]]>
+=======
+        </test-method> <!-- testCapNhatHoaDon -->
+        <test-method signature="testCapNhatHoaDon([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testCapNhatHoaDon" description="Test dao cap nhat hoa don" data-provider="dataCapNhatHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="22" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@664a9613]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testCapNhatOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="134" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@38089a5a]]>
+=======
+        </test-method> <!-- testCapNhatHoaDon -->
+        <test-method signature="testCapNhatHoaDon([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testCapNhatHoaDon" description="Test dao cap nhat hoa don" data-provider="dataCapNhatHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@549621f3]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testCapNhatOrder -->
         <test-method signature="testCapNhatOrder([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testCapNhatOrder" description="Test delete order" data-provider="dataCapNhatOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="173" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[Ljava.lang.Object;@66c92293]]>
+=======
+        </test-method> <!-- testCapNhatHoaDon -->
+        <test-method signature="testCapNhatHoaDon([Ljava.lang.Object;)[pri:2, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testCapNhatHoaDon" description="Test dao cap nhat hoa don" data-provider="dataCapNhatHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="21" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@15a902e7]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testCapNhatOrder -->
         <test-method signature="testDeleteOrder(java.lang.String,java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testDeleteOrder" description="Test delete order" data-provider="dataDeleteOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="77" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[SP01]]>
+=======
+        </test-method> <!-- testCapNhatHoaDon -->
+        <test-method signature="testTimKiemHoaDon(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testTimKiemHoaDon" description="Test tim kiem hoa don theo ma hoa don" data-provider="dataTimKiemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="12" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[HD021]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
             <param index="1">
@@ -196,12 +354,21 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testDeleteOrder -->
         <test-method signature="testDeleteOrder(java.lang.String,java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testDeleteOrder" description="Test delete order" data-provider="dataDeleteOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="47" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[SP05]]>
+=======
+        </test-method> <!-- testTimKiemHoaDon -->
+        <test-method signature="testTimKiemHoaDon(java.lang.String,java.lang.Boolean)[pri:4, instance:com.wolvesres.hott.hoadon.TestHoaDon@2667f029]" started-at="2022-04-22T03:26:39 ICT" name="testTimKiemHoaDon" description="Test tim kiem hoa don theo ma hoa don" data-provider="dataTimKiemHoaDon" finished-at="2022-04-22T03:26:39 ICT" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[HD022]]>
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
               </value>
             </param>
             <param index="1">
@@ -217,6 +384,7 @@
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testDeleteOrder -->
         <test-method signature="testDeleteOrder(java.lang.String,java.lang.String,java.lang.Boolean)[pri:3, instance:com.wolvesres.haotn.order_entity.TestOrder@353d0772]" started-at="2022-04-22T02:25:32 ICT" name="testDeleteOrder" description="Test delete order" data-provider="dataDeleteOrder" finished-at="2022-04-22T02:25:32 ICT" duration-ms="49" status="PASS">
           <params>
@@ -240,6 +408,10 @@
           </reporter-output>
         </test-method> <!-- testDeleteOrder -->
       </class> <!-- com.wolvesres.haotn.order_entity.TestOrder -->
+=======
+        </test-method> <!-- testTimKiemHoaDon -->
+      </class> <!-- com.wolvesres.hott.hoadon.TestHoaDon -->
+>>>>>>> 2d7dbf6b30fe43156e104988b8cc288a20647006
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
