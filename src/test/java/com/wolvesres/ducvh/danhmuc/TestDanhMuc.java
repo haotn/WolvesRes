@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -30,7 +31,7 @@ import exceldoing.ExcelGo;
 public class TestDanhMuc {
 	private AutoDAO autoDAO;
 	private DanhMucDAO dmDAO;
-	private int forwant = 3;
+	private int forwant = 4;
 
 	// Declare DAO
 	@BeforeClass
@@ -47,6 +48,17 @@ public class TestDanhMuc {
 		for (int i = 0; i < forwant; i++) {
 			data[i][0] = new ModelDanhMuc("DM0"+(Integer.valueOf(autoDAO.AuToDanhMuc().substring(2))+i), String.format("Tên danh mục %s", i), true);
 			data[i][1] = true; 
+		}
+		return data;
+	}
+	
+	public Object[][] dataThemDMv2(Object[][] datav1) {
+		Object[][] data = new Object[datav1.length][7];
+		for (int i = 0; i < datav1.length; i++) {
+			ModelDanhMuc sp = (ModelDanhMuc) datav1[i][0];
+			data[i][0] = sp.getMaDanhMuc();
+			data[i][1] = sp.getTenDanhMuc();
+			data[i][2] = sp.isMatHang();
 		}
 		return data;
 	}
@@ -71,7 +83,19 @@ public class TestDanhMuc {
 		return new Object[][] {
 				{ new ModelDanhMuc("", "Tên danh mục cập nhật 1", true), "DM013", true },
 				{ new ModelDanhMuc("", "Tên danh mục cập nhật 2", false), "DM014", true },
-				{ new ModelDanhMuc("", "Tên danh mục cập nhật 3", true), "DM015", true }};
+				{ new ModelDanhMuc("", "Tên danh mục cập nhật 3", false), "DM015", true },
+				{ new ModelDanhMuc("", "Tên danh mục cập nhật 3", true), "DM016", true }};
+	}
+	
+	public Object[][] dataCapNhatDMv2(Object[][] datav1) {
+		Object[][] data = new Object[datav1.length][7];
+		for (int i = 0; i < datav1.length; i++) {
+			ModelDanhMuc sp = (ModelDanhMuc) datav1[i][0];
+			data[i][0] = sp.getMaDanhMuc();
+			data[i][1] = sp.getTenDanhMuc();
+			data[i][2] = sp.isMatHang();
+		}
+		return data;
 	}
 
 	@Test(description = "Test CapNhatDM", dataProvider = "dataCapNhatDM", priority = 2)
@@ -96,7 +120,7 @@ public class TestDanhMuc {
 		return new Object[][] { { "DM016", true }};
 	}
 
-	@Test(description = "Test XoaDM", dataProvider = "dataXoaDM")
+	@Test(description = "Test XoaDM", dataProvider = "dataXoaDM", priority = 3)
 	public void XoaDM(String maDM, Boolean expected) {
 		Boolean actual = false;
 		dmDAO.delete(maDM);
@@ -114,7 +138,7 @@ public class TestDanhMuc {
 
 	@DataProvider(name = "dataTimKiemDM")
 	public Object[][] dataTimKiemDM() {
-		return new Object[][] { { "Bia", true }, { "Salad", true } };
+		return new Object[][] { { "Bia", true }, { "Điểm tâm", true }, { "Rượu", true }, { "Salad", true } };
 	}
 
 	@Test(description = "Test TimKiemDM", dataProvider = "dataTimKiemDM", priority = 4)
@@ -129,4 +153,14 @@ public class TestDanhMuc {
 		}
 		Assert.assertEquals(actual, expected);
 	}
+
+	@AfterClass
+	public void excelGo() throws IOException {
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 9, 6, "maDanhMuc,tenDanhMuc,matHang", dataThemDMv2(dataThemDM()));
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 10, 6, "maDanhMuc,tenDanhMuc,matHang", dataThemDMv2(dataCapNhatDM()));
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 11, 6, "maDanhMuc", dataXoaDM());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 12, 6, "tenDanhMuc", dataTimKiemDM());
+	}
+	
+	//
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,6 +18,7 @@ import com.wolvesres.dao.NhanVienDAO;
 import com.wolvesres.dao.SanPhamDAO;
 import com.wolvesres.ducvh.module.DTool;
 import com.wolvesres.form.hoadon.HoaDonChiTiet;
+import com.wolvesres.model.ModelDanhMuc;
 import com.wolvesres.model.ModelHoaDon;
 import com.wolvesres.model.ModelHoaDonChiTiet;
 import com.wolvesres.model.ModelKho;
@@ -81,6 +83,19 @@ public class TestHoaDonChiTiet {
 		}
 		return data;
 	}
+	
+	public Object[][] dataThemHDCTv2(Object[][] datav1) {
+		Object[][] data = new Object[datav1.length][5];
+		for (int i = 0; i < datav1.length; i++) {
+			ModelHoaDonChiTiet sp = (ModelHoaDonChiTiet) datav1[i][0];
+			data[i][0] = sp.getMaHDCT();
+			data[i][1] = sp.getMaHD();
+			data[i][2] = sp.getMaSP();
+			data[i][3] = sp.getDonGia();
+			data[i][4] = sp.getSoLuong();
+		}
+		return data;
+	}
 
 	@Test(description = "ThemHDCT", dataProvider = "dataThemHDCT", groups = "dataThemHDCT", priority = 1)
 	public void testThemHDCT(Object[] data) {
@@ -98,71 +113,9 @@ public class TestHoaDonChiTiet {
 		Assert.assertEquals(actual, expected);
 	}
 
-//	@DataProvider(name = "dataCapNhatNhanVien")
-//	public Object[][] dataCapNhatNhanVien() {
-//		return new Object[][] {
-//				{ new ModelNhanVien("NV020", "Lê Huyền Ngọc Thanh", false, "02-05-1995", "031199532143", "0728445847",
-//						"thuylh@fpt.edu.vn", "anhNhanVien55", 3, true), true },
-//				{ new ModelNhanVien("NV021", "Trần Văn Kiên", true, "02-03-1992", "042199232143", "0898100847",
-//						"kientv@fpt.edu.vn", "anhNhanVien52", 4, true), true },
-//				{ new ModelNhanVien("NV022", "Phan Kiên", true, "07-06-1998", "031199832143", "0998727433",
-//						"quynhph@gmail.com", "anhNhanVien57", 3, true), true },
-//				{ new ModelNhanVien("NV023", "Nguyễn Lê Quỳnh An", false, "28-01-1999", "080099306020", "0395100410",
-//						"anhlh@gmail.com", "anhNhanVien60", 4, true), true },
-//				{ new ModelNhanVien("NV024", "Lê Thanh Mạnh Tuấn", true, "03-11-1994", "036199695572", "0729870705",
-//						"manhlt@fpt.edu.vn", "anhNhanVien68", 4, true), true } };
-//	}
-//
-//	@Test(description = "Test dao cap nhat nhan vien", dataProvider = "dataCapNhatNhanVien", priority = 2)
-//	public void testCapNhatNhanVien(Object[] data) {
-//		ModelNhanVien nhanVien = (ModelNhanVien) data[0];
-//		Boolean expected = (Boolean) data[1];
-//		Boolean actual = false;
-//		nvDao.update(nhanVien, nhanVien.getMaNV());
-//		ModelNhanVien fromDatabase = nvDao.selectById(nhanVien.getMaNV());
-//		System.out.println("Du lieu mong muon chinh sua: " + nhanVien.toString());
-//		System.out.println("Du lieu sau khi cap nhat: " + fromDatabase.toString());
-//		System.out.println("\n");
-//		if (nhanVien.toString().equals(fromDatabase.toString())) {
-//			actual = true;
-//		}
-//		Assert.assertEquals(actual, expected);
-//	}
-//
-//	@DataProvider(name = "dataDeleteNhanVien")
-//	public Object[][] dataDeleteNhanVien() {
-//		return new Object[][] { { "NV020", true }, { "NV021", true }, { "NV022", true } };
-//	}
-//
-//	@Test(description = "Test delete nhan vien", dataProvider = "dataDeleteNhanVien", priority = 3)
-//	public void testDeleteNhanVien(String maNhanVien, Boolean expected) {
-//		Boolean actual = false;
-//		ModelNhanVien entity = nvDao.selectById(maNhanVien);
-//		nvDao.delete(maNhanVien);
-//		ModelNhanVien nhanVien = nvDao.selectById(maNhanVien);
-//		System.out.println("Truoc khi xoa: " + entity);
-//		System.out.println("Sau khi xoa: " + nhanVien);
-//		if (nhanVien == null) {
-//			actual = true;
-//		}
-//		Assert.assertEquals(actual, expected);
-//	}
-//
-//	@DataProvider(name = "dataTimKiemNhanVien")
-//	public Object[][] timKiemNhanVien() {
-//		return new Object[][] { { "Trường", true }, { "Quang", true }, { "Thành", true } };
-//	}
-//
-//	@Test(description = "Test tim kiem nhan vien theo ho ten", dataProvider = "dataTimKiemNhanVien", priority = 4)
-//	public void testTimKiemNhanVien(String keyword, Boolean expected) {
-//		Boolean actual = false;
-//		List<ModelNhanVien> list = nvDao.findNhanVien(keyword);
-//		if (list.size() > 0) {
-//			list.forEach((item) -> {
-//				System.out.println("Tim thay: " + item);
-//			});
-//			actual = true;
-//		}
-//		Assert.assertEquals(actual, expected);
-//	}
+	@AfterClass
+	public void excelGo() throws IOException {
+		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 13, 6, "maHDCT,maHD,maSP,soLuong,donGia", dataThemHDCTv2(dataThemHDCT()));
+	}
+
 }

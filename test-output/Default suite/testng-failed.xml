@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wolvesres.ducvh.sanpham.TestSanPham">
+      <class name="com.wolvesres.ducvh.danhmuc.TestDanhMuc">
         <methods>
-          <include name="ThemSP" invocation-numbers="1 2"/>
+          <include name="ThemDM" invocation-numbers="2"/>
           <include name="beforeClass"/>
+          <include name="excelGo"/>
         </methods>
-      </class> <!-- com.wolvesres.ducvh.sanpham.TestSanPham -->
+      </class> <!-- com.wolvesres.ducvh.danhmuc.TestDanhMuc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -34,7 +35,7 @@ public class TestSanPham {
 	private DanhMucDAO dmDAO;
 	private DonViTinhDAO dvtDAO;
 	private SanPhamDAO spDAO;
-	private int forwant = 3;
+	private int forwant = 4;
 	private List<ModelDanhMuc> dmList = new ArrayList<ModelDanhMuc>();
 	private List<ModelDonViTinh> dvtList = new ArrayList<ModelDonViTinh>();
 
@@ -61,9 +62,24 @@ public class TestSanPham {
 		}
 		return data;
 	}
+	
+	public Object[][] dataThemSPv2(Object[][] datav1) {
+		Object[][] data = new Object[datav1.length][7];
+		for (int i = 0; i < datav1.length; i++) {
+			ModelSanPham sp = (ModelSanPham) datav1[i][0];
+			data[i][0] = sp.getMaSP();
+			data[i][1] = sp.getTenSP();
+			data[i][2] = sp.getGiaBan();
+			data[i][3] = sp.getMaDanhMuc();
+			data[i][4] = sp.getPathAnh();
+			data[i][5] = sp.getMaDVT();
+			data[i][6] = sp.isTrangThai();
+		}
+		return data;
+	}
 
 	@Test(description = "Test ThemSP", dataProvider = "dataThemSP", groups = "dataThemSP", priority = 1)
-	public void ThemSP(Object[] data) {
+	public void testThemSP(Object[] data) {
 		ModelSanPham spTemp = (ModelSanPham) data[0];
 		Boolean expected = (Boolean) data[1];
 		Boolean actual = false;
@@ -80,13 +96,30 @@ public class TestSanPham {
 	@DataProvider(name = "dataCapNhatSP")
 	public Object[][] dataCapNhatSP() {
 		return new Object[][] {
-				{ new ModelSanPham("SP015", "Tên sản phẩm cập nhật 1", 997f, dmList.get(0).getMaDanhMuc(), "", dvtList.get(0).getMaDVT(), true), true},
+				{ new ModelSanPham("SP016", "Tên sản phẩm cập nhật 1", 997f, dmList.get(0).getMaDanhMuc(), "", dvtList.get(0).getMaDVT(), true), true},
 				{ new ModelSanPham("SP017", "Tên sản phẩm cập nhật 2", 922f, dmList.get(0).getMaDanhMuc(), "", dvtList.get(0).getMaDVT(), true), true}
 				};
 	}
+	
+	public Object[][] dataCapNhatSPv2(Object[][] datav1) {
+//		ModelSanPham sp = new ModelSanPham(String maSP, String tenSP, float giaBan, String maDanhMuc, String pathAnh, int maDVT,
+//				boolean trangThai);
+		Object[][] data = new Object[datav1.length][7];
+		for (int i = 0; i < datav1.length; i++) {
+			ModelSanPham sp = (ModelSanPham) datav1[i][0];
+			data[i][0] = sp.getMaSP();
+			data[i][1] = sp.getTenSP();
+			data[i][2] = sp.getGiaBan();
+			data[i][3] = sp.getMaDanhMuc();
+			data[i][4] = sp.getPathAnh();
+			data[i][5] = sp.getMaDVT();
+			data[i][6] = sp.isTrangThai();
+		}
+		return data;
+	}
 
 	@Test(description = "Test CapNhatSP", dataProvider = "dataCapNhatSP", priority = 2)
-	public void CapNhatSP(Object[] data) {
+	public void testCapNhatSP(Object[] data) {
 		ModelSanPham spTemp = (ModelSanPham) data[0];
 		Boolean expected = (Boolean) data[1];
 		Boolean actual = false;
@@ -110,7 +143,7 @@ public class TestSanPham {
 	}
 
 	@Test(description = "Test XoaSP", dataProvider = "dataXoaSP", priority = 3)
-	public void XoaSP(String maSP, Boolean expected) {
+	public void testXoaSP(String maSP, Boolean expected) {
 		Boolean actual = false;
 		spDAO.delete(maSP);
 		ModelSanPham spAfter = null;
@@ -127,11 +160,11 @@ public class TestSanPham {
 
 	@DataProvider(name = "dataTimKiemSP")
 	public Object[][] dataTimKiemSP() {
-		return new Object[][] { { "7 Up", true }, { "Pepsi", false } };
+		return new Object[][] { { "7 Up", true }, { "Bán", true }, { "Bia", true }, { "Pepsi", false } };
 	}
 
 	@Test(description = "Test TimKiemSP", dataProvider = "dataTimKiemSP", priority = 4)
-	public void TimKiemSP(String keyword, Boolean expected) {
+	public void testTimKiemSP(String keyword, Boolean expected) {
 		Boolean actual = false;
 		List<ModelSanPham> list = spDAO.timkiem(keyword);
 		if (list.size() > 0) {
@@ -142,4 +175,63 @@ public class TestSanPham {
 		}
 		Assert.assertEquals(actual, expected);
 	}
+
+	@DataProvider(name = "dataCheckForeign")
+	public Object[][] dataCheckForeign() {
+		return new Object[][] { { "SP03", true }};
+	}
+
+	@Test(description = "Test CheckForeign", dataProvider = "dataCheckForeign", priority = 5)
+	public void testCheckForeignChiTietLS(String id, Boolean expected) {
+		Boolean actual = false;
+		ModelSanPham spTemp = spDAO.checkForeignChiTietLS(id);
+		if (spTemp != null) {
+			actual = true;
+		}
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test(description = "Test CheckForeign", dataProvider = "dataCheckForeign", priority = 6)
+	public void testCheckForeignHoaDonCT(String id, Boolean expected) {
+		Boolean actual = false;
+		ModelSanPham spTemp = spDAO.checkForeignHoaDonCT(id);
+		if (spTemp != null) {
+			actual = true;
+		}
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test(description = "Test CheckForeign", dataProvider = "dataCheckForeign", priority = 7)
+	public void testCheckForeignKho(String id, Boolean expected) {
+		Boolean actual = false;
+		ModelSanPham spTemp = spDAO.checkForeignKho(id);
+		if (spTemp != null) {
+			actual = true;
+		}
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test(description = "Test CheckForeign", dataProvider = "dataCheckForeign", priority = 8)
+	public void testCheckForeignLichSuGia(String id, Boolean expected) {
+		Boolean actual = false;
+		ModelSanPham spTemp = spDAO.checkForeignLichSuGia(id);
+		if (spTemp != null) {
+			actual = true;
+		}
+		Assert.assertEquals(actual, expected);
+	}
+
+	@AfterClass
+	public void excelGo() throws IOException {
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 1, 6, "maSP,tenSP,giaBan,maDanhMuc,pathAnh,maDVT,trangThai", dataThemSPv2(dataThemSP()));
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 2, 6, "maSP,tenSP,giaBan,maDanhMuc,pathAnh,maDVT,trangThai", dataCapNhatSPv2(dataCapNhatSP()));
+////		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 3, 6, "maSP", dataXoaSP());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 4, 6, "keyword", dataTimKiemSP());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 5, 6, "maSP", dataCheckForeign());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 6, 6, "maSP", dataCheckForeign());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 7, 6, "maSP", dataCheckForeign());
+//		ExcelGo.writeExcelv3("D:\\demo.xlsx", 0, 8, 6, "maSP", dataCheckForeign());
+	}
+	
+	//
 }
